@@ -1,0 +1,8 @@
+venv/*
+.idea/*
+monitor_api.wsgi
+activate_venv.bat
+requirements.txt
+app/__pycache__/*
+app/config.py
+befehle_putty.txt

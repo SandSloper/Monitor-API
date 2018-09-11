@@ -1,0 +1,25 @@
+.logo{
+    background-image: url(images/header.png) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    max-width: 100vh;
+    height: 20vh;
+    margin-top:5vh;
+    margin-left: 10vh;
+}
+.choice{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5vh;
+    max-width: 100vh;
+}
+
+.choice .info{
+    font-size: 2vh;
+}
+.choice .btn-primary{
+    margin-top: 2vh;
+    width:150px;
+    height: 50px
+}
