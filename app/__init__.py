@@ -17,13 +17,12 @@ migrate = Migrate(app, db)
 db.init_app(app)
 CORS(app)
 
-from app.users import users
-from app.start import start
+from app.ogc import ogc
 from app.flaechenportal import f_portal
 from app.email import mail
 
-app.register_blueprint(start,url_prefix='/')
-app.register_blueprint(users, url_prefix='/users')
+app.register_blueprint(ogc, url_prefix='/')
 app.register_blueprint(f_portal, url_prefix='/fp')
 app.register_blueprint(mail,url_prefix="/email")
+
 
