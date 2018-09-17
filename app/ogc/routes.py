@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import render_template,request,Markup,jsonify,redirect
-from flask_login import login_user,LoginManager
-from flask import stream_with_context
+from flask_login import login_user, LoginManager, current_user, login_required, logout_user
+from flask import stream_with_context, url_for, session
 from flask import Response
 from app.ogc.forms import *
 
@@ -16,9 +16,14 @@ import requests
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+@ogc.route('/index')
 @ogc.route('/')
 def index():
     return render_template('index.html')
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 @ogc.route('/ogc', methods=['GET', 'POST'])
 def get_service():
@@ -47,24 +52,24 @@ def get_service():
     else:
         req = requests.get(url_ogc, stream=True)
         return Response(stream_with_context(req.iter_content()), content_type=req.headers['content-type'])
-
 @ogc.route('/login', methods=['GET', 'POST'])
 def login():
-    url = request.url.split("?")
+    if current_user.is_authenticated:
+        return redirect(url_for('ogc.api_key'))
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user:
             if check_password_hash(user.password, form.password.data):
                 login_user(user, remember=form.remember_me.data)
-                return redirect("{}?{}&{}".format("https://monitor.ioer.de/monitor_test/", url[1],"log=true"))
+                return redirect(url_for('ogc.api_key'))
             login_user(user, remember=form.remember_me.data)
 
     return render_template('login.html', form=form)
 
 @ogc.route('/signup', methods=['GET', 'POST'])
 def signup():
-    form = RegisterForm()
+    form = RegisterForm(form_type="inline")
     if form.validate_on_submit():
         #Form Values
         hashed_password = generate_password_hash(form.password.data, method='sha256')
@@ -82,5 +87,42 @@ def signup():
             new_user = User(username=username, email=email, password=hashed_password,lastname=form.lastname.data,firstname=form.firstname.data,facility=form.facility.data)
             db.session.add(new_user)
             db.session.commit()
-            return "<h1>Logged in</h1>"
+            return render_template('api_key.html')
     return render_template('signup.html', form=form)
+
+@ogc.route('/api_key')
+def api_key():
+    key = current_user.api_key
+    btn_text = "Generieren"
+    key_text = ''
+    if key:
+        btn_text = "Kopieren"
+        key_text = key
+
+    return render_template('api_key.html',key=key_text, btn_text=btn_text,username=current_user.username,user_id=current_user.id)
+
+@ogc.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('ogc.index'))
+
+@ogc.route('/check_key',methods=['GET', 'POST'])
+def check_key():
+    key=request.args.get('key')
+    cur_key = db.engine.execute("SELECT api_key FROM users WHERE api_key='{}'".format(key))
+    if cur_key.rowcount >0:
+        return jsonify(True)
+    else:
+        return  jsonify(False)
+
+@ogc.route('/insert_key',methods=['GET', 'POST'])
+def insert_key():
+    key=request.args.get('key')
+    name=request.args.get('name')
+    id=request.args.get('id')
+    try:
+        db.engine.execute("UPDATE users set api_key='{}' where username='{}' and id={}".format(key,name,id))
+        return jsonify(True)
+    except:
+        return jsonify(False)

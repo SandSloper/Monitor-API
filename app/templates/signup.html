@@ -1,15 +1,21 @@
 {% extends "bootstrap/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
-
+{% block title %}
+IÖR-Monitor-API
+{% endblock %}
 {% block styles %}
 {{super()}}
-<link rel="stylesheet" href="{{url_for('static', filename='signin.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
 {% endblock %}
 
 {% block content %}
-    <div class="header"><h2>Registrierung</h2></div>
+    <div class="header">
+        <h2>Registrierung</h2>
+    </div>
     <div class="container logo">
-        <div class="image"></div>
+        <a href="https://ioer-monitor.de" target="_blank">
+            <div class="image"></div>
+        </a>
     </div>
 <div class="container">
      {% if error %}

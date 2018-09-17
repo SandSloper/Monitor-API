@@ -1,0 +1,183 @@
+/*
+Global
+ */
+/* Works not on IE -> a shame*/
+:root{
+    --main-color:#4E60AA;
+    --active-color:#8CB91B
+}
+.header{
+    margin-top: 0;
+    width: 100%;
+    height:5vh;
+    background-color: #4E60AA;
+}
+.header h2{
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    padding: 1vh;
+}
+.logo{
+    margin-top: 5vh;
+}
+.logo .image{
+    background-image: url(../images/header.png) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+    max-width: 100vh;
+    height: 10vh;
+    margin: 0 auto;
+}
+/*
+Landing Page
+ */
+.landing_logo{
+    background-image: url(../images/header.png) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    max-width: 100vh;
+    height: 20vh;
+    margin-top:5vh;
+    margin-left: 10vh;
+}
+.landing_choice{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5vh;
+    max-width: 100vh;
+}
+
+.landing_choice .info{
+    font-size: 2vh;
+}
+.landing_choice .btn-primary{
+    margin-top: 2vh;
+    width:150px;
+    height: 50px
+}
+/*
+Log In
+ */
+.login form{
+    padding: 15px;
+    width: 60vh;
+    height: auto;
+}
+.login .form-control{
+
+    height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.login form{
+    width: 100vh;
+    margin: 0 auto;
+}
+.login form .form-inline{
+    display: flex;
+}
+.login form .form-inline .checkbox{
+    width:70%;
+}
+.login form .form-inline a{
+    font-size: 14px;
+    line-height: 1.42857143;
+    font-weight: bold;
+    text-align: right;
+    width:30%;
+    cursor: pointer;
+}
+.login button{
+    margin-top: 20px;
+    width:150px;
+    height: 50px;
+    float: left;
+}
+/*
+Sign Up
+ */
+.error_message{
+  max-width: 80%;
+  padding: 15px;
+  margin: 0 auto;
+ border: 2px solid red;
+}
+.form-signin {
+  max-width: 80%;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.form-signin .btn-primary{
+    margin-top: 2vh;
+    width:150px;
+    height: 50px;
+    float: left;
+}
+/*
+API Key View
+ */
+.api_key .container{
+    max-width: 100vh;
+    margin: 0 auto;
+    margin-bottom: 5vh;
+}
+.api_key .navbar{
+    background-color: white !important;
+    margin-top: 2vh;
+}
+.api_key .navbar #navbarNav .navbar-nav .nav-item{
+    width: 15vh;
+}
+.api_key .navbar #navbarNav .navbar-nav .nav-item:hover{
+    font-weight: bold;
+    color:black;
+}
+.api_key .navbar #navbarNav .navbar-nav .api_key{
+     border-bottom: 2px solid var(--main-color);
+    font-weight: bold;
+}
+.api_key .navbar .logout button{
+    color:white;
+}
+.api_key hr{
+    margin-top: 0;
+}
+.api_key .api_key_generate button{
+    margin-top: 2vh;
+    color:white
+}
