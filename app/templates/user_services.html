@@ -7,7 +7,7 @@
     <link type="text/css" href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet"/>
 </head>
 <body>
-<div class="api_key">
+<div class="user_services">
     <div class="header"></div>
     <div class="container">
         <div class="logo">
@@ -26,7 +26,7 @@
                 <a class="nav-link" href="#">API-Key</a>
               </li>
               <li class="nav-item services">
-                <a class="nav-link" href="#">Dienste</a>
+                <a class="nav-link" href="{{url_for(ogc.services)}}">Dienste</a>
               </li>
             </ul>
           </div>

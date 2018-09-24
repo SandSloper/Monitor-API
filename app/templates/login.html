@@ -18,6 +18,9 @@ Login
         <div class="image"></div>
     </div>
     <div class="container login">
+     {% if error %}
+      <p class="error_message"><strong>Fehler:</strong> {{ error }}
+      {% endif %}
       <form class="form-signin" method="POST">
         <!--<h2 class="form-signin-heading">Please sign in</h2>-->
         {{ form.hidden_tag() }}

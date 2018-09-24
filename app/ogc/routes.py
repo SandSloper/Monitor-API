@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import render_template,request,Markup,jsonify,redirect
 from flask_login import login_user, LoginManager, current_user, login_required, logout_user
-from flask import stream_with_context, url_for, session
+from flask import stream_with_context, url_for
 from flask import Response
 from app.ogc.forms import *
 
@@ -33,6 +33,7 @@ def get_service():
     service = ''
     id=''
     key = ''
+    user_id = ''
     paramater_ogc = ''
     for x in parameters:
         x_str = x.lower()
@@ -50,20 +51,29 @@ def get_service():
     if cur_key.rowcount == 0:
         return jsonify({"error":"Wrong API Key"})
     else:
+        for row in cur_key:
+            user_id = row['id']
+        # save the request
+        db.engine.execute("INSERT INTO user_cache (user_id,indikator,type) VALUES({},'{}','{}')".format(user_id,id.upper(),service.upper()))
         req = requests.get(url_ogc, stream=True)
         return Response(stream_with_context(req.iter_content()), content_type=req.headers['content-type'])
+
 @ogc.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('ogc.api_key'))
+        return render_template('api_key.html', key=current_user.api_key, btn_text='Kopieren',
+                               username=current_user.username,
+                               user_id=current_user.id)
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
-        if user:
-            if check_password_hash(user.password, form.password.data):
-                login_user(user, remember=form.remember_me.data)
-                return redirect(url_for('ogc.api_key'))
+        if user and check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember_me.data)
+            return render_template('api_key.html', key=current_user.api_key, btn_text='Kopieren', username=current_user.username,
+                                   user_id=current_user.id)
+        else:
+            error = Markup('Der <b>Nutzername</b> oder <b>Passwort</b> falsch')
+            return render_template('login.html', form=form, error=error)
 
     return render_template('login.html', form=form)
 
@@ -87,12 +97,14 @@ def signup():
             new_user = User(username=username, email=email, password=hashed_password,lastname=form.lastname.data,firstname=form.firstname.data,facility=form.facility.data)
             db.session.add(new_user)
             db.session.commit()
-            return render_template('api_key.html')
+            login_user(User.query.filter_by(username=username).first())
+            return render_template('api_key.html',key='', btn_text='Generieren',username=current_user.username,user_id=current_user.id)
     return render_template('signup.html', form=form)
 
 @ogc.route('/api_key')
 def api_key():
     key = current_user.api_key
+    print(api_key)
     btn_text = "Generieren"
     key_text = ''
     if key:

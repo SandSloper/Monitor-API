@@ -25,8 +25,8 @@ class Parser:
                         end = row.find("span",{"class":"date-display-end"})
                         name = row.find("a")
                         if start is not None:
-                            date = strConverter.cleanString("{} - {}".format(start.getText(), end.getText()))
-                            name_txt = strConverter.cleanString(name.getText())
+                            date = strConverter.clean_string("{} - {}".format(start.getText(), end.getText()))
+                            name_txt = strConverter.clean_string(name.getText())
                             values.append({"date":date,"name":name_txt, "url": "https://www.arl-net.de/{}".format(name.get('href'))})
                 events.append({id: {"events": values}})
             elif id=="bbsr":
@@ -36,8 +36,8 @@ class Parser:
                 values = []
                 for tr in tBody:
                     td_list = tr.find_all("td")
-                    date = strConverter.cleanString(td_list[0].getText())
-                    name = strConverter.cleanString(td_list[1].getText())
+                    date = strConverter.clean_string(td_list[0].getText())
+                    name = strConverter.clean_string(td_list[1].getText())
                     name_a = td_list[1].find('a')
                     url = name_a.get('href')
                     if name != "Kurzbeschreibung":
@@ -50,11 +50,11 @@ class Parser:
                     info_span = content.find("span", {"class": "rf-c-typo:xs"})
                     text = content.find("a")
                     if info_span is not None:
-                        name = strConverter.cleanString(text.getText())
+                        name = strConverter.clean_string(text.getText())
                         url = text.get("href")
                         infos = info_span.getText()
                         infos = infos.split("|")
-                        date = strConverter.cleanString(infos[0])
+                        date = strConverter.clean_string(infos[0])
                         values.append({"date": date, "name": name, "url": "{}{}".format("https://www.bmu.de/service/veranstaltungen/",url)})
                 events.append({id: {"events": values}})
             elif id=="uba":
@@ -66,12 +66,12 @@ class Parser:
                 for content in panel:
                     link = content.find("h4")
                     link = link.find("a")
-                    name = strConverter.cleanString(link.getText())
+                    name = strConverter.clean_string(link.getText())
                     link = link.get("href")
                     date = content.find("p",{"class","small-gray"})
                     date = date.getText()
                     date = date.split("|")
-                    date = strConverter.cleanString(date[0])
+                    date = strConverter.clean_string(date[0])
                     values.append(
                         {"date": date, "name": name, "url": link})
                 events.append({id: {"events": values}})
@@ -81,11 +81,11 @@ class Parser:
                 for content in panel:
                     date = content.find("div",{"class","difu-start-ende"})
                     date = date.getText()
-                    date = strConverter.cleanString(date)
+                    date = strConverter.clean_string(date)
                     name = content.find("h2",{"class","title"})
                     name = name.find("a")
                     link = name.get("href")
-                    name = strConverter.cleanString(name.getText())
+                    name = strConverter.clean_string(name.getText())
                     values.append(
                         {"date": date, "name": name, "url": link})
                 events.append({id: {"events": values}})
