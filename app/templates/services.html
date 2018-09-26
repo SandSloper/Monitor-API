@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Home Page</title>
     <link type="text/css" href="{{ url_for('static', filename='lib/bootstrap/bootstrap.min.css') }}" rel="stylesheet"/>
+    <link type="text/css" href="{{ url_for('static', filename='lib/datatables/datatables.min.css') }}" rel="stylesheet"/>
     <link type="text/css" href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet"/>
 </head>
 <body>
@@ -20,13 +21,10 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link settings" href="#">Einstellungen</a>
+                <a class="nav-link" href="{{url_for('ogc.api_key')}}">API-Key</a>
               </li>
-              <li class="nav-item api_key">
-                <a class="nav-link" href="#">API-Key</a>
-              </li>
-              <li class="nav-item services">
-                <a class="nav-link" href="{{url_for(ogc.services)}}">Dienste</a>
+              <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('ogc.user_services')}}">Dienste</a>
               </li>
             </ul>
           </div>
@@ -36,15 +34,34 @@
         </nav>
         <hr class="hr"/>
     </div>
-    <div class="container api_key_generate">
-        <h5>API-Key</h5>
-        <hr class="hr">
-        <input type="text" class="form-control" id="api_key" value="{{key}}" disabled/>
-        <button type="button" class="btn btn-warning" id="api_key_btn" data-user_name="{{username}}" data-user_id="{{user_id}}">{{btn_text}}</button>
+    <div class="container services">
+       <form>
+            <label class="radio-inline">
+              <input type="radio" name="optradio" value="wfs" checked>WFS
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="optradio" value="wcs" >WCS
+            </label>
+          </form>
+        <table id="service_table" class="table table-striped table-bordered" data-key="{{key}}">
+            <thead>
+            <tr>
+                <th>Indikator</th>
+                <th>URL</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <th>Indikator</th>
+                <th>URL</th>
+            </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 </body>
 <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
-<script src="{{ url_for('static', filename='js/api_key.js') }}"></script>
-<script type=text/javascript>$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};</script>
+<script src="{{ url_for('static', filename='js/services.js') }}"></script>
+<script src="{{url_for('static',filename='lib/datatables/datatables.min.js')}}"></script>
+<script type=text/javascript>$SCRIPT_ROOT = {{ request.script_root|tojson|safe }}</script>
 </html>

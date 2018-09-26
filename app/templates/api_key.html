@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home Page</title>
+    <link type="text/css" href="{{ url_for('static', filename='lib/bootstrap/bootstrap.min.css') }}" rel="stylesheet"/>
+    <link type="text/css" href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet"/>
+</head>
+<body>
+<div class="header"></div>
+<div class="container">
+    <div class="logo">
+        <div class="image"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href={{url_for('ogc.api_key')}}>API-Key</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={{url_for('ogc.user_services')}}>Dienste</a>
+          </li>
+        </ul>
+      </div>
+     <div class="logout">
+           <a href="/logout"><button type="submit" class="btn btn-warning">Logout</button></a>
+      </div>
+    </nav>
+    <hr class="hr"/>
+</div>
+<div class="container api_key_generate">
+    <h5>API-Key</h5>
+    <hr class="hr">
+    <input type="text" class="form-control" id="api_key" value="{{key}}" disabled/>
+    <button type="button" class="btn btn-warning" id="api_key_btn" data-user_name="{{username}}" data-user_id="{{user_id}}">{{btn_text}}</button>
+</div>
+
+</body>
+<script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/api_key.js') }}"></script>
+<script type=text/javascript>$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};</script>
+</html>

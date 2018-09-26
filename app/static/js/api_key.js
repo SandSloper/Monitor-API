@@ -30,7 +30,6 @@ $(function(){
                }
            })
        }
-       //console.log(makekey());
     });
 });
 function insert(key,username,user_id){

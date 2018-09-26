@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import render_template,request,Markup,jsonify,redirect
+from flask import render_template,request,Markup,jsonify,redirect,session
 from flask_login import login_user, LoginManager, current_user, login_required, logout_user
 from flask import stream_with_context, url_for
 from flask import Response
@@ -33,7 +33,6 @@ def get_service():
     service = ''
     id=''
     key = ''
-    user_id = ''
     paramater_ogc = ''
     for x in parameters:
         x_str = x.lower()
@@ -45,18 +44,21 @@ def get_service():
             id=x_str.replace('id=','')
         else:
             paramater_ogc +='&'+x_str
-    url_ogc = 'http://maps.ioer.de/cgi-bin/{}?MAP={}_{}&SERVICE={}{}'.format(service,id.upper(),service,service.upper(),paramater_ogc.upper())
+    url_ogc ="https://monitor.ioer.de/cgi-bin/mapserv?map=/mapsrv_daten/detailviewer/{}_mapfiles/{}_{}.map&SERVICE={}{}".format(service.lower(),service.lower(),id.upper(),service.upper(),paramater_ogc.upper())
+    req = requests.get(url_ogc, stream=True)
+    response = Response(req.iter_content(), content_type=req.headers['content-type'])
     #check the key
-    cur_key = db.engine.execute("SELECT * FROM users WHERE api_key='{}'".format(key))
-    if cur_key.rowcount == 0:
-        return jsonify({"error":"Wrong API Key"})
+    if session.get('key') is not None:
+        print("session is set")
+        return response
     else:
-        for row in cur_key:
-            user_id = row['id']
-        # save the request
-        db.engine.execute("INSERT INTO user_cache (user_id,indikator,type) VALUES({},'{}','{}')".format(user_id,id.upper(),service.upper()))
-        req = requests.get(url_ogc, stream=True)
-        return Response(stream_with_context(req.iter_content()), content_type=req.headers['content-type'])
+        print("session is not set")
+        cur_key = db.engine.execute("SELECT * FROM users WHERE api_key='{}'".format(key))
+        if cur_key.rowcount == 0:
+            return jsonify({"error":"Wrong API Key"})
+        else:
+            session['key'] = True
+            return response
 
 @ogc.route('/login', methods=['GET', 'POST'])
 def login():
@@ -100,6 +102,10 @@ def signup():
             login_user(User.query.filter_by(username=username).first())
             return render_template('api_key.html',key='', btn_text='Generieren',username=current_user.username,user_id=current_user.id)
     return render_template('signup.html', form=form)
+
+@ogc.route('/services',methods=['GET','POST'])
+def user_services():
+    return render_template('services.html',key=current_user.api_key)
 
 @ogc.route('/api_key')
 def api_key():

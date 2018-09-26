@@ -149,35 +149,54 @@ Sign Up
     float: left;
 }
 /*
-API Key View
+Main
  */
-.api_key .container{
-    max-width: 100vh;
-    margin: 0 auto;
-    margin-bottom: 5vh;
-}
-.api_key .navbar{
+ .navbar{
     background-color: white !important;
     margin-top: 2vh;
 }
-.api_key .navbar #navbarNav .navbar-nav .nav-item{
+ .navbar #navbarNav .navbar-nav .nav-item{
     width: 15vh;
 }
-.api_key .navbar #navbarNav .navbar-nav .nav-item:hover{
+ .navbar #navbarNav .navbar-nav .nav-item:hover{
     font-weight: bold;
     color:black;
 }
-.api_key .navbar #navbarNav .navbar-nav .api_key{
+ .navbar #navbarNav .navbar-nav .active{
      border-bottom: 2px solid var(--main-color);
-    font-weight: bold;
+     font-weight: bold;
 }
-.api_key .navbar .logout button{
+ .navbar .logout button{
     color:white;
 }
-.api_key hr{
+ hr{
     margin-top: 0;
 }
-.api_key .api_key_generate button{
+ /*
+ API Key Generation
+  */
+.api_key_generate button{
     margin-top: 2vh;
     color:white
 }
+/*
+Services
+ */
+.services form{
+    margin-left: 1vh;
+}
+.services form label{
+    color:black;
+    font-weight:bold;
+    font-size: 1.2em;
+}
+.services form label:nth-child(1){
+    margin-right: 2vh;
+}
+.services form input{
+    margin-right: 1vh;
+}
+.services div{
+    margin-top: 1vh;
+}
+
