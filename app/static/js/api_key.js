@@ -1,14 +1,13 @@
+const txt_copy = "Kopieren";
 var key_input = $('#api_key'),
     key_btn = $('#api_key_btn');
-const txt_copy = "Kopieren",
-    txt_gen = "Generieren";
 $(function(){
     key_btn.click(function () {
           var id = $(this).text(),
            username=$(this).data('user_name'),
            user_id=$(this).data('user_id');
 
-       if(id ===txt_copy){
+       if(id===txt_copy){
             var $temp = $("<input>");
             $("body").append($temp);
             $temp.val(key_input.val()).select();
@@ -19,7 +18,7 @@ $(function(){
             //key_input.val(key);
             //check if the key allredy exists
            $.ajax({
-               url:$SCRIPT_ROOT+'/check_key',
+               url:window.location.origin+'/check_key',
                type:"GET",
                data:{"key":key},
                success:function(data){
@@ -34,7 +33,7 @@ $(function(){
 });
 function insert(key,username,user_id){
  $.ajax({
-        url:$SCRIPT_ROOT+'/insert_key',
+        url:window.location.origin+'/insert_key',
         type:"GET",
         data:{
             key:key,

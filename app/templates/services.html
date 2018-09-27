@@ -47,21 +47,42 @@
             <thead>
             <tr>
                 <th>Indikator</th>
-                <th>URL</th>
+                <th>Service</th>
             </tr>
             </thead>
             <tfoot>
             <tr>
                 <th>Indikator</th>
-                <th>URL</th>
+                <th>Service</th>
             </tr>
             </tfoot>
         </table>
     </div>
 </div>
+<!--Modal dialog-->
+<div class="modal" id="info_modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal_title"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5>Interpretation</h5>
+            <div id="modal_interpretation">info</div>
+            <h5>Methodik</h5>
+            <div id="modal_methodik">methodik</div>
+          </div>
+        </div>
+      </div>
+</div>
+
 </body>
+
 <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/bootstrap/bootstrap.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/services.js') }}"></script>
 <script src="{{url_for('static',filename='lib/datatables/datatables.min.js')}}"></script>
-<script type=text/javascript>$SCRIPT_ROOT = {{ request.script_root|tojson|safe }}</script>
 </html>

@@ -49,10 +49,8 @@ def get_service():
     response = Response(req.iter_content(), content_type=req.headers['content-type'])
     #check the key
     if session.get('key') is not None:
-        print("session is set")
         return response
     else:
-        print("session is not set")
         cur_key = db.engine.execute("SELECT * FROM users WHERE api_key='{}'".format(key))
         if cur_key.rowcount == 0:
             return jsonify({"error":"Wrong API Key"})
@@ -105,19 +103,25 @@ def signup():
 
 @ogc.route('/services',methods=['GET','POST'])
 def user_services():
-    return render_template('services.html',key=current_user.api_key)
+    if current_user.is_authenticated:
+        return render_template('services.html',key=current_user.api_key)
+    else:
+       return url_for('ogc.login')
 
 @ogc.route('/api_key')
 def api_key():
-    key = current_user.api_key
-    print(api_key)
-    btn_text = "Generieren"
-    key_text = ''
-    if key:
-        btn_text = "Kopieren"
-        key_text = key
+    if current_user.is_authenticated:
+        key = current_user.api_key
+        print(api_key)
+        btn_text = "Generieren"
+        key_text = ''
+        if key:
+            btn_text = "Kopieren"
+            key_text = key
 
-    return render_template('api_key.html',key=key_text, btn_text=btn_text,username=current_user.username,user_id=current_user.id)
+        return render_template('api_key.html',key=key_text, btn_text=btn_text,username=current_user.username,user_id=current_user.id)
+    else:
+        return url_for('ogc.login')
 
 @ogc.route('/logout')
 @login_required
