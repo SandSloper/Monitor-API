@@ -6,3 +6,4 @@ requirements.txt
 app/__pycache__/*
 app/config.py
 befehle_putty.txt
+flask_session/*
