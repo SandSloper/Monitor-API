@@ -1,41 +1,62 @@
 # -*- coding: utf-8 -*-
-from flask import jsonify,request,Response
-from rdflib import Graph,URIRef, BNode, Literal
-from rdflib.namespace import RDF
+from flask import jsonify,request,Response,abort
+from app.tools.toolbox import *
 
 import requests
 import json
 import os
 
-
 from app.sora import sora
 from app.sora.request_handler import ESRIServerManager
+from app.sora.model.indicator import Indicator
 
-@sora.route('/rdf')
-def rdf():
-    # get all avalibable indicators from the server
-    url='https://monitor.ioer.de/monitor_test/backend/query.php'
-    json_string = '{"format":{"id":"raster"},"query":"getAllIndicators"}'
-    req = requests.get("{}".format(url,json_string))
-    categories = json.loads(req.text)
-    # create the graph for the RDF DOC
-    # siehe Lars: https://git.gesis.org/SoRa/sora-app/blob/master/backend/project/resources/indicator.py
-    g = Graph()
-    indicator = URIRef("http://monitor.ioer.de:5000/ressources/indicator")
-    for cat in categories:
-        ind_id = categories[cat]['indicators']
-        for x in ind_id:
-            ind_name = categories[cat]['indicators'][x]['ind_name']
+url = 'https://monitor.ioer.de/backend/query.php?values={"format":{"id":"raster"},"query":"getAllIndicators"}'
 
-    g.serialize(destination=os.path.dirname(os.path.realpath(__file__))+'/ressources/indicator.ttl', format='turtle')
+@sora.route("/indicator", methods=['GET', 'POST'])
+def get_indicators():
+    indicator = Indicator(json_url=url)
+    try:
+        res = indicator.g
+    except Exception as e:
+        return abort(500)
+    if len(res) == 0:
+        return abort(404)
+    else:
+        return Response(res.serialize(format="turtle"), mimetype="text/n3")
 
-    return jsonify(True)
+@sora.route("/indicator/<indicator_id>", methods=['GET', 'POST'])
+def get_indicator(indicator_id):
+    indicator = Indicator(json_url=url)
+    try:
+        query = """
+                CONSTRUCT 
+                {{ <http://{}/sora/indicator/{}> ?p ?o . }} 
+                WHERE {{ <http://{}/sora/indicator/{}> ?p ?o. }}
+                """.format(request.host,indicator_id,request.host,indicator_id)
 
-@sora.route('/routing_xy', methods=['GET', 'POST'])
+        res = indicator.g.query(query)
+
+    except Exception as e:
+        return abort(500)
+    if len(res) == 0:
+        return abort(404)
+    else:
+        return Response(res.serialize(format="turtle"), mimetype="text/n3")
+
+@sora.route('/services', methods=['GET', 'POST'])
 def get():
     values = request.args.get('value')
+    # which service is needed e.g. routing_xy or routing_poi
     job_id = request.args.get('job')
-    request_handler = ESRIServerManager(job_id, values)
-    result = request_handler.get_request()
-    return Response(result, mimetype='application/json')
+    #test if json is valid
+    tb = TOOLBOX()
+    if tb.json_validator(values):
+        request_handler = ESRIServerManager(job_id, values)
+        result = request_handler.get_request()
+        response = Response(result, mimetype='application/json')
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        response.headers['Content-type'] = 'application/json; charset=utf-8'
+        return response
+    else:
+        return jsonify(error='no valid json')
 

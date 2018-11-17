@@ -16,14 +16,13 @@ import requests
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-@ogc.route('/index')
 @ogc.route('/')
 def index():
     return render_template('index.html')
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    return USER.query.get(int(user_id))
 
 @ogc.route('/ogc', methods=['GET', 'POST'])
 def get_service():
@@ -66,7 +65,7 @@ def login():
                                user_id=current_user.id)
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
+        user = USER.query.filter_by(username=form.username.data).first()
         if user and check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember_me.data)
             return render_template('api_key.html', key=current_user.api_key, btn_text='Kopieren', username=current_user.username,
@@ -94,10 +93,10 @@ def signup():
             error = Markup('Die <b>Email-Adresse</b> existiert bereits, bitte wählen Sie eine andere')
             return render_template('signup.html', form=form, error=error)
         else:
-            new_user = User(username=username, email=email, password=hashed_password,lastname=form.lastname.data,firstname=form.firstname.data,facility=form.facility.data)
+            new_user = USER(username=username, email=email, password=hashed_password, lastname=form.lastname.data, firstname=form.firstname.data, facility=form.facility.data)
             db.session.add(new_user)
             db.session.commit()
-            login_user(User.query.filter_by(username=username).first())
+            login_user(USER.query.filter_by(username=username).first())
             return render_template('api_key.html',key='', btn_text='Generieren',username=current_user.username,user_id=current_user.id)
     return render_template('signup.html', form=form)
 

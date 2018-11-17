@@ -15,7 +15,7 @@ def parse():
         {"id": "nhr", "url": "https://www.nachhaltigkeitsrat.de/termine/"},
         {"id": "aktion_flaeche", "url": "https://aktion-flaeche.de/termine"}
     ]
-    result = parser.ParseEvents(pages)
+    result = parser.parseEvents(pages)
     result = json.dumps(result,ensure_ascii=False)
     resp = Response(result,mimetype='application/json')
     resp.headers['Access-Control-Allow-Origin'] = '*'

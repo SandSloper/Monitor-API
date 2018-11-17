@@ -4,13 +4,13 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-from app.tools.Converter import *
+from app.tools.toolbox import *
 
 class Parser:
 
-    def ParseEvents(self,value):
+    def parseEvents(self, value):
         events = []
-        strConverter = StringConverter()
+        strConverter = TOOLBOX()
         for o in value:
             page = requests.get(o['url'])
             id = o['id']

@@ -8,8 +8,9 @@ class ESRIServerManager:
         self.job_id = job_id
         self.values = values
         self.jobs = {
-            "poi":"https://edn.ioer.de/arcgis/rest/services/SORA/routing_nearestPOI/GPServer/routing_nearestPOI/execute",
+            "routing_poi":"https://edn.ioer.de/arcgis/rest/services/SORA/routing_nearestPOI/GPServer/routing_nearestPOI/execute",
             "routing_xy":"https://edn.ioer.de/arcgis/rest/services/SORA/routing_xy/GPServer/routing_xy/execute",
+            "coordinates":"https://edn.ioer.de/arcgis/rest/services/SORA/querybycoordinates/GPServer/querybycoordinates/execute"
         }
 
     def get_request(self):

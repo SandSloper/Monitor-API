@@ -44,7 +44,7 @@ const table={
     getData:function(setting){
          return  $.ajax({
             type: "GET",
-            url: 'https://monitor.ioer.de/monitor_test/backend/query.php',
+            url: 'https://monitor.ioer.de/backend/query.php',
             data: {
                 values:'{"format":{"id":"'+setting+'"},"query":"getAllIndicators"}'
             }
