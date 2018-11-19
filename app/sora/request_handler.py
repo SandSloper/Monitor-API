@@ -14,11 +14,10 @@ class ESRIServerManager:
         }
 
     def get_request(self):
-        request_url = "{}?inputJSON={}&f=pjson".format(self.jobs[self.job_id],self.values)
-        req = requests.get(request_url)
+        req = requests.post(self.jobs[self.job_id],data=self.values,params={'f':'pjson'})
+        print(req.text)
         resultJSON = json.loads(req.text)
         values = None
         for x in resultJSON['results']:
            values =  x['value']
-        print(values)
         return json.dumps(values)
