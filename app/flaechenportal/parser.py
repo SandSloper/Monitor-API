@@ -10,7 +10,7 @@ class Parser:
 
     def parseEvents(self, value):
         events = []
-        strConverter = TOOLBOX()
+        strConverter = Toolbox()
         for o in value:
             page = requests.get(o['url'])
             id = o['id']

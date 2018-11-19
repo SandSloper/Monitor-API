@@ -126,7 +126,7 @@ def api_key():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('ogc.index'))
+    return redirect("https://{}/monitor_api".format(request.host))
 
 @ogc.route('/check_key',methods=['GET', 'POST'])
 def check_key():

@@ -1,10 +1,7 @@
 from flask import request
-from rdflib import Graph, RDF, RDFS, Namespace, BNode, URIRef, Literal
-from rdflib.plugins.sparql.results.jsonresults import JSONResultSerializer
+from rdflib import Graph, RDF, RDFS, Namespace, URIRef, Literal
 from requests import get
 import logging as log
-from io import StringIO
-import json
 
 class Indicator:
     def __init__(self,json=None, json_url=None):
@@ -13,15 +10,20 @@ class Indicator:
         else:
             indicator_json = get(json_url).json()
 
-        soo = Namespace("http://{}/sora/ontology#".format(request.host))
-        qu = Namespace("http://purl.oclc.org/NET/ssnx/qu/qu#")
+        soo = Namespace("https://{}/monitor_api/sora/ontology#".format(request.host))
+        cat = Namespace("https://{}/monitor_api/sora/category#".format(request.host))
+        qu = Namespace("https://purl.oclc.org/NET/ssnx/qu/qu#")
         self.g = Graph()
 
-        for x in indicator_json.values():
-            for k,v in x['indicators'].items():
-                uri = URIRef("http://{}/sora/indicator/{}".format(request.host,k))
+        for cat_k,cat_v in indicator_json.items():
+            cat_name = cat_v['cat_name']
+            cat_name_en = cat_v['cat_name_en']
+            for k,v in cat_v['indicators'].items():
+                uri = URIRef("https://{}/monitor_api/sora/indicator#{}".format(request.host,k))
+                uri_cat = URIRef("https://{}/monitor_api/sora/category#{}".format(request.host,cat_k))
                 #create the graph
                 self.g.add((uri, RDF.type, soo.Indicator))
+                self.g.add((uri, soo.hasCategory, uri_cat))
                 self.g.add((uri, soo.hasIndicatorId, Literal(k)))
                 self.g.add((uri, RDFS.label, Literal(v['ind_name'], lang='de')))
                 self.g.add((uri, RDFS.label, Literal(v['ind_name_en'], lang='en')))

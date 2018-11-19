@@ -10,12 +10,11 @@ class ESRIServerManager:
         self.jobs = {
             "routing_poi":"https://edn.ioer.de/arcgis/rest/services/SORA/routing_nearestPOI/GPServer/routing_nearestPOI/execute",
             "routing_xy":"https://edn.ioer.de/arcgis/rest/services/SORA/routing_xy/GPServer/routing_xy/execute",
-            "coordinates":"https://edn.ioer.de/arcgis/rest/services/SORA/querybycoordinates/GPServer/querybycoordinates/execute"
+            "coordinates":"https://edn.ioer.de/arcgis/rest/services/SORA/querybycoordinates/GPServer/querybycoordinates/submitJob"
         }
 
     def get_request(self):
-        req = requests.post(self.jobs[self.job_id],data=self.values,params={'f':'pjson'})
-        print(req.text)
+        req = requests.post(self.jobs[self.job_id],data=self.values,params={'f':'pjson'},stream=True)
         resultJSON = json.loads(req.text)
         values = None
         for x in resultJSON['results']:

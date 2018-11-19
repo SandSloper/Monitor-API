@@ -1,6 +1,7 @@
 const txt_copy = "Kopieren";
 var key_input = $('#api_key'),
-    key_btn = $('#api_key_btn');
+    key_btn = $('#api_key_btn'),
+    url_base = window.location.origin+'/monitor_api';
 $(function(){
     key_btn.click(function () {
           var id = $(this).text(),
@@ -18,7 +19,7 @@ $(function(){
             //key_input.val(key);
             //check if the key allredy exists
            $.ajax({
-               url:window.location.origin+'/check_key',
+               url:url_base+'/check_key',
                type:"GET",
                data:{"key":key},
                success:function(data){
@@ -33,7 +34,7 @@ $(function(){
 });
 function insert(key,username,user_id){
  $.ajax({
-        url:window.location.origin+'/insert_key',
+        url:url_base+'/insert_key',
         type:"GET",
         data:{
             key:key,

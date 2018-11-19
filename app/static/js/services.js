@@ -1,3 +1,4 @@
+const url_base =window.location.origin + '/monitor_api/';
 $(document).ready(function(){
     table.init(false);
     checkbox.init();
@@ -18,8 +19,8 @@ const table={
         $.when(table.getData(setting[0])).done(function(data) {
             $.each(data, function (key, row) {
                 $.each(data[key]['indicators'], function (key, value) {
-                    let capability_url = window.location.origin + '/ogc?id=' + key + '&service=' + setting[1] + '&key=' + user_key + '&VERSION=1.1.0&REQUEST=GetCapabilities',
-                        url=window.location.origin + '/ogc?id=' + key + '&service=' + setting[1] + '&key=' + user_key,
+                    let capability_url = url_base + '/ogc?id=' + key + '&service=' + setting[1] + '&key=' + user_key + '&VERSION=1.1.0&REQUEST=GetCapabilities',
+                        url=url_base + '/ogc?id=' + key + '&service=' + setting[1] + '&key=' + user_key,
                         button_group = '<div class="btn-group" role="group" aria-label="Basic example">'+
                                           '<a target="_blank" href="'+capability_url+'"><button type="button" class="btn btn-warning">GetCapabilities</button></a>'+
                                           '<button type="button" class="btn btn-primary copy" data-url="'+url+'">URL-Kopieren</button>'+

@@ -1,0 +1,52 @@
+@base <https://monitor.ioer.de/monitor_api/sora/ontology> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+
+<#Indicator> rdf:type rdfs:Class;
+	rdfs:label "Als Indikator (Anzeiger) gilt ein sichtbares oder empirisch fassbares quantitatives Merkmal (Kennzahl), das in Geographie, Raumordnung und Umweltforschung auf nicht unmittelbar zugängliche Raumaspekte, Begriffe oder Prozesse hinweist. Zur Operationalisierung und kartographischen Darstellung sind Indikatoren zu formalisieren und auf konkrete räumliche Bezugseinheiten auszurichten. Bei der georäumlichen Interpretation von Indikatoren werden gleichzeitig abhängige Aspekte der Raumstruktur oder raumwirksamer Prozesse gedanklich vermittelt."@de;
+	rdfs:seeAlso <http://www.ioer-monitor.de/methodik/glossar/i/indikator/> .
+
+
+<#Category> rdf:type rdfs:Class;
+	rdfs:label "Bezeichnet die Kategorie eines Indikators."@de ;
+	rdfs:label "Indicates the category of an indicator."@en .
+
+
+<#hasIndicatorId> rdf:type rdf:Property ;
+	rdfs:label "Identifikator der Indikators."@de;
+	rdfs:label "Identifier of the indicator."@en;
+	rdfs:domain <https://monitor.ioer.de/monitor_api/sora/ontology#Indicator>; 
+	rdfs:range xsd:string .
+
+<#hasCategory> rdf:type rdf:Property ;
+	rdfs:label "Bezeichnet die Kategorie des Indikators."@de ;
+	rdfs:label "Indicates the category of the indicator."@en ;
+	rdfs:domain <https://monitor.ioer.de/monitor_api/sora/ontology#Indicator> ;
+	rdfs:range <https://monitor.ioer.de/monitor_api/sora/ontology#Category> .
+
+<#hasYearRecorded> rdf:type rdf:Property ;
+	rdfs:label "Zeitschnitt des Indikators."@de ;
+	rdfs:label "Timeframe of the indicator."@en ;
+	rdfs:domain <https://monitor.ioer.de/monitor_api/sora/ontology#Indicator> ;
+	rdfs:range rdfs:Literal, xsd:gYear .
+
+<#interpretation> rdf:type rdf:Property ;
+	rdfs:label "Beschreibt die Interpretation des Indikators."@de ;
+	rdfs:label "Describes the intepretation of the indicator."@en ;
+	rdfs:domain <https://monitor.ioer.de/monitor_api/sora/ontology#Indicator> ;
+	rdfs:range rdfs:Literal, xsd:string .
+
+<#methodology> rdf:type rdf:Property ;
+	rdfs:label "Methodik zur Erfassung des Indikators."@de ;
+	rdfs:label "Methodology to calculate the indicator."@en ;
+	rdfs:domain <https://monitor.ioer.de/monitor_api/sora/ontology#Indicator> ;
+	rdfs:range rdfs:Literal, xsd:string .
+
+<#unit> rdf:type rdf:Property ;
+	rdfs:label "Einheit des Indikators."@de ;
+	rdfs:label "Unit of the indicator."@de ;
+	rdfs:domain <https://monitor.ioer.de/monitor_api/sora/ontology#Indicator> ;
+	rdfs:range rdfs:Literal, xsd:string .

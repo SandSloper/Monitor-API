@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-from flask import jsonify,request,Response,abort
-from app.tools.toolbox import *
-
-import requests
+from rdflib import Graph
+from flask import jsonify, request, Response, abort
 import json
 import os
 
 from app.sora import sora
 from app.sora.request_handler import ESRIServerManager
 from app.sora.model.indicator import Indicator
+from app.sora.model.category import Category
 
 url = 'https://monitor.ioer.de/backend/query.php?values={"format":{"id":"raster"},"query":"getAllIndicators"}'
+
 
 @sora.route("/indicator", methods=['GET', 'POST'])
 def get_indicators():
@@ -24,18 +24,11 @@ def get_indicators():
     else:
         return Response(res.serialize(format="turtle"), mimetype="text/n3")
 
-@sora.route("/indicator/<indicator_id>", methods=['GET', 'POST'])
-def get_indicator(indicator_id):
-    indicator = Indicator(json_url=url)
+@sora.route("/category", methods=['GET', 'POST'])
+def get_categories():
+    category = Category(json_url=url)
     try:
-        query = """
-                CONSTRUCT 
-                {{ <http://{}/sora/indicator/{}> ?p ?o . }} 
-                WHERE {{ <http://{}/sora/indicator/{}> ?p ?o. }}
-                """.format(request.host,indicator_id,request.host,indicator_id)
-
-        res = indicator.g.query(query)
-
+        res = category.g
     except Exception as e:
         return abort(500)
     if len(res) == 0:
@@ -43,20 +36,28 @@ def get_indicator(indicator_id):
     else:
         return Response(res.serialize(format="turtle"), mimetype="text/n3")
 
+@sora.route("/ontology",methods=['GET', 'POST'])
+def get_ontology():
+    dir = os.getcwd()
+    graph = Graph().parse("{}/app/sora/data/ontology.ttl".format(dir),format="turtle")
+    response = Response(graph.serialize(format="turtle"), mimetype='text/n3')
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
+
 @sora.route('/services', methods=['GET', 'POST'])
 def get():
-    values = request.args.get('value')
-    # which service is needed e.g. routing_xy or routing_poi
+    values = request.get_data()
     job_id = request.args.get('job')
-    #test if json is valid
-    tb = TOOLBOX()
-    if tb.json_validator(values):
+    # test if JSON is valid
+    try:
+        #validate json
+        json.loads(values.decode("utf-8"))
+        #set request and get response from esri server
         request_handler = ESRIServerManager(job_id, values)
         result = request_handler.get_request()
         response = Response(result, mimetype='application/json')
         response.headers['Access-Control-Allow-Origin'] = '*'
         response.headers['Content-type'] = 'application/json; charset=utf-8'
         return response
-    else:
-        return jsonify(error='no valid json')
-
+    except Exception as e:
+        return jsonify(error=str(e))
