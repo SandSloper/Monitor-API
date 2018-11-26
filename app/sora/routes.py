@@ -9,7 +9,7 @@ from app.sora.request_handler import ESRIServerManager
 from app.sora.model.indicator import Indicator
 from app.sora.model.category import Category
 
-url = 'https://monitor.ioer.de/backend/query.php?values={"format":{"id":"raster"},"query":"getAllIndicators"}'
+url = 'https://monitor.ioer.de/monitor_test/backend/query.php?values={"format":{"id":"raster"},"query":"getAllIndicators"}'
 
 
 @sora.route("/indicator", methods=['GET', 'POST'])
@@ -44,20 +44,18 @@ def get_ontology():
     response.headers['Access-Control-Allow-Origin'] = '*'
     return response
 
-@sora.route('/services', methods=['GET', 'POST'])
+@sora.route('/services',methods=['GET', 'POST'])
 def get():
-    values = request.get_data()
-    job_id = request.args.get('job')
+    job = request.args.get('job')
+    values = request.get_data() or None
+    job_id = request.args.get('job_id') or None
     # test if JSON is valid
     try:
         #validate json
-        json.loads(values.decode("utf-8"))
+        if values is not None:
+            test = json.loads(values.decode("utf-8"))
         #set request and get response from esri server
-        request_handler = ESRIServerManager(job_id, values)
-        result = request_handler.get_request()
-        response = Response(result, mimetype='application/json')
-        response.headers['Access-Control-Allow-Origin'] = '*'
-        response.headers['Content-type'] = 'application/json; charset=utf-8'
-        return response
+        request_handler = ESRIServerManager(job, values=values,job_id=job_id)
+        return request_handler.get_request()
     except Exception as e:
         return jsonify(error=str(e))
