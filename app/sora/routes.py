@@ -9,8 +9,7 @@ from app.sora.request_handler import ESRIServerManager
 from app.sora.model.indicator import Indicator
 from app.sora.model.category import Category
 
-url = 'https://monitor.ioer.de/monitor_test/backend/query.php?values={"format":{"id":"raster"},"query":"getAllIndicators"}'
-
+url = 'https://monitor.ioer.de/backend/sora/GET.php?values={"format":{"id":"raster"},"query":"getAllIndicators"}'
 
 @sora.route("/indicator", methods=['GET', 'POST'])
 def get_indicators():

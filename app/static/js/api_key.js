@@ -1,21 +1,21 @@
-const txt_copy = "Kopieren";
-var key_input = $('#api_key'),
-    key_btn = $('#api_key_btn'),
-    url_base = window.location.origin+'/monitor_api';
-$(function(){
-    key_btn.click(function () {
-          var id = $(this).text(),
-           username=$(this).data('user_name'),
-           user_id=$(this).data('user_id');
-
-       if(id===txt_copy){
-            var $temp = $("<input>");
-            $("body").append($temp);
-            $temp.val(key_input.val()).select();
-            document.execCommand("copy");
-            $temp.remove();
-       }else{
-            var key = makekey();
+class ApiKey extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {value: key,button_text:button_text};
+        this.textArea = React.createRef();
+        this.copyToClipboard = this.copyToClipboard.bind(this);
+    }
+    copyToClipboard(){
+        const el = document.createElement('textarea'),
+            manager = this;
+        if(this.state.key){
+            el.value = this.state.value;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        }else{
+             var key =this.makekey();
             //key_input.val(key);
             //check if the key allredy exists
            $.ajax({
@@ -25,37 +25,52 @@ $(function(){
                success:function(data){
                    console.log(data);
                    if(!data){
-                        insert(key,username,user_id);
+                        manager.insert(key,username,user_id);
                    }
                }
-           })
-       }
-    });
-});
-function insert(key,username,user_id){
- $.ajax({
-        url:url_base+'/insert_key',
-        type:"GET",
-        data:{
-            key:key,
-            name:username,
-            id:user_id
-        },
-         success:function(data){
-            console.log(this.url);
-                  if(data){
-                      key_input.val(key);
-                      key_btn.text(txt_copy);
-                  }
-         }
-   });
-}
-function makekey() {
-  var text = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            });
+        }
+    }
+    makekey() {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-  for (var i = 0; i < 32; i++)
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
+        for (var i = 0; i < 32; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
 
-  return text;
+        return text;
+    }
+    insert(key,username,user_id){
+        const manager = this;
+         $.ajax({
+                url:url_base+'/insert_key',
+                type:"GET",
+                data:{
+                    key:key,
+                    name:username,
+                    id:user_id
+                },
+                 success:function(data){
+                    console.log(this.url);
+                          if(data){
+                              manager.setState({value: key});
+                              manager.setState({button_text: "Kopieren"});
+                          }
+                 }
+           });
+        }
+    render(){
+        return(
+            <div className="container api_key_generate">
+                <h5>API-Key</h5>
+                <hr className="hr"/>
+                    <textarea ref={(textarea) => this.textArea = textarea} className="form-control" id="api_key" value={this.state.value} rows={1} disabled/>
+                    <button type="button" className="btn btn-warning" id="api_key_btn" data-user_name={username}  data-user_id={user_id} onClick={this.copyToClipboard}>{this.state.button_text}</button>
+            </div>
+        );
+    }
 }
+ ReactDOM.render(
+    <ApiKey />,
+    document.getElementById('root')
+  );

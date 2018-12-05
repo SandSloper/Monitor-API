@@ -1,8 +1,9 @@
 from flask import request
 from rdflib import Graph, RDF, RDFS, Namespace, URIRef, Literal, BNode
-from requests import get
+import requests
 import logging as log
 import os
+import json
 
 class Indicator:
     def __init__(self,json_url):
@@ -12,8 +13,10 @@ class Indicator:
         try:
             graph = self.g.parse(file_dir, format="turtle")
         except Exception as e:
-            indicator_json = get(json_url).json()
 
+            indicator_request = requests.get(json_url)
+            indicator_json = json.loads(indicator_request.text)
+            
             soo = Namespace("https://{}/monitor_api/sora/ontology#".format(request.host))
             cat = Namespace("https://{}/monitor_api/sora/category#".format(request.host))
             qu = Namespace("https://purl.oclc.org/NET/ssnx/qu/qu#")
@@ -26,8 +29,10 @@ class Indicator:
                     uri = URIRef("https://{}/monitor_api/sora/indicator#{}".format(request.host,k))
                     uri_cat = URIRef("https://{}/monitor_api/sora/category#{}".format(request.host,cat_k))
                     #grab the time shifts
-                    url_spatial_extend = 'https://monitor.ioer.de/monitor_test/backend/html/raumgliederung.php?indikator={}&modus=raster'.format(k)
-                    extends = get(url_spatial_extend).json()
+                    # TODO: url muss noch flexibel gestaltet werden
+                    url_spatial_extend = 'https://monitor.ioer.de/backend/sora/GET.php?values={"ind":{"id":"'+k+'"},"format":{"id":"raster"},"query":"getSpatialExtend"}'
+                    extends_request = requests.get(url_spatial_extend)
+                    extends = json.loads(extends_request.text)
                     #create the graph
                     self.g.add((uri, RDF.type, soo.Indicator))
                     self.g.add((uri, soo.hasCategory, uri_cat))

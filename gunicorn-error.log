@@ -1,0 +1,3306 @@
+[2018-12-04 12:11:24 +0100] [22033] [DEBUG] Current configuration:
+  threads: 1
+  worker_tmp_dir: None
+  timeout: 30
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fae68852f28>
+  reload_extra_files: []
+  spew: False
+  keyfile: None
+  cert_reqs: 0
+  suppress_ragged_eofs: True
+  backlog: 2048
+  enable_stdio_inheritance: False
+  workers: 3
+  ssl_version: 2
+  limit_request_line: 8190
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  worker_connections: 1000
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  preload_app: False
+  reuse_port: False
+  raw_env: []
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  group: 100
+  forwarded_allow_ips: ['127.0.0.1']
+  pythonpath: None
+  paste: None
+  syslog_addr: udp://localhost:514
+  proc_name: None
+  capture_output: False
+  syslog_facility: user
+  reload_engine: auto
+  max_requests: 0
+  bind: ['127.0.0.1:8000']
+  statsd_host: None
+  ca_certs: None
+  default_proc_name: app:app
+  user: 1000
+  post_fork: <function Postfork.post_fork at 0x7fae68852bf8>
+  chdir: /srv/www/htdocs/monitor_api
+  worker_class: sync
+  umask: 0
+  initgroups: False
+  secure_scheme_headers: {'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https'}
+  when_ready: <function WhenReady.when_ready at 0x7fae688529d8>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fae68852d08>
+  worker_int: <function WorkerInt.worker_int at 0x7fae68852e18>
+  pre_exec: <function PreExec.pre_exec at 0x7fae685ce0d0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fae685ce598>
+  certfile: None
+  disable_redirect_access_to_syslog: False
+  loglevel: debug
+  config: ./gunicorn.conf
+  check_config: False
+  max_requests_jitter: 0
+  on_starting: <function OnStarting.on_starting at 0x7fae688527b8>
+  pre_request: <function PreRequest.pre_request at 0x7fae685ce1e0>
+  post_request: <function PostRequest.post_request at 0x7fae685ce268>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fae685ce488>
+  on_exit: <function OnExit.on_exit at 0x7fae685ce6a8>
+  sendfile: None
+  do_handshake_on_connect: False
+  proxy_protocol: False
+  reload: False
+  raw_paste_global_conf: []
+  syslog: False
+  ciphers: TLSv1
+  on_reload: <function OnReload.on_reload at 0x7fae688528c8>
+  tmp_upload_dir: None
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  daemon: True
+  graceful_timeout: 30
+  pre_fork: <function Prefork.pre_fork at 0x7fae68852ae8>
+  child_exit: <function ChildExit.child_exit at 0x7fae685ce378>
+  syslog_prefix: None
+  statsd_prefix: 
+  proxy_allow_ips: ['127.0.0.1']
+  keepalive: 2
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+[2018-12-04 12:11:24 +0100] [22033] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 12:11:24 +0100] [22033] [DEBUG] Arbiter booted
+[2018-12-04 12:11:24 +0100] [22033] [INFO] Listening at: http://127.0.0.1:8000 (22033)
+[2018-12-04 12:11:24 +0100] [22033] [INFO] Using worker: sync
+[2018-12-04 12:11:24 +0100] [22036] [INFO] Booting worker with pid: 22036
+[2018-12-04 12:11:24 +0100] [22037] [INFO] Booting worker with pid: 22037
+[2018-12-04 12:11:24 +0100] [22038] [INFO] Booting worker with pid: 22038
+[2018-12-04 12:11:24 +0100] [22033] [DEBUG] 3 workers
+[2018-12-04 12:11:40 +0100] [22037] [DEBUG] POST /login
+[2018-12-04 12:11:40,252] ERROR in app: Exception on /login [POST]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 72, in login
+    user_id=current_user.id, access=user.is_admin)
+AttributeError: 'USER' object has no attribute 'is_admin'
+[2018-12-04 12:11:45 +0100] [22037] [DEBUG] GET /
+[2018-12-04 12:11:46 +0100] [22036] [DEBUG] GET /login
+[2018-12-04 12:11:50 +0100] [22036] [DEBUG] POST /login
+[2018-12-04 12:11:50,415] ERROR in app: Exception on /login [POST]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 72, in login
+    user_id=current_user.id, access=user.is_admin)
+AttributeError: 'USER' object has no attribute 'is_admin'
+[2018-12-04 12:22:16 +0100] [22033] [INFO] Handling signal: term
+[2018-12-04 12:22:16 +0100] [22037] [INFO] Worker exiting (pid: 22037)
+[2018-12-04 12:22:16 +0100] [22036] [INFO] Worker exiting (pid: 22036)
+[2018-12-04 12:22:16 +0100] [22038] [INFO] Worker exiting (pid: 22038)
+[2018-12-04 12:22:16 +0100] [22033] [INFO] Shutting down: Master
+[2018-12-04 12:22:25 +0100] [22221] [DEBUG] Current configuration:
+  worker_tmp_dir: None
+  workers: 3
+  limit_request_fields: 100
+  logconfig: None
+  syslog_prefix: None
+  preload_app: False
+  pythonpath: None
+  enable_stdio_inheritance: False
+  daemon: True
+  spew: False
+  raw_paste_global_conf: []
+  statsd_prefix: 
+  proc_name: None
+  threads: 1
+  on_reload: <function OnReload.on_reload at 0x7fd2f2eec8c8>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fd2f2eecf28>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fd2f2c68598>
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  user: 1000
+  keyfile: None
+  ca_certs: None
+  suppress_ragged_eofs: True
+  worker_connections: 1000
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  reload_extra_files: []
+  chdir: /srv/www/htdocs/monitor_api
+  group: 100
+  tmp_upload_dir: None
+  proxy_allow_ips: ['127.0.0.1']
+  disable_redirect_access_to_syslog: False
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  pre_request: <function PreRequest.pre_request at 0x7fd2f2c681e0>
+  child_exit: <function ChildExit.child_exit at 0x7fd2f2c68378>
+  check_config: False
+  ciphers: TLSv1
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  paste: None
+  proxy_protocol: False
+  worker_class: sync
+  max_requests_jitter: 0
+  reload: False
+  default_proc_name: app:app
+  max_requests: 0
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fd2f2eecd08>
+  bind: ['127.0.0.1:8000']
+  when_ready: <function WhenReady.when_ready at 0x7fd2f2eec9d8>
+  graceful_timeout: 30
+  sendfile: None
+  timeout: 30
+  certfile: None
+  limit_request_field_size: 8190
+  reuse_port: False
+  raw_env: []
+  on_starting: <function OnStarting.on_starting at 0x7fd2f2eec7b8>
+  pre_fork: <function Prefork.pre_fork at 0x7fd2f2eecae8>
+  post_fork: <function Postfork.post_fork at 0x7fd2f2eecbf8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fd2f2c68488>
+  umask: 0
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTO': 'https'}
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function WorkerInt.worker_int at 0x7fd2f2eece18>
+  pre_exec: <function PreExec.pre_exec at 0x7fd2f2c680d0>
+  statsd_host: None
+  initgroups: False
+  ssl_version: 2
+  backlog: 2048
+  config: ./gunicorn.conf
+  cert_reqs: 0
+  limit_request_line: 8190
+  syslog: False
+  post_request: <function PostRequest.post_request at 0x7fd2f2c68268>
+  keepalive: 2
+  on_exit: <function OnExit.on_exit at 0x7fd2f2c686a8>
+  syslog_facility: user
+  reload_engine: auto
+  do_handshake_on_connect: False
+[2018-12-04 12:22:25 +0100] [22221] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 12:22:25 +0100] [22221] [DEBUG] Arbiter booted
+[2018-12-04 12:22:25 +0100] [22221] [INFO] Listening at: http://127.0.0.1:8000 (22221)
+[2018-12-04 12:22:25 +0100] [22221] [INFO] Using worker: sync
+[2018-12-04 12:22:25 +0100] [22224] [INFO] Booting worker with pid: 22224
+[2018-12-04 12:22:26 +0100] [22225] [INFO] Booting worker with pid: 22225
+[2018-12-04 12:22:26 +0100] [22226] [INFO] Booting worker with pid: 22226
+[2018-12-04 12:22:26 +0100] [22221] [DEBUG] 3 workers
+[2018-12-04 12:22:32 +0100] [22225] [DEBUG] GET /
+[2018-12-04 12:22:34 +0100] [22224] [DEBUG] GET /login
+[2018-12-04 12:22:38 +0100] [22224] [DEBUG] POST /login
+[2018-12-04 12:22:43 +0100] [22225] [DEBUG] GET /services
+[2018-12-04 12:23:45 +0100] [22226] [DEBUG] GET /api_key
+[2018-12-04 12:24:02 +0100] [22225] [DEBUG] GET /api_key
+[2018-12-04 12:24:06 +0100] [22225] [DEBUG] GET /
+[2018-12-04 12:24:07 +0100] [22226] [DEBUG] GET /login
+[2018-12-04 12:24:11 +0100] [22226] [DEBUG] POST /login
+[2018-12-04 12:25:08 +0100] [22224] [DEBUG] POST /login
+[2018-12-04 12:25:08,070] ERROR in app: Exception on /login [POST]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 65, in login
+    user_id=current_user.id,access="test")
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'USER' object has no attribute 'is_admin'
+[2018-12-04 12:25:15 +0100] [22224] [DEBUG] GET /
+[2018-12-04 12:25:17 +0100] [22225] [DEBUG] GET /login
+[2018-12-04 12:25:17,182] ERROR in app: Exception on /login [GET]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 65, in login
+    user_id=current_user.id,access="test")
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'USER' object has no attribute 'is_admin'
+[2018-12-04 12:27:31 +0100] [22224] [DEBUG] GET /
+[2018-12-04 12:27:33 +0100] [22226] [DEBUG] GET /login
+[2018-12-04 12:27:33,640] ERROR in app: Exception on /login [GET]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 65, in login
+    user_id=current_user.id,access=current_user.access)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'USER' object has no attribute 'is_admin'
+[2018-12-04 12:27:38 +0100] [22221] [INFO] Handling signal: term
+[2018-12-04 12:27:38 +0100] [22226] [INFO] Worker exiting (pid: 22226)
+[2018-12-04 12:27:38 +0100] [22224] [INFO] Worker exiting (pid: 22224)
+[2018-12-04 12:27:38 +0100] [22225] [INFO] Worker exiting (pid: 22225)
+[2018-12-04 12:27:38 +0100] [22221] [INFO] Shutting down: Master
+[2018-12-04 12:27:48 +0100] [22431] [DEBUG] Current configuration:
+  forwarded_allow_ips: ['127.0.0.1']
+  proxy_protocol: False
+  reload: False
+  pre_fork: <function Prefork.pre_fork at 0x7f82376f5ae8>
+  post_fork: <function Postfork.post_fork at 0x7f82376f5bf8>
+  pre_request: <function PreRequest.pre_request at 0x7f82374711e0>
+  disable_redirect_access_to_syslog: False
+  logconfig_dict: {}
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f8237471598>
+  loglevel: debug
+  worker_class: sync
+  logconfig: None
+  syslog: False
+  threads: 1
+  ca_certs: None
+  max_requests_jitter: 0
+  keepalive: 2
+  syslog_facility: user
+  on_reload: <function OnReload.on_reload at 0x7f82376f58c8>
+  statsd_host: None
+  on_exit: <function OnExit.on_exit at 0x7f82374716a8>
+  do_handshake_on_connect: False
+  reuse_port: False
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  user: 1000
+  group: 100
+  umask: 0
+  secure_scheme_headers: {'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https'}
+  proxy_allow_ips: ['127.0.0.1']
+  on_starting: <function OnStarting.on_starting at 0x7f82376f57b8>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f82376f5f28>
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  enable_stdio_inheritance: False
+  timeout: 30
+  limit_request_field_size: 8190
+  ciphers: TLSv1
+  max_requests: 0
+  graceful_timeout: 30
+  certfile: None
+  limit_request_line: 8190
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  worker_int: <function WorkerInt.worker_int at 0x7f82376f5e18>
+  keyfile: None
+  pythonpath: None
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  reload_extra_files: []
+  pre_exec: <function PreExec.pre_exec at 0x7f82374710d0>
+  syslog_addr: udp://localhost:514
+  statsd_prefix: 
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f82376f5d08>
+  preload_app: False
+  limit_request_fields: 100
+  spew: False
+  config: ./gunicorn.conf
+  bind: ['127.0.0.1:8000']
+  syslog_prefix: None
+  reload_engine: auto
+  chdir: /srv/www/htdocs/monitor_api
+  daemon: True
+  raw_env: []
+  worker_tmp_dir: None
+  initgroups: False
+  when_ready: <function WhenReady.when_ready at 0x7f82376f59d8>
+  paste: None
+  check_config: False
+  tmp_upload_dir: None
+  raw_paste_global_conf: []
+  child_exit: <function ChildExit.child_exit at 0x7f8237471378>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f8237471488>
+  cert_reqs: 0
+  backlog: 2048
+  proc_name: None
+  default_proc_name: app:app
+  workers: 3
+  sendfile: None
+  post_request: <function PostRequest.post_request at 0x7f8237471268>
+  worker_connections: 1000
+[2018-12-04 12:27:48 +0100] [22431] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 12:27:48 +0100] [22431] [DEBUG] Arbiter booted
+[2018-12-04 12:27:48 +0100] [22431] [INFO] Listening at: http://127.0.0.1:8000 (22431)
+[2018-12-04 12:27:48 +0100] [22431] [INFO] Using worker: sync
+[2018-12-04 12:27:48 +0100] [22434] [INFO] Booting worker with pid: 22434
+[2018-12-04 12:27:48 +0100] [22435] [INFO] Booting worker with pid: 22435
+[2018-12-04 12:27:48 +0100] [22436] [INFO] Booting worker with pid: 22436
+[2018-12-04 12:27:48 +0100] [22431] [DEBUG] 3 workers
+[2018-12-04 12:27:48 +0100] [22434] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/srv/www/htdocs/monitor_api/app/__init__.py", line 19, in <module>
+    from app.ogc import ogc
+  File "/srv/www/htdocs/monitor_api/app/ogc/__init__.py", line 5, in <module>
+    from . import routes
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 72
+    user_id=current_user.id,user.access)
+                                       ^
+SyntaxError: non-keyword arg after keyword arg
+[2018-12-04 12:27:48 +0100] [22434] [INFO] Worker exiting (pid: 22434)
+[2018-12-04 12:27:48 +0100] [22435] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/srv/www/htdocs/monitor_api/app/__init__.py", line 19, in <module>
+    from app.ogc import ogc
+  File "/srv/www/htdocs/monitor_api/app/ogc/__init__.py", line 5, in <module>
+    from . import routes
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 72
+    user_id=current_user.id,user.access)
+                                       ^
+SyntaxError: non-keyword arg after keyword arg
+[2018-12-04 12:27:48 +0100] [22435] [INFO] Worker exiting (pid: 22435)
+[2018-12-04 12:27:49 +0100] [22436] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/srv/www/htdocs/monitor_api/app/__init__.py", line 19, in <module>
+    from app.ogc import ogc
+  File "/srv/www/htdocs/monitor_api/app/ogc/__init__.py", line 5, in <module>
+    from . import routes
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 72
+    user_id=current_user.id,user.access)
+                                       ^
+SyntaxError: non-keyword arg after keyword arg
+[2018-12-04 12:27:49 +0100] [22436] [INFO] Worker exiting (pid: 22436)
+[2018-12-04 12:27:49 +0100] [22431] [INFO] Shutting down: Master
+[2018-12-04 12:27:49 +0100] [22431] [INFO] Reason: Worker failed to boot.
+[2018-12-04 12:28:43 +0100] [22450] [DEBUG] Current configuration:
+  disable_redirect_access_to_syslog: False
+  capture_output: False
+  threads: 1
+  umask: 0
+  proxy_allow_ips: ['127.0.0.1']
+  reload_engine: auto
+  child_exit: <function ChildExit.child_exit at 0x7f8492f0c378>
+  on_exit: <function OnExit.on_exit at 0x7f8492f0c6a8>
+  worker_class: sync
+  keyfile: None
+  on_starting: <function OnStarting.on_starting at 0x7f84931907b8>
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  syslog_addr: udp://localhost:514
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f8493190f28>
+  post_request: <function PostRequest.post_request at 0x7f8492f0c268>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f8492f0c488>
+  logger_class: gunicorn.glogging.Logger
+  workers: 3
+  sendfile: None
+  chdir: /srv/www/htdocs/monitor_api
+  daemon: True
+  logconfig_dict: {}
+  group: 100
+  tmp_upload_dir: None
+  paste: None
+  ca_certs: None
+  on_reload: <function OnReload.on_reload at 0x7f84931908c8>
+  config: ./gunicorn.conf
+  syslog: False
+  syslog_facility: user
+  limit_request_fields: 100
+  loglevel: debug
+  reload: False
+  raw_env: []
+  cert_reqs: 0
+  do_handshake_on_connect: False
+  raw_paste_global_conf: []
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f8492f0c598>
+  limit_request_line: 8190
+  backlog: 2048
+  max_requests: 0
+  spew: False
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f8493190d08>
+  timeout: 30
+  ciphers: TLSv1
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  user: 1000
+  certfile: None
+  pythonpath: None
+  pre_fork: <function Prefork.pre_fork at 0x7f8493190ae8>
+  keepalive: 2
+  worker_int: <function WorkerInt.worker_int at 0x7f8493190e18>
+  bind: ['127.0.0.1:8000']
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  proc_name: None
+  proxy_protocol: False
+  check_config: False
+  forwarded_allow_ips: ['127.0.0.1']
+  suppress_ragged_eofs: True
+  preload_app: False
+  limit_request_field_size: 8190
+  worker_tmp_dir: None
+  pre_exec: <function PreExec.pre_exec at 0x7f8492f0c0d0>
+  ssl_version: 2
+  initgroups: False
+  when_ready: <function WhenReady.when_ready at 0x7f84931909d8>
+  post_fork: <function Postfork.post_fork at 0x7f8493190bf8>
+  default_proc_name: app:app
+  pre_request: <function PreRequest.pre_request at 0x7f8492f0c1e0>
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  logconfig: None
+  worker_connections: 1000
+  max_requests_jitter: 0
+  graceful_timeout: 30
+  reload_extra_files: []
+  syslog_prefix: None
+  statsd_host: None
+  reuse_port: False
+  secure_scheme_headers: {'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTOCOL': 'ssl'}
+  enable_stdio_inheritance: False
+  statsd_prefix: 
+[2018-12-04 12:28:43 +0100] [22450] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 12:28:43 +0100] [22450] [DEBUG] Arbiter booted
+[2018-12-04 12:28:43 +0100] [22450] [INFO] Listening at: http://127.0.0.1:8000 (22450)
+[2018-12-04 12:28:43 +0100] [22450] [INFO] Using worker: sync
+[2018-12-04 12:28:43 +0100] [22453] [INFO] Booting worker with pid: 22453
+[2018-12-04 12:28:43 +0100] [22454] [INFO] Booting worker with pid: 22454
+[2018-12-04 12:28:43 +0100] [22455] [INFO] Booting worker with pid: 22455
+[2018-12-04 12:28:43 +0100] [22450] [DEBUG] 3 workers
+[2018-12-04 12:28:46 +0100] [22455] [DEBUG] GET /
+[2018-12-04 12:28:48 +0100] [22454] [DEBUG] GET /login
+[2018-12-04 12:28:48,848] ERROR in app: Exception on /login [GET]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 65, in login
+    user_id=current_user.id,access=current_user.access)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'USER' object has no attribute 'access'
+[2018-12-04 12:30:57 +0100] [22450] [INFO] Handling signal: term
+[2018-12-04 12:30:57 +0100] [22454] [INFO] Worker exiting (pid: 22454)
+[2018-12-04 12:30:57 +0100] [22455] [INFO] Worker exiting (pid: 22455)
+[2018-12-04 12:30:57 +0100] [22453] [INFO] Worker exiting (pid: 22453)
+[2018-12-04 12:30:57 +0100] [22450] [INFO] Shutting down: Master
+[2018-12-04 12:31:11 +0100] [22591] [DEBUG] Current configuration:
+  when_ready: <function WhenReady.when_ready at 0x7fdf91b429d8>
+  capture_output: False
+  certfile: None
+  ciphers: TLSv1
+  sendfile: None
+  reuse_port: False
+  worker_tmp_dir: None
+  proxy_allow_ips: ['127.0.0.1']
+  worker_class: sync
+  post_fork: <function Postfork.post_fork at 0x7fdf91b42bf8>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fdf91b42f28>
+  post_request: <function PostRequest.post_request at 0x7fdf918be268>
+  chdir: /srv/www/htdocs/monitor_api
+  tmp_upload_dir: None
+  max_requests_jitter: 0
+  keyfile: None
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  worker_int: <function WorkerInt.worker_int at 0x7fdf91b42e18>
+  daemon: True
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  syslog: False
+  limit_request_fields: 100
+  worker_connections: 1000
+  config: ./gunicorn.conf
+  default_proc_name: app:app
+  limit_request_line: 8190
+  statsd_prefix: 
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  group: 100
+  initgroups: False
+  pre_exec: <function PreExec.pre_exec at 0x7fdf918be0d0>
+  disable_redirect_access_to_syslog: False
+  reload: False
+  reload_engine: auto
+  preload_app: False
+  raw_env: []
+  raw_paste_global_conf: []
+  child_exit: <function ChildExit.child_exit at 0x7fdf918be378>
+  workers: 3
+  threads: 1
+  max_requests: 0
+  graceful_timeout: 30
+  keepalive: 2
+  do_handshake_on_connect: False
+  bind: ['127.0.0.1:8000']
+  on_starting: <function OnStarting.on_starting at 0x7fdf91b427b8>
+  user: 1000
+  on_reload: <function OnReload.on_reload at 0x7fdf91b428c8>
+  pre_request: <function PreRequest.pre_request at 0x7fdf918be1e0>
+  umask: 0
+  forwarded_allow_ips: ['127.0.0.1']
+  proxy_protocol: False
+  loglevel: debug
+  logger_class: gunicorn.glogging.Logger
+  syslog_addr: udp://localhost:514
+  enable_stdio_inheritance: False
+  backlog: 2048
+  pre_fork: <function Prefork.pre_fork at 0x7fdf91b42ae8>
+  logconfig_dict: {}
+  spew: False
+  proc_name: None
+  secure_scheme_headers: {'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-PROTOCOL': 'ssl'}
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fdf91b42d08>
+  reload_extra_files: []
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  syslog_prefix: None
+  on_exit: <function OnExit.on_exit at 0x7fdf918be6a8>
+  pythonpath: None
+  syslog_facility: user
+  statsd_host: None
+  ca_certs: None
+  worker_exit: <function WorkerExit.worker_exit at 0x7fdf918be488>
+  check_config: False
+  cert_reqs: 0
+  timeout: 30
+  paste: None
+  logconfig: None
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fdf918be598>
+  limit_request_field_size: 8190
+[2018-12-04 12:31:11 +0100] [22591] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 12:31:11 +0100] [22591] [DEBUG] Arbiter booted
+[2018-12-04 12:31:11 +0100] [22591] [INFO] Listening at: http://127.0.0.1:8000 (22591)
+[2018-12-04 12:31:11 +0100] [22591] [INFO] Using worker: sync
+[2018-12-04 12:31:11 +0100] [22594] [INFO] Booting worker with pid: 22594
+[2018-12-04 12:31:11 +0100] [22595] [INFO] Booting worker with pid: 22595
+[2018-12-04 12:31:11 +0100] [22596] [INFO] Booting worker with pid: 22596
+[2018-12-04 12:31:11 +0100] [22591] [DEBUG] 3 workers
+[2018-12-04 12:31:16 +0100] [22596] [DEBUG] GET /
+[2018-12-04 12:31:18 +0100] [22594] [DEBUG] GET /login
+[2018-12-04 12:31:18,465] ERROR in app: Exception on /login [GET]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 64, in login
+    user_id=current_user.id,access=current_user.access)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'USER' object has no attribute 'access'
+[2018-12-04 12:32:13 +0100] [22595] [DEBUG] GET /login
+[2018-12-04 12:32:13,650] ERROR in app: Exception on /login [GET]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 64, in login
+    user_id=current_user.id,access="test")
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'USER' object has no attribute 'access'
+[2018-12-04 12:32:16 +0100] [22595] [DEBUG] GET /login
+[2018-12-04 12:32:16,104] ERROR in app: Exception on /login [GET]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 64, in login
+    user_id=current_user.id,access="test")
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'USER' object has no attribute 'access'
+[2018-12-04 12:32:19 +0100] [22591] [INFO] Handling signal: term
+[2018-12-04 12:32:19 +0100] [22596] [INFO] Worker exiting (pid: 22596)
+[2018-12-04 12:32:19 +0100] [22594] [INFO] Worker exiting (pid: 22594)
+[2018-12-04 12:32:19 +0100] [22595] [INFO] Worker exiting (pid: 22595)
+[2018-12-04 12:32:20 +0100] [22591] [INFO] Shutting down: Master
+[2018-12-04 12:32:22 +0100] [22615] [DEBUG] Current configuration:
+  statsd_host: None
+  bind: ['127.0.0.1:8000']
+  reload: False
+  paste: None
+  disable_redirect_access_to_syslog: False
+  on_reload: <function OnReload.on_reload at 0x7f7d246828c8>
+  when_ready: <function WhenReady.when_ready at 0x7f7d246829d8>
+  spew: False
+  worker_class: sync
+  preload_app: False
+  max_requests: 0
+  logconfig_dict: {}
+  ciphers: TLSv1
+  reuse_port: False
+  logger_class: gunicorn.glogging.Logger
+  forwarded_allow_ips: ['127.0.0.1']
+  cert_reqs: 0
+  pre_fork: <function Prefork.pre_fork at 0x7f7d24682ae8>
+  post_fork: <function Postfork.post_fork at 0x7f7d24682bf8>
+  worker_int: <function WorkerInt.worker_int at 0x7f7d24682e18>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f7d24682f28>
+  on_exit: <function OnExit.on_exit at 0x7f7d243fe6a8>
+  capture_output: False
+  worker_exit: <function WorkerExit.worker_exit at 0x7f7d243fe488>
+  timeout: 30
+  keepalive: 2
+  child_exit: <function ChildExit.child_exit at 0x7f7d243fe378>
+  check_config: False
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f7d24682d08>
+  logconfig: None
+  enable_stdio_inheritance: False
+  proc_name: None
+  default_proc_name: app:app
+  reload_engine: auto
+  ca_certs: None
+  reload_extra_files: []
+  suppress_ragged_eofs: True
+  limit_request_field_size: 8190
+  sendfile: None
+  daemon: True
+  user: 1000
+  max_requests_jitter: 0
+  statsd_prefix: 
+  limit_request_line: 8190
+  initgroups: False
+  proxy_protocol: False
+  syslog_facility: user
+  on_starting: <function OnStarting.on_starting at 0x7f7d246827b8>
+  workers: 3
+  syslog_addr: udp://localhost:514
+  chdir: /srv/www/htdocs/monitor_api
+  raw_env: []
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  worker_tmp_dir: None
+  group: 100
+  umask: 0
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  pythonpath: None
+  proxy_allow_ips: ['127.0.0.1']
+  ssl_version: 2
+  config: ./gunicorn.conf
+  backlog: 2048
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f7d243fe598>
+  keyfile: None
+  do_handshake_on_connect: False
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  loglevel: debug
+  threads: 1
+  graceful_timeout: 30
+  pre_request: <function PreRequest.pre_request at 0x7f7d243fe1e0>
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  syslog: False
+  limit_request_fields: 100
+  pre_exec: <function PreExec.pre_exec at 0x7f7d243fe0d0>
+  post_request: <function PostRequest.post_request at 0x7f7d243fe268>
+  worker_connections: 1000
+  certfile: None
+  raw_paste_global_conf: []
+  syslog_prefix: None
+[2018-12-04 12:32:22 +0100] [22615] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 12:32:22 +0100] [22615] [DEBUG] Arbiter booted
+[2018-12-04 12:32:22 +0100] [22615] [INFO] Listening at: http://127.0.0.1:8000 (22615)
+[2018-12-04 12:32:22 +0100] [22615] [INFO] Using worker: sync
+[2018-12-04 12:32:22 +0100] [22618] [INFO] Booting worker with pid: 22618
+[2018-12-04 12:32:22 +0100] [22619] [INFO] Booting worker with pid: 22619
+[2018-12-04 12:32:22 +0100] [22620] [INFO] Booting worker with pid: 22620
+[2018-12-04 12:32:22 +0100] [22615] [DEBUG] 3 workers
+[2018-12-04 12:32:25 +0100] [22620] [DEBUG] GET /
+[2018-12-04 12:32:28 +0100] [22620] [DEBUG] GET /login
+[2018-12-04 12:32:48 +0100] [22615] [INFO] Handling signal: term
+[2018-12-04 12:32:48 +0100] [22620] [INFO] Worker exiting (pid: 22620)
+[2018-12-04 12:32:48 +0100] [22618] [INFO] Worker exiting (pid: 22618)
+[2018-12-04 12:32:48 +0100] [22619] [INFO] Worker exiting (pid: 22619)
+[2018-12-04 12:32:48 +0100] [22615] [INFO] Shutting down: Master
+[2018-12-04 12:32:57 +0100] [22632] [DEBUG] Current configuration:
+  reload_extra_files: []
+  daemon: True
+  paste: None
+  cert_reqs: 0
+  logconfig: None
+  user: 1000
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTO': 'https'}
+  proxy_allow_ips: ['127.0.0.1']
+  raw_paste_global_conf: []
+  on_reload: <function OnReload.on_reload at 0x7f2e821158c8>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f2e82115d08>
+  reload_engine: auto
+  threads: 1
+  syslog: False
+  syslog_prefix: None
+  statsd_prefix: 
+  default_proc_name: app:app
+  pre_exec: <function PreExec.pre_exec at 0x7f2e81e910d0>
+  do_handshake_on_connect: False
+  proc_name: None
+  worker_class: sync
+  max_requests_jitter: 0
+  on_starting: <function OnStarting.on_starting at 0x7f2e821157b8>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f2e82115f28>
+  child_exit: <function ChildExit.child_exit at 0x7f2e81e91378>
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  capture_output: False
+  syslog_addr: udp://localhost:514
+  ciphers: TLSv1
+  chdir: /srv/www/htdocs/monitor_api
+  raw_env: []
+  worker_tmp_dir: None
+  initgroups: False
+  tmp_upload_dir: None
+  forwarded_allow_ips: ['127.0.0.1']
+  proxy_protocol: False
+  certfile: None
+  workers: 3
+  logconfig_dict: {}
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f2e81e91598>
+  on_exit: <function OnExit.on_exit at 0x7f2e81e916a8>
+  limit_request_fields: 100
+  preload_app: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  post_fork: <function Postfork.post_fork at 0x7f2e82115bf8>
+  syslog_facility: user
+  timeout: 30
+  enable_stdio_inheritance: False
+  limit_request_line: 8190
+  sendfile: None
+  reuse_port: False
+  group: 100
+  umask: 0
+  pythonpath: None
+  when_ready: <function WhenReady.when_ready at 0x7f2e821159d8>
+  pre_fork: <function Prefork.pre_fork at 0x7f2e82115ae8>
+  worker_int: <function WorkerInt.worker_int at 0x7f2e82115e18>
+  keyfile: None
+  ssl_version: 2
+  pre_request: <function PreRequest.pre_request at 0x7f2e81e911e0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f2e81e91488>
+  config: ./gunicorn.conf
+  worker_connections: 1000
+  max_requests: 0
+  keepalive: 2
+  disable_redirect_access_to_syslog: False
+  statsd_host: None
+  reload: False
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  graceful_timeout: 30
+  bind: ['127.0.0.1:8000']
+  ca_certs: None
+  limit_request_field_size: 8190
+  check_config: False
+  suppress_ragged_eofs: True
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+  post_request: <function PostRequest.post_request at 0x7f2e81e91268>
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  loglevel: debug
+  spew: False
+[2018-12-04 12:32:57 +0100] [22632] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 12:32:57 +0100] [22632] [DEBUG] Arbiter booted
+[2018-12-04 12:32:57 +0100] [22632] [INFO] Listening at: http://127.0.0.1:8000 (22632)
+[2018-12-04 12:32:57 +0100] [22632] [INFO] Using worker: sync
+[2018-12-04 12:32:57 +0100] [22635] [INFO] Booting worker with pid: 22635
+[2018-12-04 12:32:57 +0100] [22636] [INFO] Booting worker with pid: 22636
+[2018-12-04 12:32:57 +0100] [22637] [INFO] Booting worker with pid: 22637
+[2018-12-04 12:32:57 +0100] [22632] [DEBUG] 3 workers
+[2018-12-04 12:33:06 +0100] [22636] [DEBUG] GET /login
+[2018-12-04 12:33:06,500] ERROR in app: Exception on /login [GET]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 64, in login
+    user_id=current_user.id,access=current_user.access)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'USER' object has no attribute 'access'
+[2018-12-04 12:33:19 +0100] [22632] [INFO] Handling signal: term
+[2018-12-04 12:33:19 +0100] [22636] [INFO] Worker exiting (pid: 22636)
+[2018-12-04 12:33:19 +0100] [22637] [INFO] Worker exiting (pid: 22637)
+[2018-12-04 12:33:19 +0100] [22635] [INFO] Worker exiting (pid: 22635)
+[2018-12-04 12:33:19 +0100] [22632] [INFO] Shutting down: Master
+[2018-12-04 12:33:26 +0100] [22650] [DEBUG] Current configuration:
+  keyfile: None
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  on_reload: <function OnReload.on_reload at 0x7f7a4208b8c8>
+  check_config: False
+  logger_class: gunicorn.glogging.Logger
+  when_ready: <function WhenReady.when_ready at 0x7f7a4208b9d8>
+  paste: None
+  max_requests_jitter: 0
+  sendfile: None
+  timeout: 30
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  reload_engine: auto
+  post_fork: <function Postfork.post_fork at 0x7f7a4208bbf8>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f7a4208bf28>
+  syslog_prefix: None
+  pre_fork: <function Prefork.pre_fork at 0x7f7a4208bae8>
+  syslog_addr: udp://localhost:514
+  worker_class: sync
+  statsd_prefix: 
+  ca_certs: None
+  spew: False
+  max_requests: 0
+  pre_exec: <function PreExec.pre_exec at 0x7f7a41e070d0>
+  reload_extra_files: []
+  bind: ['127.0.0.1:8000']
+  capture_output: False
+  suppress_ragged_eofs: True
+  tmp_upload_dir: None
+  config: ./gunicorn.conf
+  group: 100
+  proxy_allow_ips: ['127.0.0.1']
+  do_handshake_on_connect: False
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f7a41e07598>
+  chdir: /srv/www/htdocs/monitor_api
+  ciphers: TLSv1
+  raw_env: []
+  statsd_host: None
+  daemon: True
+  proxy_protocol: False
+  reload: False
+  on_starting: <function OnStarting.on_starting at 0x7f7a4208b7b8>
+  loglevel: debug
+  worker_tmp_dir: None
+  user: 1000
+  raw_paste_global_conf: []
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f7a4208bd08>
+  keepalive: 2
+  syslog: False
+  limit_request_field_size: 8190
+  preload_app: False
+  limit_request_fields: 100
+  backlog: 2048
+  logconfig: None
+  initgroups: False
+  child_exit: <function ChildExit.child_exit at 0x7f7a41e07378>
+  certfile: None
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  forwarded_allow_ips: ['127.0.0.1']
+  limit_request_line: 8190
+  syslog_facility: user
+  default_proc_name: app:app
+  reuse_port: False
+  on_exit: <function OnExit.on_exit at 0x7f7a41e076a8>
+  disable_redirect_access_to_syslog: False
+  pythonpath: None
+  worker_int: <function WorkerInt.worker_int at 0x7f7a4208be18>
+  worker_connections: 1000
+  post_request: <function PostRequest.post_request at 0x7f7a41e07268>
+  enable_stdio_inheritance: False
+  proc_name: None
+  workers: 3
+  ssl_version: 2
+  cert_reqs: 0
+  threads: 1
+  secure_scheme_headers: {'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-SSL': 'on'}
+  pre_request: <function PreRequest.pre_request at 0x7f7a41e071e0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f7a41e07488>
+  logconfig_dict: {}
+  umask: 0
+  graceful_timeout: 30
+[2018-12-04 12:33:26 +0100] [22650] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 12:33:26 +0100] [22650] [DEBUG] Arbiter booted
+[2018-12-04 12:33:26 +0100] [22650] [INFO] Listening at: http://127.0.0.1:8000 (22650)
+[2018-12-04 12:33:26 +0100] [22650] [INFO] Using worker: sync
+[2018-12-04 12:33:26 +0100] [22653] [INFO] Booting worker with pid: 22653
+[2018-12-04 12:33:26 +0100] [22654] [INFO] Booting worker with pid: 22654
+[2018-12-04 12:33:26 +0100] [22655] [INFO] Booting worker with pid: 22655
+[2018-12-04 12:33:26 +0100] [22650] [DEBUG] 3 workers
+[2018-12-04 12:33:31 +0100] [22654] [DEBUG] GET /
+[2018-12-04 12:33:32 +0100] [22653] [DEBUG] GET /
+[2018-12-04 12:33:34 +0100] [22653] [DEBUG] GET /login
+[2018-12-04 12:33:34,779] ERROR in app: Exception on /login [GET]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 64, in login
+    user_id=current_user.id,access=current_user.access)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'USER' object has no attribute 'access'
+[2018-12-04 12:34:38 +0100] [22650] [INFO] Handling signal: term
+[2018-12-04 12:34:38 +0100] [22653] [INFO] Worker exiting (pid: 22653)
+[2018-12-04 12:34:38 +0100] [22654] [INFO] Worker exiting (pid: 22654)
+[2018-12-04 12:34:38 +0100] [22655] [INFO] Worker exiting (pid: 22655)
+[2018-12-04 12:34:38 +0100] [22650] [INFO] Shutting down: Master
+[2018-12-04 12:34:46 +0100] [22708] [DEBUG] Current configuration:
+  pythonpath: None
+  reload_extra_files: []
+  graceful_timeout: 30
+  pre_fork: <function Prefork.pre_fork at 0x7f51067efae8>
+  child_exit: <function ChildExit.child_exit at 0x7f510656b378>
+  on_exit: <function OnExit.on_exit at 0x7f510656b6a8>
+  backlog: 2048
+  keyfile: None
+  statsd_prefix: 
+  check_config: False
+  worker_int: <function WorkerInt.worker_int at 0x7f51067efe18>
+  worker_class: sync
+  worker_connections: 1000
+  enable_stdio_inheritance: False
+  proc_name: None
+  do_handshake_on_connect: False
+  on_starting: <function OnStarting.on_starting at 0x7f51067ef7b8>
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  pre_exec: <function PreExec.pre_exec at 0x7f510656b0d0>
+  worker_tmp_dir: None
+  capture_output: False
+  keepalive: 2
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  logger_class: gunicorn.glogging.Logger
+  syslog_facility: user
+  post_request: <function PostRequest.post_request at 0x7f510656b268>
+  certfile: None
+  on_reload: <function OnReload.on_reload at 0x7f51067ef8c8>
+  reload: False
+  syslog: False
+  paste: None
+  suppress_ragged_eofs: True
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f51067efd08>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f510656b488>
+  logconfig: None
+  preload_app: False
+  umask: 0
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f51067eff28>
+  tmp_upload_dir: None
+  raw_paste_global_conf: []
+  spew: False
+  syslog_prefix: None
+  ca_certs: None
+  threads: 1
+  loglevel: debug
+  logconfig_dict: {}
+  post_fork: <function Postfork.post_fork at 0x7f51067efbf8>
+  sendfile: None
+  reuse_port: False
+  chdir: /srv/www/htdocs/monitor_api
+  default_proc_name: app:app
+  ciphers: TLSv1
+  limit_request_fields: 100
+  raw_env: []
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  user: 1000
+  group: 100
+  forwarded_allow_ips: ['127.0.0.1']
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function PreRequest.pre_request at 0x7f510656b1e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f510656b598>
+  reload_engine: auto
+  ssl_version: 2
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  disable_redirect_access_to_syslog: False
+  syslog_addr: udp://localhost:514
+  daemon: True
+  initgroups: False
+  limit_request_field_size: 8190
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTO': 'https'}
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  when_ready: <function WhenReady.when_ready at 0x7f51067ef9d8>
+  cert_reqs: 0
+  bind: ['127.0.0.1:8000']
+  workers: 3
+  statsd_host: None
+  config: ./gunicorn.conf
+  limit_request_line: 8190
+[2018-12-04 12:34:46 +0100] [22708] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 12:34:46 +0100] [22708] [DEBUG] Arbiter booted
+[2018-12-04 12:34:46 +0100] [22708] [INFO] Listening at: http://127.0.0.1:8000 (22708)
+[2018-12-04 12:34:46 +0100] [22708] [INFO] Using worker: sync
+[2018-12-04 12:34:46 +0100] [22711] [INFO] Booting worker with pid: 22711
+[2018-12-04 12:34:46 +0100] [22712] [INFO] Booting worker with pid: 22712
+[2018-12-04 12:34:46 +0100] [22713] [INFO] Booting worker with pid: 22713
+[2018-12-04 12:34:47 +0100] [22708] [DEBUG] 3 workers
+[2018-12-04 12:34:53 +0100] [22711] [DEBUG] GET /
+[2018-12-04 12:34:53,717] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 20, in index
+    return render_template('index.html')
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/templating.py", line 133, in render_template
+    ctx.app.update_template_context(context)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 792, in update_template_context
+    context.update(func())
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_login/utils.py", line 368, in _user_context_processor
+    return dict(current_user=_get_user())
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_login/utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_login/login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_login/login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 24, in load_user
+    return USER.query.get(int(user_id))
+NameError: name 'USER' is not defined
+[2018-12-04 12:35:49 +0100] [22708] [INFO] Handling signal: term
+[2018-12-04 12:35:49 +0100] [22711] [INFO] Worker exiting (pid: 22711)
+[2018-12-04 12:35:49 +0100] [22712] [INFO] Worker exiting (pid: 22712)
+[2018-12-04 12:35:49 +0100] [22713] [INFO] Worker exiting (pid: 22713)
+[2018-12-04 12:35:50 +0100] [22708] [INFO] Shutting down: Master
+[2018-12-04 12:35:58 +0100] [22760] [DEBUG] Current configuration:
+  worker_class: sync
+  certfile: None
+  do_handshake_on_connect: False
+  worker_exit: <function WorkerExit.worker_exit at 0x7ff8fa968488>
+  disable_redirect_access_to_syslog: False
+  logconfig_dict: {}
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7ff8fabecd08>
+  paste: None
+  syslog_addr: udp://localhost:514
+  worker_connections: 1000
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7ff8fa968598>
+  raw_env: []
+  group: 100
+  pythonpath: None
+  keyfile: None
+  reload_engine: auto
+  check_config: False
+  max_requests: 0
+  timeout: 30
+  graceful_timeout: 30
+  on_reload: <function OnReload.on_reload at 0x7ff8fabec8c8>
+  preload_app: False
+  chdir: /srv/www/htdocs/monitor_api
+  umask: 0
+  proxy_allow_ips: ['127.0.0.1']
+  raw_paste_global_conf: []
+  default_proc_name: app:app
+  cert_reqs: 0
+  reload: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  ciphers: TLSv1
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  backlog: 2048
+  when_ready: <function WhenReady.when_ready at 0x7ff8fabec9d8>
+  syslog_facility: user
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  limit_request_field_size: 8190
+  proc_name: None
+  tmp_upload_dir: None
+  worker_abort: <function WorkerAbort.worker_abort at 0x7ff8fabecf28>
+  config: ./gunicorn.conf
+  syslog_prefix: None
+  max_requests_jitter: 0
+  statsd_prefix: 
+  pre_exec: <function PreExec.pre_exec at 0x7ff8fa9680d0>
+  limit_request_line: 8190
+  reuse_port: False
+  keepalive: 2
+  ssl_version: 2
+  sendfile: None
+  daemon: True
+  worker_tmp_dir: None
+  user: 1000
+  initgroups: False
+  secure_scheme_headers: {'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTOCOL': 'ssl'}
+  on_starting: <function OnStarting.on_starting at 0x7ff8fabec7b8>
+  child_exit: <function ChildExit.child_exit at 0x7ff8fa968378>
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  pre_request: <function PreRequest.pre_request at 0x7ff8fa9681e0>
+  limit_request_fields: 100
+  spew: False
+  ca_certs: None
+  forwarded_allow_ips: ['127.0.0.1']
+  pre_fork: <function Prefork.pre_fork at 0x7ff8fabecae8>
+  post_fork: <function Postfork.post_fork at 0x7ff8fabecbf8>
+  loglevel: debug
+  proxy_protocol: False
+  workers: 3
+  worker_int: <function WorkerInt.worker_int at 0x7ff8fabece18>
+  on_exit: <function OnExit.on_exit at 0x7ff8fa9686a8>
+  logconfig: None
+  bind: ['127.0.0.1:8000']
+  syslog: False
+  enable_stdio_inheritance: False
+  statsd_host: None
+  threads: 1
+  post_request: <function PostRequest.post_request at 0x7ff8fa968268>
+  suppress_ragged_eofs: True
+  reload_extra_files: []
+[2018-12-04 12:35:58 +0100] [22760] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 12:35:58 +0100] [22760] [DEBUG] Arbiter booted
+[2018-12-04 12:35:58 +0100] [22760] [INFO] Listening at: http://127.0.0.1:8000 (22760)
+[2018-12-04 12:35:58 +0100] [22760] [INFO] Using worker: sync
+[2018-12-04 12:35:58 +0100] [22763] [INFO] Booting worker with pid: 22763
+[2018-12-04 12:35:58 +0100] [22764] [INFO] Booting worker with pid: 22764
+[2018-12-04 12:35:58 +0100] [22765] [INFO] Booting worker with pid: 22765
+[2018-12-04 12:35:58 +0100] [22760] [DEBUG] 3 workers
+[2018-12-04 12:37:29 +0100] [22765] [DEBUG] GET /
+[2018-12-04 12:37:29,740] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 20, in index
+    def index():
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/templating.py", line 133, in render_template
+    ctx.app.update_template_context(context)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 792, in update_template_context
+    context.update(func())
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_login/utils.py", line 368, in _user_context_processor
+    return dict(current_user=_get_user())
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_login/utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_login/login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_login/login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 24, in load_user
+    def load_user(user_id):
+NameError: name 'USER' is not defined
+[2018-12-04 12:37:33 +0100] [22760] [INFO] Handling signal: term
+[2018-12-04 12:37:33 +0100] [22764] [INFO] Worker exiting (pid: 22764)
+[2018-12-04 12:37:33 +0100] [22765] [INFO] Worker exiting (pid: 22765)
+[2018-12-04 12:37:33 +0100] [22763] [INFO] Worker exiting (pid: 22763)
+[2018-12-04 12:37:33 +0100] [22760] [INFO] Shutting down: Master
+[2018-12-04 12:37:35 +0100] [22850] [DEBUG] Current configuration:
+  keepalive: 2
+  chdir: /srv/www/htdocs/monitor_api
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  cert_reqs: 0
+  suppress_ragged_eofs: True
+  ciphers: TLSv1
+  backlog: 2048
+  pre_fork: <function Prefork.pre_fork at 0x7fe4a6f97ae8>
+  post_fork: <function Postfork.post_fork at 0x7fe4a6f97bf8>
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  logger_class: gunicorn.glogging.Logger
+  statsd_host: None
+  pythonpath: None
+  statsd_prefix: 
+  when_ready: <function WhenReady.when_ready at 0x7fe4a6f979d8>
+  threads: 1
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fe4a6f97d08>
+  pre_exec: <function PreExec.pre_exec at 0x7fe4a6d130d0>
+  on_exit: <function OnExit.on_exit at 0x7fe4a6d136a8>
+  enable_stdio_inheritance: False
+  reload_extra_files: []
+  raw_env: []
+  spew: False
+  worker_tmp_dir: None
+  max_requests: 0
+  proc_name: None
+  limit_request_fields: 100
+  bind: ['127.0.0.1:8000']
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  worker_exit: <function WorkerExit.worker_exit at 0x7fe4a6d13488>
+  loglevel: debug
+  pre_request: <function PreRequest.pre_request at 0x7fe4a6d131e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fe4a6d13598>
+  check_config: False
+  workers: 3
+  timeout: 30
+  logconfig: None
+  initgroups: False
+  raw_paste_global_conf: []
+  ssl_version: 2
+  limit_request_line: 8190
+  reuse_port: False
+  child_exit: <function ChildExit.child_exit at 0x7fe4a6d13378>
+  daemon: True
+  syslog: False
+  do_handshake_on_connect: False
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fe4a6f97f28>
+  default_proc_name: app:app
+  logconfig_dict: {}
+  certfile: None
+  on_starting: <function OnStarting.on_starting at 0x7fe4a6f977b8>
+  preload_app: False
+  sendfile: None
+  group: 100
+  umask: 0
+  proxy_allow_ips: ['127.0.0.1']
+  syslog_facility: user
+  reload_engine: auto
+  disable_redirect_access_to_syslog: False
+  forwarded_allow_ips: ['127.0.0.1']
+  paste: None
+  config: ./gunicorn.conf
+  max_requests_jitter: 0
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-SSL': 'on'}
+  worker_class: sync
+  graceful_timeout: 30
+  capture_output: False
+  on_reload: <function OnReload.on_reload at 0x7fe4a6f978c8>
+  post_request: <function PostRequest.post_request at 0x7fe4a6d13268>
+  reload: False
+  worker_int: <function WorkerInt.worker_int at 0x7fe4a6f97e18>
+  ca_certs: None
+  user: 1000
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  worker_connections: 1000
+  keyfile: None
+  limit_request_field_size: 8190
+  proxy_protocol: False
+[2018-12-04 12:37:35 +0100] [22850] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 12:37:35 +0100] [22850] [DEBUG] Arbiter booted
+[2018-12-04 12:37:35 +0100] [22850] [INFO] Listening at: http://127.0.0.1:8000 (22850)
+[2018-12-04 12:37:35 +0100] [22850] [INFO] Using worker: sync
+[2018-12-04 12:37:35 +0100] [22854] [INFO] Booting worker with pid: 22854
+[2018-12-04 12:37:35 +0100] [22855] [INFO] Booting worker with pid: 22855
+[2018-12-04 12:37:35 +0100] [22857] [INFO] Booting worker with pid: 22857
+[2018-12-04 12:37:35 +0100] [22850] [DEBUG] 3 workers
+[2018-12-04 12:37:37 +0100] [22855] [DEBUG] GET /
+[2018-12-04 12:37:40 +0100] [22854] [DEBUG] GET /login
+[2018-12-04 12:38:08 +0100] [22854] [DEBUG] GET /services
+[2018-12-04 13:09:24 +0100] [22857] [DEBUG] POST /sora/services
+[2018-12-04 13:09:25 +0100] [22855] [DEBUG] GET /sora/services
+[2018-12-04 13:12:04 +0100] [22855] [DEBUG] POST /sora/services
+[2018-12-04 13:12:06 +0100] [22854] [DEBUG] GET /sora/services
+[2018-12-04 13:12:09 +0100] [22850] [INFO] Handling signal: term
+[2018-12-04 13:12:09 +0100] [22854] [INFO] Worker exiting (pid: 22854)
+[2018-12-04 13:12:09 +0100] [22855] [INFO] Worker exiting (pid: 22855)
+[2018-12-04 13:12:09 +0100] [22857] [INFO] Worker exiting (pid: 22857)
+[2018-12-04 13:12:10 +0100] [22850] [INFO] Shutting down: Master
+[2018-12-04 13:12:17 +0100] [23270] [DEBUG] Current configuration:
+  proxy_allow_ips: ['127.0.0.1']
+  syslog_prefix: None
+  workers: 3
+  post_fork: <function Postfork.post_fork at 0x7ff6bbbd7bf8>
+  timeout: 30
+  user: 1000
+  logconfig: None
+  certfile: None
+  on_starting: <function OnStarting.on_starting at 0x7ff6bbbd77b8>
+  pre_fork: <function Prefork.pre_fork at 0x7ff6bbbd7ae8>
+  worker_int: <function WorkerInt.worker_int at 0x7ff6bbbd7e18>
+  proxy_protocol: False
+  syslog: False
+  proc_name: None
+  graceful_timeout: 30
+  on_reload: <function OnReload.on_reload at 0x7ff6bbbd78c8>
+  default_proc_name: app:app
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  on_exit: <function OnExit.on_exit at 0x7ff6bb9536a8>
+  capture_output: False
+  forwarded_allow_ips: ['127.0.0.1']
+  spew: False
+  logger_class: gunicorn.glogging.Logger
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  threads: 1
+  paste: None
+  pre_exec: <function PreExec.pre_exec at 0x7ff6bb9530d0>
+  pre_request: <function PreRequest.pre_request at 0x7ff6bb9531e0>
+  child_exit: <function ChildExit.child_exit at 0x7ff6bb953378>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7ff6bb953598>
+  tmp_upload_dir: None
+  raw_paste_global_conf: []
+  bind: ['127.0.0.1:8000']
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  backlog: 2048
+  statsd_prefix: 
+  limit_request_line: 8190
+  keyfile: None
+  suppress_ragged_eofs: True
+  worker_class: sync
+  worker_tmp_dir: None
+  post_request: <function PostRequest.post_request at 0x7ff6bb953268>
+  sendfile: None
+  max_requests: 0
+  when_ready: <function WhenReady.when_ready at 0x7ff6bbbd79d8>
+  reuse_port: False
+  ssl_version: 2
+  cert_reqs: 0
+  preload_app: False
+  statsd_host: None
+  do_handshake_on_connect: False
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7ff6bbbd7d08>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7ff6bbbd7f28>
+  chdir: /srv/www/htdocs/monitor_api
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  config: ./gunicorn.conf
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  limit_request_field_size: 8190
+  ciphers: TLSv1
+  loglevel: debug
+  raw_env: []
+  umask: 0
+  limit_request_fields: 100
+  reload: False
+  reload_extra_files: []
+  pythonpath: None
+  max_requests_jitter: 0
+  disable_redirect_access_to_syslog: False
+  logconfig_dict: {}
+  ca_certs: None
+  worker_connections: 1000
+  group: 100
+  initgroups: False
+  reload_engine: auto
+  check_config: False
+  keepalive: 2
+  syslog_addr: udp://localhost:514
+  daemon: True
+  worker_exit: <function WorkerExit.worker_exit at 0x7ff6bb953488>
+[2018-12-04 13:12:17 +0100] [23270] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 13:12:17 +0100] [23270] [DEBUG] Arbiter booted
+[2018-12-04 13:12:17 +0100] [23270] [INFO] Listening at: http://127.0.0.1:8000 (23270)
+[2018-12-04 13:12:17 +0100] [23270] [INFO] Using worker: sync
+[2018-12-04 13:12:17 +0100] [23273] [INFO] Booting worker with pid: 23273
+[2018-12-04 13:12:17 +0100] [23274] [INFO] Booting worker with pid: 23274
+[2018-12-04 13:12:18 +0100] [23275] [INFO] Booting worker with pid: 23275
+[2018-12-04 13:12:18 +0100] [23270] [DEBUG] 3 workers
+[2018-12-04 13:12:22 +0100] [23275] [DEBUG] GET /services
+[2018-12-04 13:12:33 +0100] [23275] [DEBUG] GET /services
+[2018-12-04 13:12:37 +0100] [23275] [DEBUG] GET /
+[2018-12-04 13:12:38 +0100] [23275] [DEBUG] GET /login
+[2018-12-04 13:12:41 +0100] [23273] [DEBUG] POST /login
+[2018-12-04 13:12:43 +0100] [23273] [DEBUG] GET /services
+[2018-12-04 13:12:48 +0100] [23275] [DEBUG] GET /api_key
+[2018-12-04 13:12:49 +0100] [23274] [DEBUG] GET /services
+[2018-12-04 13:18:36 +0100] [23274] [DEBUG] POST /sora/services
+[2018-12-04 13:18:37 +0100] [23274] [DEBUG] GET /sora/services
+[2018-12-04 13:18:39 +0100] [23273] [DEBUG] GET /sora/services
+[2018-12-04 13:20:31 +0100] [23275] [DEBUG] POST /sora/services
+[2018-12-04 13:20:33 +0100] [23275] [DEBUG] GET /sora/services
+[2018-12-04 13:20:34 +0100] [23273] [DEBUG] GET /sora/services
+[2018-12-04 13:21:32 +0100] [23273] [DEBUG] GET /
+[2018-12-04 13:21:33 +0100] [23274] [DEBUG] POST /sora/services
+[2018-12-04 13:21:35 +0100] [23275] [DEBUG] GET /sora/services
+[2018-12-04 13:23:59 +0100] [23274] [DEBUG] POST /sora/services
+[2018-12-04 13:24:16 +0100] [23274] [DEBUG] GET /sora/services
+[2018-12-04 13:32:01 +0100] [23275] [DEBUG] POST /sora/services
+[2018-12-04 13:32:03 +0100] [23274] [DEBUG] GET /sora/services
+[2018-12-04 13:33:20 +0100] [23274] [DEBUG] POST /sora/services
+[2018-12-04 13:33:21 +0100] [23273] [DEBUG] GET /sora/services
+[2018-12-04 13:35:22 +0100] [23275] [DEBUG] POST /sora/services
+[2018-12-04 13:35:24 +0100] [23275] [DEBUG] GET /sora/services
+[2018-12-04 13:41:10 +0100] [23275] [DEBUG] POST /sora/services
+[2018-12-04 13:41:12 +0100] [23275] [DEBUG] GET /sora/services
+[2018-12-04 13:44:11 +0100] [23273] [DEBUG] POST /sora/services
+[2018-12-04 13:44:12 +0100] [23275] [DEBUG] GET /sora/services
+[2018-12-04 13:44:51 +0100] [23274] [DEBUG] POST /sora/services
+[2018-12-04 13:44:53 +0100] [23274] [DEBUG] GET /sora/services
+[2018-12-04 13:47:26 +0100] [23273] [DEBUG] POST /sora/services
+[2018-12-04 13:47:27 +0100] [23273] [DEBUG] GET /sora/services
+[2018-12-04 13:47:39 +0100] [23273] [DEBUG] GET //ogc
+[2018-12-04 13:47:41 +0100] [23273] [DEBUG] Ignoring connection reset
+[2018-12-04 13:47:44 +0100] [23274] [DEBUG] GET //ogc
+[2018-12-04 13:47:59 +0100] [23273] [DEBUG] GET /ogc
+[2018-12-04 13:48:50 +0100] [23273] [DEBUG] POST /sora/services
+[2018-12-04 13:48:52 +0100] [23275] [DEBUG] GET /sora/services
+[2018-12-04 13:51:10 +0100] [23270] [INFO] Handling signal: term
+[2018-12-04 13:51:10 +0100] [23273] [INFO] Worker exiting (pid: 23273)
+[2018-12-04 13:51:10 +0100] [23274] [INFO] Worker exiting (pid: 23274)
+[2018-12-04 13:51:10 +0100] [23275] [INFO] Worker exiting (pid: 23275)
+[2018-12-04 13:51:11 +0100] [23270] [INFO] Shutting down: Master
+[2018-12-04 13:51:21 +0100] [23937] [DEBUG] Current configuration:
+  proc_name: None
+  chdir: /srv/www/htdocs/monitor_api
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f2728155d08>
+  proxy_protocol: False
+  worker_exit: <function WorkerExit.worker_exit at 0x7f2727ed1488>
+  syslog_prefix: None
+  pre_exec: <function PreExec.pre_exec at 0x7f2727ed10d0>
+  threads: 1
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f2728155f28>
+  limit_request_field_size: 8190
+  max_requests_jitter: 0
+  reload_engine: auto
+  paste: None
+  child_exit: <function ChildExit.child_exit at 0x7f2727ed1378>
+  reload_extra_files: []
+  cert_reqs: 0
+  limit_request_fields: 100
+  statsd_host: None
+  worker_int: <function WorkerInt.worker_int at 0x7f2728155e18>
+  limit_request_line: 8190
+  worker_tmp_dir: None
+  post_fork: <function Postfork.post_fork at 0x7f2728155bf8>
+  disable_redirect_access_to_syslog: False
+  check_config: False
+  tmp_upload_dir: None
+  max_requests: 0
+  ssl_version: 2
+  bind: ['127.0.0.1:8000']
+  syslog_facility: user
+  default_proc_name: app:app
+  spew: False
+  keepalive: 2
+  ca_certs: None
+  graceful_timeout: 30
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  statsd_prefix: 
+  raw_env: []
+  pre_fork: <function Prefork.pre_fork at 0x7f2728155ae8>
+  config: ./gunicorn.conf
+  umask: 0
+  certfile: None
+  backlog: 2048
+  on_exit: <function OnExit.on_exit at 0x7f2727ed16a8>
+  reuse_port: False
+  daemon: True
+  initgroups: False
+  worker_class: sync
+  post_request: <function PostRequest.post_request at 0x7f2727ed1268>
+  sendfile: None
+  workers: 3
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  loglevel: debug
+  logconfig: None
+  on_starting: <function OnStarting.on_starting at 0x7f27281557b8>
+  when_ready: <function WhenReady.when_ready at 0x7f27281559d8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f2727ed1598>
+  worker_connections: 1000
+  timeout: 30
+  suppress_ragged_eofs: True
+  capture_output: False
+  group: 100
+  logger_class: gunicorn.glogging.Logger
+  syslog_addr: udp://localhost:514
+  ciphers: TLSv1
+  preload_app: False
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  pythonpath: None
+  pre_request: <function PreRequest.pre_request at 0x7f2727ed11e0>
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  enable_stdio_inheritance: False
+  reload: False
+  keyfile: None
+  logconfig_dict: {}
+  syslog: False
+  raw_paste_global_conf: []
+  on_reload: <function OnReload.on_reload at 0x7f27281558c8>
+  do_handshake_on_connect: False
+  user: 1000
+  proxy_allow_ips: ['127.0.0.1']
+[2018-12-04 13:51:21 +0100] [23937] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 13:51:21 +0100] [23937] [DEBUG] Arbiter booted
+[2018-12-04 13:51:21 +0100] [23937] [INFO] Listening at: http://127.0.0.1:8000 (23937)
+[2018-12-04 13:51:21 +0100] [23937] [INFO] Using worker: sync
+[2018-12-04 13:51:21 +0100] [23940] [INFO] Booting worker with pid: 23940
+[2018-12-04 13:51:21 +0100] [23941] [INFO] Booting worker with pid: 23941
+[2018-12-04 13:51:21 +0100] [23942] [INFO] Booting worker with pid: 23942
+[2018-12-04 13:51:21 +0100] [23937] [DEBUG] 3 workers
+[2018-12-04 13:51:26 +0100] [23941] [DEBUG] GET /services
+[2018-12-04 13:51:37 +0100] [23940] [DEBUG] GET /
+[2018-12-04 13:51:39 +0100] [23941] [DEBUG] POST /sora/services
+[2018-12-04 13:51:39 +0100] [23940] [DEBUG] GET /login
+[2018-12-04 13:51:40 +0100] [23940] [DEBUG] GET /sora/services
+[2018-12-04 13:51:43 +0100] [23941] [DEBUG] POST /login
+[2018-12-04 13:51:45 +0100] [23941] [DEBUG] GET /services
+[2018-12-04 13:52:36 +0100] [23941] [DEBUG] GET /
+[2018-12-04 13:53:17 +0100] [23937] [INFO] Handling signal: term
+[2018-12-04 13:53:17 +0100] [23941] [INFO] Worker exiting (pid: 23941)
+[2018-12-04 13:53:17 +0100] [23940] [INFO] Worker exiting (pid: 23940)
+[2018-12-04 13:53:17 +0100] [23942] [INFO] Worker exiting (pid: 23942)
+[2018-12-04 13:53:17 +0100] [23937] [INFO] Shutting down: Master
+[2018-12-04 13:53:25 +0100] [24038] [DEBUG] Current configuration:
+  child_exit: <function ChildExit.child_exit at 0x7f599b2e6378>
+  reload_extra_files: []
+  proc_name: None
+  default_proc_name: app:app
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  proxy_allow_ips: ['127.0.0.1']
+  worker_exit: <function WorkerExit.worker_exit at 0x7f599b2e6488>
+  workers: 3
+  paste: None
+  logconfig: None
+  on_reload: <function OnReload.on_reload at 0x7f599b56a8c8>
+  enable_stdio_inheritance: False
+  reload: False
+  reload_engine: auto
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  syslog_addr: udp://localhost:514
+  worker_class: sync
+  logger_class: gunicorn.glogging.Logger
+  syslog_facility: user
+  limit_request_field_size: 8190
+  preload_app: False
+  ssl_version: 2
+  when_ready: <function WhenReady.when_ready at 0x7f599b56a9d8>
+  ca_certs: None
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  syslog_prefix: None
+  statsd_host: None
+  max_requests: 0
+  capture_output: False
+  max_requests_jitter: 0
+  on_starting: <function OnStarting.on_starting at 0x7f599b56a7b8>
+  pre_fork: <function Prefork.pre_fork at 0x7f599b56aae8>
+  pre_request: <function PreRequest.pre_request at 0x7f599b2e61e0>
+  threads: 1
+  spew: False
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f599b56af28>
+  config: ./gunicorn.conf
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f599b2e6598>
+  on_exit: <function OnExit.on_exit at 0x7f599b2e66a8>
+  daemon: True
+  worker_tmp_dir: None
+  backlog: 2048
+  suppress_ragged_eofs: True
+  disable_redirect_access_to_syslog: False
+  loglevel: debug
+  post_fork: <function Postfork.post_fork at 0x7f599b56abf8>
+  chdir: /srv/www/htdocs/monitor_api
+  raw_env: []
+  tmp_upload_dir: None
+  timeout: 30
+  initgroups: False
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  logconfig_dict: {}
+  user: 1000
+  graceful_timeout: 30
+  keepalive: 2
+  sendfile: None
+  umask: 0
+  forwarded_allow_ips: ['127.0.0.1']
+  limit_request_line: 8190
+  bind: ['127.0.0.1:8000']
+  syslog: False
+  worker_connections: 1000
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f599b56ad08>
+  reuse_port: False
+  group: 100
+  pythonpath: None
+  raw_paste_global_conf: []
+  statsd_prefix: 
+  keyfile: None
+  certfile: None
+  cert_reqs: 0
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  worker_int: <function WorkerInt.worker_int at 0x7f599b56ae18>
+  pre_exec: <function PreExec.pre_exec at 0x7f599b2e60d0>
+  post_request: <function PostRequest.post_request at 0x7f599b2e6268>
+  check_config: False
+  limit_request_fields: 100
+  secure_scheme_headers: {'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https'}
+  proxy_protocol: False
+[2018-12-04 13:53:25 +0100] [24038] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 13:53:25 +0100] [24038] [DEBUG] Arbiter booted
+[2018-12-04 13:53:25 +0100] [24038] [INFO] Listening at: http://127.0.0.1:8000 (24038)
+[2018-12-04 13:53:25 +0100] [24038] [INFO] Using worker: sync
+[2018-12-04 13:53:25 +0100] [24041] [INFO] Booting worker with pid: 24041
+[2018-12-04 13:53:26 +0100] [24042] [INFO] Booting worker with pid: 24042
+[2018-12-04 13:53:26 +0100] [24043] [INFO] Booting worker with pid: 24043
+[2018-12-04 13:53:26 +0100] [24038] [DEBUG] 3 workers
+[2018-12-04 13:53:29 +0100] [24041] [DEBUG] GET /services
+[2018-12-04 13:53:38 +0100] [24043] [DEBUG] GET /services
+[2018-12-04 13:53:42 +0100] [24043] [DEBUG] GET /
+[2018-12-04 13:53:44 +0100] [24042] [DEBUG] GET /login
+[2018-12-04 13:53:47 +0100] [24042] [DEBUG] POST /login
+[2018-12-04 13:55:14 +0100] [24043] [DEBUG] POST /login
+[2018-12-04 13:56:33 +0100] [24043] [DEBUG] POST /login
+[2018-12-04 13:56:55 +0100] [24043] [DEBUG] POST /login
+[2018-12-04 13:56:57 +0100] [24043] [DEBUG] POST /login
+[2018-12-04 13:57:42 +0100] [24038] [INFO] Handling signal: term
+[2018-12-04 13:57:42 +0100] [24043] [INFO] Worker exiting (pid: 24043)
+[2018-12-04 13:57:42 +0100] [24041] [INFO] Worker exiting (pid: 24041)
+[2018-12-04 13:57:42 +0100] [24042] [INFO] Worker exiting (pid: 24042)
+[2018-12-04 13:57:43 +0100] [24038] [INFO] Shutting down: Master
+[2018-12-04 13:57:50 +0100] [24277] [DEBUG] Current configuration:
+  ssl_version: 2
+  logconfig_dict: {}
+  reload_engine: auto
+  certfile: None
+  on_reload: <function OnReload.on_reload at 0x7fd75d8668c8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fd75d5e2488>
+  raw_env: []
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  user: 1000
+  umask: 0
+  disable_redirect_access_to_syslog: False
+  limit_request_field_size: 8190
+  daemon: True
+  threads: 1
+  graceful_timeout: 30
+  when_ready: <function WhenReady.when_ready at 0x7fd75d8669d8>
+  post_fork: <function Postfork.post_fork at 0x7fd75d866bf8>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fd75d866d08>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fd75d866f28>
+  pre_request: <function PreRequest.pre_request at 0x7fd75d5e21e0>
+  reload: False
+  default_proc_name: app:app
+  timeout: 30
+  check_config: False
+  keyfile: None
+  config: ./gunicorn.conf
+  ciphers: TLSv1
+  on_starting: <function OnStarting.on_starting at 0x7fd75d8667b8>
+  pre_exec: <function PreExec.pre_exec at 0x7fd75d5e20d0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fd75d5e2598>
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  reuse_port: False
+  tmp_upload_dir: None
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  syslog_facility: user
+  statsd_host: None
+  limit_request_line: 8190
+  chdir: /srv/www/htdocs/monitor_api
+  group: 100
+  forwarded_allow_ips: ['127.0.0.1']
+  capture_output: False
+  reload_extra_files: []
+  raw_paste_global_conf: []
+  ca_certs: None
+  max_requests: 0
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  paste: None
+  proc_name: None
+  bind: ['127.0.0.1:8000']
+  proxy_protocol: False
+  backlog: 2048
+  worker_int: <function WorkerInt.worker_int at 0x7fd75d866e18>
+  logger_class: gunicorn.glogging.Logger
+  worker_connections: 1000
+  cert_reqs: 0
+  keepalive: 2
+  sendfile: None
+  on_exit: <function OnExit.on_exit at 0x7fd75d5e26a8>
+  spew: False
+  max_requests_jitter: 0
+  preload_app: False
+  limit_request_fields: 100
+  post_request: <function PostRequest.post_request at 0x7fd75d5e2268>
+  initgroups: False
+  statsd_prefix: 
+  suppress_ragged_eofs: True
+  proxy_allow_ips: ['127.0.0.1']
+  pre_fork: <function Prefork.pre_fork at 0x7fd75d866ae8>
+  worker_tmp_dir: None
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  syslog: False
+  enable_stdio_inheritance: False
+  workers: 3
+  syslog_addr: udp://localhost:514
+  worker_class: sync
+  syslog_prefix: None
+  pythonpath: None
+  do_handshake_on_connect: False
+  loglevel: debug
+  child_exit: <function ChildExit.child_exit at 0x7fd75d5e2378>
+  logconfig: None
+[2018-12-04 13:57:50 +0100] [24277] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 13:57:50 +0100] [24277] [DEBUG] Arbiter booted
+[2018-12-04 13:57:50 +0100] [24277] [INFO] Listening at: http://127.0.0.1:8000 (24277)
+[2018-12-04 13:57:50 +0100] [24277] [INFO] Using worker: sync
+[2018-12-04 13:57:50 +0100] [24280] [INFO] Booting worker with pid: 24280
+[2018-12-04 13:57:50 +0100] [24281] [INFO] Booting worker with pid: 24281
+[2018-12-04 13:57:50 +0100] [24282] [INFO] Booting worker with pid: 24282
+[2018-12-04 13:57:51 +0100] [24277] [DEBUG] 3 workers
+[2018-12-04 13:57:56 +0100] [24282] [DEBUG] GET /
+[2018-12-04 13:57:58 +0100] [24280] [DEBUG] GET /login
+[2018-12-04 14:06:18 +0100] [24280] [DEBUG] GET /
+[2018-12-04 14:07:50 +0100] [24280] [DEBUG] GET /login
+[2018-12-04 14:08:42 +0100] [24280] [DEBUG] POST /sora/services
+[2018-12-04 14:08:44 +0100] [24280] [DEBUG] GET /sora/services
+[2018-12-04 14:08:54 +0100] [24280] [DEBUG] GET /login
+[2018-12-04 14:09:00 +0100] [24282] [DEBUG] GET /login
+[2018-12-04 14:09:03 +0100] [24280] [DEBUG] POST /login
+[2018-12-04 14:10:18 +0100] [24281] [DEBUG] POST /sora/services
+[2018-12-04 14:10:19 +0100] [24280] [DEBUG] GET /sora/services
+[2018-12-04 14:10:42 +0100] [24280] [DEBUG] POST /login
+[2018-12-04 14:11:18 +0100] [24280] [DEBUG] POST /login
+[2018-12-04 14:11:20 +0100] [24282] [DEBUG] POST /login
+[2018-12-04 14:11:29 +0100] [24280] [DEBUG] POST /sora/services
+[2018-12-04 14:11:31 +0100] [24280] [DEBUG] GET /sora/services
+[2018-12-04 14:11:35 +0100] [24280] [DEBUG] POST /login
+[2018-12-04 16:30:17 +0100] [24282] [DEBUG] GET /sora/category
+[2018-12-04 16:30:28 +0100] [24281] [DEBUG] GET /sora/indicator
+[2018-12-04 17:58:33 +0100] [24280] [DEBUG] GET /
+[2018-12-04 17:58:46 +0100] [24280] [DEBUG] GET /sora/indicator
+[2018-12-04 17:59:41 +0100] [24281] [DEBUG] GET /sora/indicator
+[2018-12-04 17:59:55 +0100] [24282] [DEBUG] GET /sora/indicator
+[2018-12-04 18:00:09 +0100] [24280] [DEBUG] GET /sora/category
+[2018-12-04 18:00:34 +0100] [24280] [DEBUG] GET /sora/indicator
+[2018-12-04 18:35:36 +0100] [24281] [DEBUG] GET /
+[2018-12-04 18:35:41 +0100] [24280] [DEBUG] GET /login
+[2018-12-04 18:36:18 +0100] [24280] [DEBUG] GET /
+[2018-12-04 18:38:36 +0100] [24281] [DEBUG] GET /sora/indicator
+[2018-12-04 19:03:50 +0100] [24281] [DEBUG] GET /login
+[2018-12-04 19:04:45 +0100] [24277] [INFO] Handling signal: term
+[2018-12-04 19:04:45 +0100] [24281] [INFO] Worker exiting (pid: 24281)
+[2018-12-04 19:04:45 +0100] [24280] [INFO] Worker exiting (pid: 24280)
+[2018-12-04 19:04:45 +0100] [24282] [INFO] Worker exiting (pid: 24282)
+[2018-12-04 19:04:45 +0100] [24277] [INFO] Shutting down: Master
+[2018-12-04 19:05:11 +0100] [27880] [DEBUG] Current configuration:
+  logconfig: None
+  certfile: None
+  raw_paste_global_conf: []
+  statsd_prefix: 
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  user: 1000
+  group: 100
+  timeout: 30
+  ca_certs: None
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f8de0b89d08>
+  worker_int: <function WorkerInt.worker_int at 0x7f8de0b89e18>
+  child_exit: <function ChildExit.child_exit at 0x7f8de0905378>
+  umask: 0
+  on_exit: <function OnExit.on_exit at 0x7f8de09056a8>
+  sendfile: None
+  logconfig_dict: {}
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f8de0b89f28>
+  reuse_port: False
+  limit_request_fields: 100
+  raw_env: []
+  proc_name: None
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  syslog_facility: user
+  forwarded_allow_ips: ['127.0.0.1']
+  proxy_protocol: False
+  check_config: False
+  keyfile: None
+  workers: 3
+  worker_class: sync
+  max_requests: 0
+  max_requests_jitter: 0
+  tmp_upload_dir: None
+  post_fork: <function Postfork.post_fork at 0x7f8de0b89bf8>
+  post_request: <function PostRequest.post_request at 0x7f8de0905268>
+  suppress_ragged_eofs: True
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  reload_extra_files: []
+  syslog_addr: udp://localhost:514
+  syslog: False
+  worker_tmp_dir: None
+  spew: False
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  reload_engine: auto
+  limit_request_field_size: 8190
+  when_ready: <function WhenReady.when_ready at 0x7f8de0b899d8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f8de0905598>
+  loglevel: debug
+  cert_reqs: 0
+  ciphers: TLSv1
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  logger_class: gunicorn.glogging.Logger
+  syslog_prefix: None
+  statsd_host: None
+  chdir: /srv/www/htdocs/monitor_api
+  pythonpath: None
+  disable_redirect_access_to_syslog: False
+  default_proc_name: app:app
+  on_starting: <function OnStarting.on_starting at 0x7f8de0b897b8>
+  limit_request_line: 8190
+  pre_fork: <function Prefork.pre_fork at 0x7f8de0b89ae8>
+  enable_stdio_inheritance: False
+  worker_connections: 1000
+  daemon: True
+  on_reload: <function OnReload.on_reload at 0x7f8de0b898c8>
+  pre_exec: <function PreExec.pre_exec at 0x7f8de09050d0>
+  initgroups: False
+  paste: None
+  ssl_version: 2
+  do_handshake_on_connect: False
+  config: ./gunicorn.conf
+  graceful_timeout: 30
+  keepalive: 2
+  capture_output: False
+  pre_request: <function PreRequest.pre_request at 0x7f8de09051e0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f8de0905488>
+  reload: False
+  threads: 1
+  preload_app: False
+  secure_scheme_headers: {'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-PROTOCOL': 'ssl'}
+  proxy_allow_ips: ['127.0.0.1']
+[2018-12-04 19:05:11 +0100] [27880] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 19:05:11 +0100] [27880] [DEBUG] Arbiter booted
+[2018-12-04 19:05:11 +0100] [27880] [INFO] Listening at: http://127.0.0.1:8000 (27880)
+[2018-12-04 19:05:11 +0100] [27880] [INFO] Using worker: sync
+[2018-12-04 19:05:11 +0100] [27883] [INFO] Booting worker with pid: 27883
+[2018-12-04 19:05:11 +0100] [27884] [INFO] Booting worker with pid: 27884
+[2018-12-04 19:05:11 +0100] [27885] [INFO] Booting worker with pid: 27885
+[2018-12-04 19:05:11 +0100] [27880] [DEBUG] 3 workers
+[2018-12-04 19:05:24 +0100] [27884] [DEBUG] GET /login
+[2018-12-04 19:05:25 +0100] [27885] [DEBUG] GET /login
+[2018-12-04 19:05:28 +0100] [27885] [DEBUG] POST /login
+[2018-12-04 19:10:12 +0100] [27883] [DEBUG] POST /login
+[2018-12-04 19:10:16 +0100] [27883] [DEBUG] POST /login
+[2018-12-04 19:10:29 +0100] [27883] [DEBUG] POST /login
+[2018-12-04 19:10:31 +0100] [27883] [DEBUG] POST /login
+[2018-12-04 19:10:42 +0100] [27880] [INFO] Handling signal: term
+[2018-12-04 19:10:42 +0100] [27883] [INFO] Worker exiting (pid: 27883)
+[2018-12-04 19:10:42 +0100] [27884] [INFO] Worker exiting (pid: 27884)
+[2018-12-04 19:10:42 +0100] [27885] [INFO] Worker exiting (pid: 27885)
+[2018-12-04 19:10:42 +0100] [27880] [INFO] Shutting down: Master
+[2018-12-04 19:10:52 +0100] [27994] [DEBUG] Current configuration:
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  limit_request_fields: 100
+  config: ./gunicorn.conf
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f2a56bb9d08>
+  check_config: False
+  ca_certs: None
+  pre_exec: <function PreExec.pre_exec at 0x7f2a569350d0>
+  loglevel: debug
+  preload_app: False
+  forwarded_allow_ips: ['127.0.0.1']
+  pythonpath: None
+  capture_output: False
+  syslog_prefix: None
+  max_requests: 0
+  sendfile: None
+  umask: 0
+  tmp_upload_dir: None
+  post_request: <function PostRequest.post_request at 0x7f2a56935268>
+  secure_scheme_headers: {'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTOCOL': 'ssl'}
+  reload: False
+  reload_extra_files: []
+  keyfile: None
+  disable_redirect_access_to_syslog: False
+  logconfig: None
+  syslog_facility: user
+  on_starting: <function OnStarting.on_starting at 0x7f2a56bb97b8>
+  post_fork: <function Postfork.post_fork at 0x7f2a56bb9bf8>
+  cert_reqs: 0
+  keepalive: 2
+  child_exit: <function ChildExit.child_exit at 0x7f2a56935378>
+  proxy_protocol: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  daemon: True
+  user: 1000
+  paste: None
+  proxy_allow_ips: ['127.0.0.1']
+  worker_class: sync
+  logconfig_dict: {}
+  pre_request: <function PreRequest.pre_request at 0x7f2a569351e0>
+  syslog_addr: udp://localhost:514
+  ssl_version: 2
+  statsd_prefix: 
+  worker_tmp_dir: None
+  logger_class: gunicorn.glogging.Logger
+  reuse_port: False
+  raw_env: []
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  initgroups: False
+  raw_paste_global_conf: []
+  certfile: None
+  ciphers: TLSv1
+  pre_fork: <function Prefork.pre_fork at 0x7f2a56bb9ae8>
+  enable_stdio_inheritance: False
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f2a56935598>
+  on_exit: <function OnExit.on_exit at 0x7f2a569356a8>
+  workers: 3
+  threads: 1
+  worker_connections: 1000
+  timeout: 30
+  on_reload: <function OnReload.on_reload at 0x7f2a56bb98c8>
+  when_ready: <function WhenReady.when_ready at 0x7f2a56bb99d8>
+  spew: False
+  limit_request_line: 8190
+  backlog: 2048
+  worker_int: <function WorkerInt.worker_int at 0x7f2a56bb9e18>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f2a56935488>
+  reload_engine: auto
+  group: 100
+  suppress_ragged_eofs: True
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  limit_request_field_size: 8190
+  graceful_timeout: 30
+  chdir: /srv/www/htdocs/monitor_api
+  syslog: False
+  do_handshake_on_connect: False
+  statsd_host: None
+  bind: ['127.0.0.1:8000']
+  proc_name: None
+  default_proc_name: app:app
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f2a56bb9f28>
+  max_requests_jitter: 0
+[2018-12-04 19:10:52 +0100] [27994] [INFO] Starting gunicorn 19.9.0
+[2018-12-04 19:10:52 +0100] [27994] [DEBUG] Arbiter booted
+[2018-12-04 19:10:52 +0100] [27994] [INFO] Listening at: http://127.0.0.1:8000 (27994)
+[2018-12-04 19:10:52 +0100] [27994] [INFO] Using worker: sync
+[2018-12-04 19:10:52 +0100] [27997] [INFO] Booting worker with pid: 27997
+[2018-12-04 19:10:52 +0100] [27998] [INFO] Booting worker with pid: 27998
+[2018-12-04 19:10:52 +0100] [27999] [INFO] Booting worker with pid: 27999
+[2018-12-04 19:10:52 +0100] [27994] [DEBUG] 3 workers
+[2018-12-04 19:10:57 +0100] [27998] [DEBUG] POST /login
+[2018-12-04 19:11:01 +0100] [27997] [DEBUG] GET /login
+[2018-12-04 19:17:44 +0100] [27997] [DEBUG] POST /login
+[2018-12-04 19:18:23 +0100] [27998] [DEBUG] POST /login
+[2018-12-04 19:18:31 +0100] [27998] [DEBUG] POST /login
+[2018-12-04 19:22:46 +0100] [27999] [DEBUG] POST /login
+[2018-12-04 19:28:04 +0100] [27997] [DEBUG] POST /login
+[2018-12-04 19:28:53 +0100] [27997] [DEBUG] POST /login
+[2018-12-04 19:29:24 +0100] [27997] [DEBUG] GET /api_key
+[2018-12-04 19:29:26 +0100] [27997] [DEBUG] GET /services
+[2018-12-04 19:29:30 +0100] [27997] [DEBUG] GET /api_key
+[2018-12-04 19:31:18 +0100] [27997] [DEBUG] GET /api_key
+[2018-12-04 19:33:29 +0100] [27997] [DEBUG] GET /login
+[2018-12-04 19:38:50 +0100] [27999] [DEBUG] GET /login
+[2018-12-04 19:38:56 +0100] [27997] [DEBUG] GET /login
+[2018-12-04 19:39:00 +0100] [27997] [DEBUG] POST /login
+[2018-12-04 19:41:45 +0100] [27997] [DEBUG] GET /services
+[2018-12-04 19:41:48 +0100] [27997] [DEBUG] GET /api_key
+[2018-12-04 19:41:50 +0100] [27997] [DEBUG] GET /services
+[2018-12-04 19:43:32 +0100] [27999] [DEBUG] GET /services
+[2018-12-04 19:44:01 +0100] [27999] [DEBUG] GET /api_key
+[2018-12-04 19:44:01 +0100] [27998] [DEBUG] GET /api_key
+[2018-12-04 19:47:34 +0100] [27998] [DEBUG] GET /api_key
+[2018-12-04 19:50:10 +0100] [27998] [DEBUG] GET /api_key
+[2018-12-04 19:50:55 +0100] [27997] [DEBUG] GET /api_key
+[2018-12-04 19:53:31 +0100] [27998] [DEBUG] GET /api_key
+[2018-12-04 19:55:08 +0100] [27998] [DEBUG] GET /api_key
+[2018-12-04 19:55:49 +0100] [27997] [DEBUG] GET /api_key
+[2018-12-04 20:01:09 +0100] [27999] [DEBUG] GET /api_key
+[2018-12-04 20:01:16 +0100] [27999] [DEBUG] GET /api_key
+[2018-12-04 20:01:20 +0100] [27998] [DEBUG] GET /
+[2018-12-04 20:01:23 +0100] [27999] [DEBUG] GET /login
+[2018-12-04 20:01:25 +0100] [27999] [DEBUG] POST /login
+[2018-12-04 20:02:07 +0100] [27997] [DEBUG] GET /services
+[2018-12-04 20:02:10 +0100] [27997] [DEBUG] GET /api_key
+[2018-12-04 20:02:12 +0100] [27998] [DEBUG] GET /api_key
+[2018-12-04 20:02:13 +0100] [27999] [DEBUG] GET /api_key
+[2018-12-04 20:02:42 +0100] [27997] [DEBUG] GET /api_key
+[2018-12-04 20:02:46 +0100] [27999] [DEBUG] GET /
+[2018-12-04 20:02:47 +0100] [27999] [DEBUG] GET /login
+[2018-12-04 20:02:50 +0100] [27997] [DEBUG] POST /login
+[2018-12-04 20:03:37 +0100] [27997] [DEBUG] GET /
+[2018-12-04 20:03:38 +0100] [27999] [DEBUG] GET /login
+[2018-12-04 20:03:41 +0100] [27999] [DEBUG] POST /login
+[2018-12-04 20:03:49 +0100] [27999] [DEBUG] GET /
+[2018-12-04 20:04:42 +0100] [27997] [DEBUG] POST /login
+[2018-12-04 20:07:07 +0100] [27997] [DEBUG] POST /login
+[2018-12-04 20:10:04 +0100] [27999] [DEBUG] GET /api_key
+[2018-12-04 20:10:07 +0100] [27998] [DEBUG] GET /services
+[2018-12-04 20:10:10 +0100] [27998] [DEBUG] GET /api_key
+[2018-12-04 20:10:13 +0100] [27999] [DEBUG] GET /api_key
+[2018-12-04 20:16:42 +0100] [27999] [DEBUG] GET /api_key
+[2018-12-04 20:25:06 +0100] [27997] [DEBUG] GET /api_key
+[2018-12-04 20:25:31 +0100] [27997] [DEBUG] GET /api_key
+[2018-12-04 22:18:47 +0100] [27999] [DEBUG] GET /ogc
+[2018-12-04 22:18:47,233] ERROR in app: Exception on /ogc [GET]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 31, in get_service
+    parameters = url[1].split("&")
+IndexError: list index out of range
+[2018-12-04 22:33:36 +0100] [27998] [DEBUG] GET /
+[2018-12-05 10:27:32 +0100] [27998] [DEBUG] GET /
+[2018-12-05 10:27:42 +0100] [27998] [DEBUG] GET /sora/indicator
+[2018-12-05 10:27:56 +0100] [27999] [DEBUG] GET /sora/indicator
+[2018-12-05 10:27:57 +0100] [27999] [DEBUG] GET /sora/indicator
+[2018-12-05 10:28:20 +0100] [27999] [DEBUG] GET /sora/ontology
+[2018-12-05 11:50:36 +0100] [27997] [DEBUG] GET /sora/indicator
+[2018-12-05 11:55:58 +0100] [27997] [DEBUG] POST /sora/services
+[2018-12-05 11:56:01 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:02 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:03 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:04 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:06 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:07 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:08 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:10 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:11 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:12 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:56:13 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:15 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:16 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:17 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:18 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:20 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:21 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:22 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:23 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:56:25 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:26 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:56:27 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:28 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:56:30 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:56:31 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:32 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:33 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:35 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:56:36 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:37 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:39 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:40 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:41 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:42 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:44 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:45 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:56:46 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:48 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:49 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:50 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:51 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:53 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:56:54 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:56:55 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:56 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:56:58 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:56:59 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:57:00 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:57:01 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:57:11 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:57:12 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:57:13 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:57:14 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:57:16 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:57:17 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:57:18 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:57:19 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:57:21 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 11:57:22 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:57:23 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:57:24 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 11:57:26 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:57:27 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:57:28 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 11:57:30 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 12:15:02 +0100] [27999] [DEBUG] GET /api_key
+[2018-12-05 12:15:06 +0100] [27998] [DEBUG] GET /
+[2018-12-05 12:15:07 +0100] [27997] [DEBUG] GET /login
+[2018-12-05 12:15:10 +0100] [27999] [DEBUG] POST /login
+[2018-12-05 12:18:48 +0100] [27998] [DEBUG] POST /login
+[2018-12-05 12:19:05 +0100] [27997] [DEBUG] POST /login
+[2018-12-05 12:19:09 +0100] [27997] [DEBUG] GET /api_key
+[2018-12-05 12:19:11 +0100] [27998] [DEBUG] GET /api_key
+[2018-12-05 12:19:19 +0100] [27998] [DEBUG] GET /services
+[2018-12-05 12:21:10 +0100] [27999] [DEBUG] GET /services
+[2018-12-05 12:21:14 +0100] [27999] [DEBUG] GET /services
+[2018-12-05 12:21:17 +0100] [27998] [DEBUG] GET /services
+[2018-12-05 12:21:19 +0100] [27998] [DEBUG] GET /api_key
+[2018-12-05 12:21:22 +0100] [27999] [DEBUG] GET /api_key
+[2018-12-05 12:21:25 +0100] [27997] [DEBUG] GET /services
+[2018-12-05 12:32:51 +0100] [27998] [DEBUG] GET /services
+[2018-12-05 12:34:01 +0100] [27997] [DEBUG] GET /services
+[2018-12-05 12:34:05 +0100] [27999] [DEBUG] GET /api_key
+[2018-12-05 12:34:07 +0100] [27998] [DEBUG] GET /services
+[2018-12-05 12:34:17 +0100] [27998] [DEBUG] GET //ogc
+[2018-12-05 12:47:54 +0100] [27998] [DEBUG] POST /sora/services
+[2018-12-05 12:47:55 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 12:47:57 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 12:47:58 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 12:47:59 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 12:48:01 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:03:27 +0100] [27997] [DEBUG] POST /sora/services
+[2018-12-05 13:03:29 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:03:30 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:03:31 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:03:33 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:03:34 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:03:35 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:03:36 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:03:38 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:03:39 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:03:40 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:03:41 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:03:43 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:03:44 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:03:45 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:03:46 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:03:48 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:03:49 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:03:50 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:03:51 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:03:53 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:03:54 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:03:55 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:03:56 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:03:58 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:03:59 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:03:59 +0100] [27998] [DEBUG] POST /sora/services
+[2018-12-05 13:04:01 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:04:02 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:04:03 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:04:04 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:04:06 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:06:13 +0100] [27997] [DEBUG] POST /sora/services
+[2018-12-05 13:06:14 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:06:15 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:06:17 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:06:18 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:06:19 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:06:20 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:06:22 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:06:23 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:06:24 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:06:25 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:06:27 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:06:28 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:06:29 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:06:30 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:06:32 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:06:33 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:06:34 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:06:35 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:06:37 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:06:38 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:06:39 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:06:40 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:06:42 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:06:43 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:06:44 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:08:17 +0100] [27999] [DEBUG] POST /sora/services
+[2018-12-05 13:08:19 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:08:20 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:08:21 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 13:08:23 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 13:08:24 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 13:46:44 +0100] [27998] [DEBUG] GET /services
+[2018-12-05 13:46:48 +0100] [27998] [DEBUG] GET /
+[2018-12-05 13:46:50 +0100] [27999] [DEBUG] GET /login
+[2018-12-05 13:46:53 +0100] [27999] [DEBUG] POST /login
+[2018-12-05 13:46:56 +0100] [27997] [DEBUG] GET /services
+[2018-12-05 13:49:14 +0100] [27997] [DEBUG] GET /api_key
+[2018-12-05 13:50:04 +0100] [27997] [DEBUG] GET /api_key
+[2018-12-05 13:54:51 +0100] [27998] [DEBUG] GET /api_key
+[2018-12-05 13:56:30 +0100] [27999] [DEBUG] GET /api_key
+[2018-12-05 13:56:54 +0100] [27999] [DEBUG] GET /api_key
+[2018-12-05 14:20:04 +0100] [27997] [DEBUG] GET /
+[2018-12-05 14:51:22 +0100] [27999] [DEBUG] POST /sora/services
+[2018-12-05 14:51:24 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 14:51:25 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:51:26 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 14:51:28 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:51:29 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 14:51:30 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 14:51:31 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 14:51:33 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 14:51:34 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:51:35 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 14:51:36 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:51:38 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:51:39 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:51:40 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:51:42 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:51:43 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:51:45 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 14:51:46 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:51:47 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:51:48 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:51:50 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:51:51 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:51:52 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 14:51:53 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:55:30 +0100] [27998] [DEBUG] POST /sora/services
+[2018-12-05 14:55:31 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:55:33 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 14:55:34 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:55:35 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:55:36 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:55:38 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 14:55:39 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:55:40 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 14:55:41 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 14:55:43 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 14:55:44 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:55:45 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:55:46 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:55:48 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:55:49 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:55:50 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:55:51 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:55:53 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:55:54 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:55:55 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:55:57 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:55:58 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:55:59 +0100] [27998] [DEBUG] GET /sora/services
+[2018-12-05 14:56:00 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:56:01 +0100] [27999] [DEBUG] GET /sora/services
+[2018-12-05 14:56:03 +0100] [27997] [DEBUG] GET /sora/services
+[2018-12-05 15:13:38 +0100] [27997] [DEBUG] GET /api_key
+[2018-12-05 15:13:57 +0100] [27997] [DEBUG] GET /logout
+[2018-12-05 15:13:57 +0100] [27997] [DEBUG] GET /
+[2018-12-05 15:14:00 +0100] [27997] [DEBUG] GET /login
+[2018-12-05 15:14:02 +0100] [27998] [DEBUG] POST /login
+[2018-12-05 15:24:02 +0100] [27998] [DEBUG] POST /login
+[2018-12-05 15:24:22 +0100] [27997] [DEBUG] POST /login
+[2018-12-05 15:24:23 +0100] [27997] [DEBUG] POST /login
+[2018-12-05 15:24:40 +0100] [27999] [DEBUG] GET /services
+[2018-12-05 15:24:42 +0100] [27999] [DEBUG] GET /api_key
+[2018-12-05 15:25:42 +0100] [27994] [INFO] Handling signal: term
+[2018-12-05 15:25:42 +0100] [27998] [INFO] Worker exiting (pid: 27998)
+[2018-12-05 15:25:42 +0100] [27999] [INFO] Worker exiting (pid: 27999)
+[2018-12-05 15:25:42 +0100] [27997] [INFO] Worker exiting (pid: 27997)
+[2018-12-05 15:25:42 +0100] [27994] [INFO] Shutting down: Master
+[2018-12-05 15:25:54 +0100] [13450] [DEBUG] Current configuration:
+  default_proc_name: app:app
+  spew: False
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f5a9eb71f28>
+  pre_request: <function PreRequest.pre_request at 0x7f5a9e8ed1e0>
+  worker_class: sync
+  worker_exit: <function WorkerExit.worker_exit at 0x7f5a9e8ed488>
+  raw_env: []
+  pre_exec: <function PreExec.pre_exec at 0x7f5a9e8ed0d0>
+  check_config: False
+  proc_name: None
+  keepalive: 2
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  reload: False
+  logconfig: None
+  workers: 3
+  daemon: True
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  umask: 0
+  tmp_upload_dir: None
+  paste: None
+  certfile: None
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  group: 100
+  initgroups: False
+  disable_redirect_access_to_syslog: False
+  loglevel: debug
+  capture_output: False
+  when_ready: <function WhenReady.when_ready at 0x7f5a9eb719d8>
+  chdir: /srv/www/htdocs/monitor_api
+  ssl_version: 2
+  max_requests: 0
+  on_reload: <function OnReload.on_reload at 0x7f5a9eb718c8>
+  timeout: 30
+  raw_paste_global_conf: []
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  proxy_allow_ips: ['127.0.0.1']
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  ciphers: TLSv1
+  statsd_prefix: 
+  max_requests_jitter: 0
+  sendfile: None
+  forwarded_allow_ips: ['127.0.0.1']
+  child_exit: <function ChildExit.child_exit at 0x7f5a9e8ed378>
+  pythonpath: None
+  on_exit: <function OnExit.on_exit at 0x7f5a9e8ed6a8>
+  reload_engine: auto
+  graceful_timeout: 30
+  pre_fork: <function Prefork.pre_fork at 0x7f5a9eb71ae8>
+  limit_request_line: 8190
+  keyfile: None
+  logger_class: gunicorn.glogging.Logger
+  post_fork: <function Postfork.post_fork at 0x7f5a9eb71bf8>
+  preload_app: False
+  on_starting: <function OnStarting.on_starting at 0x7f5a9eb717b8>
+  reuse_port: False
+  proxy_protocol: False
+  config: ./gunicorn.conf
+  syslog_addr: udp://localhost:514
+  syslog: False
+  enable_stdio_inheritance: False
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f5a9eb71d08>
+  worker_int: <function WorkerInt.worker_int at 0x7f5a9eb71e18>
+  threads: 1
+  worker_tmp_dir: None
+  secure_scheme_headers: {'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https'}
+  ca_certs: None
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f5a9e8ed598>
+  logconfig_dict: {}
+  syslog_prefix: None
+  syslog_facility: user
+  cert_reqs: 0
+  user: 1000
+  post_request: <function PostRequest.post_request at 0x7f5a9e8ed268>
+  worker_connections: 1000
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  statsd_host: None
+  reload_extra_files: []
+[2018-12-05 15:25:54 +0100] [13450] [INFO] Starting gunicorn 19.9.0
+[2018-12-05 15:25:55 +0100] [13450] [DEBUG] Arbiter booted
+[2018-12-05 15:25:55 +0100] [13450] [INFO] Listening at: http://127.0.0.1:8000 (13450)
+[2018-12-05 15:25:55 +0100] [13450] [INFO] Using worker: sync
+[2018-12-05 15:25:55 +0100] [13453] [INFO] Booting worker with pid: 13453
+[2018-12-05 15:25:55 +0100] [13454] [INFO] Booting worker with pid: 13454
+[2018-12-05 15:25:55 +0100] [13455] [INFO] Booting worker with pid: 13455
+[2018-12-05 15:25:55 +0100] [13450] [DEBUG] 3 workers
+[2018-12-05 15:26:01 +0100] [13454] [DEBUG] GET /api_key
+[2018-12-05 15:28:18 +0100] [13455] [DEBUG] GET /api_key
+[2018-12-05 15:29:12 +0100] [13455] [DEBUG] GET /api_key
+[2018-12-05 15:29:23 +0100] [13455] [DEBUG] GET /api_key
+[2018-12-05 15:29:26 +0100] [13455] [DEBUG] GET /
+[2018-12-05 15:29:28 +0100] [13453] [DEBUG] GET /login
+[2018-12-05 15:29:31 +0100] [13454] [DEBUG] POST /login
+[2018-12-05 15:30:26 +0100] [13450] [INFO] Handling signal: term
+[2018-12-05 15:30:26 +0100] [13455] [INFO] Worker exiting (pid: 13455)
+[2018-12-05 15:30:26 +0100] [13454] [INFO] Worker exiting (pid: 13454)
+[2018-12-05 15:30:26 +0100] [13453] [INFO] Worker exiting (pid: 13453)
+[2018-12-05 15:30:26 +0100] [13450] [INFO] Shutting down: Master
+[2018-12-05 15:30:29 +0100] [13723] [DEBUG] Current configuration:
+  initgroups: False
+  disable_redirect_access_to_syslog: False
+  worker_int: <function WorkerInt.worker_int at 0x7f5c6af66e18>
+  pre_exec: <function PreExec.pre_exec at 0x7f5c6ace20d0>
+  syslog_facility: user
+  worker_connections: 1000
+  preload_app: False
+  cert_reqs: 0
+  pre_fork: <function Prefork.pre_fork at 0x7f5c6af66ae8>
+  check_config: False
+  raw_env: []
+  enable_stdio_inheritance: False
+  user: 1000
+  tmp_upload_dir: None
+  pythonpath: None
+  paste: None
+  ssl_version: 2
+  ca_certs: None
+  do_handshake_on_connect: False
+  threads: 1
+  graceful_timeout: 30
+  logconfig: None
+  raw_paste_global_conf: []
+  limit_request_line: 8190
+  statsd_host: None
+  max_requests_jitter: 0
+  keepalive: 2
+  when_ready: <function WhenReady.when_ready at 0x7f5c6af669d8>
+  suppress_ragged_eofs: True
+  capture_output: False
+  certfile: None
+  on_reload: <function OnReload.on_reload at 0x7f5c6af668c8>
+  limit_request_fields: 100
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  statsd_prefix: 
+  ciphers: TLSv1
+  worker_tmp_dir: None
+  reload_extra_files: []
+  chdir: /srv/www/htdocs/monitor_api
+  secure_scheme_headers: {'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTOCOL': 'ssl'}
+  keyfile: None
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f5c6af66d08>
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  post_fork: <function Postfork.post_fork at 0x7f5c6af66bf8>
+  daemon: True
+  post_request: <function PostRequest.post_request at 0x7f5c6ace2268>
+  umask: 0
+  limit_request_field_size: 8190
+  worker_class: sync
+  config: ./gunicorn.conf
+  bind: ['127.0.0.1:8000']
+  max_requests: 0
+  sendfile: None
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  proxy_protocol: False
+  on_starting: <function OnStarting.on_starting at 0x7f5c6af667b8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f5c6ace2488>
+  reload: False
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f5c6af66f28>
+  on_exit: <function OnExit.on_exit at 0x7f5c6ace26a8>
+  reload_engine: auto
+  reuse_port: False
+  group: 100
+  timeout: 30
+  proc_name: None
+  default_proc_name: app:app
+  loglevel: debug
+  logger_class: gunicorn.glogging.Logger
+  syslog: False
+  workers: 3
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function PreRequest.pre_request at 0x7f5c6ace21e0>
+  child_exit: <function ChildExit.child_exit at 0x7f5c6ace2378>
+  backlog: 2048
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f5c6ace2598>
+  forwarded_allow_ips: ['127.0.0.1']
+  spew: False
+  logconfig_dict: {}
+[2018-12-05 15:30:29 +0100] [13723] [INFO] Starting gunicorn 19.9.0
+[2018-12-05 15:30:29 +0100] [13723] [DEBUG] Arbiter booted
+[2018-12-05 15:30:29 +0100] [13723] [INFO] Listening at: http://127.0.0.1:8000 (13723)
+[2018-12-05 15:30:29 +0100] [13723] [INFO] Using worker: sync
+[2018-12-05 15:30:29 +0100] [13726] [INFO] Booting worker with pid: 13726
+[2018-12-05 15:30:29 +0100] [13727] [INFO] Booting worker with pid: 13727
+[2018-12-05 15:30:29 +0100] [13728] [INFO] Booting worker with pid: 13728
+[2018-12-05 15:30:29 +0100] [13723] [DEBUG] 3 workers
+[2018-12-05 15:30:33 +0100] [13726] [DEBUG] POST /login
+[2018-12-05 15:31:16 +0100] [13726] [DEBUG] POST /login
+[2018-12-05 15:34:38 +0100] [13726] [DEBUG] POST /login
+[2018-12-05 15:34:49 +0100] [13726] [DEBUG] POST /login
+[2018-12-05 15:35:04 +0100] [13727] [DEBUG] POST /login
+[2018-12-05 15:35:06 +0100] [13727] [DEBUG] POST /login
+[2018-12-05 15:39:14 +0100] [13727] [DEBUG] POST /login
+[2018-12-05 15:39:33 +0100] [13727] [DEBUG] GET /services
+[2018-12-05 15:39:35 +0100] [13726] [DEBUG] GET /api_key
+[2018-12-05 15:40:09 +0100] [13726] [DEBUG] GET /api_key
+[2018-12-05 15:40:16 +0100] [13723] [INFO] Handling signal: term
+[2018-12-05 15:40:16 +0100] [13727] [INFO] Worker exiting (pid: 13727)
+[2018-12-05 15:40:16 +0100] [13726] [INFO] Worker exiting (pid: 13726)
+[2018-12-05 15:40:16 +0100] [13728] [INFO] Worker exiting (pid: 13728)
+[2018-12-05 15:40:16 +0100] [13723] [INFO] Shutting down: Master
+[2018-12-05 15:40:19 +0100] [13931] [DEBUG] Current configuration:
+  max_requests_jitter: 0
+  bind: ['127.0.0.1:8000']
+  worker_class: sync
+  syslog_prefix: None
+  pre_exec: <function PreExec.pre_exec at 0x7f92a24820d0>
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  timeout: 30
+  on_starting: <function OnStarting.on_starting at 0x7f92a27067b8>
+  reuse_port: False
+  user: 1000
+  limit_request_line: 8190
+  worker_tmp_dir: None
+  post_request: <function PostRequest.post_request at 0x7f92a2482268>
+  cert_reqs: 0
+  sendfile: None
+  limit_request_fields: 100
+  do_handshake_on_connect: False
+  chdir: /srv/www/htdocs/monitor_api
+  group: 100
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  proxy_protocol: False
+  loglevel: debug
+  reload: False
+  threads: 1
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f92a2706d08>
+  reload_extra_files: []
+  child_exit: <function ChildExit.child_exit at 0x7f92a2482378>
+  preload_app: False
+  proxy_allow_ips: ['127.0.0.1']
+  proc_name: None
+  capture_output: False
+  enable_stdio_inheritance: False
+  worker_int: <function WorkerInt.worker_int at 0x7f92a2706e18>
+  paste: None
+  raw_paste_global_conf: []
+  certfile: None
+  ca_certs: None
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f92a2706f28>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f92a2482598>
+  logger_class: gunicorn.glogging.Logger
+  logconfig_dict: {}
+  max_requests: 0
+  pre_request: <function PreRequest.pre_request at 0x7f92a24821e0>
+  daemon: True
+  worker_exit: <function WorkerExit.worker_exit at 0x7f92a2482488>
+  backlog: 2048
+  default_proc_name: app:app
+  worker_connections: 1000
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  statsd_prefix: 
+  reload_engine: auto
+  raw_env: []
+  pre_fork: <function Prefork.pre_fork at 0x7f92a2706ae8>
+  post_fork: <function Postfork.post_fork at 0x7f92a2706bf8>
+  syslog_addr: udp://localhost:514
+  statsd_host: None
+  limit_request_field_size: 8190
+  on_reload: <function OnReload.on_reload at 0x7f92a27068c8>
+  on_exit: <function OnExit.on_exit at 0x7f92a24826a8>
+  syslog: False
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTO': 'https'}
+  spew: False
+  workers: 3
+  keyfile: None
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  ciphers: TLSv1
+  when_ready: <function WhenReady.when_ready at 0x7f92a27069d8>
+  config: ./gunicorn.conf
+  graceful_timeout: 30
+  keepalive: 2
+  check_config: False
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  syslog_facility: user
+  forwarded_allow_ips: ['127.0.0.1']
+  pythonpath: None
+  logconfig: None
+[2018-12-05 15:40:19 +0100] [13931] [INFO] Starting gunicorn 19.9.0
+[2018-12-05 15:40:19 +0100] [13931] [DEBUG] Arbiter booted
+[2018-12-05 15:40:19 +0100] [13931] [INFO] Listening at: http://127.0.0.1:8000 (13931)
+[2018-12-05 15:40:19 +0100] [13931] [INFO] Using worker: sync
+[2018-12-05 15:40:19 +0100] [13934] [INFO] Booting worker with pid: 13934
+[2018-12-05 15:40:19 +0100] [13935] [INFO] Booting worker with pid: 13935
+[2018-12-05 15:40:19 +0100] [13936] [INFO] Booting worker with pid: 13936
+[2018-12-05 15:40:19 +0100] [13931] [DEBUG] 3 workers
+[2018-12-05 15:40:22 +0100] [13936] [DEBUG] GET /api_key
+[2018-12-05 15:40:26 +0100] [13935] [DEBUG] GET /
+[2018-12-05 15:40:27 +0100] [13936] [DEBUG] GET /login
+[2018-12-05 15:40:31 +0100] [13936] [DEBUG] POST /login
+[2018-12-05 15:40:40 +0100] [13934] [DEBUG] POST /login
+[2018-12-05 15:40:42 +0100] [13934] [DEBUG] GET /services
+[2018-12-05 15:40:44 +0100] [13936] [DEBUG] GET /api_key
+[2018-12-05 15:40:48 +0100] [13936] [DEBUG] GET /services
+[2018-12-05 15:40:51 +0100] [13936] [DEBUG] GET /api_key
+[2018-12-05 15:41:47 +0100] [13935] [DEBUG] GET /services
+[2018-12-05 15:42:12 +0100] [13935] [DEBUG] GET /api_key
+[2018-12-05 15:43:06 +0100] [13936] [DEBUG] GET /api_key
+[2018-12-05 15:43:09 +0100] [13936] [DEBUG] GET /services
+[2018-12-05 15:43:11 +0100] [13936] [DEBUG] GET /api_key
+[2018-12-05 15:47:42 +0100] [13936] [DEBUG] GET /api_key
+[2018-12-05 15:48:33 +0100] [13936] [DEBUG] GET /
+[2018-12-05 15:49:08 +0100] [13936] [DEBUG] GET /api_key
+[2018-12-05 15:49:57 +0100] [13934] [DEBUG] GET /api_key
+[2018-12-05 15:51:26 +0100] [13935] [DEBUG] GET /api_key
+[2018-12-05 15:54:14 +0100] [13934] [DEBUG] GET /api_key
+[2018-12-05 15:55:00 +0100] [13934] [DEBUG] GET /api_key
+[2018-12-05 15:57:48 +0100] [13934] [DEBUG] GET /api_key
+[2018-12-05 16:00:01 +0100] [13934] [DEBUG] GET /api_key
+[2018-12-05 16:00:17 +0100] [13934] [DEBUG] GET /api_key
+[2018-12-05 16:00:20 +0100] [13936] [DEBUG] GET /
+[2018-12-05 16:00:21 +0100] [13935] [DEBUG] GET /login
+[2018-12-05 16:00:24 +0100] [13935] [DEBUG] POST /login
+[2018-12-05 16:00:50 +0100] [13936] [DEBUG] GET /services
+[2018-12-05 16:00:51 +0100] [13935] [DEBUG] GET /api_key
+[2018-12-05 16:01:42 +0100] [13936] [DEBUG] GET /api_key
+[2018-12-05 16:04:04 +0100] [13935] [DEBUG] GET /api_key
+[2018-12-05 16:04:30 +0100] [13934] [DEBUG] GET /api_key
+[2018-12-05 16:06:15 +0100] [13934] [DEBUG] GET /api_key
+[2018-12-05 16:08:25 +0100] [13935] [DEBUG] GET /api_key
+[2018-12-05 16:14:04 +0100] [13935] [DEBUG] GET /api_key
+[2018-12-05 16:14:59 +0100] [13935] [DEBUG] GET /api_key
+[2018-12-05 16:29:04 +0100] [13936] [DEBUG] GET /api_key
+[2018-12-05 16:29:42 +0100] [13934] [DEBUG] GET /api_key
+[2018-12-05 16:31:19 +0100] [13935] [DEBUG] GET /api_key
+[2018-12-05 16:32:05 +0100] [13935] [DEBUG] GET /api_key
+[2018-12-05 16:32:46 +0100] [13934] [DEBUG] GET /api_key
+[2018-12-05 16:33:18 +0100] [13936] [DEBUG] GET /api_key
+[2018-12-05 16:33:29 +0100] [13934] [DEBUG] GET /logout
+[2018-12-05 16:33:29 +0100] [13934] [DEBUG] GET /
+[2018-12-05 16:33:31 +0100] [13936] [DEBUG] GET /signup
+[2018-12-05 16:33:48 +0100] [13934] [DEBUG] POST /signup
+[2018-12-05 16:33:48,160] ERROR in app: Exception on /signup [POST]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 96, in signup
+    new_user = USER(username=username, email=email, password=hashed_password, lastname=form.lastname.data, firstname=form.firstname.data, facility=form.facility.data)
+TypeError: __init__() missing 1 required positional argument: 'access'
+[2018-12-05 16:34:19 +0100] [13934] [DEBUG] POST /signup
+[2018-12-05 16:34:19,762] ERROR in app: Exception on /signup [POST]
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 96, in signup
+    new_user = USER(username=username, email=email, password=hashed_password, lastname=form.lastname.data, firstname=form.firstname.data, facility=form.facility.data)
+TypeError: __init__() missing 1 required positional argument: 'access'
+[2018-12-05 16:38:01 +0100] [13931] [INFO] Handling signal: term
+[2018-12-05 16:38:01 +0100] [13936] [INFO] Worker exiting (pid: 13936)
+[2018-12-05 16:38:01 +0100] [13934] [INFO] Worker exiting (pid: 13934)
+[2018-12-05 16:38:01 +0100] [13935] [INFO] Worker exiting (pid: 13935)
+[2018-12-05 16:38:01 +0100] [13931] [INFO] Shutting down: Master
+[2018-12-05 16:38:08 +0100] [15690] [DEBUG] Current configuration:
+  pre_fork: <function Prefork.pre_fork at 0x7f8bcfa97ae8>
+  pythonpath: None
+  cert_reqs: 0
+  preload_app: False
+  reuse_port: False
+  proxy_protocol: False
+  worker_int: <function WorkerInt.worker_int at 0x7f8bcfa97e18>
+  ca_certs: None
+  chdir: /srv/www/htdocs/monitor_api
+  worker_connections: 1000
+  pre_exec: <function PreExec.pre_exec at 0x7f8bcf8130d0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f8bcf813488>
+  capture_output: False
+  logconfig_dict: {}
+  statsd_host: None
+  limit_request_line: 8190
+  sendfile: None
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  pre_request: <function PreRequest.pre_request at 0x7f8bcf8131e0>
+  logger_class: gunicorn.glogging.Logger
+  reload_extra_files: []
+  graceful_timeout: 30
+  limit_request_fields: 100
+  suppress_ragged_eofs: True
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f8bcf813598>
+  syslog_addr: udp://localhost:514
+  syslog: False
+  keyfile: None
+  group: 100
+  initgroups: False
+  paste: None
+  proxy_allow_ips: ['127.0.0.1']
+  raw_paste_global_conf: []
+  ssl_version: 2
+  max_requests: 0
+  limit_request_field_size: 8190
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f8bcfa97d08>
+  loglevel: debug
+  statsd_prefix: 
+  timeout: 30
+  ciphers: TLSv1
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f8bcfa97f28>
+  reload_engine: auto
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  umask: 0
+  reload: False
+  proc_name: None
+  tmp_upload_dir: None
+  forwarded_allow_ips: ['127.0.0.1']
+  do_handshake_on_connect: False
+  workers: 3
+  keepalive: 2
+  config: ./gunicorn.conf
+  worker_class: sync
+  child_exit: <function ChildExit.child_exit at 0x7f8bcf813378>
+  max_requests_jitter: 0
+  default_proc_name: app:app
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  disable_redirect_access_to_syslog: False
+  logconfig: None
+  syslog_facility: user
+  secure_scheme_headers: {'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https'}
+  certfile: None
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  spew: False
+  on_starting: <function OnStarting.on_starting at 0x7f8bcfa977b8>
+  when_ready: <function WhenReady.when_ready at 0x7f8bcfa979d8>
+  post_fork: <function Postfork.post_fork at 0x7f8bcfa97bf8>
+  on_exit: <function OnExit.on_exit at 0x7f8bcf8136a8>
+  check_config: False
+  on_reload: <function OnReload.on_reload at 0x7f8bcfa978c8>
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  syslog_prefix: None
+  threads: 1
+  post_request: <function PostRequest.post_request at 0x7f8bcf813268>
+  daemon: True
+  raw_env: []
+  worker_tmp_dir: None
+  user: 1000
+  enable_stdio_inheritance: False
+[2018-12-05 16:38:08 +0100] [15690] [INFO] Starting gunicorn 19.9.0
+[2018-12-05 16:38:08 +0100] [15690] [DEBUG] Arbiter booted
+[2018-12-05 16:38:08 +0100] [15690] [INFO] Listening at: http://127.0.0.1:8000 (15690)
+[2018-12-05 16:38:08 +0100] [15690] [INFO] Using worker: sync
+[2018-12-05 16:38:09 +0100] [15693] [INFO] Booting worker with pid: 15693
+[2018-12-05 16:38:09 +0100] [15694] [INFO] Booting worker with pid: 15694
+[2018-12-05 16:38:09 +0100] [15695] [INFO] Booting worker with pid: 15695
+[2018-12-05 16:38:09 +0100] [15690] [DEBUG] 3 workers
+[2018-12-05 16:38:16 +0100] [15694] [DEBUG] GET /
+[2018-12-05 16:38:18 +0100] [15693] [DEBUG] GET /signup
+[2018-12-05 16:38:36 +0100] [15693] [DEBUG] POST /signup
+[2018-12-05 16:38:48 +0100] [15693] [DEBUG] GET /signup
+[2018-12-05 16:39:15 +0100] [15690] [INFO] Handling signal: term
+[2018-12-05 16:39:15 +0100] [15693] [INFO] Worker exiting (pid: 15693)
+[2018-12-05 16:39:15 +0100] [15694] [INFO] Worker exiting (pid: 15694)
+[2018-12-05 16:39:15 +0100] [15695] [INFO] Worker exiting (pid: 15695)
+[2018-12-05 16:39:15 +0100] [15690] [INFO] Shutting down: Master
+[2018-12-05 16:39:42 +0100] [15807] [DEBUG] Current configuration:
+  syslog_prefix: None
+  max_requests_jitter: 0
+  group: 100
+  secure_scheme_headers: {'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https'}
+  config: ./gunicorn.conf
+  disable_redirect_access_to_syslog: False
+  default_proc_name: app:app
+  check_config: False
+  syslog_facility: user
+  raw_env: []
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7ff64265ed08>
+  reload: False
+  limit_request_line: 8190
+  user: 1000
+  ciphers: TLSv1
+  syslog_addr: udp://localhost:514
+  worker_class: sync
+  graceful_timeout: 30
+  limit_request_fields: 100
+  sendfile: None
+  forwarded_allow_ips: ['127.0.0.1']
+  reload_engine: auto
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  loglevel: debug
+  logconfig_dict: {}
+  syslog: False
+  statsd_host: None
+  ca_certs: None
+  on_reload: <function OnReload.on_reload at 0x7ff64265e8c8>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7ff64265ef28>
+  statsd_prefix: 
+  spew: False
+  tmp_upload_dir: None
+  pythonpath: None
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  worker_int: <function WorkerInt.worker_int at 0x7ff64265ee18>
+  child_exit: <function ChildExit.child_exit at 0x7ff6423da378>
+  worker_exit: <function WorkerExit.worker_exit at 0x7ff6423da488>
+  keyfile: None
+  timeout: 30
+  proc_name: None
+  reuse_port: False
+  workers: 3
+  on_starting: <function OnStarting.on_starting at 0x7ff64265e7b8>
+  when_ready: <function WhenReady.when_ready at 0x7ff64265e9d8>
+  pre_fork: <function Prefork.pre_fork at 0x7ff64265eae8>
+  post_fork: <function Postfork.post_fork at 0x7ff64265ebf8>
+  post_request: <function PostRequest.post_request at 0x7ff6423da268>
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  suppress_ragged_eofs: True
+  preload_app: False
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  worker_tmp_dir: None
+  paste: None
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7ff6423da598>
+  on_exit: <function OnExit.on_exit at 0x7ff6423da6a8>
+  raw_paste_global_conf: []
+  cert_reqs: 0
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  logger_class: gunicorn.glogging.Logger
+  enable_stdio_inheritance: False
+  initgroups: False
+  do_handshake_on_connect: False
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  capture_output: False
+  logconfig: None
+  ssl_version: 2
+  pre_exec: <function PreExec.pre_exec at 0x7ff6423da0d0>
+  pre_request: <function PreRequest.pre_request at 0x7ff6423da1e0>
+  certfile: None
+  limit_request_field_size: 8190
+  chdir: /srv/www/htdocs/monitor_api
+  daemon: True
+  umask: 0
+  keepalive: 2
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  reload_extra_files: []
+[2018-12-05 16:39:42 +0100] [15807] [INFO] Starting gunicorn 19.9.0
+[2018-12-05 16:39:42 +0100] [15807] [DEBUG] Arbiter booted
+[2018-12-05 16:39:42 +0100] [15807] [INFO] Listening at: http://127.0.0.1:8000 (15807)
+[2018-12-05 16:39:42 +0100] [15807] [INFO] Using worker: sync
+[2018-12-05 16:39:42 +0100] [15810] [INFO] Booting worker with pid: 15810
+[2018-12-05 16:39:42 +0100] [15811] [INFO] Booting worker with pid: 15811
+[2018-12-05 16:39:42 +0100] [15807] [DEBUG] 3 workers
+[2018-12-05 16:39:42 +0100] [15812] [INFO] Booting worker with pid: 15812
+[2018-12-05 16:39:45 +0100] [15810] [DEBUG] GET /
+[2018-12-05 16:39:50 +0100] [15810] [DEBUG] GET /fp/
+[2018-12-05 16:39:54 +0100] [15812] [DEBUG] GET /fp/
+[2018-12-05 16:40:09 +0100] [15811] [DEBUG] GET /
+[2018-12-05 16:40:12 +0100] [15811] [DEBUG] GET /signup
+[2018-12-05 16:40:23 +0100] [15810] [DEBUG] POST /signup
+[2018-12-05 16:41:01 +0100] [15811] [DEBUG] POST /signup
+[2018-12-05 16:41:40 +0100] [15812] [DEBUG] POST /signup
+[2018-12-05 16:41:51 +0100] [15811] [DEBUG] GET /login
+[2018-12-05 16:41:54 +0100] [15810] [DEBUG] GET /login
+[2018-12-05 16:42:06 +0100] [15812] [DEBUG] GET /login
+[2018-12-05 16:42:14 +0100] [15811] [DEBUG] POST /login
+[2018-12-05 16:42:19 +0100] [15812] [DEBUG] POST /login
+[2018-12-05 16:42:23 +0100] [15812] [DEBUG] POST /login
+[2018-12-05 16:42:29 +0100] [15812] [DEBUG] POST /login
+[2018-12-05 16:42:55 +0100] [15811] [DEBUG] GET /
+[2018-12-05 16:42:57 +0100] [15810] [DEBUG] GET /login
+[2018-12-05 16:44:19 +0100] [15807] [INFO] Handling signal: term
+[2018-12-05 16:44:19 +0100] [15810] [INFO] Worker exiting (pid: 15810)
+[2018-12-05 16:44:19 +0100] [15811] [INFO] Worker exiting (pid: 15811)
+[2018-12-05 16:44:19 +0100] [15812] [INFO] Worker exiting (pid: 15812)
+[2018-12-05 16:44:20 +0100] [15807] [INFO] Shutting down: Master
+[2018-12-05 16:44:44 +0100] [16027] [DEBUG] Current configuration:
+  proxy_allow_ips: ['127.0.0.1']
+  ciphers: TLSv1
+  proxy_protocol: False
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fe54bbc2598>
+  enable_stdio_inheritance: False
+  reuse_port: False
+  keepalive: 2
+  logconfig_dict: {}
+  user: 1000
+  backlog: 2048
+  post_fork: <function Postfork.post_fork at 0x7fe54be46bf8>
+  limit_request_line: 8190
+  spew: False
+  preload_app: False
+  on_starting: <function OnStarting.on_starting at 0x7fe54be467b8>
+  on_reload: <function OnReload.on_reload at 0x7fe54be468c8>
+  child_exit: <function ChildExit.child_exit at 0x7fe54bbc2378>
+  certfile: None
+  limit_request_field_size: 8190
+  sendfile: None
+  group: 100
+  pythonpath: None
+  workers: 3
+  worker_class: sync
+  config: ./gunicorn.conf
+  syslog_facility: user
+  threads: 1
+  worker_connections: 1000
+  default_proc_name: app:app
+  ca_certs: None
+  raw_paste_global_conf: []
+  do_handshake_on_connect: False
+  reload_engine: auto
+  timeout: 30
+  keyfile: None
+  disable_redirect_access_to_syslog: False
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  raw_env: []
+  when_ready: <function WhenReady.when_ready at 0x7fe54be469d8>
+  proc_name: None
+  pre_exec: <function PreExec.pre_exec at 0x7fe54bbc20d0>
+  syslog: False
+  daemon: True
+  cert_reqs: 0
+  max_requests_jitter: 0
+  logconfig: None
+  bind: ['127.0.0.1:8000']
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fe54be46f28>
+  pre_request: <function PreRequest.pre_request at 0x7fe54bbc21e0>
+  post_request: <function PostRequest.post_request at 0x7fe54bbc2268>
+  chdir: /srv/www/htdocs/monitor_api
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  worker_tmp_dir: None
+  reload: False
+  graceful_timeout: 30
+  syslog_prefix: None
+  initgroups: False
+  ssl_version: 2
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  reload_extra_files: []
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  max_requests: 0
+  umask: 0
+  statsd_host: None
+  limit_request_fields: 100
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fe54be46d08>
+  on_exit: <function OnExit.on_exit at 0x7fe54bbc26a8>
+  loglevel: debug
+  syslog_addr: udp://localhost:514
+  tmp_upload_dir: None
+  paste: None
+  statsd_prefix: 
+  pre_fork: <function Prefork.pre_fork at 0x7fe54be46ae8>
+  worker_int: <function WorkerInt.worker_int at 0x7fe54be46e18>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fe54bbc2488>
+  check_config: False
+  secure_scheme_headers: {'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTOCOL': 'ssl'}
+  forwarded_allow_ips: ['127.0.0.1']
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  suppress_ragged_eofs: True
+[2018-12-05 16:44:44 +0100] [16027] [INFO] Starting gunicorn 19.9.0
+[2018-12-05 16:44:44 +0100] [16027] [DEBUG] Arbiter booted
+[2018-12-05 16:44:44 +0100] [16027] [INFO] Listening at: http://127.0.0.1:8000 (16027)
+[2018-12-05 16:44:44 +0100] [16027] [INFO] Using worker: sync
+[2018-12-05 16:44:44 +0100] [16030] [INFO] Booting worker with pid: 16030
+[2018-12-05 16:44:44 +0100] [16031] [INFO] Booting worker with pid: 16031
+[2018-12-05 16:44:44 +0100] [16032] [INFO] Booting worker with pid: 16032
+[2018-12-05 16:44:44 +0100] [16027] [DEBUG] 3 workers
+[2018-12-05 16:44:45 +0100] [16030] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/srv/www/htdocs/monitor_api/app/__init__.py", line 19, in <module>
+    from app.ogc import ogc
+  File "/srv/www/htdocs/monitor_api/app/ogc/__init__.py", line 5, in <module>
+    from . import routes
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 19, in <module>
+    @ogc.route('/')
+NameError: name 'ogc' is not defined
+[2018-12-05 16:44:45 +0100] [16030] [INFO] Worker exiting (pid: 16030)
+[2018-12-05 16:44:45 +0100] [16031] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/srv/www/htdocs/monitor_api/app/__init__.py", line 19, in <module>
+    from app.ogc import ogc
+  File "/srv/www/htdocs/monitor_api/app/ogc/__init__.py", line 5, in <module>
+    from . import routes
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 19, in <module>
+    @ogc.route('/')
+NameError: name 'ogc' is not defined
+[2018-12-05 16:44:45 +0100] [16031] [INFO] Worker exiting (pid: 16031)
+[2018-12-05 16:44:45 +0100] [16032] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/srv/www/htdocs/monitor_api/python3-venv/lib64/python3.4/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/srv/www/htdocs/monitor_api/app/__init__.py", line 19, in <module>
+    from app.ogc import ogc
+  File "/srv/www/htdocs/monitor_api/app/ogc/__init__.py", line 5, in <module>
+    from . import routes
+  File "/srv/www/htdocs/monitor_api/app/ogc/routes.py", line 19, in <module>
+    @ogc.route('/')
+NameError: name 'ogc' is not defined
+[2018-12-05 16:44:45 +0100] [16032] [INFO] Worker exiting (pid: 16032)
+[2018-12-05 16:44:45 +0100] [16027] [INFO] Shutting down: Master
+[2018-12-05 16:44:45 +0100] [16027] [INFO] Reason: Worker failed to boot.
+[2018-12-05 16:45:32 +0100] [16165] [DEBUG] Current configuration:
+  secure_scheme_headers: {'X-FORWARDED-SSL': 'on', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-PROTOCOL': 'ssl'}
+  check_config: False
+  disable_redirect_access_to_syslog: False
+  syslog_facility: user
+  timeout: 30
+  reload_engine: auto
+  raw_env: []
+  user: 1000
+  syslog_prefix: None
+  worker_int: <function WorkerInt.worker_int at 0x7ff1bb2cfe18>
+  reload: False
+  chdir: /srv/www/htdocs/monitor_api
+  ciphers: TLSv1
+  group: 100
+  when_ready: <function WhenReady.when_ready at 0x7ff1bb2cf9d8>
+  pre_fork: <function Prefork.pre_fork at 0x7ff1bb2cfae8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7ff1bb04b488>
+  logconfig_dict: {}
+  enable_stdio_inheritance: False
+  statsd_prefix: 
+  on_reload: <function OnReload.on_reload at 0x7ff1bb2cf8c8>
+  on_exit: <function OnExit.on_exit at 0x7ff1bb04b6a8>
+  proxy_allow_ips: ['127.0.0.1']
+  worker_connections: 1000
+  worker_tmp_dir: None
+  forwarded_allow_ips: ['127.0.0.1']
+  reload_extra_files: []
+  accesslog: /srv/www/htdocs/monitor_api/gunicorn-access.log
+  capture_output: False
+  syslog_addr: udp://localhost:514
+  syslog: False
+  worker_abort: <function WorkerAbort.worker_abort at 0x7ff1bb2cff28>
+  pre_request: <function PreRequest.pre_request at 0x7ff1bb04b1e0>
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  cert_reqs: 0
+  reuse_port: False
+  pythonpath: None
+  paste: None
+  pre_exec: <function PreExec.pre_exec at 0x7ff1bb04b0d0>
+  raw_paste_global_conf: []
+  config: ./gunicorn.conf
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  statsd_host: None
+  certfile: None
+  ca_certs: None
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7ff1bb04b598>
+  worker_class: sync
+  threads: 1
+  max_requests: 0
+  max_requests_jitter: 0
+  graceful_timeout: 30
+  keepalive: 2
+  backlog: 2048
+  errorlog: /srv/www/htdocs/monitor_api/gunicorn-error.log
+  do_handshake_on_connect: False
+  default_proc_name: app:app
+  on_starting: <function OnStarting.on_starting at 0x7ff1bb2cf7b8>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7ff1bb2cfd08>
+  post_request: <function PostRequest.post_request at 0x7ff1bb04b268>
+  child_exit: <function ChildExit.child_exit at 0x7ff1bb04b378>
+  loglevel: debug
+  logger_class: gunicorn.glogging.Logger
+  preload_app: False
+  umask: 0
+  proc_name: None
+  initgroups: False
+  suppress_ragged_eofs: True
+  daemon: True
+  keyfile: None
+  tmp_upload_dir: None
+  proxy_protocol: False
+  workers: 3
+  post_fork: <function Postfork.post_fork at 0x7ff1bb2cfbf8>
+  sendfile: None
+  ssl_version: 2
+  spew: False
+  pidfile: /srv/www/htdocs/monitor_api/gunicorn.pid
+  logconfig: None
+  bind: ['127.0.0.1:8000']
+  limit_request_line: 8190
+[2018-12-05 16:45:32 +0100] [16165] [INFO] Starting gunicorn 19.9.0
+[2018-12-05 16:45:32 +0100] [16165] [DEBUG] Arbiter booted
+[2018-12-05 16:45:32 +0100] [16165] [INFO] Listening at: http://127.0.0.1:8000 (16165)
+[2018-12-05 16:45:32 +0100] [16165] [INFO] Using worker: sync
+[2018-12-05 16:45:32 +0100] [16168] [INFO] Booting worker with pid: 16168
+[2018-12-05 16:45:32 +0100] [16169] [INFO] Booting worker with pid: 16169
+[2018-12-05 16:45:32 +0100] [16170] [INFO] Booting worker with pid: 16170
+[2018-12-05 16:45:32 +0100] [16165] [DEBUG] 3 workers
+[2018-12-05 16:45:35 +0100] [16169] [DEBUG] GET /
+[2018-12-05 16:45:38 +0100] [16168] [DEBUG] GET /login
+[2018-12-05 16:46:17 +0100] [16170] [DEBUG] GET /
+[2018-12-05 16:46:20 +0100] [16170] [DEBUG] GET /login
+[2018-12-05 16:47:33 +0100] [16168] [DEBUG] GET /login
+[2018-12-05 16:47:38 +0100] [16169] [DEBUG] POST /login
+[2018-12-05 16:47:43 +0100] [16170] [DEBUG] POST /login
+[2018-12-05 16:47:44 +0100] [16169] [DEBUG] POST /login
+[2018-12-05 16:47:48 +0100] [16168] [DEBUG] POST /login
+[2018-12-05 16:48:03 +0100] [16168] [DEBUG] POST /login
+[2018-12-05 16:48:10 +0100] [16168] [DEBUG] GET /api_key
+[2018-12-05 16:48:12 +0100] [16168] [DEBUG] GET /api_key
+[2018-12-05 16:48:19 +0100] [16168] [DEBUG] GET /services
+[2018-12-05 16:49:06 +0100] [16168] [DEBUG] GET /services
+[2018-12-05 16:49:48 +0100] [16168] [DEBUG] GET /
+[2018-12-05 16:49:50 +0100] [16168] [DEBUG] GET /login
+[2018-12-05 16:50:22 +0100] [16168] [DEBUG] GET /login
+[2018-12-05 16:50:24 +0100] [16168] [DEBUG] GET /login
+[2018-12-05 16:50:25 +0100] [16168] [DEBUG] GET /login
+[2018-12-05 16:50:25 +0100] [16170] [DEBUG] GET /login
+[2018-12-05 16:50:25 +0100] [16170] [DEBUG] GET /login
+[2018-12-05 16:50:26 +0100] [16170] [DEBUG] GET /login
+[2018-12-05 16:50:26 +0100] [16169] [DEBUG] GET /login
+[2018-12-05 16:50:26 +0100] [16169] [DEBUG] GET /login
+[2018-12-05 16:50:26 +0100] [16169] [DEBUG] GET /login
+[2018-12-05 16:50:27 +0100] [16169] [DEBUG] GET /login
+[2018-12-05 16:50:27 +0100] [16170] [DEBUG] GET /login
+[2018-12-05 16:50:27 +0100] [16168] [DEBUG] GET /login
+[2018-12-05 16:50:27 +0100] [16168] [DEBUG] GET /login
+[2018-12-05 16:50:28 +0100] [16170] [DEBUG] GET /login
+[2018-12-05 16:50:28 +0100] [16169] [DEBUG] GET /login
+[2018-12-05 16:50:28 +0100] [16168] [DEBUG] GET /login

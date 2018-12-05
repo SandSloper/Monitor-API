@@ -3,9 +3,9 @@ from flask import render_template,request,Markup,jsonify,redirect,session
 from flask_login import login_user, LoginManager, current_user, login_required, logout_user
 from flask import stream_with_context, url_for
 from flask import Response
-from app.ogc.forms import *
 
-from app.ogc.models import *
+from app.ogc.models.forms import *
+from app.ogc.models.users import * 
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from app.ogc import ogc
@@ -62,14 +62,14 @@ def login():
     if current_user.is_authenticated:
         return render_template('api_key.html', key=current_user.api_key, btn_text='Kopieren',
                                username=current_user.username,
-                               user_id=current_user.id)
+                               user_id=current_user.id,access=current_user.access)
     form = LoginForm()
     if form.validate_on_submit():
         user = USER.query.filter_by(username=form.username.data).first()
         if user and check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember_me.data)
             return render_template('api_key.html', key=current_user.api_key, btn_text='Kopieren', username=current_user.username,
-                                   user_id=current_user.id)
+                                   user_id=current_user.id,access=current_user.access)
         else:
             error = Markup('Der <b>Nutzername</b> oder <b>Passwort</b> falsch')
             return render_template('login.html', form=form, error=error)
@@ -93,17 +93,17 @@ def signup():
             error = Markup('Die <b>Email-Adresse</b> existiert bereits, bitte wählen Sie eine andere')
             return render_template('signup.html', form=form, error=error)
         else:
-            new_user = USER(username=username, email=email, password=hashed_password, lastname=form.lastname.data, firstname=form.firstname.data, facility=form.facility.data)
+            new_user = USER(username=username, email=email, password=hashed_password, lastname=form.lastname.data, firstname=form.firstname.data, facility=form.facility.data,access=1)
             db.session.add(new_user)
             db.session.commit()
             login_user(USER.query.filter_by(username=username).first())
-            return render_template('api_key.html',key='', btn_text='Generieren',username=current_user.username,user_id=current_user.id)
+            return render_template('api_key.html',key='', btn_text='Generieren',username=current_user.username,user_id=current_user.id,access=1)
     return render_template('signup.html', form=form)
 
 @ogc.route('/services',methods=['GET','POST'])
 def user_services():
     if current_user.is_authenticated:
-        return render_template('services.html',key=current_user.api_key)
+        return render_template('services.html',key=current_user.api_key,access=current_user.access)
     else:
        return url_for('ogc.login')
 
@@ -111,14 +111,7 @@ def user_services():
 def api_key():
     if current_user.is_authenticated:
         key = current_user.api_key
-        print(api_key)
-        btn_text = "Generieren"
-        key_text = ''
-        if key:
-            btn_text = "Kopieren"
-            key_text = key
-
-        return render_template('api_key.html',key=key_text, btn_text=btn_text,username=current_user.username,user_id=current_user.id)
+        return render_template('api_key.html',key=key, username=current_user.username,user_id=current_user.id,access=current_user.access)
     else:
         return url_for('ogc.login')
 

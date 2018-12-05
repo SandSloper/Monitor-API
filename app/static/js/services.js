@@ -1,4 +1,5 @@
 const url_base =window.location.origin + '/monitor_api/';
+//TODO noch auf react umstellen !
 $(document).ready(function(){
     table.init(false);
     checkbox.init();
@@ -11,12 +12,14 @@ const table={
     init:function(_option){
         const table = this,
             user_key=this.getTableObject().data('key');
-        let setting = ["gebiete","wfs"];
+        let setting = ["gebiete","wfs"],
+            values = [];
         if(_option){
             setting=_option;
         }
-        let values = [];
+
         $.when(table.getData(setting[0])).done(function(data) {
+            console.log(data);
             $.each(data, function (key, row) {
                 $.each(data[key]['indicators'], function (key, value) {
                     let capability_url = url_base + '/ogc?id=' + key + '&service=' + setting[1] + '&key=' + user_key + '&VERSION=1.1.0&REQUEST=GetCapabilities',
@@ -43,11 +46,15 @@ const table={
         });
     },
     getData:function(setting){
+        console.log(setting);
          return  $.ajax({
-            type: "GET",
+            type: "POST",
             url: 'https://monitor.ioer.de/backend/query.php',
             data: {
                 values:'{"format":{"id":"'+setting+'"},"query":"getAllIndicators"}'
+            },
+            success:function(){
+                console.log(this.url);
             }
         });
 

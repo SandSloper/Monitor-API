@@ -1,6 +1,11 @@
 from flask_login import UserMixin
-
 from app import db
+# access roles
+ACCESS = {
+    'guest': 0,
+    'user': 1,
+    'admin': 2
+}
 
 class USER(UserMixin, db.Model):
     __tablename__ = 'users'
@@ -12,20 +17,25 @@ class USER(UserMixin, db.Model):
     firstname = db.Column(db.String(30), nullable=False)
     facility = db.Column(db.String(50), nullable=False)
     api_key = db.Column(db.String(50),nullable=False)
+    access = db.Column(db.Integer,nullable=False)
 
-    def __init__(self,username, password, email,lastname,firstname,facility):
+    def __init__(self,username, password, email,lastname,firstname,facility,access):
         self.username = username
         self.password = password
         self.email = email
         self.lastname = lastname
         self.firstname = firstname
         self.facility = facility
+        self.access = access
 
     def is_authenticated(self):
         return True
 
     def is_active(self):
         return True
+
+    def is_admin(self):
+        return self.access == ACCESS['admin']
 
     def is_anonymous(self):
         return False

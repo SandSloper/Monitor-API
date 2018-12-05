@@ -93,7 +93,7 @@ Log In
     width:30%;
     cursor: pointer;
 }
-.login button{
+.login .btn{
     margin-top: 20px;
     width:150px;
     height: 50px;
@@ -106,7 +106,7 @@ Sign Up
   max-width: 80%;
   padding: 15px;
   margin: 0 auto;
- border: 2px solid red;
+  border: 2px solid red;
 }
 .form-signin {
   max-width: 80%;
@@ -154,19 +154,20 @@ Main
  .navbar{
     background-color: white !important;
     margin-top: 2vh;
+     width:100%;
 }
- .navbar #navbarNav .navbar-nav .nav-item{
+ .navbar .navbar-nav .nav-item{
     width: 15vh;
 }
- .navbar #navbarNav .navbar-nav .nav-item:hover{
+ .navbar .navbar-nav .nav-item:hover{
     font-weight: bold;
     color:black;
 }
- .navbar #navbarNav .navbar-nav .active{
+ .navbar .navbar-nav .active{
      border-bottom: 2px solid var(--main-color);
      font-weight: bold;
 }
- .navbar .logout button{
+ .navbar .logout .btn{
     color:white;
 }
  hr{

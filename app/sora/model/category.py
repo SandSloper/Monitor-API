@@ -1,15 +1,14 @@
 from flask import request
 from rdflib import Graph, RDF, RDFS, Namespace, URIRef, Literal
-from requests import get
+import requests
+import json
 import logging as log
 
 class Category:
-    def __init__(self,json=None, json_url=None):
-        if not json is None:
-            indicator_json = json
-        else:
-            indicator_json = get(json_url).json()
-
+    def __init__(self,json_url):
+        indicator_request = requests.get(json_url)
+        indicator_json = json.loads(indicator_request.text)
+            
         soo = Namespace("https://{}/monitor_api/sora/ontology#".format(request.host))
         qu = Namespace("https://purl.oclc.org/NET/ssnx/qu/qu#")
         self.g = Graph()
