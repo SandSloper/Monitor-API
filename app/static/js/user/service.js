@@ -22,8 +22,8 @@ const table={
             console.log(data);
             $.each(data, function (key, row) {
                 $.each(data[key]['indicators'], function (key, value) {
-                    let capability_url = url_base + '/ogc?id=' + key + '&service=' + setting[1] + '&key=' + user_key + '&VERSION=1.1.0&REQUEST=GetCapabilities',
-                        url=url_base + '/ogc?id=' + key + '&service=' + setting[1] + '&key=' + user_key,
+                    let capability_url = url_base + 'ogc?id=' + key + '&service=' + setting[1] + '&key=' + user_key + '&VERSION=1.1.0&REQUEST=GetCapabilities',
+                        url=url_base + 'ogc?id=' + key + '&service=' + setting[1] + '&key=' + user_key,
                         url_monitor = function(){
                             if(setting[0]==="raster"){
                                 return `https://monitor.ioer.de/?raeumliche_gliederung=raster&ind=${key}`;
@@ -85,7 +85,6 @@ const table={
             });
         },
         copyUrl:function(url){
-            console.log(url);
             var $temp = $("<input>");
             $("body").append($temp);
             $temp.val(url).select();

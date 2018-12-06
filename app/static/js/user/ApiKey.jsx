@@ -15,7 +15,7 @@ class ApiKey extends React.Component{
             document.execCommand('copy');
             document.body.removeChild(el);
         }else{
-             var key =this.makekey();
+             var key =ApiKey.makekey();
             //key_input.val(key);
             //check if the key allredy exists
            $.ajax({

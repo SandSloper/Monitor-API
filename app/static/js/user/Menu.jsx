@@ -1,9 +1,7 @@
 class Menu extends React.Component{
   render(){
     let url = window.location.href,
-        path = url.includes("services"),
-        admin=false;
-    if(access_role==2){admin=true};
+        path = url.includes("services");
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-light" id="navbarNav">
             <div className="navbar">
@@ -14,13 +12,6 @@ class Menu extends React.Component{
                     <li className={"nav-item "+(path ? 'active':'')}>
                         <a className="nav-link" href="https://monitor.ioer.de/monitor_api/services">OGC-Dienste</a>
                     </li>
-                    {admin ?
-                         <li className="nav-item admin">
-                            <a className="nav-link">Admin</a>
-                         </li>
-                        :
-                        ''
-                    }
                 </ul>
                 <div className="logout my-2 my-lg-0">
                     <a href="https://monitor.ioer.de/monitor_api/logout">

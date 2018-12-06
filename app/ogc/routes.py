@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import render_template,request,Markup,jsonify,redirect,session
 from flask_login import login_user, LoginManager, current_user, login_required, logout_user
-from flask import stream_with_context, url_for
+from flask import url_for
 from flask import Response
 
 from app.ogc.models.forms import *
@@ -18,7 +18,7 @@ login_manager.init_app(app)
 
 @ogc.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('user/index.html')
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -43,12 +43,11 @@ def get_service():
             id=x_str.replace('id=','')
         else:
             paramater_ogc +='&'+x_str
-    url_ogc ="https://monitor.ioer.de/cgi-bin/mapserv?map=/mapsrv_daten/detailviewer/{}_mapfiles/{}_{}.map&SERVICE={}{}".format(service.lower(),service.lower(),id.upper(),service.upper(),paramater_ogc.upper())
+    url_ogc ="https://monitor.ioer.de/cgi-bin/mapserv?map=/mapsrv_daten/detailviewer/{}_mapfiles/{}_{}.map&SERVICE={}{}".format(service.lower(),service.lower(),id.upper(),service.upper(),paramater_ogc)
     req = requests.get(url_ogc, stream=True)
-    response = Response(req.iter_content(), content_type=req.headers['content-type'])
-    #check the key
+    response = Response(req.text,status = req.status_code,content_type = req.headers['content-type'])
     if session.get('key') is not None:
-        return response
+         return response
     else:
         cur_key = db.engine.execute("SELECT * FROM users WHERE api_key='{}'".format(key))
         if cur_key.rowcount == 0:
@@ -60,21 +59,28 @@ def get_service():
 @ogc.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return render_template('api_key.html', key=current_user.api_key, btn_text='Kopieren',
-                               username=current_user.username,
-                               user_id=current_user.id,access=current_user.access)
+        if current_user.access == 2:
+            # ToDo redirect is not working-> somewhere is a mistake
+            return redirect("https://{}/monitor_api/admin".format(request.host))
+        else:
+            return render_template('user/api_key.html', key=current_user.api_key, btn_text='Kopieren',
+                                   username=current_user.username,
+                                   user_id=current_user.id)
     form = LoginForm()
     if form.validate_on_submit():
         user = USER.query.filter_by(username=form.username.data).first()
         if user and check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember_me.data)
-            return render_template('api_key.html', key=current_user.api_key, btn_text='Kopieren', username=current_user.username,
-                                   user_id=current_user.id,access=current_user.access)
+            if current_user.access == 2:
+                return redirect("https://{}/monitor_api/admin".format(request.host))
+            else:
+                return render_template('user/api_key.html', key=current_user.api_key, btn_text='Kopieren', username=current_user.username,
+                                       user_id=current_user.id)
         else:
             error = Markup('Der <b>Nutzername</b> oder <b>Passwort</b> falsch')
-            return render_template('login.html', form=form, error=error)
+            return render_template('user/login.html', form=form, error=error)
 
-    return render_template('login.html', form=form)
+    return render_template('user/login.html', form=form)
 
 @ogc.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -88,30 +94,30 @@ def signup():
         cur_mail = db.engine.execute("SELECT * FROM users WHERE email='{}'".format(email))
         if cur_user.rowcount > 0:
             error = Markup('Der <b>Nutzername</b> existiert bereits, bitte wählen Sie einen andere')
-            return render_template('signup.html', form=form, error=error)
+            return render_template('user/signup.html', form=form, error=error)
         elif cur_mail.rowcount > 0:
             error = Markup('Die <b>Email-Adresse</b> existiert bereits, bitte wählen Sie eine andere')
-            return render_template('signup.html', form=form, error=error)
+            return render_template('user/signup.html', form=form, error=error)
         else:
             new_user = USER(username=username, email=email, password=hashed_password, lastname=form.lastname.data, firstname=form.firstname.data, facility=form.facility.data,access=1)
             db.session.add(new_user)
             db.session.commit()
             login_user(USER.query.filter_by(username=username).first())
-            return render_template('api_key.html',key='', btn_text='Generieren',username=current_user.username,user_id=current_user.id,access=1)
-    return render_template('signup.html', form=form)
+            return render_template('user/api_key.html', key='', btn_text='Generieren', username=current_user.username, user_id=current_user.id, access=1)
+    return render_template('user/signup.html', form=form)
 
 @ogc.route('/services',methods=['GET','POST'])
 def user_services():
     if current_user.is_authenticated:
-        return render_template('services.html',key=current_user.api_key,access=current_user.access)
+        return render_template('user/services.html', key=current_user.api_key, access=current_user.access)
     else:
-       return url_for('ogc.login')
+       return redirect("https://{}/monitor_api/login".format(request.host))
 
 @ogc.route('/api_key')
 def api_key():
     if current_user.is_authenticated:
         key = current_user.api_key
-        return render_template('api_key.html',key=key, username=current_user.username,user_id=current_user.id,access=current_user.access)
+        return render_template('user/api_key.html', key=key, username=current_user.username, user_id=current_user.id, access=current_user.access)
     else:
         return url_for('ogc.login')
 
