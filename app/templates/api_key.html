@@ -11,7 +11,7 @@
 <div class="header"></div>
 <div class="container">
      <div class="logo">
-      <a href="https://monitor.ioer.de" target="_blank"><div class="image"></div></a>
+      <a href="http://www.ioer-monitor.de" target="_blank"><div class="image"></div></a>
     </div>
     <div id="navbar"></div>
     <hr class="hr"/>
@@ -23,8 +23,8 @@
 <script src="{{ url_for('static', filename='lib/react/react-dom.min.js') }}"></script>
 <script src="{{ url_for('static', filename='lib/react/JSXTransformer.js') }}"></script>
 <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
-<script src="{{url_for('static',filename='js/menu.js')}}" type="text/jsx"></script>
-<script src="{{url_for('static',filename='js/api_key.js')}}" type="text/jsx"></script>
+<script src="{{url_for('static',filename='js/Menu.jsx')}}" type="text/jsx"></script>
+<script src="{{url_for('static',filename='js/ApiKey.jsx')}}" type="text/jsx"></script>
 <script type=text/javascript>$SCRIPT_ROOT = {{ request.script_root|tojson|safe }}</script>
 <script type="text/javascript">
      var access_role = {{access}},
