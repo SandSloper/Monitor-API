@@ -5,7 +5,8 @@ from flask import url_for
 from flask import Response
 
 from app.ogc.models.forms import *
-from app.ogc.models.users import * 
+from app.ogc.models.users import *
+from app.config import Config
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from app.ogc import ogc
@@ -18,7 +19,7 @@ login_manager.init_app(app)
 
 @ogc.route('/')
 def index():
-    return render_template('user/index.html')
+    return render_template('user/index.html',host=Config.URL_ENDPOINT)
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -44,6 +45,7 @@ def get_service():
         else:
             paramater_ogc +='&'+x_str
     url_ogc ="https://monitor.ioer.de/cgi-bin/mapserv?map=/mapsrv_daten/detailviewer/{}_mapfiles/{}_{}.map&SERVICE={}{}".format(service.lower(),service.lower(),id.upper(),service.upper(),paramater_ogc)
+    app.logger.info("Mapserver request: %s", url_ogc)
     req = requests.get(url_ogc, stream=True)
     response = Response(req.text,status = req.status_code,content_type = req.headers['content-type'])
     if session.get('key') is not None:
@@ -60,22 +62,23 @@ def get_service():
 def login():
     if current_user.is_authenticated:
         if current_user.access == 2:
-            # ToDo redirect is not working-> somewhere is a mistake
-            return redirect("https://{}/monitor_api/admin".format(request.host))
+            return redirect("{}admin/".format(Config.URL_ENDPOINT))
         else:
             return render_template('user/api_key.html', key=current_user.api_key, btn_text='Kopieren',
                                    username=current_user.username,
-                                   user_id=current_user.id)
+                                   user_id=current_user.id,host=Config.URL_ENDPOINT)
     form = LoginForm()
     if form.validate_on_submit():
         user = USER.query.filter_by(username=form.username.data).first()
         if user and check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember_me.data)
             if current_user.access == 2:
-                return redirect("https://{}/monitor_api/admin".format(request.host))
+                app.logger.info("%s is logged in as admin", current_user.username)
+                return redirect("{}admin/".format(Config.URL_ENDPOINT))
             else:
+                app.logger.info("%s is logged in as user",current_user.username)
                 return render_template('user/api_key.html', key=current_user.api_key, btn_text='Kopieren', username=current_user.username,
-                                       user_id=current_user.id)
+                                       user_id=current_user.id,host=Config.URL_ENDPOINT)
         else:
             error = Markup('Der <b>Nutzername</b> oder <b>Passwort</b> falsch')
             return render_template('user/login.html', form=form, error=error)
@@ -103,7 +106,7 @@ def signup():
             db.session.add(new_user)
             db.session.commit()
             login_user(USER.query.filter_by(username=username).first())
-            return render_template('user/api_key.html', key='', btn_text='Generieren', username=current_user.username, user_id=current_user.id, access=1)
+            return render_template('user/api_key.html', key='', btn_text='Generieren', username=current_user.username, user_id=current_user.id, access=1,host=Config.URL_ENDPOINT)
     return render_template('user/signup.html', form=form)
 
 @ogc.route('/services',methods=['GET','POST'])
@@ -111,13 +114,13 @@ def user_services():
     if current_user.is_authenticated:
         return render_template('user/services.html', key=current_user.api_key, access=current_user.access)
     else:
-       return redirect("https://{}/monitor_api/login".format(request.host))
+       return redirect("{}login".format(Config.URL_ENDPOINT))
 
 @ogc.route('/api_key')
 def api_key():
     if current_user.is_authenticated:
         key = current_user.api_key
-        return render_template('user/api_key.html', key=key, username=current_user.username, user_id=current_user.id, access=current_user.access)
+        return render_template('user/api_key.html', key=key, username=current_user.username, user_id=current_user.id, access=current_user.access,host=Config.URL_ENDPOINT)
     else:
         return url_for('ogc.login')
 
@@ -125,7 +128,7 @@ def api_key():
 @login_required
 def logout():
     logout_user()
-    return redirect("https://{}/monitor_api".format(request.host))
+    return redirect(Config.URL_ENDPOINT)
 
 @ogc.route('/check_key',methods=['GET', 'POST'])
 def check_key():

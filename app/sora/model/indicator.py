@@ -1,5 +1,6 @@
 from flask import request
 from rdflib import Graph, RDF, RDFS, Namespace, URIRef, Literal, BNode
+from app.config import Config
 import requests
 import logging as log
 import os
@@ -15,22 +16,21 @@ class Indicator:
         except Exception as e:
 
             indicator_request = requests.get(json_url)
-            indicator_json = json.loads(indicator_request.text)
-            
-            soo = Namespace("https://{}/monitor_api/sora/ontology#".format(request.host))
-            cat = Namespace("https://{}/monitor_api/sora/category#".format(request.host))
+            self.indicator_json = json.loads(indicator_request.text)
+
+            soo = Namespace("{}sora/ontology#".format(Config.URL_ENDPOINT))
+            cat = Namespace("{}sora/category#".format(Config.URL_ENDPOINT))
             qu = Namespace("https://purl.oclc.org/NET/ssnx/qu/qu#")
             m3 = Namespace("http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#")
 
-            for cat_k,cat_v in indicator_json.items():
+            for cat_k,cat_v in self.indicator_json.items():
                 cat_name = cat_v['cat_name']
                 cat_name_en = cat_v['cat_name_en']
                 for k,v in cat_v['indicators'].items():
-                    uri = URIRef("https://{}/monitor_api/sora/indicator#{}".format(request.host,k))
-                    uri_cat = URIRef("https://{}/monitor_api/sora/category#{}".format(request.host,cat_k))
+                    uri = URIRef("{}sora/indicator#{}".format(Config.URL_ENDPOINT, k))
+                    uri_cat = URIRef("{}sora/category#{}".format(Config.URL_ENDPOINT, cat_k))
                     #grab the time shifts
-                    # TODO: url muss noch flexibel gestaltet werden
-                    url_spatial_extend = 'https://monitor.ioer.de/backend/sora/GET.php?values={"ind":{"id":"'+k+'"},"format":{"id":"raster"},"query":"getSpatialExtend"}'
+                    url_spatial_extend = '%s?values={"ind":{"id":"%s"},"format":{"id":"raster"},"query":"getSpatialExtend"}'%(Config.URL_BACKEND,k)
                     extends_request = requests.get(url_spatial_extend)
                     extends = json.loads(extends_request.text)
                     #create the graph

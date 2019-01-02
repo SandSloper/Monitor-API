@@ -1,0 +1,1352 @@
+@prefix ns1: <https://monitor.ioer.de/monitor_api/sora/ontology#> .
+@prefix ns2: <https://purl.oclc.org/NET/ssnx/qu/qu#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#B00DG> a ns1:Indicator ;
+    rdfs:label "Einwohnerzahl"@de,
+        "Population"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#B> ;
+    ns1:hasIndicatorId "B00DG" ;
+    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2011" ;
+    ns1:interpretation "Der Indikator gibt die Einwohnerzahl einer Rasterzelle an."@de,
+        ""@en ;
+    ns1:methodology "Einwohnerzahl"@de,
+        ""@en ;
+    ns2:Unit "Ew." .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#B02DT> a ns1:Indicator ;
+    rdfs:label "Siedlungsdichte"@de,
+        "Settlement density (settlement and transport area)"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#B> ;
+    ns1:hasIndicatorId "B02DT" ;
+    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2011" ;
+    ns1:interpretation "Der Indikator beschreibt die Besiedelungsdichte, bezogen auf den Siedlungs- und Verkehrsraum eines Gebietes."@de,
+        "The indicator describes the population density for the settlement area and transport space of a reference area"@en ;
+    ns1:methodology "Quotient aus Einwohnerzahl und Siedlungs- u. Verkehrsfläche"@de,
+        "Quotient of population over settlement and transport space"@en ;
+    ns2:Unit "Ew/km²" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#B31RT> a ns1:Indicator ;
+    rdfs:label "Einwohneranteil im Einwirkbereich von Hochspannungsfreileitungen"@de,
+        "Share of the population in the exposure area of high-voltage lines"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#B> ;
+    ns1:hasIndicatorId "B31RT" ;
+    ns1:hasSpatialExtent [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2015" ;
+    ns1:interpretation "Bei Errichtung und wesentlicher Änderung von Niederfrequenzanlagen sowie Gleichstromanlagen sind nach § 4 Absatz 2 (26. BImSchV) von der jeweiligen Anlage ausgehende elektrische, magnetische und elektromagnetische Felder im Einwirkungsbereich zu minimieren. Einwirkungsbereiche von Niederfrequenzanlagen sind in der allgemeinen Verwaltungsvorschrift zur Durchführung der Verordnung über elektromagnetische Felder - 26. BImSchV (26. BImSchVVwV) folgendermaßen definiert: 'Der Einwirkungsbereich einer Anlage ist der Bereich, in dem die Anlage sich signifikant von den natürlichen und mittleren anthropogen bedingten Immissionen abhebende elektrische oder magnetische Felder verursacht, unabhängig davon, ob die Immissionen tatsächlich schädliche Umwelteinwirkungen auslösen.' Diese Bereiche werden im Indikator als Distanzmaß für die Wirkung von elektrischen und magnetischen Feldern verwendet. Bei der Festlegung der in Anlage 1 des 26. BImSchV aufgeführten Grenzwerte wurden akute Wirkungen durch elektrischen Ströme berücksichtigt, die im Körper durch elektrische und magnetische Wechselfelder erzeugt werden. Biologische Effekte infolge der Aussetzung von elektrischen und magnetischen Feldern sind für Menschen auch bei geringen magnetischen Flussdichten nicht auszuschließen. In diesem Zusammenhang rät z.B. das Bundesamt für Strahlenschutz (BfS) dazu, die Belastung durch elektromagnetische Felder grundsätzlich so gering wie möglich zu halten. Als Vorsorgemaßnahmen werden vom BfS u.a. benannt: -Minimierung der Exposition der Bevölkerung gegenüber niederfrequenter Felder (u.a. durch Hochspannungsleitungen) -Informierung der Bevölkerung über Feldintensitäten relevanter Feldquellen wie z.B. Hochspannungsleitungen Vergleichbare Aussagen sind in der Verwaltungsvorschrift (26. BImSchVVwV) enthalten, so steht die allgemeine Bevölkerung im Mittelpunkt der Minimierungsbetrachtung. Die Bevölkerung soll durch geeignete technische Maßnahmen an der Anlage so wenig wie möglich von den hiervon ausgehenden elektrischen und magnetischen Feldern ausgesetzt werden. Im Sinne des Vorsorgeprinzips nach europäischen Umweltrecht ist die Abwehr von Umweltrisiken auch bei unsicherer Erkenntnislage vorgesehen. Daher sollte das Minimierungsgebot nicht nur bei erheblicher Änderung oder Neubau von Anlagen Anwendung finden, sondern ist im Sinne einer Schadensabwendung für die menschliche Gesundheit auf den Anlagenbestand auszuweiten. Demzufolge gibt der Indikator die Bevölkerungszahl im Einwirkungsbereich von bestehenden Hochspannungsleitungen (mind. 110 kV) in Deutschland an. Mit dem Indikator wird ein erster Beitrag zur flächendeckenden Risikobewertung geleistet sowie für Vorsorgemaßnahmen im Kontext elektromagnetischer Strahlung durch Hochspannungsfreileitungen sensibilisiert."@de,
+        ""@en ;
+    ns1:methodology "Summe der Bevölkerungszahl, die im Einwirkungsbereich von Hochspannungsleitungen (mind. 110 kV) ihren Wohnsitz hat, bezogen auf die jeweilige Gebietseinheit. Für die Modellierung des Einwirkungsbereichs werden: 1. die im ATKIS Basis-DLM vorhandenen Hochspannungsfreileitungen erfasst (Objektart: 51005; Attributart: BWF 1110 entspr. Freileitung), 2. mit Hilfe von Open Street Map Daten werden z.T. fehlende Informationen zur Spannungsstärke (speziell Spannungen mind. 110 kV) ergänzt, 3. die Reichweite der Emissionen von Freileitungen mit den in der 26. BImSchVVwV festgelegten Pauschalwerten: -200 m bei 110 kV -300 m bei 220 kV -400 m bei 380 kV modelliert (Erzeugung einer Pufferfläche um die Freileitungen). Die Ermittlung der Einwohnerzahl erfolgt über den Anteil der Rasterzellen des Bevölkerungsrasters Zensus 2011 (flächengewichtet) im modellierten Einwirkungsbereich (Pufferfläche), so geht z.B. 50 % der Einwohnerzahl einer Rasterzelle in den Indikatorwert ein, sobald sich die Hälft der Zelle im Einwirkungsbereich befindet. Abschließend wird die Summe aus der flächengewichteten Einwohnerzahl für jede Gebietseinheit gebildet."@de,
+        ""@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#F01RG> a ns1:Indicator ;
+    rdfs:label "Anteil Freiraumfläche an Gebietsfläche"@de,
+        "Proportion of open space in reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#F> ;
+    ns1:hasIndicatorId "F01RG" ;
+    ns1:hasSpatialExtent [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Anteil des Freiraumes in einer Gebietseinheit. Hohe Werte treten in ländlichen Regionen auf; niedrige Werte in Agglomerationsräumen."@de,
+        "The indicator describes the proportion of open space in an administrative territory. High values are associated with rural regions, while low values are found in urban agglomerations."@en ;
+    ns1:methodology "Quotient aus Freiraumfläche (Differenz aus Gebietsfläche einerseits und Siedlungs- und Verkehrsfläche andererseits) und Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche für die Gebietseinheit der entsprechenden Bezugsebene)"@de,
+        "Quotient of open space (reference area minus settlement and transport space) over reference area (derived from ATKIS Basis-DLM for the administrative unit at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#F02RG> a ns1:Indicator ;
+    rdfs:label "Anteil Landwirtschaftsfläche an Gebietsfläche"@de,
+        "Proportion of agricultural land in reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#F> ;
+    ns1:hasIndicatorId "F02RG" ;
+    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Anteil der Landwirtschaftsfläche in einer Gebietseinheit. Hohe Werte treten folglich in ländlichen Regionen auf, wo großflächig Ackerbau bzw. Grünland dominieren."@de,
+        "The indicator describes the proportion of agricultural land in an administrative territory. High values are associated with rural regions where usage is dominated by large-scale arable farming or land for grazing."@en ;
+    ns1:methodology "Quotient aus der Vereinigung verschiedener Landwirtschaftsflächen (Acker, Grünland, Streuobst, Gartenland, Obst- und Weinbau) einerseits und Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene) andererseits"@de,
+        "Quotient of total agricultural land (arable land, grazing land, land for horticulture, fruit growing and viniculture) over the reference area (latter dervied from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#F03RG> a ns1:Indicator ;
+    rdfs:label "Anteil Ackerfläche an Gebietsfläche"@de,
+        "Proportion of arable land in reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#F> ;
+    ns1:hasIndicatorId "F03RG" ;
+    ns1:hasSpatialExtent [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Anteil der Ackerfläche in einer Gebietseinheit. Hohe Werte treten folglich in ländlichen Regionen auf, wo großflächiger Ackerbau gegenüber Grünland und anderen Nutzungsarten dominiert."@de,
+        "The indicator describes the proportion of arable land in an administrative territory. High values are associated with rural regions where large-scale arable farming dominates rather than grazing or other forms of use."@en ;
+    ns1:methodology "Quotient aus Ackerfläche und Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche für die Gebietseinheit der entsprechenden Bezugsebene)"@de,
+        "Quotient of arable land over reference area (derived from ATKIS Basis-DLM for the administrative unit at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#F04RG> a ns1:Indicator ;
+    rdfs:label "Anteil Grünlandfläche an Gebietsfläche"@de,
+        "Proportion of grazing land in reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#F> ;
+    ns1:hasIndicatorId "F04RG" ;
+    ns1:hasSpatialExtent [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Anteil der Grünlandfläche in einer Gebietseinheit. Hohe Werte treten folglich in ländlichen Regionen auf, wo Grünland gegenüber Ackerbau und anderen Nutzungsarten dominiert."@de,
+        "The indicator describes the proportion of grazing land in an administrative territory. High values are associated with rural regions where grazing dominates arable farming or other forms of use."@en ;
+    ns1:methodology "Quotient aus Grünlandfläche und Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche für die Gebietseinheit der entsprechenden Bezugsebene)"@de,
+        "Quotient of grazing land over reference area (derived from ATKIS Basis-DLM for the administrative unit at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#F07RG> a ns1:Indicator ;
+    rdfs:label "Anteil Wald- und Gehölzfläche an Gebietsfläche"@de,
+        "Proportion of forest and copse in reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#F> ;
+    ns1:hasIndicatorId "F07RG" ;
+    ns1:hasSpatialExtent [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Anteil der Wald- und Gehölzfläche in einer Gebietseinheit. Hohe Werte treten folglich in waldreichen und dünnbesiedelten Regionen auf."@de,
+        "The indicator describes the proportion of forest and woodland in an administrative territory. High values are associated with richly forested, sparsely populated regions."@en ;
+    ns1:methodology "Quotient aus Wald- und Gehölzfläche einerseits und Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene) andererseits"@de,
+        "Quotient of forest and woodland sites (including low-growing woodland) over reference area (latter derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#F11RG> a ns1:Indicator ;
+    rdfs:label "Anteil Wasserfläche an Gebietsfläche"@de,
+        "Proportion of area of water in reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#F> ;
+    ns1:hasIndicatorId "F11RG" ;
+    ns1:hasSpatialExtent [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Anteil Wasserfläche in einer Gebietseinheit."@de,
+        "The indicator describes the proportion of areas of water in an administrative territory."@en ;
+    ns1:methodology "Quotient aus allen Wasserflächen (Fließgewässer, stehende Gewässer, Hafenbecken und Meer bzw. Bodden) und Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene)"@de,
+        "Quotient of all areas of water (running water, standing water, harbours and sea or shallow bay) over reference area (latter derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#G03DA> a ns1:Indicator ;
+    rdfs:label "Wohngebäudedichte in Siedlungs- und Verkehrsfläche"@de,
+        "Residential building density in settlement area and transport space"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#G> ;
+    ns1:hasIndicatorId "G03DA" ;
+    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2012" ;
+    ns1:interpretation ""@de,
+        ""@en ;
+    ns1:methodology "Quotient aus Wohngebäudeanzahl (Gebäude mit mindestens einer Hausadresse, die innerhalb von ATKIS Basis-DLM-Flächen Wohnbau oder Mischnutzung stehen) und der Siedlungs- und Verkehrsfläche (ATKIS Basis-DLM: Baulich geprägte Fläche, Siedlungsfreifläche und Verkehrsfläche abzüglich Wasserfläche)."@de,
+        "Quotient of the number of dwellings (with at least one postal address and which are located within ATKIS Basis-DLM areas of residental or mixed-use buildings) over the settlement area and transport space (ATKIS Basis-DLM: built-up area, urban open space and transport space minus areas of water)."@en ;
+    ns2:Unit "Geb./km²" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#L01RG> a ns1:Indicator ;
+    rdfs:label "Anteil Schutzgebiete gesamt an Gebietsfläche"@de,
+        "Protected areas"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#L> ;
+    ns1:hasIndicatorId "L01RG" ;
+    ns1:hasSpatialExtent [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Stand der Ausweisung von Schutzgebieten, bezogen auf die administrative Gebietsfläche (ohne Meeresgebiete). Aus funktionaler Sicht wird unterschieden in einen höheren Schutzstatus für den (strengen) Natur- und Artenschutz und einen geringeren Schutzstatuts für den (allgemeinen) Landschaftsschutz. Zur ersten Kategorie zählen Nationalparke (NTP), Naturschutzgebiete (NSG), Fauna-Flora-Habitat-Gebiete (FFH) und Vogelschutzgebiete (SPA). Zur zweiten Kategorie zählen Naturparke (NP), Landschaftsschutzgebiete (LSG) und Biosphärenreservate (BIO) außerhalb der Kernzonen. Teilbereiche, die als NSG-, FFH- oder SPA-Gebiet ausgewiesen sind, zählen zur ersten Kategorie."@de,
+        "The indicator describes the current provision of protected land for the administrative reference area (not including off-shore areas). Functionally we make a distinction between high protection status for (strict) nature and species protection and a lower protection status for more general landscape protection. The first category includes national parks (NTP), nature reserves (NSG), fauna-flora habitats (FFH) and bird sanctuaries (SPA). The second category includes nature parks (NP), landscape conservation areas (LSG) and biosphere reserves (BIO) outside of core areas. Part areas that are designated as NSG, FFH or SPA areas belong to the first category."@en ;
+    ns1:methodology "Quotient aus Schutzgebietsfläche gesamt (Vereinigung von Nationalparken, Naturschutzgebieten, Fauna-Flora-Habitat-Gebieten, Vogelschutzgebieten, Naturparken, Landschaftsschutzgebieten sowie Biosphärenreservaten) und Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche für die Gebietseinheit der entsprechenden Bezugsebene)"@de,
+        "Quotient of total protected land (being national parks, nature reserves, protected fauna-flora habitats, bird sanctuaries, protected areas, landscape conservation areas and biosphere reserves) over reference area (latter derived from ATKIS Basis-DLM for the administrative unit at the respective level of investigation)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#L08RG> a ns1:Indicator ;
+    rdfs:label "Anteil Gebiete 'Natur- und Artenschutz' an Gebietsfläche"@de,
+        "Countryside and species protection"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#L> ;
+    ns1:hasIndicatorId "L08RG" ;
+    ns1:hasSpatialExtent [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Stand der Ausweisung von Schutzgebieten für den (strengen) Natur- und Artenschutz, bezogen auf die administrative Gebietsfläche (ohne Meeresgebiete). Dabei sind die europäischen NATURA2000-Gebiete integriert."@de,
+        "The indicator describes the current provision of protected areas for (strict) nature and species protection for the administrative reference area (not including off-shore areas). NATURA2000 sites are integrated."@en ;
+    ns1:methodology "Quotient aus Schutzgebietsfläche 'Natur- und Artenschutz' (Nationalparke (NTP), Naturschutzgebiete (NSG), Fauna-Flora-Habitat-Gebiete (FFH) sowie Vogelschutzgebiete (SPA)) und Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche für die Gebietseinheit der entsprechenden Bezugsebene)"@de,
+        "Quotient of protected areas 'Nature and species protection' (national parks (NTP), nature reserves (NSG), protected fauna-flora habitats (FFH) as well as bird sanctuaries (SPA) over reference area (latter derived from ATKIS Basis-DLM for the administrative unit at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#L09RG> a ns1:Indicator ;
+    rdfs:label "Anteil Gebiete 'Landschaftsschutz' an Gebietsfläche"@de,
+        "Landscape protection"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#L> ;
+    ns1:hasIndicatorId "L09RG" ;
+    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Stand der Ausweisung von Schutzgebieten für den (allgemeinen) Landschaftsschutz, bezogen auf die administrative Gebietsfläche (ohne Meeresgebiete)."@de,
+        "The indicator describes the current provision of protected areas for (general) landscape conservation for the administrative reference area (not including off-shore areas)."@en ;
+    ns1:methodology "Quotient aus Schutzgebietsfläche 'Landschaftsschutz' (Naturparke (NP), Landschaftsschutzgebiete (LSG) sowie Biosphärenreservate (BIO) außerhalb von NSG-, FFH- oder SPA-Gebieten) und Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche für die Gebietseinheit der entsprechenden Bezugsebene)"@de,
+        "Quotient of protected areas for 'landscape conservation' (nature parks (NP), landscape conservation areas (LSG) as well as biosphere reserves (BIO) outside of NSG, FFH or SPA areas) over reference area (derived from ATKIS Basis-DLM for the administrative unit at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#O01RG> a ns1:Indicator ;
+    rdfs:label "Erreichbarkeit städtischer Grünflächen"@de,
+        "Accessibility of urban green spaces"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#O> ;
+    ns1:hasIndicatorId "O01RG" ;
+    ns1:hasSpatialExtent [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2013" ;
+    ns1:interpretation "Der Indikator beschreibt die Erreichbarkeit naher und größerer öffentlicher Grünflächen, gemessen an der in fußläufiger Entfernung wohnenden Bevölkerung im Verhältnis zur Gesamtbevölkerung der jeweiligen Stadt (Mittel- und Großstädte ab 50.000 Einwohnern). Mit dem Indikator wird der Anteil der Bevölkerung ermittelt, der wohnungs- und quartiersnah fußläufig erreichbare öffentliche Grünflächen vorfindet. Grünflächen sind multifunktional und besitzen eine hohe Bedeutung für die im Umkreis wohnende Bevölkerung durch ihre Klimafunktion (Luftfilterung, Kaltluftentstehung), Erholungsfunktion (Sport, Freizeit, Naturerfahrung) und Hochwasserschutzfunktion (Wasserspeicher, Rückhaltefläche). Der Indikator adressiert sowohl die alltägliche Erholung in fußläufiger Entfernung als auch ausgedehnte Freizeitaktivitäten im mittelbaren Quartiersumfeld oder die Naherholung am Wochenende."@de,
+        "Indicator captures the proportion of inhabitants who find at least small nearby green spaces within walking distance in the sense of daily or leisuretime recreation and also larger green spaces at a medium distance for local recreation. Urban ecosystems, such as forests, parks, bodies of water and adjacent embankments, are multifunctional and provide services for the residents regarding the experience of nature, recreational activities. Furthermore, green spaces are important for many other ecosystem services, such as habitat services, air purification, water regulation and provision or microclimate regulation."@en ;
+    ns1:methodology "Quotient aus der Einwohnerzahl, die im 300 m - und 700 m Umkreis von öffentlichen Grünflächen (>1 ha und >10 ha) wohnt und der Einwohnerzahl einer Gebietseinheit Zu den öffentlichen Grünflächen werden Flächen mit geringer Bodenversiegelung und einem hohen Vegetationsanteil gezählt. Weiterhin werden Gewässerflächen im Sinne der Definition von Grünräumen nach Rittel et al. (2014) mit einbezogen. Dazu gehören folgende Objektarten (gegliedert nach Kategorien): - Siedlung: Friedhof, Park- / Grünanlage - Freiraum: Grünland, Streuobst, Wald und Gehölz, Fließ- sowie stehendes Gewässer Die Ermittlung der Einwohnerzahl erfolgt in einem 300 m Umkreis von öffentlichen Grünflächen(>1 ha) und 700 m Umkreis von öffentlichen Grünflächen (>10 ha). Abschließend wird der Quotient aus ermittelter Einwohnerzahl und Gesamteinwohnerzahl der Gebietseinheit gebildet. Eine 300 m Luftlinie entspricht im Durchschnitt einer fußläufiger Wegstrecke von ca. 500 m gemäß Richter (2016)."@de,
+        "Quotient of number of inhabitants that live within a radius of 300 m & 700 m to green spaces > 1 ha & > 10 ha and the number of inhabitants in the respective municipality. Selected types of green spaces with recreation functions and mostly with access for the public: Park, Green area, Cemetery, Grasland, Orchard meadow, Forest, Woods, Flowing/Standing body of water."@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#O03RG> a ns1:Indicator ;
+    rdfs:label "Erreichbarkeit naher städtischer Grünflächen"@de,
+        "Accessibility of nearby urban green spaces"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#O> ;
+    ns1:hasIndicatorId "O03RG" ;
+    ns1:hasSpatialExtent [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2013" ;
+    ns1:interpretation "Der Indikator beschreibt die Erreichbarkeit öffentlicher Grünflächen (größer 1 ha), gemessen an der in fußläufiger Entfernung wohnenden Bevölkerung im Verhältnis zur Gesamtbevölkerung der jeweiligen Stadt (Mittel- und Großstädte ab 50.000 Einwohnern). Mit dem Indikator wird der Anteil der Bevölkerung ermittelt, der wohnungsnah bzw. fußläufig erreichbare öffentliche Grünflächen vorfindet. Grünflächen sind multifunktional und besitzen eine hohe Bedeutung für die im Umkreis wohnende Bevölkerung durch ihre Klimafunktion (Luftfilterung, Kaltluftentstehung), Erholungsfunktion (Sport, Freizeit, Naturerfahrung) und Hochwasserschutzfunktion (Wasserspeicher, Rückhaltefläche). Der Indikator wohnungsnahe Grünerreichbarkeit fokussiert auf die alltägliche Erholung in fußläufiger Entfernung."@de,
+        "Indicator captures the proportion of inhabitants who find small nearby green spaces within walking distance in the sense of daily or leisuretime recreation. Urban ecosystems, such as forests, parks, bodies of water and adjacent embankments, are multifunctional and provide services for the residents regarding the experience of nature, recreational activities. Furthermore, green spaces are important for many other ecosystem services, such as habitat services, air purification, water regulation and provision or microclimate regulation."@en ;
+    ns1:methodology "Quotient aus der Einwohnerzahl, die im 300 m Umkreis von öffentlichen Grünflächen (>1 ha) wohnt und der Einwohnerzahl einer Gebietseinheit Zu den öffentlichen Grünflächen werden Flächen mit geringer Bodenversiegelung und einem hohen Vegetationsanteil gezählt. Weiterhin werden Gewässerflächen im Sinne der Definition von Grünräumen nach Rittel et al. (2014) mit einbezogen. Dazu gehören folgende Objektarten (gegliedert nach Kategorien): - Siedlung: Friedhof, Park- / Grünanlage - Freiraum: Grünland, Streuobst, Wald und Gehölz, Fließ- sowie stehendes Gewässer Die Ermittlung der Einwohnerzahl erfolgt in einem 300 m Umkreis von öffentlichen Grünflächen größer 1 ha (300 m Luftlinie entspricht fußläufiger Wegstrecke von ca. 500 m gemäß Richter 2016). Abschließend wird der Quotient aus ermittelter Einwohnerzahl und Gesamteinwohnerzahl der Gebietseinheit gebildet."@de,
+        "Quotient of number of inhabitants that live within a radius of 300 m to green spaces > 1 ha and the number of inhabitants in the respective municipality. Selected types of green spaces with recreation functions and mostly with access for the public: Park, Green area, Cemetery, Grasland, Orchard meadow, Forest, Woods, Flowing/Standing body of water."@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#O04RG> a ns1:Indicator ;
+    rdfs:label "Erreichbarkeit größerer städtischer Grünflächen"@de,
+        "Accessibility of larger urban green spaces"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#O> ;
+    ns1:hasIndicatorId "O04RG" ;
+    ns1:hasSpatialExtent [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2013" ;
+    ns1:interpretation "Der Indikator beschreibt die Erreichbarkeit öffentlicher Grünflächen (größer 10 ha), gemessen an der in mittelbar fußläufiger Entfernung wohnenden Bevölkerung im Verhältnis zur Gesamtbevölkerung der jeweiligen Stadt (Mittel- und Großstädte ab 50.000 Einwohnern). Mit dem Indikator wird der Anteil der Bevölkerung ermittelt, der quartiersnah bzw. mittelbar fußläufig erreichbare öffentliche Grünflächen vorfindet. Grünflächen sind multifunktional und besitzen eine hohe Bedeutung für die im Umkreis wohnende Bevölkerung durch ihre Klimafunktion (Luftfilterung, Kaltluftentstehung), Erholungsfunktion (Sport, Freizeit, Naturerfahrung) und Hochwasserschutzfunktion (Wasserspeicher, Rückhaltefläche). Der Indikator adressiert ausgedehnte Freizeitaktivitäten im mittelbaren Quartiersumfeld oder die Naherholung am Wochenende."@de,
+        ""@en ;
+    ns1:methodology "Quotient aus der Einwohnerzahl, die im 700 m Umkreis von öffentlichen Grünflächen (>10 ha) wohnt und der Einwohnerzahl einer Gebietseinheit Zu den öffentlichen Grünflächen werden Flächen mit geringer Bodenversiegelung und einem hohen Vegetationsanteil gezählt. Weiterhin werden Gewässerflächen im Sinne der Definition von Grünräumen nach Rittel et al. (2014) mit einbezogen. Dazu gehören folgende Objektarten (gegliedert nach Kategorien): - Siedlung: Friedhof, Park- / Grünanlage - Freiraum: Grünland, Streuobst, Wald und Gehölz, Fließ- sowie stehendes Gewässer Die Ermittlung der Einwohnerzahl erfolgt in einem 700 m Umkreis von öffentlichen Grünflächen(>10 ha). Abschließend wird der Quotient aus ermittelter Einwohnerzahl und Gesamteinwohnerzahl der Gebietseinheit gebildet."@de,
+        "Quotient of number of inhabitants that live within a radius of 700 m to green spaces > 10 ha and the number of inhabitants in the respective municipality. Selected types of green spaces with recreation functions and mostly with access for the public: Park, Green area, Cemetery, Grasland, Orchard meadow, Forest, Woods, Flowing/Standing body of water."@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#O06RG> a ns1:Indicator ;
+    rdfs:label "Anteil Waldfläche an Gebietsfläche"@de,
+        "Proportion of forest area in reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#O> ;
+    ns1:hasIndicatorId "O06RG" ;
+    ns1:hasSpatialExtent [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016" ;
+    ns1:interpretation "Der Waldflächenanteil gibt einen Hinweis auf die potenziell für die Rohholzproduktion nutzbare Fläche. Hohe Indikatorwerte treten in gebirgigen und dünnbesiedelten Regionen auf."@de,
+        ""@en ;
+    ns1:methodology "Quotientenbildung aus Waldfläche (ATKIS Basis-DLM) und Gebietsfläche (VG25)"@de,
+        ""@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#O10RT> a ns1:Indicator ;
+    rdfs:label "Anteil Hochwasserretentionsfläche an Gesamtaue"@de,
+        "Percentage of retention area to flood plain"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#O> ;
+    ns1:hasIndicatorId "O10RT" ;
+    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2013" ;
+    ns1:interpretation "Der Indikator ermittelt den Flächenanteil der unbebauten rezenten Aue, welcher noch für den Hochwasserrückhalt zur Verfügung steht, bezogen auf die morphologische Aue. Rezente Auen besitzen eine hohe gesellschaftliche Bedeutung, denn das Überschwemmungsrisiko stellt eine direkte Gefahr für Menschenleben dar. Wiederholte Überschwemmung oder alleine schon das Risiko können die Lebensqualität erheblich einschränken. Darüber hinaus können immense volkswirtschaftliche Schäden entstehen. Die Vermeidung von Hochwässern durch den natürlichen Rückhalt in der Aue trägt auch zur Vermeidung erheblicher Kosten von technischen Schutzmaßnahmen bei. Auen erfüllen weitere Ökosystemleistungen wie z.B. Versorgungsleistungen (Grünlandnutzung, Viehzucht zur Nahrungsmittelerzeugung, Beitrag Trinkwassergewinnung), Gewässer-/Grundwasserschutz, kulturelle Leistungen (Raum für Erholung in der Auenlandschaft, Landschaftsqualität, Ästhetik) sowie Biodiversität."@de,
+        "The indicator investigates the share of undeveloped floodplain, i.e. that which still actively contributes to flood retention, in relation to the original morphological floodplain. Undeveloped floodplains are of great social importance in view of the direct danger that flooding poses to human life. Repeated flooding or merely the risk of flooding can considerably reduce the quality of life. In addition, huge economic losses can occur. The prevention of floods through natural retention in the floodplain also helps to avoid the high cost of artificial protection measures. Floodplains provide other ecosystem services such as supply services (grassland use, livestock breeding for food production, contribution to drinking water production), water/groundwater protection, cultural services (space for recreation in the floodplain, high quality landscape, aesthetics) as well as biodiversity."@en ;
+    ns1:methodology "1. Bildung der Differenz aus rezenter Aue (einschließlich Flussfläche) und bebauter Siedlungs- und Verkehrsfläche innerhalb rezenter Aue 2. Division durch die Fläche der morphologischen Aue 3. Multiplikation mit 100"@de,
+        "1. Calculation of active floodplain areas (including river area) minus built-up settlement areas and transport space within these active floodplain areas 2. Division by the area of the morphological floodplain 3. Multiplication by 100"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#O11RT> a ns1:Indicator ;
+    rdfs:label "Anteil bebauter Flächen in der rezenten Aue"@de,
+        "Percentage of built-up area in flood plain"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#O> ;
+    ns1:hasIndicatorId "O11RT" ;
+    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2013" ;
+    ns1:interpretation "Auen besitzen eine hohe gesellschaftliche Bedeutung, denn das Überschwemmungsrisiko stellt eine direkte Gefahr für Menschenleben dar. Wiederholte Überschwemmung oder alleine schon das Risiko können die Lebensqualität erheblich einschränken. Darüber hinaus können immense volkswirtschaftliche Schäden entstehen. Die Vermeidung von Hochwässern durch den natürlichen Rückhalt in der Aue trägt auch zur Vermeidung erheblicher Kosten von technischen Schutzmaßnahmen bei. Die bebauten Siedlungs- und Verkehrsflächen schränken die rezente Aue in ihrer Funktion (und damit der potenziellen Leistung) ein. Überschwemmte Siedlungs- und Verkehrsflächen haben ebenfalls Retentionsfunktionen und sie vermeiden eventuell Überschwemmungen an anderer Stelle, nehmen durch Überschwemmungen aber in erheblichem Maße selber Schaden. Im Sinne der Leistungsfähigkeit von Ökosystemen ist der Ökosystembegriff auf Siedlungs- und Verkehrsflächen für die ÖSL Hochwasserretention nur eingeschränkt anwendbar. Deshalb werden die Retentionswirkungen von Siedlungs- und Verkehrsflächen nicht als ÖSL angesehen. Darüber hinaus zielen bei Hochwasserereignissen die Maßnahmen des Katastrophenschutzes grundsätzlich darauf, Siedlungen und Verkehrsinfrastruktur beispielsweise mit mobilen Hochwasserschutzanlagen zu schützen."@de,
+        ""@en ;
+    ns1:methodology "Bildung der Division aus bebauter Siedlungs- und Verkehrsfläche innerhalb rezenter Aue und rezenter Auenfläche (einschließlich Flussfläche)"@de,
+        ""@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#R01RG> a ns1:Indicator ;
+    rdfs:label "Anteil des amtl. festgesetzten Überschwemmungsgebietes an der Gebietsfläche"@de,
+        "Percentage of flood zones to reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#R> ;
+    ns1:hasIndicatorId "R01RG" ;
+    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015" ;
+    ns1:interpretation "Der Indikator beschreibt das potenzielle flächenbezogene Überschwemmungsrisiko in einer Gebietseinheit."@de,
+        "The indicator describes the total area at risk of flooding in a reference area."@en ;
+    ns1:methodology "Quotient aus der Fläche des festgesetzten Überschwemmungsgebietes und der Fläche der Gebietseinheit der entsprechenden Bezugsebene"@de,
+        "Quotient of official flood zones over the area of the administrative territory at the desired spatial level"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#R04RT> a ns1:Indicator ;
+    rdfs:label "Anteil amtl. festgesetzten Überschwemmungsgebietes mit bebauter Siedlungs- u. Verkehrsfläche"@de,
+        "Percentage of built-up area in flood zones"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#R> ;
+    ns1:hasIndicatorId "R04RT" ;
+    ns1:hasSpatialExtent [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015" ;
+    ns1:interpretation "Der Indikator beschreibt die Siedlungslast im Überschwemmungsgebiet einer Gebietseinheit."@de,
+        ""@en ;
+    ns1:methodology "Quotient aus baulich geprägter Siedlungs- und Verkehrsfläche im amtlich festgesetzten Überschwemmungsgebiet und der Fläche des festgesetzten Überschwemmungsgebietes in der Gebietseinheit der entsprechenden Bezugsebene."@de,
+        ""@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#R05RT> a ns1:Indicator ;
+    rdfs:label "Anteil baulich geprägter Siedlungs- u. Verkehrsfläche im amtl. festges. Überschwemmungsgebiet"@de,
+        "Ratio of built-up settlement area and transport space in flood zones"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#R> ;
+    ns1:hasIndicatorId "R05RT" ;
+    ns1:hasSpatialExtent [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015" ;
+    ns1:interpretation "Der Indikator beschreibt das potenzielle Überschwemmungsrisiko für baulich geprägte Flächen sowie Verkehrsflächen in einer Gebietseinheit."@de,
+        "The indicator describes the potential risk of flooding for built-up areas as well as transport space in an administrative territory."@en ;
+    ns1:methodology "Quotient aus der baulich geprägten Siedlungsfläche (Wohnbau, Mischnutzung, Industrie/Gewerbe, besondere funktionale Prägung) und Verkehrsfläche (Straße, Schiene, Flug zuzügl. Verkehrsbegleitfläche) innerhalb des amtlich festgesetzten Überschwemmungsgebietes und der gesamten baulich geprägten Siedlungs- und Verkehrsfläche der Gebietseinheit der entsprechenden Bezugsebene"@de,
+        "Quotient of built-up settlement and transport space within official flood zones over the total built-up settlement and transport space of the administrative territory at the relevant spatial level"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#R06RT> a ns1:Indicator ;
+    rdfs:label "Anteil Gebäudegrundfläche im amtl. festgesetzten Überschwemmungsgebiet"@de,
+        "Ratio of building area in total flood zone"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#R> ;
+    ns1:hasIndicatorId "R06RT" ;
+    ns1:hasSpatialExtent [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2010" ;
+    ns1:interpretation "Der Indikator beschreibt das potenzielle flächenbezogene Überschwemmungsrisiko für Gebäude in einer Gebietseinheit."@de,
+        "The indicator describes the potential risk of flooding of buildings in a reference area."@en ;
+    ns1:methodology "Quotient aus der Gebäudegrundfläche innerhalb des amtlich festgesetzten Überschwemmungsgebietes und der gesamten Gebäudegrundfläche (ohne Baulichkeiten im Gartenland) für die Gebietseinheit der entsprechenden Bezugsebene"@de,
+        "Quotient of the sum total of building footprints over the total area of officially designated flood zones of the administrative territory at the relevant spatial level."@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#S02RG> a ns1:Indicator ;
+    rdfs:label "Anteil Siedlungsfläche an Gebietsfläche"@de,
+        "Percentage of settlement area to reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
+    ns1:hasIndicatorId "S02RG" ;
+    ns1:hasSpatialExtent [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Flächenanteil sowohl der bebauten als auch der unbebauten Siedlungsfläche in einer Gebietseinheit."@de,
+        "The indicator describes the proportion of built-up and non built-up settlement area in a reference area."@en ;
+    ns1:methodology "Quotient aus der Vereinigung aller baulich geprägten Siedlungsflächen und Siedlungsfreiflächen abzüglich gepufferter Verkehrs- und Wasserflächen einerseits und der Gebietsfläche andererseits (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene)"@de,
+        "Quotient of the total of all built-up settlement areas and urban open spaces minus buffered transport space and areas of water over the reference area (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#S05RG> a ns1:Indicator ;
+    rdfs:label "Anteil Industrie- und Gewerbefläche an Gebietsfläche"@de,
+        "Percentage of industrial and commercial site to reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
+    ns1:hasIndicatorId "S05RG" ;
+    ns1:hasSpatialExtent [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Anteil von Industrie- und Gewerbeflächen (z. B. Einkaufszentren, Lager/Depots, großflächiger Handel, Ver- und Entsorgungsbetriebe, Messeeinrichtungen, Hafenanlagen) an der Gebietsfläche. Hohe Indikatorwerte treten v. a. in größeren Städten sowie Industrieregionen auf."@de,
+        "The indicator describes the proportion of industrial and commercial areas (e.g. shopping centers, storage facilities, extensive business parks, utilities, trade fairs, harbor facilities) in the reference area. High values are associated with large cities as well as industrial regions."@en ;
+    ns1:methodology "Quotient aus der Vereinigung von Industrie-/Gewerbefläche (einschl. Bergbaubetrieb) abzüglich gepufferter Verkehrs- und Wasserfläche, überlagerter Abbau-/Haldenfläche einerseits und der Gebietsfläche andererseits (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene)"@de,
+        "Quotient of all industrial/commercial areas, mining facilities, shipping traffic minus buffered transport space and areas of water, mines/dump sites as well as areas with the vegetation attribute 'tree stocks, shrubbery, grass' over the reference area (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#S08RG> a ns1:Indicator ;
+    rdfs:label "Anteil Siedlungsfreifläche an Gebietsfläche"@de,
+        "Percentage of urban open space to reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
+    ns1:hasIndicatorId "S08RG" ;
+    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Anteil von Grünflächen und Erholungsanlagen innerhalb des Siedlungsraumes (z. B. Park/Grünanlage, Kleingarten, Wochenendsiedlung, Golfplatz) an der Gebietsfläche. Hohe Indikatorwerte treten v. a. in größeren Städten auf, da die baulich geprägte Siedlungsfläche in ländlichen Gebieten meist unmittelbar an den Freiraum grenzt. Im Zeitverlauf kommt es in einigen Bundesländern zu größeren Differenzen in der Wertausprägung, die teilweise auf keiner realen Flächennutzungsänderung, sondern einer modellierungsbedingten Neuzuordnung beruhen (siehe: <a target='_blank' href='http://www.ioer-monitor.de/glossar/a/aaa-migrationseffekte/'>AAA-Migrationseffekte</a>)"@de,
+        "The indicator describes the ratio of green space and recreation areas within the settlement (e.g. parks and green sites, allotments, weekend homes, golf courses) to the reference area. High values are associated with large cities, as in rural areas open space is directly adjacent to settlements."@en ;
+    ns1:methodology "Quotient aus der Vereinigung verschiedener Siedlungsfreiflächen (Sport, Freizeit und Erholung sowie Friedhof) und überlagerter Vegetationsflächen auf Industrie/Gewerbe und Flächen besonderer funktionaler Prägung abzüglich gepufferter Verkehrs- und Wasserfläche einerseits und Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene) andererseits"@de,
+        "Quotient of the sum total of diverse urban open spaces (sport, leisure and recreation areas as well as cemetaries) and overlayed areas of vegetation on industrial/commercial sites as well as specific functional areas minus buffered transport space and areas of water over reference area (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#S10RG> a ns1:Indicator ;
+    rdfs:label "Anteil baulich geprägter Siedlungsfläche ohne Industrie und Gewerbe an Gebietsfläche "@de,
+        "Percentage of built-up settlement area with no industry/commerce to reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
+    ns1:hasIndicatorId "S10RG" ;
+    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Anteil baulich geprägter Siedlungsfläche ohne Industrie und Gewerbe in einer Gebietseinheit."@de,
+        "The indicator describes the proportion of built-up settlement excluding industrial and commercial areas in an administrative territory."@en ;
+    ns1:methodology "Quotient aus der Vereinigung verschiedener baulich geprägter Siedlungsflächen (Wohnbau, gemischte Nutzung, besondere funktionale Prägung) abzüglich gepufferter Verkehrs- und Wasserfläche einerseits und Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene) andererseits"@de,
+        "Quotient of the sum total of diverse built-up settlement areas (residential areas, combined use areas, specific functional areas) minus buffered transport space and areas of water over reference area (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#S11RG> a ns1:Indicator ;
+    rdfs:label "Anteil Siedlungs- und Verkehrsfläche an Gebietsfläche"@de,
+        "Percentage of settlement area and transport space to reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
+    ns1:hasIndicatorId "S11RG" ;
+    ns1:hasSpatialExtent [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Anteil des Siedlungs- und Verkehrsraumes in einer Gebietseinheit. Er korreliert positiv mit dem Versiegelungsgrad und negativ mit dem Freiraumanteil."@de,
+        "The indicator describes the proportion of settlement and transport space within an administrative territory. It correlates positively with the degree of soil-sealing and negatively with the proportion of open space."@en ;
+    ns1:methodology "Quotient aus der Vereinigung von baulich geprägter Siedlungsfläche, Siedlungsfreifläche und Verkehrsfläche abzüglich Wasserfläche einerseits und der Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene) andererseits"@de,
+        "Quotient of the total built-up settlement area, urban open space and transport space minus areas of water over the reference area (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#S12RG> a ns1:Indicator ;
+    rdfs:label "Anteil baulich geprägter Siedlungs- und Verkehrsfläche an Gebietsfläche"@de,
+        "Percentage of built-up settlement area and transport space to reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
+    ns1:hasIndicatorId "S12RG" ;
+    ns1:hasSpatialExtent [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Anteil des baulich geprägten Siedlungs- und des Verkehrsraumes in einer Gebietseinheit. Er korreliert positiv mit dem Versiegelungsgrad und negativ mit dem Freiraumanteil."@de,
+        "The indicator describes the proportion of built-up settlement and transport space in an administrative territory. It correlates positively with the degree of soil-sealing and negatively with the proportion of open space."@en ;
+    ns1:methodology "Quotient aus der Vereinigung von baulich geprägter Siedlungsfläche (Wohnbau, Mischnutzung, Industrie/Gewerbe, besondere funktionale Prägung) und Verkehrsfläche (Straße, Schiene, Flug zuzügl. Verkehrsbegleitfläche) abzüglich gepufferter Wasserfläche einerseits und der Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene) andererseits"@de,
+        "Quotient of the total built-up settlement area and transport space minus buffered areas of water over the reference area (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#S15RG> a ns1:Indicator ;
+    rdfs:label "Anteil baulich geprägter Siedlungsfläche an Gebietsfläche"@de,
+        "Percentage of built-up area to reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
+    ns1:hasIndicatorId "S15RG" ;
+    ns1:hasSpatialExtent [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Anteil baulich geprägter Fläche mit verschiedenen Funktionen in einer Gebietseinheit. Er korreliert positiv mit dem Versiegelungsgrad und negativ mit dem Freiraumanteil."@de,
+        "The indicator describes the proportion of built-up land with diverse functions in an administrative territory. It correlates positively with the degree of soil-sealing and negatively with the proportion of open space."@en ;
+    ns1:methodology "Quotient aus der Vereinigung von Wohnbaufläche, Fläche gemischter Nutzung und Fläche besonderer funktionaler Prägung sowie Industrie-/Gewerbefläche (einschl. Bergbaubetrieb) abzüglich gepufferter Verkehrs- und Wasserfläche einerseits und Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene) andererseits"@de,
+        "Quotient of total residential area, combined use area and specific functional area as well as industrial/commercial area (incl. mining operations and ship traffic minus overlayed areas of vegetation of attribute 'woodland, shrubbery, grass') minus buffered transport space over reference area (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#S40RG> a ns1:Indicator ;
+    rdfs:label "Bodenversiegelungsgrad"@de,
+        "Imperviousness"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
+    ns1:hasIndicatorId "S40RG" ;
+    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2015" ;
+    ns1:interpretation "Der Indikator beschreibt den Bodenversiegelungsgrad einer Gebietsfläche. Je höher der Wert, desto stärker versiegelt ist die Gebietseinheit (100 % entspricht einer vollständigen Bodenversiegelung, 0 % einer völlig unversiegelten Gebietsfläche)."@de,
+        "The indicator describes the degree of imperviousness in a reference area. The higher the value, the higher the proportion sealed soil in an administrative territory (100 % is complete soil-sealing, 0 % is a completely unsealed area)."@en ;
+    ns1:methodology "Die rasterbasierten Bodenversiegelungswerte (Wertebereich 0 - 100 %) werden aufsummiert und durch die Gebietsfläche geteilt (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene)."@de,
+        "The raster-based value for level of soil sealing (ranging from 0 - 100 %) is summed and divided by the reference area (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)."@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#U03RG> a ns1:Indicator ;
+    rdfs:label "Anteil unzerschnittener Freiräume > 100 km² an Gebietsfläche"@de,
+        "Percentage of open spaces > 100 km² to reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
+    ns1:hasIndicatorId "U03RG" ;
+    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2008",
+        "2010",
+        "2012",
+        "2014" ;
+    ns1:interpretation "Als ein Maß für die Landschaftszerschneidung und den Wert einzelner Räume gibt der (Teil-) Indikator den Flächenanteil unzerschnitten betrachteter Freiräume in einer Gebietseinheit an. Zerschneidungselemente bilden die Trassen des überörtlichen Verkehrsnetzes von Straße (alle Kreis- und höher klassifizierten Straßen) und Schiene (alle zwei- und mehrgleisigen Strecken sowie elektrifizierten eingleisigen Strecken, jeweils in Betrieb). Relativ hohe Werte treten v. a. in dünnbesiedelten Regionen mit geringer Landschaftszerschneidung auf. Für eine landschaftsökologische Bewertung sollte diese Kennzahl im Zusammenhang mit der effektiven Maschenweite betrachtet werden."@de,
+        "The (partial) indicator on the degree of unfragmented open spaces in an administrative territory provides a measure of landscape fragmentation and the value of individual plots. Elements causing fragmentation are sections of the regional roadway network (all district and higher roads) and track network (all two- and three-track sections as well as electrified single-track sections, in both cases currently still in operation). Relatively high values are associated with sparsely population regions with low landscape fragmentation. In order to evaluate fragmentation from the perspective of landscape ecology, this parameter should be considered in combination with the effective mesh width."@en ;
+    ns1:methodology "Verschneidung der Freiraumflächen (außerhalb der Ortslagen, ohne Hafenbecken) mit dem überörtlichen Verkehrsnetz (Linien gepuffert) und Selektion > 100 km²; Quotient aus der Summe der Flächenelemente in der Gebietsfläche und der Gebietsfläche selbst (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene)"@de,
+        "Fragmentation of open space (outside urban sites, without harbour basins) by the regional transport network (buffered lines) and selection > 100 km²; quotient from the sum of spatial elements in the reference area over the reference area itself (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#U04RG> a ns1:Indicator ;
+    rdfs:label "Anteil unzerschnittener Freiräume > 50 km² an Gebietsfläche"@de,
+        "Percentage of open spaces > 50 km² to reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
+    ns1:hasIndicatorId "U04RG" ;
+    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2008",
+        "2010",
+        "2012",
+        "2014" ;
+    ns1:interpretation "Als ein Maß für die Landschaftszerschneidung und den Wert einzelner Räume gibt der (Teil-) Indikator den Flächenanteil unzerschnitten betrachteter Freiräume in einer Gebietseinheit an. Zerschneidungselemente bilden die Trassen des überörtlichen Verkehrsnetzes von Straße (alle Kreis- und höher klassifizierten Straßen) und Schiene (alle zwei- und mehrgleisigen Strecken sowie elektrifizierten eingleisigen Strecken, jeweils in Betrieb). Relativ hohe Werte treten v. a. in dünnbesiedelten Regionen mit geringer Landschaftszerschneidung auf. Für eine landschaftsökologische Bewertung sollte diese Kennzahl im Zusammenhang mit der effektiven Maschenweite betrachtet werden."@de,
+        "The (partial) indicator on the degree of unfragmented open spaces in a reference unit provides a measure of landscape fragmentation and the value of individual spaces. Elements causing fragmentation are sections of the regional roadway network (all district and higher roads) and railways (all two- and three-track sections as well as electrified single-track sections, in both cases in operation). Relatively high values are associated with sparsely population regions with low landscape fragmentation. In order to evaluate fragmentation from the perspective of landscape ecology, this parameter should be considered in combination with the effective mesh width."@en ;
+    ns1:methodology "Verschneidung der Freiraumflächen (außerhalb der Ortslagen, ohne Hafenbecken) mit dem überörtlichen Verkehrsnetz (Linien gepuffert) und Selektion > 50 km²; Quotient aus der Summe der Flächenelemente in der Gebietsfläche und der Gebietsfläche selbst (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene)"@de,
+        "Fragmentation of open space (outside of urban sites, without harbour basins) by the regional transport network (buffered lines) and selection > 50 km²; quotient from the sum of spatial elements in the reference area over the reference area itself (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#U07RG> a ns1:Indicator ;
+    rdfs:label "Anteil unzerschnittener Wälder > 50 km² an Gebietsfläche"@de,
+        "Percentage of unfragmented forests > 50 km² to reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
+    ns1:hasIndicatorId "U07RG" ;
+    ns1:hasSpatialExtent [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2008",
+        "2010",
+        "2012",
+        "2014" ;
+    ns1:interpretation "Große zusammenhängende Wälder besitzen eine hohe naturschutzfachliche Bedeutung. Dieser Indikator betrachtet die Größe der nicht durch Verkehrswege zerschnittenen Wald- und Gehölzflächen. Zerschneidungselemente bilden die Trassen des überörtlichen Verkehrsnetzes von Straße (alle Kreis- und höher klassifizierten Straßen) und Schiene (alle zwei- und mehrgleisigen Strecken sowie elektrifizierten eingleisigen Strecken, jeweils in Betrieb). Relativ hohe Werte treten v. a. in dünnbesiedelten und waldreichen Regionen auf. Für eine landschaftsökologische Bewertung sollte diese Kennzahl im Zusammenhang mit der effektiven Maschenweite betrachtet werden."@de,
+        "Large contiguous areas of woodland are important for nature protection. The indicator describes the size of woodland sites and areas of forest that are not fragmented by transport paths. Elements causing fragmentation are sections of the regional roadway network (all district and higher roads) and railways (all two- and three-track sections as well as electrified single-track sections, in both cases in operation). Relatively high values are associated, in particular, with sparsely populated, richly forested regions. In order to evaluate fragmentation from the perspective of landscape ecology, this parameter should be considered in combination with the effective mesh width."@en ;
+    ns1:methodology "Verschneidung der Wald- und Gehölzflächen außerhalb der Ortslagen mit dem überörtlichen Verkehrsnetz (Linien gepuffert) und Selektion > 50 km²; Quotient aus der Summe der Flächenelemente in der Gebietsfläche und der Gebietsfläche selbst (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene)"@de,
+        "Fragmentation of forests and woodland sites outside of urban zones by the regional transport network (buffered lines) and selection > 50 km²; quotient from the sum of the fragmented sites in the reference area and the area itself (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#U18RG> a ns1:Indicator ;
+    rdfs:label "Anteil naturbetonter Flächen an Gebietsfläche"@de,
+        "Percentage of nature-accentuated areas to reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
+    ns1:hasIndicatorId "U18RG" ;
+    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2009",
+        "2012" ;
+    ns1:interpretation "Der Begriff Hemerobie leitet sich von den griechischen Wörtern hémeros (gezähmt, kultiviert) und bíos (leben) ab. Die Hemerobie stellt die Gesamtheit aller Eingriffe des Menschen in den Naturhaushalt dar und kann als ein inverses Maß der Naturnähe verstanden werden, wenn die anthropogenen Eingriffe reversibel sind. Den Flächennutzungen bzw. Bodenbedeckungen werden Werte folgender 7-stufigen Hemerobieklassifikation zugeordnet: - Stufe 1: ahemerob (nicht kulturbeeinflusst), - Stufe 2: oligohemerob (schwach kulturbeeinflusst), - Stufe 3: mesohemerob (mäßig kulturbeeinflusst), - Stufe 4: beta-euhemerob (mäßig-stark kulturbeeinflusst), - Stufe 5: alpha-euhemerob (stark kulturbeeinflusst), - Stufe 6: polyhemerob (sehr stark kulturbeeinflusst) und - Stufe 7: metahemerob (übermäßig stark kulturbeeinflusst / Biozönose zerstört). Von besonderem naturschutzfachlichem Interesse für die Freiraumentwicklung sind naturbetonte Flächen der Hemerobiestufen ahemerob bis mesohemerob, da diese keinen oder nur mäßigen periodischen Eingriffen des Menschen unterliegen. Hierzu zählen standortgerechte und standortfremde Wälder, Gehölze und Hecken, Sümpfe und Moore. Der restliche Anteil der Bezugsfläche ist folglich mindestens mäßig stark kulturbeeinflusst."@de,
+        "'The term hemeroby is derived from the Greek hémeros (tamed, cultivated) and bios (life). Hemeroby describes the totality of anthropogenic interventions in the natural environment and can be seen as a reverse measure of naturalness, if these interventions are reversible. The following seven levels of hemeroby are used to classify forms of land use or land cover: -Level 1: ahemerob (no cultural influence), -Level 2: oligohemerob (weak cultural influence), -Level 3: mesohemerob (moderate cultural influence), -Level 4: beta-euhemerob (moderate to strong cultural influence), -Level 5: alpha-euhemerob (strong cultural influence), -Level 6: polyhemerob (very strong cultural influence) and -Level 7: metahemerob (extreme cultural influence / destruction of ecosystems). Of particular interest from the perspective of nature protection and open space development are nature-accentuated areas classified as ahemerob to mesohemerob, as these are associated with little or no anthropogenic disturbance. Such areas can be native or non-native woodland, bushes and hedges, bogs and moorland. The remainder of the reference area, consequently, shows at least a moderate level of disturbance by human activity.'"@en ;
+    ns1:methodology "Die Zuordnung der Hemerobiestufen erfolgte auf der Grundlage von Geodaten wie folgt: Die Angaben zur Bodenbedeckung bzw. Flächennutzung werden aus dem LBM-DE entnommen, da die Kategorien des Freiraumes (v.a. Wald und Grünland) hier besser erfasst sind als im ATKIS Basis-DLM. Das Straßen-, Wege- und Schienennetz sowie die linienhaften Gewässer werden aus dem Basis-DLM abgeleitet und mit dem LBM-DE verschnitten, da das LBM-DE keine linienhaften Elemente enthält. Baumreihen und Hecken werden ebenso wie Punktobjekte (z.B. Quellen und landschaftsprägende Einzelbäume) nicht berücksichtigt. Für die Pufferung der im ATKIS Basis-DLM linienförmig vorliegenden Objekte können die enthaltenen Breitenangaben genutzt werden. Bei fehlender Breitenangabe erfolgt eine standardisierte Zuweisung von Werten anhand anderer Eigenschaften (z.B. Widmung von Straßen, Anzahl von Fahrstreifen oder Gleisen). Zur Klassifikation von Wäldern und vegetationslosen Flächen nach ihrer Hemerobie ist zusätzlich eine Verschneidung mit der potentiellen natürlichen Vegetation (pnV) notwendig. Hierfür wird die bundesweit vorliegende Karte der pnV im Maßstab 1:500.000 genutzt. Für die Analyse wird eine semantische Generalisierung mit den im Basis-DLM vorhandenen Landnutzungstypen Nadel- und Mischwald sowie natürlich waldfreien Standorten durchgeführt. Schneiden diese Fläche die jeweilige passende pnV-Einheit, wird diese als standortgerecht und damit weniger kulturbeeinflusst klassifiziert. Weil der Laubwald überwiegend der pnV in Deutschland entspricht, erfolgt dafür kein separater Abgleich."@de,
+        "Geodata is used to classify land into hemeroby steps as follows: The categorization of forms of land use is taken from LBM-DE, as the categories of open space (in particular forest and grazing land) are better captured than in ATKIS Basis-DLM. Road-, path- and the (rail)track network as well as linear waterways are derived from Basis-DLM and intersected with the LBM-DE, as the latter does not include any linear elements. Tree rows and hedgerows are ignored, as are point-like objects (such as springs and prominent individual trees). Data on width could be used to buffer the linear objects in ATKIS Basis-DLM. When such data was lacking, a standard width was applied to reflect other features (e.g. type of road, number of lanes or tracks). The classification of forests and vegetation-free areas according to level of hemeroby requires an additional intersection with the potential natural vegetation (pnV). Here nationally available maps of pnV at scale 1:500,000 were used. For the analysis, a semantic generalisation was carried out on the land use types present in Basis-DLM ? deciduous, coniferous and mixed forest as well as naturally non-forested sites. Owing to divergences in scale, comparison of the individual woodland sites was always undertaken with the pnV unit in which the largest proportion of the forest is found. The hemeroby index is calculated as the sum of the area-weighted ratios of the individual hemeroby classes for the respective reference unit. This leads to values lying between 1 and 7."@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#U20KG> a ns1:Indicator ;
+    rdfs:label "Hemerobieindex"@de,
+        "Hemeroby index"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
+    ns1:hasIndicatorId "U20KG" ;
+    ns1:hasSpatialExtent [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2009",
+        "2012" ;
+    ns1:interpretation "Der Begriff Hemerobie leitet sich von den griechischen Wörtern hémeros (gezähmt, kultiviert) und bíos (leben) ab. Die Hemerobie stellt die Gesamtheit aller Eingriffe des Menschen in den Naturhaushalt dar und kann als ein inverses Maß der Naturnähe verstanden werden, wenn die anthropogenen Eingriffe reversibel sind. Den Flächennutzungen bzw. Bodenbedeckungen werden Werte folgender 7-stufigen Hemerobieklassifikation zugeordnet: - Stufe 1: ahemerob (nicht kulturbeeinflusst), - Stufe 2: oligohemerob (schwach kulturbeeinflusst), - Stufe 3: mesohemerob (mäßig kulturbeeinflusst), - Stufe 4: beta-euhemerob (mäßig-stark kulturbeeinflusst), - Stufe 5: alpha-euhemerob (stark kulturbeeinflusst), - Stufe 6: polyhemerob (sehr stark kulturbeeinflusst) und - Stufe 7: metahemerob (übermäßig stark kulturbeeinflusst / Biozönose zerstört). Auf Basis dieses Indikators sind Gesamtaussagen über die Qualität der anthropogenen Flächeninanspruchnahme möglich (im Gegensatz zu sektoralen Indikatoren)."@de,
+        "The term hemeroby is derived from the Greek hémeros (tamed, cultivated) and bios (life). Hemeroby describes the totality of anthropogenic interventions in the natural environment and can be seen as a reverse measure of naturalness, if these interventions are reversible. The following seven levels of hemeroby are used to classifiy forms of land use or land cover. -Level 1: ahemerob (no cultural influence), -Level 2: oligohemerob (weak cultural influence), -Level 3: mesohemerob (moderate cultural influence), -Level 4: beta-euhemerob (moderate to strong cultural influence), -Level 5: alpha-euhemerob (strong cultural influence), -Level 6: polyhemerob (very strong cultural influence) and -Level 7: metahemerob (extreme cultural influence / destruction of ecosystems). This indicator provides a general statement on the quality of land consumption by anthropogenic intervention (in contrast to sectoral indicators)."@en ;
+    ns1:methodology "Die Zuordnung der Hemerobiestufen erfolgte auf der Grundlage von Geodaten wie folgt: Die Angaben zur Bodenbedeckung bzw. Flächennutzung werden aus dem LBM-DE entnommen, da die Kategorien des Freiraumes (v.a. Wald und Grünland) hier besser erfasst sind als im ATKIS Basis-DLM. Das Straßen-, Wege- und Schienennetz sowie die linienhaften Gewässer werden aus dem Basis-DLM abgeleitet und mit dem LBM-DE verschnitten, da das LBM-DE keine linienhaften Elemente enthält. Baumreihen und Hecken werden ebenso wie Punktobjekte (z.B. Quellen und landschaftsprägende Einzelbäume) nicht berücksichtigt. Für die Pufferung der im ATKIS Basis-DLM linienförmig vorliegenden Objekte können die enthaltenen Breitenangaben genutzt werden. Bei fehlender Breitenangabe erfolgt eine standardisierte Zuweisung von Werten anhand anderer Eigenschaften (z.B. Widmung von Straßen, Anzahl von Fahrstreifen oder Gleisen). Zur Klassifikation von Wäldern und vegetationslosen Flächen nach ihrer Hemerobie ist zusätzlich eine Verschneidung mit der potentiellen natürlichen Vegetation (pnV) notwendig. Hierfür wird die bundesweit vorliegende Karte der pnV im Maßstab 1:500.000 genutzt. Für die Analyse wird eine semantische Generalisierung mit den im Basis-DLM vorhandenen Landnutzungstypen Nadel- und Mischwald sowie natürlich waldfreien Standorten durchgeführt. Schneiden diese Fläche die jeweilige passende pnV-Einheit, wird diese als standortgerecht und damit weniger kulturbeeinflusst klassifiziert. Weil der Laubwald überwiegend der pnV in Deutschland entspricht, erfolgt dafür kein separater Abgleich. Der Hemerobieindex errechnet sich aus der Summe der flächengewichteten Anteile der einzelnen Hemerobiestufen an der jeweiligen Bezugseinheit. Dabei können Werte zwischen 1 und 7 auftreten."@de,
+        "Geodata is used to classify land into hemeroby steps as follows: The categorization of forms of land use is taken from LBM-DE, as here the categories of open space (in particular forest and grazing land) are better captured than in ATKIS Basis-DLM. Road-, path- and rail networks as well as linear waterways are derived from Basis-DLM and intersected with LBM-DE, as the latter does not include any line-like elements. Tree rows and hedgerows are ignored, as are point-like objects (such as springs and prominent individual trees). Data on width could be used to buffer the line-like objects in ATKIS Basis-DLM. When such data was lacking, a standard width was applied to reflect other features (e.g. type of road, number of lanes of tracks). The classification of forests and vegetation-free areas according to level of hemeroby requires an additional intersection with the potential natural vegetation (pnV). Here nationally available maps of pnV at scale 1:500,000 were used. For the analysis a semantic generalisation was carried out on the land use types present in Basis-DLM ? deciduous, coniferous and mixed forest as well as naturally non-forested sites. Owing to divergences in scale, the comparison of the individual woodland sites was always undertaken with the pnV unit in which the largest proportion of forest is found. The hemeroby index is calculated as the sum of the area-weighted ratios of the individual hemeroby classes for the respective reference unit. This leads to values lying between 1 and 7."@en ;
+    ns2:Unit "" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#U30DG> a ns1:Indicator ;
+    rdfs:label "Gehölzdominierte Ökotondichte"@de,
+        "Wood dominated ecotone density"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
+    ns1:hasIndicatorId "U30DG" ;
+    ns1:hasSpatialExtent [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Als Ökoton (Saum- oder Randbiotop) ist in der Ökologie ein besonders artenreicher Übergangsbereich zwischen zwei verschiedenen Ökosystemen zu verstehen. Dabei spielen Gehölz- und Waldränder, Baumreihen und Hecken eine wichtige Rolle. Je mehr Saumbiotope es in einer Landschaft bzw. Gebietseinheit gibt, desto höher ist diese Landschaft aus naturschutzfachlicher Sicht zu bewerten."@de,
+        "In the field of ecology, an ecotone is a transitional or boundary area between two ecosystems, which therefore displays wide species diversity. Important examples of ecotones are marginal areas of forests and woodland, tree rows and hedges. The more ecotones a landscape or administrative territory possesses, the higher the landscape value for nature conservation."@en ;
+    ns1:methodology "Quotient aus der gesamten Randlinienlänge von Gehölz- und Waldrändern, Baumreihen und Hecken einerseits und der Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene) andererseits. Es werden die Längen der im Basis-DLM dargestellten äußeren Ränder von Waldflächen und Gehölzen sowie der linienhaft erfassten Baumreihen, Hecken und Gehölze in der Gebietseinheit aufsummiert. Dabei werden Waldränder an durchquerenden Straßen, Bahnlinien oder Gewässern nur dann berücksichtigt, wenn diese Objekte als Flächen im Basis-DLM enthalten sind. Linien direkt aneinander grenzender Waldflächen bzw. Gehölze gehen nicht in die Berechnung ein. Folgende ATKIS-Objekte werden berücksichtigt: (a) Randlinien flächenhafter Objekte: Wald (43002), Gehölz (43003), Vegetationsmerkmal (54001) mit folgendem Bewuchs: Baumbestand Laubholz (BWS=1021), Baumbestand Nadelholz (BWS=1022), Baumbestand Laub- und Nadelholz (BWS=1023) oder Gehölz (BWS=1250) (b) Linienhafte Objekte: Vegetationsmerkmal (54001) mit folgendem Bewuchs: Hecke (BWS=1100), Baumreihe Laubholz (BWS=1210), Baumreihe Nadelholz (BWS=1220) oder Baumreihe Laub- und Nadelholz (BWS=1230)"@de,
+        "'Quotient of the total length of woodland/low-growing woodland margins and tree rows/hedgerows over the reference area (which is the administrative territory derived from ATKIS Basis-DLM according to the level of investigation) The lengths of the margins of woodland sites and low-growing woodland as well as line-like tree rows, hedgerows and low-growing woodland sites are summed for the administrative territory. Forest margins at intersecting roads, railway lines or waterways are only incorporated when these are separately indicated as spatial elements in Basis-DLM. Lines created by directly abutting forest areas or low-growing woodland are not considered in the calculation. The following ATIKIS objects are considered: (a) Margins of extended objects: forest (43002), low-growing woodland (43003), vegetation feature (54001) with the following plant form (German ? Bewuchs/BWS): tree stock deciduous forest (BWS=1021), tree stock coniferous forest (BWS=1022), tree stock mixed forest (BWS=1023) or low-growing woodland (BWS=1250) (b) Line-like objects: vegetation feature (54001) with following plant cover: hedge (BWS=1100), tree row deciduous (BWS=1210), tree row coniferous (BWS=1220) or tree row deciduous and coniferous trees (BWS=1230)'"@en ;
+    ns2:Unit "km/km²" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#U31DG> a ns1:Indicator ;
+    rdfs:label "Gewässerranddichte"@de,
+        "Water edge density"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
+    ns1:hasIndicatorId "U31DG" ;
+    ns1:hasSpatialExtent [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2015" ;
+    ns1:interpretation "Mit dem Indikator werden die Längen aller kleineren Fließgewässer (3 m durchschnittliche Breite) als lineare Elemente sowie die Randlängen von größeren Fließgewässern (6 m durchschnittliche Breite) und flächenhaften Gewässern erfasst und auf die jeweilige Gebietsfläche bezogen. Dieser Indikator besitzt in mehrfacher Hinsicht Bedeutung: -aus ökologischer Sicht, da gerade Randbereiche und Ufersäume eine hohe Artenvielfalt besitzen. -aus anthropogener Sicht, da eine vielfältige Landschaft als attraktiv empfunden wird. Gewässer-Randlinien werden in einschlägigen Modellen als besonders wichtig eingestuft. Hier werden nur ganzjährig wasserführende und nicht verrohrte Gewässer betrachtet. Kanäle finden wegen ihrer meist starken technischen Überprägung keine Berücksichtigung."@de,
+        ""@en ;
+    ns1:methodology "Quotient aus der gesamten Randlinienlänge von Still- und Fließgewässern einerseits und der Gebietsfläche (Verwaltungsgeometrie 1:25 000) andererseits. Es werden die Längen der im Basis-DLM dargestellten äußeren Ränder aller stehenden Gewässer und von Fließgewässern mit einer Breite über 3 m, sowie die Länge aller linienhaften Gewässer unter 3 m Breite erfasst. Im Basis DLM sind Gewässer über 12 m Breite flächenhaft erfasst, und besitzen folglich 2 Randlinien. Schmalere Fließgewässer sind dagegen als einfaches Linienelement enthalten und finden im Indikator entsprechend ihrer durchschnittlichen Breite (Attribut: BRG) Berücksichtigung. Bei kleineren Fließgewässern (BRG < 3 m, entspricht durchschnittlicher Gewässerbreite von 3 m) geht nur die Gewässerlänge in die Berechnung ein, da diese eine geringere Uferausdehnung und Bedeutung für die Landschaftsvielfalt besitzen. Dagegen wird für größere Fließgewässer (ab durchschnittlicher Gewässerbreite von 6 m) zunächst eine beidseitige Pufferung durchgeführt. Dabei entspricht die Pufferdistanz der Hälfte des Attributs BRG. Ränder von Gewässern mit Lage auf oder in direkter Nähe zu administrativen Grenzen werden eindeutig einer Gebietseinheit zugewiesen. Durch Verschneidung von Gewässern mit administrativen Grenzen modellierte und physisch nicht vorhandene Ränder gehen durch die Anwendung der ArcGIS Funktion 'Erase' nicht in den Ergebniswert ein. Außerdem werden Gewässerlinienabschnitte (BRG < 3m) mit Lage auf administrativen Grenzen, eindeutig einer administrativen Einheit zugewiesen, um eine Doppelzählung bei der Aggregation auf nächsthöhere Gebietseinheiten zu vermeiden. Folgende ATKIS-Objekte werden berücksichtigt: -Randlinien flächenhafter Objekte: Stehende Gewässer und Fließgewässer mit einer Breite von 12 m (Objektarten 44001, 44006 und 44007), ohne FKT = 8300 (Kanal) und ohne HYD = 2000 (nicht ständig wasserführend). Transformation der Polygone der flächenhaften Gewässer in Linien (Funktion 'Polygons to Line', mit der Option 'Identify and store polygon neighboring information'). Anschließend selektieren der Linien, die Außengrenzen (also Ufer) sind (Select LEFT_FID = -1) -Linienhafte Objekte: Objektart 44004 (Gewässerachse) mit der Bedingung HYD ungleich 2000 oder 3000 (nicht ständig wasserführend bzw. trockengefallen) sowie ungleich FKT = 8300 (Kanäle). Entfernen aller verrohrten und durch Bauwerke (z.B. Gewässerbrücken, Wehr- und Schöpfwerkanlagen) überprägte Gewässerabschnitte über das Attribut HDU_X gleich 1. Damit werden alle Gewässerelemente mit den Attributen BWF 1800, 1820, 1870, 2010, 2011, 2012, 2050, 2070, 2090 entfernt."@de,
+        ""@en ;
+    ns2:Unit "m/ha" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#U51RG> a ns1:Indicator ;
+    rdfs:label "Anteil Einwirkbereich von Hochspannungsfreileitungen an Gebietsfläche"@de,
+        "Percentage of area of influence of high-voltage lines to reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
+    ns1:hasIndicatorId "U51RG" ;
+    ns1:hasSpatialExtent [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2015" ;
+    ns1:interpretation "Der Indikator erfasst den Einwirkbereich von Hochspannungsfreileitungen. In diesem Bereich ist die Landschaft durch Leitungsmasten technisch stark überprägt und besitzt eine geringe Landschaftsästhetik. Dies bedingt eine verminderte Erholungswirkung in der freien Landschaft. Einwirkungsbereiche von Niederfrequenzanlagen sind in der allgemeinen Verwaltungsvorschrift zur Durchführung der Verordnung über elektromagnetische Felder - 26. BImSchV (26. BImSchVVwV) folgendermaßen definiert: 'Der Einwirkungsbereich einer Anlage ist der Bereich, in dem die Anlage signifikant von den natürlichen und mittleren anthropogen bedingten Immissionen abhebende elektrische oder magnetische Felder verursacht, unabhängig davon, ob die Immissionen tatsächlich schädliche Umwelteinwirkungen auslösen.' Diese Bereiche werden im Indikator als Distanzmaß für die Wirkung von elektrischen und magnetischen Feldern verwendet. Bei der Festlegung der in Anlage 1 des 26. BImSchV aufgeführten Grenzwerte wurden akute Wirkungen durch elektrischen Ströme berücksichtigt, die im Körper durch elektrische und magnetische Wechselfelder erzeugt werden."@de,
+        ""@en ;
+    ns1:methodology "Quotient von Einwirkbereich und Bezugsfläche. Für die Modellierung des Einwirkungsbereichs werden: 1. die im ATKIS Basis-DLM vorhandenen Hochspannungsfreileitungen erfasst (Objektart: 51005; Attributart: BWF 1110 entspr. Freileitung), 2. mit Hilfe von Open Street Map werden z.T. fehlende Informationen zur Spannungsstärke (speziell Spannungen mind. 110 kV) ergänzt, 3. die Reichweite der Emissionen von Freileitungen mit den in der 26. BImSchVVwV festgelegten Pauschalwerten: - 200 m bei 110 kV - 300 m bei 220 kV - 400 m bei 380 kV modelliert (Erzeugung einer Pufferfläche um die Freileitungen)."@de,
+        ""@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#V01RG> a ns1:Indicator ;
+    rdfs:label "Anteil Verkehrsfläche an Gebietsfläche"@de,
+        "Percentage of transport space to reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#V> ;
+    ns1:hasIndicatorId "V01RG" ;
+    ns1:hasSpatialExtent [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Anteil des Verkehrsraumes an der Gebietsfläche. Hohe Indikatorwerte treten v. a. in Gebietseinheiten auf, wo sich Knotenpunkte des überregionalen Verkehrs befinden."@de,
+        "The indicator describes the proportion of transport space within the reference area. High values generally indicate a regional transportation hub."@en ;
+    ns1:methodology "Quotient aus der Vereinigungsmenge von (gepufferter) Straßen-, Schienen- und Flugverkehrsfläche (einschl. Verkehrsbegleitgrün) einerseits und Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene) andererseits"@de,
+        "Quotient of the total (buffered) areas of roads, rail and air transport (including greenery) over the reference area (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#V02RG> a ns1:Indicator ;
+    rdfs:label "Anteil Straßenverkehrsfläche an Gebietsfläche"@de,
+        "Percentage of street, square and path to reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#V> ;
+    ns1:hasIndicatorId "V02RG" ;
+    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt den Flächenanteil des gesamten Verkehrsnetzes für den Kraftverkehr (klassifizierte und nicht klassifizierte Straßen, Plätze sowie Hauptwirtschaftswege) an der Gebietsfläche. Hohe Indikatorwerte treten v. a. in Gebietseinheiten auf, wo sich Knotenpunkte des überregionalen Verkehrs befinden."@de,
+        "The indicator describes the ratio of the entire transport network for motorised vehicles (classified and unclassified roads, squares as well as hard-surface rural roads) to the reference area. High values generally indicate a regional transportation hub."@en ;
+    ns1:methodology "Quotient aus der Vereinigungsmenge von Straßen (gepuffert), Hauptwirtschaftswegen (gepuffert), Plätzen sowie Raststätten einerseits und Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene) andererseits"@de,
+        "Quotient of total (buffered) area of roads and hard-surface rural roads, car parks as well as service areas over reference area (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "%" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#V03DG> a ns1:Indicator ;
+    rdfs:label "Straßennetzdichte in Gebietsfläche"@de,
+        "Roadway density in reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#V> ;
+    ns1:hasIndicatorId "V03DG" ;
+    ns1:hasSpatialExtent [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt die Länge des klassifizierten Straßennetzes pro Gebietsfläche. Hohe Indikatorwerte treten v. a. in größeren Städten, dicht besiedelten und über das Straßennetz gut erschlossenen Regionen auf."@de,
+        "The indicator describes the length of the classified road network per reference area. High values are particularly associated with large cities as well as densely populated regions with good road connections."@en ;
+    ns1:methodology "Quotient aus der Länge aller klassifizierten Straßen und der Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene)"@de,
+        "Quotient of the length of all classified streets over the reference area (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "km/km²" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#V29DG> a ns1:Indicator ;
+    rdfs:label "Fahrwegenetzdichte in Gebietsfläche"@de,
+        "Road network density in reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#V> ;
+    ns1:hasIndicatorId "V29DG" ;
+    ns1:hasSpatialExtent [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt die Länge des Fahrwegenetzes pro Gebietsfläche. Höhere Indikatorwerte treten in unterschiedlichen Regionen auf."@de,
+        "The indicator describes the length of the road network per reference area. High values can appear in a diverse array of regions."@en ;
+    ns1:methodology "Quotient aus der Länge aller Fahrwege (nicht klassifizierte Straßen sowie Hauptwirtschaftswege) und der Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene)"@de,
+        "Quotient of the length of all minor roads (unclassified roads as well as hard-surface rural roads) over the reference area (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "km/km²" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#V30DG> a ns1:Indicator ;
+    rdfs:label "Gesamtkraftverkehrsnetzdichte in Gebietsfläche"@de,
+        "Density of total roadway network for motorised vehicles in reference area"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#V> ;
+    ns1:hasIndicatorId "V30DG" ;
+    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2000",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017" ;
+    ns1:interpretation "Der Indikator beschreibt die Gesamtlänge des Verkehrsnetzes für den Kraftverkehr (klassifizierte und nicht klassifizierten Straßen sowie Hauptwirtschaftswege) pro Gebietsfläche. Hohe Indikatorwerte treten v. a. in größeren Städten, dicht besiedelten und über das Straßennetz gut erschlossenen Regionen auf."@de,
+        "The indicator describes the total length of the transport network for motorised vehicles (classified and unclassified roads as well as hard-surface rural roads) per reference area. High values are associated with large cities as well as densely populated regions which are closed integrated with the road network."@en ;
+    ns1:methodology "Quotient aus der Länge des Gesamtkraftverkehrsnetzes (alle klassifizierten und nicht klassifizierten Straßen sowie Hauptwirtschaftswege) und der Gebietsfläche (aus dem ATKIS Basis-DLM abgeleitete Fläche der Gebietseinheit der entsprechenden Bezugsebene)"@de,
+        "Quotient of the length of the total roadway network for motorised vehicles (all classified and unclassified roads as well as hard-surface rural roads) over the reference area (derived from ATKIS Basis-DLM for the administrative territory at the respective spatial level)"@en ;
+    ns2:Unit "km/km²" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#X01RG> a ns1:Indicator ;
+    rdfs:label "Reliefvielfalt"@de,
+        "Relief diversity"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#X> ;
+    ns1:hasIndicatorId "X01RG" ;
+    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2012" ;
+    ns1:interpretation "Der Indikator bildet Bereiche ab, die ein abwechslungsreiches, vielgestaltiges Relief aufweisen. Deutlich heben sich die Mittelgebirgsregionen und der Alpenraum ab. Die reale Oberfläche in Deutschland ist auf Gemeindeebene bis auf das ca. 1,3-fache größer als die planimetrische Fläche."@de,
+        "The indicator pinpoints areas with a highly diverse relief. Thus the central uplands and Alpine region can be clearly seen. The actual land surface (calculated at municipal level) in Germany is around 1.3 times larger than the planimetric area."@en ;
+    ns1:methodology "Zunächst erfolgt die Berechnung der 'realen' Oberfläche jedes Pixels eines Höhenmodells nach der Methode von Jenness (2004), siehe dazu auch Hoechstetter et al. (2008). Danach wird für jede Gebietseinheit die reale Oberfläche aufsummiert und ins Verhältnis zur planaren Fläche gesetzt. Wegen der Vergleichbarkeit wird die planare Fläche aus Rasterdaten mit gleicher Auflösung wie das Höhenmodell berechnet."@de,
+        "The 'real' surface of every pixel of a relief model is calculated according to the method of Jenness (2004) (cf. Hoechstetter et al. 2008). Then the real surface is summed for every spatial unit and compared with the planar surface. To ensure comparability, the planar areas of raster data are calculated at the same resolution as the relief model."@en ;
+    ns2:Unit "" .
+
+<https://monitor.ioer.de/monitor_api/sora/indicator#X02KG> a ns1:Indicator ;
+    rdfs:label "Reliefenergie"@de,
+        "Relief energy"@en ;
+    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#X> ;
+    ns1:hasIndicatorId "X02KG" ;
+    ns1:hasSpatialExtent [ rdf:value "500m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "10000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "5000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "1000m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "200m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
+        [ rdf:value "100m" ;
+            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
+    ns1:hasYearRecorded "2012" ;
+    ns1:interpretation "Der Indikator gibt an, wie stark eine Gebietseinheit durch das Relief geprägt ist. Deutlich heben sich die Mittelgebirgsregionen und der Alpenraum ab."@de,
+        "The indicator determines how strongly relief characterises a reference area. The central uplands and Alpine region can thus be clearly distinguished."@en ;
+    ns1:methodology "Die Differenz zwischen maximalem und minimalem Höhenwert wird auf Grundlage des Digitalen Geländemodells für jede Gebietseinheit ermittelt."@de,
+        "The difference between maximum and minimum altitude is determined for every spatial unit on the basis of the digital relief model."@en ;
+    ns2:Unit "m" .
+

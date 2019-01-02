@@ -21,16 +21,23 @@ Global
 /*
 Navbar
  */
- #navbar{
-    border-bottom: 1px solid black;
-}
  .navbar{
      width:100%;
-     background-color: white !important;
+     background-color: lightgrey !important;
  }
  .navbar ul li button{
      margin-left: 2vh;
  }
  .navbar .logout .btn{
     color:white;
+}
+ /*
+ Sidenav
+  */
+#side_nav{
+    position: absolute;
+    left:0;
+    height:100%;
+    top:116px;
+    border-right: 2px solid grey;
 }

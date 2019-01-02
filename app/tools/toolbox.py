@@ -1,4 +1,5 @@
 import json
+from app import *
 
 class Toolbox:
     def clean_string(self, string):
@@ -13,3 +14,5 @@ class Toolbox:
             return True
         except ValueError as error:
             return False
+
+

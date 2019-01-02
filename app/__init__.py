@@ -13,6 +13,10 @@ logging.basicConfig(level=logging.INFO)
 app = Flask(__name__)
 Bootstrap(app)
 app.config.from_object(Config)
+# set the logger for development
+gunicorn_logger = logging.getLogger("gunicorn.error")
+app.logger.handlers = gunicorn_logger.handlers
+app.logger.setLevel(gunicorn_logger.level)
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)

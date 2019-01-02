@@ -3,13 +3,14 @@ from rdflib import Graph, RDF, RDFS, Namespace, URIRef, Literal
 import requests
 import json
 import logging as log
+from app.config import Config
 
 class Category:
     def __init__(self,json_url):
         indicator_request = requests.get(json_url)
         indicator_json = json.loads(indicator_request.text)
             
-        soo = Namespace("https://{}/monitor_api/sora/ontology#".format(request.host))
+        soo = Namespace("{}sora/ontology#".format(Config.URL_ENDPOINT))
         qu = Namespace("https://purl.oclc.org/NET/ssnx/qu/qu#")
         self.g = Graph()
 
@@ -17,7 +18,7 @@ class Category:
             cat_id =k
             cat_name = v['cat_name']
             cat_name_en = v['cat_name_en']
-            uri = URIRef("https://{}/monitor_api/sora/category#{}".format(request.host, cat_id))
+            uri = URIRef("{}sora/category#{}".format(Config.URL_ENDPOINT, cat_id))
             self.g.add((uri, soo.hasCategoryId, Literal(cat_id)))
             self.g.add((uri, RDFS.label, Literal(cat_name, lang='de')))
             self.g.add((uri, RDFS.label, Literal(cat_name_en, lang='en')))

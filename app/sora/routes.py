@@ -4,12 +4,14 @@ from flask import jsonify, request, Response, abort
 import json
 import os
 
+from app import *
 from app.sora import sora
 from app.sora.request_handler import ESRIServerManager
 from app.sora.model.indicator import Indicator
 from app.sora.model.category import Category
+from app.config import Config
 
-url = 'https://monitor.ioer.de/backend/sora/GET.php?values={"format":{"id":"raster"},"query":"getAllIndicators"}'
+url = '%s?values={"format":{"id":"raster"},"query":"getAllIndicators"}' % (Config.URL_BACKEND)
 
 @sora.route("/indicator", methods=['GET', 'POST'])
 def get_indicators():
@@ -51,10 +53,9 @@ def get():
     # test if JSON is valid
     try:
         #validate json
-        if values is not None:
-            test = json.loads(values.decode("utf-8"))
         #set request and get response from esri server
         request_handler = ESRIServerManager(job, values=values,job_id=job_id)
+        app.logger.debug("result: \n%s",str(request_handler.get_request()))
         return request_handler.get_request()
     except Exception as e:
         return jsonify(error=str(e))

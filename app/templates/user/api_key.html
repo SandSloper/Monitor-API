@@ -31,7 +31,8 @@
         key = '{{ key }}',
         username='{{ username }}',
         user_id='{{ user_id }}',
-        url_base = window.location.origin+'/monitor_api';
+        url_base = window.location.origin+'/monitor_api',
+        host="{{ host }}";
     if(key==='None' || !key){
         button_text="Generieren";
         key=' ';
