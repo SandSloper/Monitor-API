@@ -1,7 +1,7 @@
 import json
 from flask import Response
 from app.flaechenportal import f_portal
-from app.flaechenportal.parser import Parser
+from app.flaechenportal.Parser import Parser
 
 parser = Parser()
 

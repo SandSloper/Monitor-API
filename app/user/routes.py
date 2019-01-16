@@ -4,12 +4,12 @@ from flask_login import login_user, LoginManager, current_user, login_required, 
 from flask import url_for
 from flask import Response
 
-from app.ogc.models.forms import *
-from app.ogc.models.users import *
+from app.user.models.Forms import *
+from app.user.models.Users import *
 from app.config import Config
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from app.ogc import ogc
+from app.user import ogc
 from app import app,db
 
 import requests
@@ -25,7 +25,7 @@ def index():
 def load_user(user_id):
     return USER.query.get(int(user_id))
 
-@ogc.route('/ogc', methods=['GET', 'POST'])
+@ogc.route('/user', methods=['GET', 'POST'])
 def get_service():
     #get all url parameter
     url = request.url.split("?")
@@ -122,7 +122,7 @@ def api_key():
         key = current_user.api_key
         return render_template('user/api_key.html', key=key, username=current_user.username, user_id=current_user.id, access=current_user.access,host=Config.URL_ENDPOINT)
     else:
-        return url_for('ogc.login')
+        return url_for('user.login')
 
 @ogc.route('/logout')
 @login_required

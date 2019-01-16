@@ -6,9 +6,9 @@ import os
 
 from app import *
 from app.sora import sora
-from app.sora.request_handler import ESRIServerManager
-from app.sora.model.indicator import Indicator
-from app.sora.model.category import Category
+from app.sora.RequestHandler import ESRIServerManager
+from app.sora.model.Indicator import Indicator
+from app.sora.model.Category import Category
 from app.config import Config
 
 url = '%s?values={"format":{"id":"raster"},"query":"getAllIndicators"}' % (Config.URL_BACKEND)

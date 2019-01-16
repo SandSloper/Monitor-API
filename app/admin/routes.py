@@ -1,27 +1,20 @@
 # -*- coding: utf-8 -*-
-from flask import render_template,request,redirect
-from flask_login import LoginManager, current_user
-
-from app.ogc.models.users import * 
-
+from flask import render_template, jsonify
 from app.admin import admin
-from app import app
-
-'''login_manager = LoginManager()
-login_manager.init_app(app)
-
-@login_manager.user_loader
-def load_user(user_id):
-    return USER.query.get(int(user_id))'''
-
+from app.admin.services.Wfs import Wfs
+from app.admin.services.Wcs import Wcs
 
 @admin.route('/')
-def admin():
-    '''if current_user.is_authenticated:
-        if current_user.access == 2:
-            return render_template("admin/index.html")
-    else:
-        return redirect("https://{}/monitor_api/login".format(request.host))'''
-    app.logger.debug("admin")
+def admin_page():
     return render_template("admin/index.html")
+
+@admin.route('/wfs',methods=['GET', 'POST'])
+def wfs_service():
+    wfs = Wfs()
+    return jsonify(wfs.createAllServices())
+
+@admin.route('/wcs',methods=['GET', 'POST'])
+def wcs_service():
+    wcs = Wcs()
+    return jsonify(wcs.createAllServices())
 

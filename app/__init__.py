@@ -24,7 +24,7 @@ db.init_app(app)
 CORS(app)
 Session(app)
 
-from app.ogc import ogc
+from app.user import ogc
 from app.flaechenportal import f_portal
 from app.email import mail
 from app.sora import sora

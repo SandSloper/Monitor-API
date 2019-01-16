@@ -4,7 +4,7 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-from app.tools.toolbox import *
+from app.tools.Toolbox import *
 
 class Parser:
 
