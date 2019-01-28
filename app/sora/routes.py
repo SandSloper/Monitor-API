@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from rdflib import Graph
 from flask import jsonify, request, Response, abort
-import json
 import os
 
 from app import *

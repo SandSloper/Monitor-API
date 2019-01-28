@@ -4,6 +4,7 @@ import codecs
 import requests
 import json
 import datetime
+from app import *
 from app.config import Config
 from app.tools.Toolbox import Toolbox
 from app.admin.services.IndicatorValues import IndicatorValues
@@ -11,9 +12,7 @@ from app.admin.services.IndicatorValues import IndicatorValues
 class Wcs:
     def __init__(self):
         self.service = 'wcs'
-        # server
-        #self.path = os.chdir('/mapsrv_daten/detailviewer/wcs_mapfiles')
-        self.path = os.chdir('G:\\mapsrv_daten\\detailviewer\\wcs_mapfiles')
+        self.path = os.chdir('/mapsrv_daten/detailviewer/wcs_mapfiles')
         self.toolbox = Toolbox()
 
     def createAllServices(self):
@@ -124,7 +123,7 @@ class Wcs:
             for t in sorted(time_array):
                 int_time = int(t)
                 now = datetime.datetime.now()
-                if int_time > 2006 and int_time <= now.year:
+                if int_time >= 2006 and int_time <= now.year:
                     for s in spatial_extends:
                         layer=("Layer\n"
                                '    NAME "{0}_{1}_{2}m"\n'
@@ -154,6 +153,7 @@ class Wcs:
                 "unit": units,
                 "methodik": methodology
             }}
+            app.logger.debug("Finished WMS_service for Indicator:\n {0}".format(created_layer))
             file.write("END")
 
         except IOError as e:
@@ -166,5 +166,5 @@ class Wcs:
                 "unit": units,
                 "methodik": methodology
             }}
-
+            app.logger.debug("Error in create WMS_service for Indicator:\n {0}".format(created_layer))
         return created_layer

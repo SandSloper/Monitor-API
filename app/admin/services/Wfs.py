@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import codecs
+from app import *
 from app.admin.services.IndicatorValues import IndicatorValues
 from app.tools.Toolbox import Toolbox
 import datetime
@@ -8,9 +9,7 @@ import datetime
 class Wfs:
     def __init__(self):
         self.service='wfs'
-        #server
-        #self.path=os.chdir('/mapsrv_daten/detailviewer/wfs_mapfiles')
-        self.path = os.chdir('G:\\mapsrv_daten\\detailviewer\\wfs_mapfiles')
+        self.path=os.chdir('/mapsrv_daten/detailviewer/wfs_mapfiles')
         self.toolbox = Toolbox()
 
     def createAllServices(self):
@@ -153,6 +152,7 @@ class Wfs:
                 "unit":units,
                 "methodik":methodology
             }}
+            app.logger.debug("Finished WMS_service for Indicator:\n {0}".format(created_layer))
             file.write("END")
         except IOError as e:
             created_layer = {id: {
@@ -164,7 +164,7 @@ class Wfs:
                 "unit": units,
                 "methodik": methodology
             }}
-
+            app.logger.debug("Error in create WMS_service for Indicator:\n {0}".format(created_layer))
         return created_layer
 
 

@@ -3,6 +3,7 @@ from flask import render_template, jsonify
 from app.admin import admin
 from app.admin.services.Wfs import Wfs
 from app.admin.services.Wcs import Wcs
+from app.admin.services.Wms import Wms
 
 @admin.route('/')
 def admin_page():
@@ -17,4 +18,9 @@ def wfs_service():
 def wcs_service():
     wcs = Wcs()
     return jsonify(wcs.createAllServices())
+
+@admin.route('/wms',methods=['GET', 'POST'])
+def wms_service():
+    wms = Wms()
+    return jsonify(wms.createAllServices())
 
