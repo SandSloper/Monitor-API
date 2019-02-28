@@ -7,7 +7,7 @@ ACCESS = {
     'admin': 2
 }
 
-class USER(UserMixin, db.Model):
+class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), nullable=False, unique=True)
@@ -17,9 +17,12 @@ class USER(UserMixin, db.Model):
     firstname = db.Column(db.String(30), nullable=False)
     facility = db.Column(db.String(50), nullable=False)
     api_key = db.Column(db.String(50),nullable=False)
+    business = db.Column(db.String(50),nullable=False)
     access = db.Column(db.Integer,nullable=False)
+    confirmed = db.Column(db.Boolean, nullable=False, default=False)
+    confirmed_on = db.Column(db.DateTime, nullable=True)
 
-    def __init__(self,username, password, email,lastname,firstname,facility,access):
+    def __init__(self,username, password, email,lastname,firstname,facility,access,business,confirmed,confirmed_on=None):
         self.username = username
         self.password = password
         self.email = email
@@ -27,6 +30,9 @@ class USER(UserMixin, db.Model):
         self.firstname = firstname
         self.facility = facility
         self.access = access
+        self.business=business
+        self.confirmed=confirmed
+        self.confirmed_on=confirmed_on
 
     def is_authenticated(self):
         return True

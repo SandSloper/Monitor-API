@@ -1,0 +1,15 @@
+.w-50{
+    width: 50% !important;
+}
+.w-75{
+    width:75%;
+}
+.w-100{
+    width:100% !important;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}

@@ -30,7 +30,7 @@ class Indicator:
                     uri = URIRef("{}sora/indicator#{}".format(Config.URL_ENDPOINT, k))
                     uri_cat = URIRef("{}sora/category#{}".format(Config.URL_ENDPOINT, cat_k))
                     #grab the time shifts
-                    url_spatial_extend = '%s?values={"ind":{"id":"%s"},"format":{"id":"raster"},"query":"getSpatialExtend"}'%(Config.URL_BACKEND,k)
+                    url_spatial_extend = '%s?values={"ind":{"id":"%s"},"format":{"id":"raster"},"query":"getSpatialExtend"}'%(Config.URL_BACKEND_SORA, k)
                     extends_request = requests.get(url_spatial_extend)
                     extends = json.loads(extends_request.text)
                     #create the graph

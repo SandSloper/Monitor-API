@@ -1,15 +1,19 @@
 # -*- coding: utf-8 -*-
 import os
 import codecs
-from app import *
-from app.admin.services.IndicatorValues import IndicatorValues
-from app.tools.Toolbox import Toolbox
 import datetime
 
-class Wfs:
-    def __init__(self):
+from app import *
+from app.admin.models.IndicatorValues import IndicatorValues
+from app.models.Toolbox import Toolbox
+from app.admin.models.Indicator import Indicator
+from app.admin.interfaces.OgcService import OgcService
+
+class Wfs(OgcService):
+    indicator = None
+    def __init__(self,path='/mapsrv_daten/detailviewer/wfs_mapfiles'):
         self.service='wfs'
-        self.path=os.chdir('/mapsrv_daten/detailviewer/wfs_mapfiles')
+        self.path=os.chdir(path)
         self.toolbox = Toolbox()
 
     def createAllServices(self):
@@ -27,19 +31,22 @@ class Wfs:
                 methodology = self.toolbox.clean_string(val["methodik"])
                 unit = val["unit"]
                 #builder
-                results.append(self.writeFile(id=ind_id, name=ind_name, description=ind_description, time_string=times, spatial_extends=spatial_extends, units=unit, methodology=methodology))
+                self.indicator = Indicator(ind_id, ind_name, ind_description, times, spatial_extends, unit, methodology)
+                results.append(self.writeFile())
         return results
 
-    def createSingleService(self,id, name, description, time_string, spatial_extends, units, methodology):
-        self.writeFile(id,name,description,time_string,spatial_extends,units,methodology)
+    def createSingleService(self,Indicator,file_path=None):
+        self.indicator=Indicator
+        self.writeFile(file_path)
 
-    def writeFile(self, id, name, description, time_string, spatial_extends, units, methodology):
+    def writeFile(self,file_path=None):
         try:
             # extract the times
-            time_array = time_string.split(",")
-
-            file = codecs.open('wfs_{}.map'.format(id.upper()), 'w',"utf-8")
-
+            time_array = self.indicator.get_time().split(",")
+            if file_path:
+                file = codecs.open(file_path, 'w',"utf-8")
+            else:
+                file = codecs.open('wfs_{}.map'.format(self.indicator.get_id().upper()), 'w', "utf-8")
             '''
                 The following File is created by taking care of the documentation of the Mapserver:  
                 https://mapserver.org/ogc/wfs_server.html
@@ -53,7 +60,7 @@ class Wfs:
                         'CONFIG "PROJ_LIB"  "/usr/share/proj/"\n'
                         'WEB\n'
                         'IMAGEPATH "/srv/www/htdocs/ms_tmp/"\n'
-                        'IMAGEURL "/ms_tmp/"\n'.format(name))
+                        'IMAGEURL "/ms_tmp/"\n'.format(self.indicator.get_name()))
 
             file.write(header)
 
@@ -81,7 +88,7 @@ class Wfs:
                 '       "wfs_enable_request" "*" \n'
                 '       "wfs_encoding" "UTF-8" \n'
                 "END \n"
-            "END \n".format(name,description,methodology))
+            "END \n".format(self.indicator.get_name(),self.indicator.get_description(),self.indicator.get_methodogy()))
 
             file.write(meta)
 
@@ -97,10 +104,9 @@ class Wfs:
 
             for t in sorted(time_array):
                 int_time = int(t)
-                now = datetime.datetime.now()
-                if int_time>2006 and int_time<=now.year:
-                    for s in spatial_extends:
-                        int_s = int(spatial_extends[s])
+                if int_time>2006 and int_time<=2016:
+                    for s in self.indicator.get_spatial_extends():
+                        int_s = int(self.indicator.get_spatial_extends()[s])
                         if int_s==1:
                             epsg = '25832'
                             geometry = 'the_geom'
@@ -110,7 +116,7 @@ class Wfs:
                                 if int_time <= 2012:
                                     epsg = '31467'
 
-                            sql = '{0} from (select g.gid, g.ags, g.{0}, g.gen, a."{1}" as value from vg250_{2}_{3}_grob g join basiskennzahlen_{3} a on g.ags = a.ags where a."{1}" >=-1) as subquery using unique gid using srid={4}'.format(geometry,id,s,t,epsg)
+                            sql = '{0} from (select g.gid, g.ags, g.{0}, g.gen, a."{1}" as value from vg250_{2}_{3}_grob g join basiskennzahlen_{3} a on g.ags = a.ags where a."{1}" >=-1) as subquery using unique gid using srid={4}'.format(geometry,self.indicator.get_id(),s,t,epsg)
 
                             layer = ('LAYER \n'
                                     '  NAME "{0}_{1}" \n'
@@ -140,30 +146,14 @@ class Wfs:
                                     '       "init=epsg:{4}" \n'
                                     '   END \n'
                                     'END \n'
-                                    '\n'.format(s,t,name,description,epsg,units,sql))
+                                    '\n'.format(s,t,self.indicator.get_name(),self.indicator.get_description(),epsg,self.indicator.get_units(),sql))
 
                             file.write(layer)
-            created_layer = {id: {
-                "state":"created",
-                "name": name,
-                "description": description,
-                "times":time_string,
-                "spatial_extends":spatial_extends,
-                "unit":units,
-                "methodik":methodology
-            }}
+            created_layer = self.indicator.toJSON()
             app.logger.debug("Finished WMS_service for Indicator:\n {0}".format(created_layer))
             file.write("END")
         except IOError as e:
-            created_layer = {id: {
-                "state":"I/O error({0})".format(e),
-                "name": name,
-                "description": description,
-                "times": time_string,
-                "spatial_extends": spatial_extends,
-                "unit": units,
-                "methodik": methodology
-            }}
+            created_layer =self.indicator.toJSON("I/O error({0})".format(e))
             app.logger.debug("Error in create WMS_service for Indicator:\n {0}".format(created_layer))
         return created_layer
 

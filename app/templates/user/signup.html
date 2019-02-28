@@ -12,12 +12,12 @@ IÖR-Monitor-API
     <div class="header">
         <h2>Registrierung</h2>
     </div>
+<div class="container signin">
     <div class="container logo">
         <a href="https://ioer-monitor.de" target="_blank">
             <a href="http://www.ioer-monitor.de" target="_blank"><div class="image"></div></a>
         </a>
     </div>
-<div class="container">
      {% if error %}
       <p class="error_message"><strong>Fehler:</strong> {{ error }}
       {% endif %}
@@ -27,6 +27,7 @@ IÖR-Monitor-API
     {{ wtf.form_field(form.email) }}
     {{ wtf.form_field(form.firstname) }}
     {{ wtf.form_field(form.lastname) }}
+    {{ wtf.form_field(form.business) }}
     {{ wtf.form_field(form.facility) }}
     {{ wtf.form_field(form.password) }}
     {{ wtf.form_field(form.repeat_password) }}

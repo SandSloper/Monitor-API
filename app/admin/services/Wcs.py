@@ -6,13 +6,16 @@ import json
 import datetime
 from app import *
 from app.config import Config
-from app.tools.Toolbox import Toolbox
-from app.admin.services.IndicatorValues import IndicatorValues
+from app.models.Toolbox import Toolbox
+from app.admin.models.IndicatorValues import IndicatorValues
+from app.admin.models.Indicator import Indicator
+from app.admin.interfaces.OgcService import OgcService
 
-class Wcs:
-    def __init__(self):
+class Wcs (OgcService):
+    indicator = None
+    def __init__(self,path='/mapsrv_daten/detailviewer/wcs_mapfiles'):
         self.service = 'wcs'
-        self.path = os.chdir('/mapsrv_daten/detailviewer/wcs_mapfiles')
+        self.path = os.chdir(path)
         self.toolbox = Toolbox()
 
     def createAllServices(self):
@@ -29,23 +32,26 @@ class Wcs:
                 times = val["times"]
                 methodology = self.toolbox.clean_string(val["methodik"])
                 unit = val["unit"]
-                url_spatial_extend = '%s?values={"ind":{"id":"%s"},"format":{"id":"raster"},"query":"getSpatialExtend"}' % (Config.URL_BACKEND, ind_id)
+                url_spatial_extend = '%s?values={"ind":{"id":"%s"},"format":{"id":"raster"},"query":"getSpatialExtend"}' % (Config.URL_BACKEND_SORA, ind_id)
                 extends_request = requests.get(url_spatial_extend)
                 extends = json.loads(extends_request.text)
                 # builder
-                results.append(self.writeFile(id=ind_id, name=ind_name, description=ind_description, time_string=times,
-                                              spatial_extends=extends, units=unit, methodology=methodology))
+                self.indicator = Indicator(ind_id,ind_name,ind_description,times,extends,unit,methodology)
+                results.append(self.writeFile())
         return results
 
-    def createSingleService(self, id, name, description, time_string, spatial_extends, units, methodology):
-        self.writeFile(id, name, description, time_string, spatial_extends, units, methodology)
+    def createSingleService(self, indicator,file_path=None):
+        self.indicator=indicator
+        self.writeFile(file_path)
 
-    def writeFile(self, id, name, description, time_string, spatial_extends, units, methodology):
+    def writeFile(self,file_path=None):
         try:
             # extract the times
-            time_array = time_string.split(",")
-
-            file = codecs.open('wcs_{}.map'.format(id.upper()), 'w', "utf-8")
+            time_array = self.indicator.get_time().split(",")
+            if file_path:
+                file = codecs.open(file_path, 'w', "utf-8")
+            else:
+                file = codecs.open('wcs_{}.map'.format(self.indicator.get_id().upper()), 'w', "utf-8")
 
             header=("MAP\n"
                     'NAME "WCS {0}"\n'
@@ -55,7 +61,7 @@ class Wcs:
                     'SHAPEPATH "../data" \n'
                     'FONTSET "../mapfiles/fonts/fonts.txt" \n'
                     'IMAGECOLOR 255 255 255 \n'
-                    'MAXSIZE 8192\n'.format(name))
+                    'MAXSIZE 8192\n'.format(self.indicator.get_name()))
 
             file.write(header)
 
@@ -112,7 +118,7 @@ class Wcs:
                    'END\n'
                    'PROJECTION\n'
                    '    "init=epsg:3035"\n'
-                   'END\n'.format(name,methodology,description))
+                   'END\n'.format(self.indicator.get_name(),self.indicator.get_methodogy(),self.indicator.get_description()))
 
             file.write(meta)
 
@@ -124,7 +130,7 @@ class Wcs:
                 int_time = int(t)
                 now = datetime.datetime.now()
                 if int_time >= 2006 and int_time <= now.year:
-                    for s in spatial_extends:
+                    for s in self.indicator.get_spatial_extends():
                         layer=("Layer\n"
                                '    NAME "{0}_{1}_{2}m"\n'
                                '    METADATA\n'
@@ -140,31 +146,15 @@ class Wcs:
                                '    PROJECTION\n'
                                '       "init=epsg:3035"\n'
                                '    END\n'
-                               'END\n'.format(id,t,s,name,description)
+                               'END\n'.format(self.indicator.get_id(),t,s,self.indicator.get_name(),self.indicator.get_description())
                                )
                         file.write(layer)
 
-            created_layer = {id: {
-                "state": "created",
-                "name": name,
-                "description": description,
-                "times": time_string,
-                "spatial_extends": spatial_extends,
-                "unit": units,
-                "methodik": methodology
-            }}
+            created_layer = self.indicator.toJSON()
             app.logger.debug("Finished WMS_service for Indicator:\n {0}".format(created_layer))
             file.write("END")
 
         except IOError as e:
-            created_layer = {id: {
-                "state": "I/O error({0})".format(e),
-                "name": name,
-                "description": description,
-                "times": time_string,
-                "spatial_extends": spatial_extends,
-                "unit": units,
-                "methodik": methodology
-            }}
+            created_layer = self.indicator.toJSON("I/O error({0})".format(e))
             app.logger.debug("Error in create WMS_service for Indicator:\n {0}".format(created_layer))
         return created_layer

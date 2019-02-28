@@ -15,4 +15,6 @@ class RegisterForm(FlaskForm):
     lastname = StringField('Familienname', validators=[InputRequired(), Length(min=4, max=15)])
     firstname = StringField('Vorname', validators=[InputRequired(), Length(min=4, max=15)])
     facility = StringField('Einrichtung', validators=[InputRequired()])
+    business_list = ('','Bundesverwaltung', 'Landesverwaltung', 'Kreis-/Kommunalverwaltung', 'Privatwirtschaft', 'Wissenschaft', 'Bildung', 'NGO', 'Privatperson', 'sonstiges')
+    business = SelectField(label='Branche',choices=[(state, state) for state in business_list],validators=[InputRequired()])
     conditions = BooleanField("Ich stimme der Benutzungsordnung zu. Ich stimme zu, dass meine persönlichen Daten vom IÖR zur Erbringung dieser Dienstleistung genutzt werden. Dies schließt auch die Information von Primärforschern oder Datengebern über die Datennutzung ein. Weitere Informationen zum Datenschutz finden sich im <a target='_blank' href='https://www.ioer.de/impressum/'>IÖR-Monitor Impressum</a>.", default=False,validators=[InputRequired()])

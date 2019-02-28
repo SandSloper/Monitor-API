@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
-from flask import render_template,request,Markup,jsonify,redirect,session
+from flask_mail import Mail, Message
+import requests
+import datetime
+from flask import render_template,request,Markup,jsonify,redirect,session,flash
 from flask_login import login_user, LoginManager, current_user, login_required, logout_user
 from flask import url_for
 from flask import Response
@@ -8,24 +11,26 @@ from app.user.models.Forms import *
 from app.user.models.Users import *
 from app.config import Config
 from werkzeug.security import check_password_hash, generate_password_hash
+from app.user.models.Token import Token
+from app.user.models.Mailer import Mailer
 
-from app.user import ogc
+from app.user import user
 from app import app,db
-
-import requests
-
+# create the log in manager to handle user sessions
 login_manager = LoginManager()
 login_manager.init_app(app)
+# token creator
+token = Token()
 
-@ogc.route('/')
+@user.route('/')
 def index():
     return render_template('user/index.html',host=Config.URL_ENDPOINT)
 
 @login_manager.user_loader
 def load_user(user_id):
-    return USER.query.get(int(user_id))
+    return User.query.get(int(user_id))
 
-@ogc.route('/user', methods=['GET', 'POST'])
+@user.route('/user', methods=['GET', 'POST'])
 def get_service():
     #get all url parameter
     url = request.url.split("?")
@@ -57,8 +62,10 @@ def get_service():
         else:
             session['key'] = True
             return response
-
-@ogc.route('/login', methods=['GET', 'POST'])
+'''
+User Log In
+'''
+@user.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         if current_user.access == 2:
@@ -69,7 +76,7 @@ def login():
                                    user_id=current_user.id,host=Config.URL_ENDPOINT)
     form = LoginForm()
     if form.validate_on_submit():
-        user = USER.query.filter_by(username=form.username.data).first()
+        user = User.query.filter_by(username=form.username.data).first()
         if user and check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember_me.data)
             if current_user.access == 2:
@@ -84,8 +91,10 @@ def login():
             return render_template('user/login.html', form=form, error=error)
 
     return render_template('user/login.html', form=form)
-
-@ogc.route('/signup', methods=['GET', 'POST'])
+'''
+Registration
+'''
+@user.route('/signup', methods=['GET', 'POST'])
 def signup():
     form = RegisterForm(form_type="inline")
     if form.validate_on_submit():
@@ -102,21 +111,56 @@ def signup():
             error = Markup('Die <b>Email-Adresse</b> existiert bereits, bitte wählen Sie eine andere')
             return render_template('user/signup.html', form=form, error=error)
         else:
-            new_user = USER(username=username, email=email, password=hashed_password, lastname=form.lastname.data, firstname=form.firstname.data, facility=form.facility.data,access=1)
+            new_user = User(username=username, email=email, password=hashed_password, lastname=form.lastname.data, firstname=form.firstname.data, facility=form.facility.data, access=1, business=form.business.data, confirmed=False)
             db.session.add(new_user)
             db.session.commit()
-            login_user(USER.query.filter_by(username=username).first())
-            return render_template('user/api_key.html', key='', btn_text='Generieren', username=current_user.username, user_id=current_user.id, access=1,host=Config.URL_ENDPOINT)
-    return render_template('user/signup.html', form=form)
 
-@ogc.route('/services',methods=['GET','POST'])
+            token_user = token.generate_confirmation_token(username)
+            confirm_url = "{}confirm/{}".format(Config.URL_ENDPOINT,token_user)
+            html = render_template('user/activate_mail.html', confirm_url=confirm_url)
+            subject = "Bitte bestätigen Sie ihre Email"
+            mail = Mailer(email,subject,html)
+            mail.send_email()
+            login_user(User.query.filter_by(username=username).first())
+            #return render_template('user/api_key.html', key='', btn_text='Generieren', username=current_user.username, user_id=current_user.id, access=1,host=Config.URL_ENDPOINT)
+    return render_template('user/signup.html', form=form)
+'''
+Email confirmation
+'''
+@user.route('/confirm/<token_pass>')
+@login_required
+def confirm_email(token_pass):
+    username = token.confirm_token(token_pass)
+    user = User.query.filter_by(username=username).first_or_404()
+    if user.confirmed:
+        flash('Account already confirmed. Please login.', 'success')
+    else:
+        user.confirmed=True
+        user.confirmed_on = datetime.datetime.now()
+        db.session.add(user)
+        db.session.commit()
+        logout_user()
+        flash('You have confirmed your account. Thanks!', 'success')
+    return redirect("https://monitor.ioer.de/monitor_api/login")
+
+
+'''
+Service overview, shown if the USER is authenticated
+'''
+@user.route('/services',methods=['GET','POST'])
+@login_required
 def user_services():
     if current_user.is_authenticated:
         return render_template('user/services.html', key=current_user.api_key, access=current_user.access)
     else:
        return redirect("{}login".format(Config.URL_ENDPOINT))
-
-@ogc.route('/api_key')
+    if user.confirmend:
+        flash('Account already confirmed. Please login.', 'success')
+'''
+show/generate API Key
+'''
+@user.route('/api_key')
+@login_required
 def api_key():
     if current_user.is_authenticated:
         key = current_user.api_key
@@ -124,13 +168,10 @@ def api_key():
     else:
         return url_for('user.login')
 
-@ogc.route('/logout')
-@login_required
-def logout():
-    logout_user()
-    return redirect(Config.URL_ENDPOINT)
-
-@ogc.route('/check_key',methods=['GET', 'POST'])
+'''
+Methods for AJAX
+'''
+@user.route('/check_key',methods=['GET', 'POST'])
 def check_key():
     key=request.args.get('key')
     cur_key = db.engine.execute("SELECT api_key FROM users WHERE api_key='{}'".format(key))
@@ -139,7 +180,7 @@ def check_key():
     else:
         return  jsonify(False)
 
-@ogc.route('/insert_key',methods=['GET', 'POST'])
+@user.route('/insert_key',methods=['GET', 'POST'])
 def insert_key():
     key=request.args.get('key')
     name=request.args.get('name')
@@ -149,3 +190,10 @@ def insert_key():
         return jsonify(True)
     except:
         return jsonify(False)
+
+@user.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(Config.URL_ENDPOINT)
+

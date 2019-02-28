@@ -10,17 +10,17 @@
         "Population"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#B> ;
     ns1:hasIndicatorId "B00DG" ;
-    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+    ns1:hasSpatialExtent [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2011" ;
     ns1:interpretation "Der Indikator gibt die Einwohnerzahl einer Rasterzelle an."@de,
@@ -34,11 +34,11 @@
         "Settlement density (settlement and transport area)"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#B> ;
     ns1:hasIndicatorId "B02DT" ;
-    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+    ns1:hasSpatialExtent [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2011" ;
     ns1:interpretation "Der Indikator beschreibt die Besiedelungsdichte, bezogen auf den Siedlungs- und Verkehrsraum eines Gebietes."@de,
@@ -52,17 +52,17 @@
         "Share of the population in the exposure area of high-voltage lines"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#B> ;
     ns1:hasIndicatorId "B31RT" ;
-    ns1:hasSpatialExtent [ rdf:value "100m" ;
+    ns1:hasSpatialExtent [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2015" ;
     ns1:interpretation "Bei Errichtung und wesentlicher Änderung von Niederfrequenzanlagen sowie Gleichstromanlagen sind nach § 4 Absatz 2 (26. BImSchV) von der jeweiligen Anlage ausgehende elektrische, magnetische und elektromagnetische Felder im Einwirkungsbereich zu minimieren. Einwirkungsbereiche von Niederfrequenzanlagen sind in der allgemeinen Verwaltungsvorschrift zur Durchführung der Verordnung über elektromagnetische Felder - 26. BImSchV (26. BImSchVVwV) folgendermaßen definiert: 'Der Einwirkungsbereich einer Anlage ist der Bereich, in dem die Anlage sich signifikant von den natürlichen und mittleren anthropogen bedingten Immissionen abhebende elektrische oder magnetische Felder verursacht, unabhängig davon, ob die Immissionen tatsächlich schädliche Umwelteinwirkungen auslösen.' Diese Bereiche werden im Indikator als Distanzmaß für die Wirkung von elektrischen und magnetischen Feldern verwendet. Bei der Festlegung der in Anlage 1 des 26. BImSchV aufgeführten Grenzwerte wurden akute Wirkungen durch elektrischen Ströme berücksichtigt, die im Körper durch elektrische und magnetische Wechselfelder erzeugt werden. Biologische Effekte infolge der Aussetzung von elektrischen und magnetischen Feldern sind für Menschen auch bei geringen magnetischen Flussdichten nicht auszuschließen. In diesem Zusammenhang rät z.B. das Bundesamt für Strahlenschutz (BfS) dazu, die Belastung durch elektromagnetische Felder grundsätzlich so gering wie möglich zu halten. Als Vorsorgemaßnahmen werden vom BfS u.a. benannt: -Minimierung der Exposition der Bevölkerung gegenüber niederfrequenter Felder (u.a. durch Hochspannungsleitungen) -Informierung der Bevölkerung über Feldintensitäten relevanter Feldquellen wie z.B. Hochspannungsleitungen Vergleichbare Aussagen sind in der Verwaltungsvorschrift (26. BImSchVVwV) enthalten, so steht die allgemeine Bevölkerung im Mittelpunkt der Minimierungsbetrachtung. Die Bevölkerung soll durch geeignete technische Maßnahmen an der Anlage so wenig wie möglich von den hiervon ausgehenden elektrischen und magnetischen Feldern ausgesetzt werden. Im Sinne des Vorsorgeprinzips nach europäischen Umweltrecht ist die Abwehr von Umweltrisiken auch bei unsicherer Erkenntnislage vorgesehen. Daher sollte das Minimierungsgebot nicht nur bei erheblicher Änderung oder Neubau von Anlagen Anwendung finden, sondern ist im Sinne einer Schadensabwendung für die menschliche Gesundheit auf den Anlagenbestand auszuweiten. Demzufolge gibt der Indikator die Bevölkerungszahl im Einwirkungsbereich von bestehenden Hochspannungsleitungen (mind. 110 kV) in Deutschland an. Mit dem Indikator wird ein erster Beitrag zur flächendeckenden Risikobewertung geleistet sowie für Vorsorgemaßnahmen im Kontext elektromagnetischer Strahlung durch Hochspannungsfreileitungen sensibilisiert."@de,
@@ -76,17 +76,17 @@
         "Proportion of open space in reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#F> ;
     ns1:hasIndicatorId "F01RG" ;
-    ns1:hasSpatialExtent [ rdf:value "5000m" ;
+    ns1:hasSpatialExtent [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -112,17 +112,17 @@
         "Proportion of agricultural land in reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#F> ;
     ns1:hasIndicatorId "F02RG" ;
-    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+    ns1:hasSpatialExtent [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -148,17 +148,17 @@
         "Proportion of arable land in reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#F> ;
     ns1:hasIndicatorId "F03RG" ;
-    ns1:hasSpatialExtent [ rdf:value "200m" ;
+    ns1:hasSpatialExtent [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -184,17 +184,17 @@
         "Proportion of grazing land in reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#F> ;
     ns1:hasIndicatorId "F04RG" ;
-    ns1:hasSpatialExtent [ rdf:value "5000m" ;
+    ns1:hasSpatialExtent [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -220,17 +220,17 @@
         "Proportion of forest and copse in reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#F> ;
     ns1:hasIndicatorId "F07RG" ;
-    ns1:hasSpatialExtent [ rdf:value "500m" ;
+    ns1:hasSpatialExtent [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -256,17 +256,17 @@
         "Proportion of area of water in reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#F> ;
     ns1:hasIndicatorId "F11RG" ;
-    ns1:hasSpatialExtent [ rdf:value "200m" ;
+    ns1:hasSpatialExtent [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -292,11 +292,11 @@
         "Residential building density in settlement area and transport space"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#G> ;
     ns1:hasIndicatorId "G03DA" ;
-    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+    ns1:hasSpatialExtent [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2012" ;
     ns1:interpretation ""@de,
@@ -310,17 +310,17 @@
         "Protected areas"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#L> ;
     ns1:hasIndicatorId "L01RG" ;
-    ns1:hasSpatialExtent [ rdf:value "500m" ;
+    ns1:hasSpatialExtent [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2006",
         "2007",
@@ -344,17 +344,17 @@
         "Countryside and species protection"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#L> ;
     ns1:hasIndicatorId "L08RG" ;
-    ns1:hasSpatialExtent [ rdf:value "100m" ;
+    ns1:hasSpatialExtent [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2006",
         "2007",
@@ -378,17 +378,17 @@
         "Landscape protection"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#L> ;
     ns1:hasIndicatorId "L09RG" ;
-    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+    ns1:hasSpatialExtent [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2006",
         "2007",
@@ -412,7 +412,7 @@
         "Accessibility of urban green spaces"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#O> ;
     ns1:hasIndicatorId "O01RG" ;
-    ns1:hasSpatialExtent [ rdf:value "100m" ;
+    ns1:hasSpatialExtent [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2013" ;
     ns1:interpretation "Der Indikator beschreibt die Erreichbarkeit naher und größerer öffentlicher Grünflächen, gemessen an der in fußläufiger Entfernung wohnenden Bevölkerung im Verhältnis zur Gesamtbevölkerung der jeweiligen Stadt (Mittel- und Großstädte ab 50.000 Einwohnern). Mit dem Indikator wird der Anteil der Bevölkerung ermittelt, der wohnungs- und quartiersnah fußläufig erreichbare öffentliche Grünflächen vorfindet. Grünflächen sind multifunktional und besitzen eine hohe Bedeutung für die im Umkreis wohnende Bevölkerung durch ihre Klimafunktion (Luftfilterung, Kaltluftentstehung), Erholungsfunktion (Sport, Freizeit, Naturerfahrung) und Hochwasserschutzfunktion (Wasserspeicher, Rückhaltefläche). Der Indikator adressiert sowohl die alltägliche Erholung in fußläufiger Entfernung als auch ausgedehnte Freizeitaktivitäten im mittelbaren Quartiersumfeld oder die Naherholung am Wochenende."@de,
@@ -421,79 +421,16 @@
         "Quotient of number of inhabitants that live within a radius of 300 m & 700 m to green spaces > 1 ha & > 10 ha and the number of inhabitants in the respective municipality. Selected types of green spaces with recreation functions and mostly with access for the public: Park, Green area, Cemetery, Grasland, Orchard meadow, Forest, Woods, Flowing/Standing body of water."@en ;
     ns2:Unit "%" .
 
-<https://monitor.ioer.de/monitor_api/sora/indicator#O03RG> a ns1:Indicator ;
-    rdfs:label "Erreichbarkeit naher städtischer Grünflächen"@de,
-        "Accessibility of nearby urban green spaces"@en ;
-    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#O> ;
-    ns1:hasIndicatorId "O03RG" ;
-    ns1:hasSpatialExtent [ rdf:value "100m" ;
-            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
-    ns1:hasYearRecorded "2013" ;
-    ns1:interpretation "Der Indikator beschreibt die Erreichbarkeit öffentlicher Grünflächen (größer 1 ha), gemessen an der in fußläufiger Entfernung wohnenden Bevölkerung im Verhältnis zur Gesamtbevölkerung der jeweiligen Stadt (Mittel- und Großstädte ab 50.000 Einwohnern). Mit dem Indikator wird der Anteil der Bevölkerung ermittelt, der wohnungsnah bzw. fußläufig erreichbare öffentliche Grünflächen vorfindet. Grünflächen sind multifunktional und besitzen eine hohe Bedeutung für die im Umkreis wohnende Bevölkerung durch ihre Klimafunktion (Luftfilterung, Kaltluftentstehung), Erholungsfunktion (Sport, Freizeit, Naturerfahrung) und Hochwasserschutzfunktion (Wasserspeicher, Rückhaltefläche). Der Indikator wohnungsnahe Grünerreichbarkeit fokussiert auf die alltägliche Erholung in fußläufiger Entfernung."@de,
-        "Indicator captures the proportion of inhabitants who find small nearby green spaces within walking distance in the sense of daily or leisuretime recreation. Urban ecosystems, such as forests, parks, bodies of water and adjacent embankments, are multifunctional and provide services for the residents regarding the experience of nature, recreational activities. Furthermore, green spaces are important for many other ecosystem services, such as habitat services, air purification, water regulation and provision or microclimate regulation."@en ;
-    ns1:methodology "Quotient aus der Einwohnerzahl, die im 300 m Umkreis von öffentlichen Grünflächen (>1 ha) wohnt und der Einwohnerzahl einer Gebietseinheit Zu den öffentlichen Grünflächen werden Flächen mit geringer Bodenversiegelung und einem hohen Vegetationsanteil gezählt. Weiterhin werden Gewässerflächen im Sinne der Definition von Grünräumen nach Rittel et al. (2014) mit einbezogen. Dazu gehören folgende Objektarten (gegliedert nach Kategorien): - Siedlung: Friedhof, Park- / Grünanlage - Freiraum: Grünland, Streuobst, Wald und Gehölz, Fließ- sowie stehendes Gewässer Die Ermittlung der Einwohnerzahl erfolgt in einem 300 m Umkreis von öffentlichen Grünflächen größer 1 ha (300 m Luftlinie entspricht fußläufiger Wegstrecke von ca. 500 m gemäß Richter 2016). Abschließend wird der Quotient aus ermittelter Einwohnerzahl und Gesamteinwohnerzahl der Gebietseinheit gebildet."@de,
-        "Quotient of number of inhabitants that live within a radius of 300 m to green spaces > 1 ha and the number of inhabitants in the respective municipality. Selected types of green spaces with recreation functions and mostly with access for the public: Park, Green area, Cemetery, Grasland, Orchard meadow, Forest, Woods, Flowing/Standing body of water."@en ;
-    ns2:Unit "%" .
-
-<https://monitor.ioer.de/monitor_api/sora/indicator#O04RG> a ns1:Indicator ;
-    rdfs:label "Erreichbarkeit größerer städtischer Grünflächen"@de,
-        "Accessibility of larger urban green spaces"@en ;
-    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#O> ;
-    ns1:hasIndicatorId "O04RG" ;
-    ns1:hasSpatialExtent [ rdf:value "100m" ;
-            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
-    ns1:hasYearRecorded "2013" ;
-    ns1:interpretation "Der Indikator beschreibt die Erreichbarkeit öffentlicher Grünflächen (größer 10 ha), gemessen an der in mittelbar fußläufiger Entfernung wohnenden Bevölkerung im Verhältnis zur Gesamtbevölkerung der jeweiligen Stadt (Mittel- und Großstädte ab 50.000 Einwohnern). Mit dem Indikator wird der Anteil der Bevölkerung ermittelt, der quartiersnah bzw. mittelbar fußläufig erreichbare öffentliche Grünflächen vorfindet. Grünflächen sind multifunktional und besitzen eine hohe Bedeutung für die im Umkreis wohnende Bevölkerung durch ihre Klimafunktion (Luftfilterung, Kaltluftentstehung), Erholungsfunktion (Sport, Freizeit, Naturerfahrung) und Hochwasserschutzfunktion (Wasserspeicher, Rückhaltefläche). Der Indikator adressiert ausgedehnte Freizeitaktivitäten im mittelbaren Quartiersumfeld oder die Naherholung am Wochenende."@de,
-        ""@en ;
-    ns1:methodology "Quotient aus der Einwohnerzahl, die im 700 m Umkreis von öffentlichen Grünflächen (>10 ha) wohnt und der Einwohnerzahl einer Gebietseinheit Zu den öffentlichen Grünflächen werden Flächen mit geringer Bodenversiegelung und einem hohen Vegetationsanteil gezählt. Weiterhin werden Gewässerflächen im Sinne der Definition von Grünräumen nach Rittel et al. (2014) mit einbezogen. Dazu gehören folgende Objektarten (gegliedert nach Kategorien): - Siedlung: Friedhof, Park- / Grünanlage - Freiraum: Grünland, Streuobst, Wald und Gehölz, Fließ- sowie stehendes Gewässer Die Ermittlung der Einwohnerzahl erfolgt in einem 700 m Umkreis von öffentlichen Grünflächen(>10 ha). Abschließend wird der Quotient aus ermittelter Einwohnerzahl und Gesamteinwohnerzahl der Gebietseinheit gebildet."@de,
-        "Quotient of number of inhabitants that live within a radius of 700 m to green spaces > 10 ha and the number of inhabitants in the respective municipality. Selected types of green spaces with recreation functions and mostly with access for the public: Park, Green area, Cemetery, Grasland, Orchard meadow, Forest, Woods, Flowing/Standing body of water."@en ;
-    ns2:Unit "%" .
-
-<https://monitor.ioer.de/monitor_api/sora/indicator#O06RG> a ns1:Indicator ;
-    rdfs:label "Anteil Waldfläche an Gebietsfläche"@de,
-        "Proportion of forest area in reference area"@en ;
-    ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#O> ;
-    ns1:hasIndicatorId "O06RG" ;
-    ns1:hasSpatialExtent [ rdf:value "5000m" ;
-            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
-            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
-            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
-            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
-            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
-            ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
-    ns1:hasYearRecorded "2000",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016" ;
-    ns1:interpretation "Der Waldflächenanteil gibt einen Hinweis auf die potenziell für die Rohholzproduktion nutzbare Fläche. Hohe Indikatorwerte treten in gebirgigen und dünnbesiedelten Regionen auf."@de,
-        ""@en ;
-    ns1:methodology "Quotientenbildung aus Waldfläche (ATKIS Basis-DLM) und Gebietsfläche (VG25)"@de,
-        ""@en ;
-    ns2:Unit "%" .
-
 <https://monitor.ioer.de/monitor_api/sora/indicator#O10RT> a ns1:Indicator ;
     rdfs:label "Anteil Hochwasserretentionsfläche an Gesamtaue"@de,
         "Percentage of retention area to flood plain"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#O> ;
     ns1:hasIndicatorId "O10RT" ;
-    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+    ns1:hasSpatialExtent [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2013" ;
     ns1:interpretation "Der Indikator ermittelt den Flächenanteil der unbebauten rezenten Aue, welcher noch für den Hochwasserrückhalt zur Verfügung steht, bezogen auf die morphologische Aue. Rezente Auen besitzen eine hohe gesellschaftliche Bedeutung, denn das Überschwemmungsrisiko stellt eine direkte Gefahr für Menschenleben dar. Wiederholte Überschwemmung oder alleine schon das Risiko können die Lebensqualität erheblich einschränken. Darüber hinaus können immense volkswirtschaftliche Schäden entstehen. Die Vermeidung von Hochwässern durch den natürlichen Rückhalt in der Aue trägt auch zur Vermeidung erheblicher Kosten von technischen Schutzmaßnahmen bei. Auen erfüllen weitere Ökosystemleistungen wie z.B. Versorgungsleistungen (Grünlandnutzung, Viehzucht zur Nahrungsmittelerzeugung, Beitrag Trinkwassergewinnung), Gewässer-/Grundwasserschutz, kulturelle Leistungen (Raum für Erholung in der Auenlandschaft, Landschaftsqualität, Ästhetik) sowie Biodiversität."@de,
@@ -507,11 +444,11 @@
         "Percentage of built-up area in flood plain"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#O> ;
     ns1:hasIndicatorId "O11RT" ;
-    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+    ns1:hasSpatialExtent [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2013" ;
     ns1:interpretation "Auen besitzen eine hohe gesellschaftliche Bedeutung, denn das Überschwemmungsrisiko stellt eine direkte Gefahr für Menschenleben dar. Wiederholte Überschwemmung oder alleine schon das Risiko können die Lebensqualität erheblich einschränken. Darüber hinaus können immense volkswirtschaftliche Schäden entstehen. Die Vermeidung von Hochwässern durch den natürlichen Rückhalt in der Aue trägt auch zur Vermeidung erheblicher Kosten von technischen Schutzmaßnahmen bei. Die bebauten Siedlungs- und Verkehrsflächen schränken die rezente Aue in ihrer Funktion (und damit der potenziellen Leistung) ein. Überschwemmte Siedlungs- und Verkehrsflächen haben ebenfalls Retentionsfunktionen und sie vermeiden eventuell Überschwemmungen an anderer Stelle, nehmen durch Überschwemmungen aber in erheblichem Maße selber Schaden. Im Sinne der Leistungsfähigkeit von Ökosystemen ist der Ökosystembegriff auf Siedlungs- und Verkehrsflächen für die ÖSL Hochwasserretention nur eingeschränkt anwendbar. Deshalb werden die Retentionswirkungen von Siedlungs- und Verkehrsflächen nicht als ÖSL angesehen. Darüber hinaus zielen bei Hochwasserereignissen die Maßnahmen des Katastrophenschutzes grundsätzlich darauf, Siedlungen und Verkehrsinfrastruktur beispielsweise mit mobilen Hochwasserschutzanlagen zu schützen."@de,
@@ -525,17 +462,17 @@
         "Percentage of flood zones to reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#R> ;
     ns1:hasIndicatorId "R01RG" ;
-    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+    ns1:hasSpatialExtent [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2006",
         "2007",
@@ -558,17 +495,17 @@
         "Percentage of built-up area in flood zones"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#R> ;
     ns1:hasIndicatorId "R04RT" ;
-    ns1:hasSpatialExtent [ rdf:value "500m" ;
+    ns1:hasSpatialExtent [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2006",
         "2007",
@@ -591,17 +528,17 @@
         "Ratio of built-up settlement area and transport space in flood zones"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#R> ;
     ns1:hasIndicatorId "R05RT" ;
-    ns1:hasSpatialExtent [ rdf:value "200m" ;
+    ns1:hasSpatialExtent [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2006",
         "2007",
@@ -624,17 +561,17 @@
         "Ratio of building area in total flood zone"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#R> ;
     ns1:hasIndicatorId "R06RT" ;
-    ns1:hasSpatialExtent [ rdf:value "100m" ;
+    ns1:hasSpatialExtent [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2010" ;
     ns1:interpretation "Der Indikator beschreibt das potenzielle flächenbezogene Überschwemmungsrisiko für Gebäude in einer Gebietseinheit."@de,
@@ -648,17 +585,17 @@
         "Percentage of settlement area to reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
     ns1:hasIndicatorId "S02RG" ;
-    ns1:hasSpatialExtent [ rdf:value "200m" ;
+    ns1:hasSpatialExtent [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -684,17 +621,17 @@
         "Percentage of industrial and commercial site to reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
     ns1:hasIndicatorId "S05RG" ;
-    ns1:hasSpatialExtent [ rdf:value "100m" ;
+    ns1:hasSpatialExtent [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -720,17 +657,17 @@
         "Percentage of urban open space to reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
     ns1:hasIndicatorId "S08RG" ;
-    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+    ns1:hasSpatialExtent [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -756,17 +693,17 @@
         "Percentage of built-up settlement area with no industry/commerce to reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
     ns1:hasIndicatorId "S10RG" ;
-    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+    ns1:hasSpatialExtent [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -792,17 +729,17 @@
         "Percentage of settlement area and transport space to reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
     ns1:hasIndicatorId "S11RG" ;
-    ns1:hasSpatialExtent [ rdf:value "5000m" ;
+    ns1:hasSpatialExtent [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -828,17 +765,17 @@
         "Percentage of built-up settlement area and transport space to reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
     ns1:hasIndicatorId "S12RG" ;
-    ns1:hasSpatialExtent [ rdf:value "500m" ;
+    ns1:hasSpatialExtent [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -864,17 +801,17 @@
         "Percentage of built-up area to reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
     ns1:hasIndicatorId "S15RG" ;
-    ns1:hasSpatialExtent [ rdf:value "500m" ;
+    ns1:hasSpatialExtent [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -900,17 +837,17 @@
         "Imperviousness"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#S> ;
     ns1:hasIndicatorId "S40RG" ;
-    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+    ns1:hasSpatialExtent [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2015" ;
     ns1:interpretation "Der Indikator beschreibt den Bodenversiegelungsgrad einer Gebietsfläche. Je höher der Wert, desto stärker versiegelt ist die Gebietseinheit (100 % entspricht einer vollständigen Bodenversiegelung, 0 % einer völlig unversiegelten Gebietsfläche)."@de,
@@ -924,17 +861,17 @@
         "Percentage of open spaces > 100 km² to reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
     ns1:hasIndicatorId "U03RG" ;
-    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+    ns1:hasSpatialExtent [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2008",
         "2010",
@@ -951,17 +888,17 @@
         "Percentage of open spaces > 50 km² to reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
     ns1:hasIndicatorId "U04RG" ;
-    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+    ns1:hasSpatialExtent [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2008",
         "2010",
@@ -978,17 +915,17 @@
         "Percentage of unfragmented forests > 50 km² to reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
     ns1:hasIndicatorId "U07RG" ;
-    ns1:hasSpatialExtent [ rdf:value "100m" ;
+    ns1:hasSpatialExtent [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2008",
         "2010",
@@ -1005,17 +942,17 @@
         "Percentage of nature-accentuated areas to reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
     ns1:hasIndicatorId "U18RG" ;
-    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+    ns1:hasSpatialExtent [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2009",
         "2012" ;
@@ -1030,17 +967,17 @@
         "Hemeroby index"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
     ns1:hasIndicatorId "U20KG" ;
-    ns1:hasSpatialExtent [ rdf:value "100m" ;
+    ns1:hasSpatialExtent [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2009",
         "2012" ;
@@ -1055,17 +992,17 @@
         "Wood dominated ecotone density"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
     ns1:hasIndicatorId "U30DG" ;
-    ns1:hasSpatialExtent [ rdf:value "200m" ;
+    ns1:hasSpatialExtent [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2006",
         "2007",
@@ -1089,22 +1026,22 @@
         "Water edge density"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
     ns1:hasIndicatorId "U31DG" ;
-    ns1:hasSpatialExtent [ rdf:value "500m" ;
+    ns1:hasSpatialExtent [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2015" ;
     ns1:interpretation "Mit dem Indikator werden die Längen aller kleineren Fließgewässer (3 m durchschnittliche Breite) als lineare Elemente sowie die Randlängen von größeren Fließgewässern (6 m durchschnittliche Breite) und flächenhaften Gewässern erfasst und auf die jeweilige Gebietsfläche bezogen. Dieser Indikator besitzt in mehrfacher Hinsicht Bedeutung: -aus ökologischer Sicht, da gerade Randbereiche und Ufersäume eine hohe Artenvielfalt besitzen. -aus anthropogener Sicht, da eine vielfältige Landschaft als attraktiv empfunden wird. Gewässer-Randlinien werden in einschlägigen Modellen als besonders wichtig eingestuft. Hier werden nur ganzjährig wasserführende und nicht verrohrte Gewässer betrachtet. Kanäle finden wegen ihrer meist starken technischen Überprägung keine Berücksichtigung."@de,
         ""@en ;
-    ns1:methodology "Quotient aus der gesamten Randlinienlänge von Still- und Fließgewässern einerseits und der Gebietsfläche (Verwaltungsgeometrie 1:25 000) andererseits. Es werden die Längen der im Basis-DLM dargestellten äußeren Ränder aller stehenden Gewässer und von Fließgewässern mit einer Breite über 3 m, sowie die Länge aller linienhaften Gewässer unter 3 m Breite erfasst. Im Basis DLM sind Gewässer über 12 m Breite flächenhaft erfasst, und besitzen folglich 2 Randlinien. Schmalere Fließgewässer sind dagegen als einfaches Linienelement enthalten und finden im Indikator entsprechend ihrer durchschnittlichen Breite (Attribut: BRG) Berücksichtigung. Bei kleineren Fließgewässern (BRG < 3 m, entspricht durchschnittlicher Gewässerbreite von 3 m) geht nur die Gewässerlänge in die Berechnung ein, da diese eine geringere Uferausdehnung und Bedeutung für die Landschaftsvielfalt besitzen. Dagegen wird für größere Fließgewässer (ab durchschnittlicher Gewässerbreite von 6 m) zunächst eine beidseitige Pufferung durchgeführt. Dabei entspricht die Pufferdistanz der Hälfte des Attributs BRG. Ränder von Gewässern mit Lage auf oder in direkter Nähe zu administrativen Grenzen werden eindeutig einer Gebietseinheit zugewiesen. Durch Verschneidung von Gewässern mit administrativen Grenzen modellierte und physisch nicht vorhandene Ränder gehen durch die Anwendung der ArcGIS Funktion 'Erase' nicht in den Ergebniswert ein. Außerdem werden Gewässerlinienabschnitte (BRG < 3m) mit Lage auf administrativen Grenzen, eindeutig einer administrativen Einheit zugewiesen, um eine Doppelzählung bei der Aggregation auf nächsthöhere Gebietseinheiten zu vermeiden. Folgende ATKIS-Objekte werden berücksichtigt: -Randlinien flächenhafter Objekte: Stehende Gewässer und Fließgewässer mit einer Breite von 12 m (Objektarten 44001, 44006 und 44007), ohne FKT = 8300 (Kanal) und ohne HYD = 2000 (nicht ständig wasserführend). Transformation der Polygone der flächenhaften Gewässer in Linien (Funktion 'Polygons to Line', mit der Option 'Identify and store polygon neighboring information'). Anschließend selektieren der Linien, die Außengrenzen (also Ufer) sind (Select LEFT_FID = -1) -Linienhafte Objekte: Objektart 44004 (Gewässerachse) mit der Bedingung HYD ungleich 2000 oder 3000 (nicht ständig wasserführend bzw. trockengefallen) sowie ungleich FKT = 8300 (Kanäle). Entfernen aller verrohrten und durch Bauwerke (z.B. Gewässerbrücken, Wehr- und Schöpfwerkanlagen) überprägte Gewässerabschnitte über das Attribut HDU_X gleich 1. Damit werden alle Gewässerelemente mit den Attributen BWF 1800, 1820, 1870, 2010, 2011, 2012, 2050, 2070, 2090 entfernt."@de,
+    ns1:methodology "Quotient aus der gesamten Randlinienlänge von Still- und Fließgewässern einerseits und der Gebietsfläche andererseits. Es werden die Längen der im Basis-DLM dargestellten äußeren Ränder aller stehenden Gewässer und von Fließgewässern mit einer Breite über 3 m, sowie die Länge aller linienhaften Gewässer unter 3 m Breite erfasst. Im Basis DLM sind Gewässer über 12 m Breite flächenhaft erfasst und besitzen folglich zwei Randlinien. Schmalere Fließgewässer sind dagegen als einfache Linienelemente enthalten und finden im Indikator entsprechend ihrer durchschnittlichen Breite (Attribut: BRG) Berücksichtigung. Bei kleineren Fließgewässern (BRG < 3 m) geht nur die Gewässerlänge in die Berechnung ein, da diese eine geringere Uferausdehnung und Bedeutung für die Landschaftsvielfalt besitzen. Dagegen wird für größere Fließgewässer (ab durchschnittlicher Gewässerbreite von 6 m) zunächst eine beidseitige Pufferung durchgeführt. Dabei entspricht die Pufferdistanz der Hälfte des Attributs BRG. Ränder von Gewässern mit Lage auf oder in direkter Nähe zu administrativen Grenzen werden eindeutig einer Gebietseinheit zugewiesen. Durch Verschneidung von Gewässern mit administrativen Grenzen modellierte und physisch nicht vorhandene Ränder gehen durch die Anwendung der ArcGIS-Funktion 'Erase' nicht in den Ergebniswert ein. Außerdem werden Gewässerlinienabschnitte (BRG < 3 m) mit Lage auf administrativen Grenzen, eindeutig einer administrativen Einheit zugewiesen, um eine Doppelzählung bei der Aggregation auf nächsthöhere Gebietseinheiten zu vermeiden. Folgende ATKIS-Objekte werden berücksichtigt: -Randlinien flächenhafter Objekte: Stehende Gewässer und Fließgewässer mit einer Breite von 12 m (Objektarten 44001, 44006 und 44007), ohne FKT = 8300 (Kanal) und ohne HYD = 2000 (nicht ständig wasserführend). Transformation der Polygone der flächenhaften Gewässer in Linien (Funktion 'Polygons to Line', mit der Option 'Identify and store polygon neighboring information'). Anschließend Selektion der Linien, die Außengrenzen (also Ufer) sind (Select LEFT_FID = -1) -Linienhafte Objekte: Objektart 44004 (Gewässerachse) mit der Bedingung HYD ungleich 2000 oder 3000 (nicht ständig wasserführend bzw. trockengefallen) sowie ungleich FKT = 8300 (Kanäle). Entfernen aller verrohrten und durch Bauwerke (z.B. Gewässerbrücken, Wehr- und Schöpfwerkanlagen) überprägte Gewässerabschnitte über das Attribut HDU_X = 1. Damit werden alle Gewässerelemente mit den Attributen BWF 1800, 1820, 1870, 2010, 2011, 2012, 2050, 2070, 2090 entfernt."@de,
         ""@en ;
     ns2:Unit "m/ha" .
 
@@ -1113,7 +1050,7 @@
         "Percentage of area of influence of high-voltage lines to reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#U> ;
     ns1:hasIndicatorId "U51RG" ;
-    ns1:hasSpatialExtent [ rdf:value "100m" ;
+    ns1:hasSpatialExtent [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2015" ;
     ns1:interpretation "Der Indikator erfasst den Einwirkbereich von Hochspannungsfreileitungen. In diesem Bereich ist die Landschaft durch Leitungsmasten technisch stark überprägt und besitzt eine geringe Landschaftsästhetik. Dies bedingt eine verminderte Erholungswirkung in der freien Landschaft. Einwirkungsbereiche von Niederfrequenzanlagen sind in der allgemeinen Verwaltungsvorschrift zur Durchführung der Verordnung über elektromagnetische Felder - 26. BImSchV (26. BImSchVVwV) folgendermaßen definiert: 'Der Einwirkungsbereich einer Anlage ist der Bereich, in dem die Anlage signifikant von den natürlichen und mittleren anthropogen bedingten Immissionen abhebende elektrische oder magnetische Felder verursacht, unabhängig davon, ob die Immissionen tatsächlich schädliche Umwelteinwirkungen auslösen.' Diese Bereiche werden im Indikator als Distanzmaß für die Wirkung von elektrischen und magnetischen Feldern verwendet. Bei der Festlegung der in Anlage 1 des 26. BImSchV aufgeführten Grenzwerte wurden akute Wirkungen durch elektrischen Ströme berücksichtigt, die im Körper durch elektrische und magnetische Wechselfelder erzeugt werden."@de,
@@ -1127,17 +1064,17 @@
         "Percentage of transport space to reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#V> ;
     ns1:hasIndicatorId "V01RG" ;
-    ns1:hasSpatialExtent [ rdf:value "5000m" ;
+    ns1:hasSpatialExtent [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -1163,17 +1100,17 @@
         "Percentage of street, square and path to reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#V> ;
     ns1:hasIndicatorId "V02RG" ;
-    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+    ns1:hasSpatialExtent [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -1199,17 +1136,17 @@
         "Roadway density in reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#V> ;
     ns1:hasIndicatorId "V03DG" ;
-    ns1:hasSpatialExtent [ rdf:value "5000m" ;
+    ns1:hasSpatialExtent [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -1235,17 +1172,17 @@
         "Road network density in reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#V> ;
     ns1:hasIndicatorId "V29DG" ;
-    ns1:hasSpatialExtent [ rdf:value "500m" ;
+    ns1:hasSpatialExtent [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -1271,17 +1208,17 @@
         "Density of total roadway network for motorised vehicles in reference area"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#V> ;
     ns1:hasIndicatorId "V30DG" ;
-    ns1:hasSpatialExtent [ rdf:value "10000m" ;
+    ns1:hasSpatialExtent [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2000",
         "2006",
@@ -1307,17 +1244,17 @@
         "Relief diversity"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#X> ;
     ns1:hasIndicatorId "X01RG" ;
-    ns1:hasSpatialExtent [ rdf:value "1000m" ;
+    ns1:hasSpatialExtent [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "500m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2012" ;
     ns1:interpretation "Der Indikator bildet Bereiche ab, die ein abwechslungsreiches, vielgestaltiges Relief aufweisen. Deutlich heben sich die Mittelgebirgsregionen und der Alpenraum ab. Die reale Oberfläche in Deutschland ist auf Gemeindeebene bis auf das ca. 1,3-fache größer als die planimetrische Fläche."@de,
@@ -1331,17 +1268,17 @@
         "Relief energy"@en ;
     ns1:hasCategory <https://monitor.ioer.de/monitor_api/sora/category#X> ;
     ns1:hasIndicatorId "X02KG" ;
-    ns1:hasSpatialExtent [ rdf:value "500m" ;
+    ns1:hasSpatialExtent [ rdf:value "5000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "10000m" ;
+        [ rdf:value "500" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "5000m" ;
+        [ rdf:value "1000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "1000m" ;
+        [ rdf:value "100" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "200m" ;
+        [ rdf:value "10000" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ],
-        [ rdf:value "100m" ;
+        [ rdf:value "200" ;
             ns2:unit <http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#Metre> ] ;
     ns1:hasYearRecorded "2012" ;
     ns1:interpretation "Der Indikator gibt an, wie stark eine Gebietseinheit durch das Relief geprägt ist. Deutlich heben sich die Mittelgebirgsregionen und der Alpenraum ab."@de,

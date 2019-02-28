@@ -10,17 +10,23 @@ IÖR-Login
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <a href="http://www.ioer-monitor.de" target="_blank"><div class="landing_logo"></div></a>
+    <div class="container landing_choice">
+        <a href="http://www.ioer-monitor.de" target="_blank">
+            <div class="landing_logo"></div>
+        </a>
     </div>
     <div class="container landing_choice">
-        <h2>Anmeldung</h2>
-        <div class="info">Hier könne Sie sich anmelden und erhalten ihren persönlichen API-Key zur Nutzung unserer OGC-Dienste</div>
-        <a href="{{ '%slogin'%(host)}}"><button type="button" class="btn btn-primary">Anmelden</button></a>
+        <h3>Zur Nutzung unserer Downloaddienste benötigen Sie einmalig einen API-Key. Diesen erhalten Sie nach Registrierung.</h3>
     </div>
-    <div class="container landing_choice">
-        <h2>Sie haben noch keinen API-Key ?</h2>
-        <div class="info">Sollten Sie noch keinen Account besitzen, können Sie sich hier einen Account erstellen.</div>
-          <a href="{{ '%ssignup'%(host)}}"><button type="button" class="btn btn-primary">Registrieren</button></a>
+    <hr class="w-50"/>
+    <div class="container landing_choice w-100">
+        <div class="w-50 float-left">
+             <h2>Anmeldung</h2>
+             <a href="{{ '%slogin'%(host)}}"><button type="button" class="btn btn-primary">Anmelden</button></a>
+        </div>
+        <div class="w-50 float-right">
+            <h2>Registrierung</h2>
+            <a href="{{ '%ssignup'%(host)}}"><button type="button" class="btn btn-primary">Registrieren</button></a>
+        </div>
     </div>
 {% endblock %}

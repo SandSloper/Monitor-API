@@ -24,14 +24,12 @@ db.init_app(app)
 CORS(app)
 Session(app)
 
-from app.user import ogc
-from app.flaechenportal import f_portal
-from app.email import mail
+from app.user import user
 from app.sora import sora
 from app.admin import admin
+from app.monitor import monitor
 
-app.register_blueprint(ogc, url_prefix='/')
-app.register_blueprint(f_portal, url_prefix='/fp')
-app.register_blueprint(mail,url_prefix="/email")
+app.register_blueprint(user, url_prefix='/')
 app.register_blueprint(sora,url_prefix="/sora")
 app.register_blueprint(admin, url_prefix='/admin')
+app.register_blueprint(monitor,url_prefix='/monitor')

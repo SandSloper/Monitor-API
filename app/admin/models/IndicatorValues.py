@@ -1,17 +1,17 @@
 import requests
 import json
 
+from app.config import Config
+
 class IndicatorValues:
     def __init__(self,format):
-        self.url = "https://monitor.ioer.de/backend/query.php"
+        self.url = Config.URL_BACKEND_MONITOR
         self.json = '{"format":{"id":"%s"},"query":"getAllIndicators"}' % format
         self.format=format
         req = requests.post(self.url, data={'values':self.json})
         self.values = json.loads(req.text)
+        print (self.values)
 
-    def getIndikatorValues(self,indicator_id):
-        for val in self.values:
-            print(val)
     #methon to return all possible indicator values which are possible for an indicator
     def getAllAvaliableServiceValues(self,service):
         res =[]

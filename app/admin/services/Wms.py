@@ -8,25 +8,32 @@ import csv
 
 from app import *
 from app.config import Config
-from app.tools.Toolbox import Toolbox
+from app.models.Toolbox import Toolbox
 from app.admin.models.Color import Color
-from app.admin.services.IndicatorValues import IndicatorValues
+from app.admin.models.IndicatorValues import IndicatorValues
+from app.admin.models.Indicator import Indicator
+from app.admin.interfaces.OgcService import OgcService
 
 '''
 Info: Raster werden nur noch in der Rasterweite 100m angeboten oder in der am geringsten vorliegenden 
 '''
 
-class Wms:
-    def __init__(self):
+class Wms(OgcService):
+    indicator = None
+    def __init__(self,path='/mapsrv_daten/detailviewer/wms_mapfiles'):
         self.service = 'wms'
-        self.path = '/mapsrv_daten/detailviewer/wms_mapfiles'
+        self.path = path
         self.toolbox = Toolbox()
-    def getQuantil(self, id, width, year):
 
+    def getQuantil(self, id, width, year):
         quantile = []
         #server path
-        quantile_path = "data/{0}/Raster {1} m/r{1}_{0}_{2}_quantile.txt".format(year,width,id)
-        path = self.path.replace("wms_mapfiles",quantile_path)
+        #quantile_path = "data/{0}/Raster {1} m/r{1}_{0}_{2}_quantile.txt".format(year,width,id)
+        quantile_path = "data\\{0}\\Raster {1} m\\r{1}_{0}_{2}_quantile.txt".format(year, width, id)
+        if "wms_mapfiles" in self.path:
+            path = self.path.replace("wms_mapfiles", quantile_path)
+        elif "wms_monitor" in self.path:
+            path = self.path.replace("wms_monitor", quantile_path)
         try:
             with open(path) as quantile_csv:
                 csv_reader = csv.reader(quantile_csv,delimiter=";")
@@ -50,6 +57,8 @@ class Wms:
         results = []
 
         for x in wms_values:
+            cat = x['cat_name']
+            cat = cat.replace("ä","ae").replace("ö","oe").replace("ü","ue")
             values = x['values']
             #get the possible rster extends
             for val in values:
@@ -60,33 +69,41 @@ class Wms:
                 methodology = self.toolbox.clean_string(val["methodik"])
                 unit = val["unit"]
                 colors=val["colors"]
-                url_spatial_extend = '%s?values={"ind":{"id":"%s"},"format":{"id":"raster"},"query":"getSpatialExtend"}' % (Config.URL_BACKEND, ind_id)
+                url_spatial_extend = '%s?values={"ind":{"id":"%s"},"format":{"id":"raster"},"query":"getSpatialExtend"}' % (Config.URL_BACKEND_SORA, ind_id)
                 extends_request = requests.get(url_spatial_extend)
                 extends = json.loads(extends_request.text)
                 # builder
                 try:
-                    results.append(self.writeFile(id=ind_id, name=ind_name, description=ind_description, time_string=times,
-                                              spatial_extends=extends, units=unit, methodology=methodology,colors=colors))
-                except:
-                    app.logger.debug("Error in create WMS_service for Indicator:\n {}\n{}\n{".format(id,times,extends))
+                     self.indicator=Indicator(ind_id,ind_name,ind_description,times,extends,unit,methodology,colors,cat)
+                     results.append(self.writeFile())
+                except IOError as e:
+                    app.logger.debug("Error in create WMS_service for Indicator:\n {}\n{}\n{}\n{}".format(ind_id,times,extends,e))
+                    #print("Error in create WMS_service for Indicator:\n {}\n{}\n{}\n{}".format(ind_id,times,extends,e))
 
         return results
 
-    def createSingleService(self, id, name, description, time_string, spatial_extends, units, methodology,colors):
-        return(self.writeFile(id, name, description, time_string, spatial_extends, units, methodology,colors))
+    def createSingleService(self, Indicator,file_path=None):
+        self.indicator = Indicator
+        return(self.writeFile(file_path))
 
-    def writeFile(self, id, name, description, time_string, spatial_extends, units, methodology,colors):
+    def writeFile(self, file_path=None,old_version=False):
         try:
             # extract the times
-            time_array = time_string.split(",")
-            # get quantile
-            classes = self.getQuantil(id,spatial_extends[0],time_array[0])["class_number"]
-            colors = Color(colors["min"],colors["max"],classes)
-            colorPalette= colors.buildColorPalette()
-            #write the file
-            os.chdir(self.path)
-            file = codecs.open('wms_{}.map'.format(id.lower()), 'w', "utf-8")
+            time_array = self.indicator.get_time().split(",")
 
+            # get quantile
+            app.logger.debug("Indicator:\n {0}".format(self.indicator.toJSON()))
+            classes = self.getQuantil(self.indicator.get_id(),self.indicator.get_spatial_extends()[0],time_array[0])["class_number"]
+            colors = Color(self.indicator.get_colors()["min"],self.indicator.get_colors()["max"],classes)
+            colorPalette= colors.buildColorPalette()
+            os.chdir(self.path)
+
+            if old_version:
+                file = codecs.open('{}_{}_100.map'.format(self.indicator.get_cat(), self.indicator.get_id().upper()), 'w',
+                               "utf-8")
+            else:
+                file = codecs.open('wms_{}.map'.format(self.indicator.get_id().lower()), 'w', "utf-8")
+                
             header = ("MAP\n"
                         'NAME "WMS {0}"\n'
                         "STATUS ON\n"
@@ -96,7 +113,7 @@ class Wms:
                         'FONTSET "../mapfiles/fonts/fonts.txt"\n'
                         "IMAGECOLOR 255 255 255\n"
                         'CONFIG "MS_ERRORFILE" "/mapsrv_daten/detailviewer/log/ms_log.txt"\n'
-                        'CONFIG "PROJ_LIB" "/usr/share/proj/"\n\n'.format(name))
+                        'CONFIG "PROJ_LIB" "/usr/share/proj/"\n\n'.format(self.indicator.get_name()))
 
             file.write(header)
 
@@ -128,7 +145,7 @@ class Wms:
                        'END\n\n'
                        'PROJECTION\n'
                        '    "init=epsg:3035"\n'
-                       'END\n\n'.format(name,methodology,description))
+                       'END\n\n'.format(self.indicator.get_name(),self.indicator.get_methodogy(),self.indicator.get_description()))
 
             file.write(meta)
 
@@ -149,7 +166,7 @@ class Wms:
                 int_time = int(t)
                 now = datetime.datetime.now()
                 if int_time >= 2006 and int_time <= now.year:
-                    for s in spatial_extends:
+                    for s in self.indicator.get_spatial_extends():
                         layer=("LAYER\n"
                                 '   NAME "{0}_{1}_{2}"\n'
                                 "   METADATA\n"
@@ -166,14 +183,14 @@ class Wms:
                                 '   PROCESSING "SCALE=-1,101"\n'
                                 '   PROCESSING "RESAMPLE=NEAREST"\n'
                                 '   DATA "./{1}/Raster {2} m/r{2}_{1}_{0}.tif"\n'
-                                '   TEMPLATE "template.json"\n'
+                                '   TEMPLATE "template.html"\n'
                                 '   TOLERANCE 0\n'
-                                '   TOLERANCEUNITS pixels\n\n'.format(id,t,s)
+                                '   TOLERANCEUNITS pixels\n\n'.format(self.indicator.get_id(),t,s)
                                )
 
                         file.write(layer)
                         try:
-                            quantile = self.getQuantil(id,s,t)["values"]
+                            quantile = self.getQuantil(self.indicator.get_id(),s,t)["values"]
                             max = quantile[(len(quantile)-1)]
                             i=0
                             for x in quantile:
@@ -197,31 +214,15 @@ class Wms:
 
                                 file.write(wms_class)
                         except:
-                            print("no quantil are avaliable for {}_{}_{}".format(id,s,t))
+                            print("no quantil are avaliable for {}_{}_{}".format(self.indicator.get_id(),s,t))
 
                         file.write("END\n\n")
 
-            created_layer = {id: {
-                "state": "created",
-                "name": name,
-                "description": description,
-                "times": time_string,
-                "spatial_extends": spatial_extends,
-                "unit": units,
-                "methodik": methodology
-            }}
+            created_layer = self.indicator.toJSON()
             app.logger.debug("Finished WMS_service for Indicator:\n {0}".format(created_layer))
             file.write("END")
         except IOError as e:
-            created_layer = {id: {
-                "state": "I/O error({0})".format(e),
-                "name": name,
-                "description": description,
-                "times": time_string,
-                "spatial_extends": spatial_extends,
-                "unit": units,
-                "methodik": methodology
-            }}
+            created_layer = self.indicator.toJSON("I/O error({0})".format(e))
             app.logger.debug("Error in create WMS_service for Indicator:\n {0}".format(created_layer))
 
         return created_layer

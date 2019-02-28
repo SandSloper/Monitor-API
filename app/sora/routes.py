@@ -10,7 +10,7 @@ from app.sora.model.Indicator import Indicator
 from app.sora.model.Category import Category
 from app.config import Config
 
-url = '%s?values={"format":{"id":"raster"},"query":"getAllIndicators"}' % (Config.URL_BACKEND)
+url = '%s?values={"format":{"id":"raster"},"query":"getAllIndicators"}' % (Config.URL_BACKEND_SORA)
 
 @sora.route("/indicator", methods=['GET', 'POST'])
 def get_indicators():
