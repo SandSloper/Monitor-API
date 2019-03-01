@@ -85,6 +85,9 @@ class Wms(OgcService):
     def createSingleService(self, Indicator,file_path=None):
         self.indicator = Indicator
         return(self.writeFile(file_path))
+    '''
+    old version creates mapfiles for the old mapserver
+    '''
 
     def writeFile(self, file_path=None,old_version=False):
         try:
@@ -103,7 +106,7 @@ class Wms(OgcService):
                                "utf-8")
             else:
                 file = codecs.open('wms_{}.map'.format(self.indicator.get_id().lower()), 'w', "utf-8")
-                
+
             header = ("MAP\n"
                         'NAME "WMS {0}"\n'
                         "STATUS ON\n"

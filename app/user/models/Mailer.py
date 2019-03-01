@@ -1,6 +1,5 @@
 from flask_mail import Mail, Message
 from app import app
-from app.config import Config
 
 class Mailer:
 

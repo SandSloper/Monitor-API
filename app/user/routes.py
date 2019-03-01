@@ -102,27 +102,28 @@ def signup():
         hashed_password = generate_password_hash(form.password.data, method='sha256')
         username = form.username.data
         email = form.email.data
-        cur_user = db.engine.execute("SELECT * FROM users WHERE username='{}'".format(username))
-        cur_mail = db.engine.execute("SELECT * FROM users WHERE email='{}'".format(email))
-        if cur_user.rowcount > 0:
-            error = Markup('Der <b>Nutzername</b> existiert bereits, bitte wählen Sie einen andere')
-            return render_template('user/signup.html', form=form, error=error)
-        elif cur_mail.rowcount > 0:
-            error = Markup('Die <b>Email-Adresse</b> existiert bereits, bitte wählen Sie eine andere')
+        cur_check = db.engine.execute("SELECT email, username FROM users WHERE username='{}' or email='{}'".format(username,email)).first()
+        if cur_check is not None:
+            error = Markup(
+                '<div class="alert alert-danger w-100" role="alert">Der <b>Nutzername</b> oder die <b>Mailadresse</b> ist schon registriert</div>')
             return render_template('user/signup.html', form=form, error=error)
         else:
-            new_user = User(username=username, email=email, password=hashed_password, lastname=form.lastname.data, firstname=form.firstname.data, facility=form.facility.data, access=1, business=form.business.data, confirmed=False)
+            new_user = User(username=username, email=email, password=hashed_password, lastname=form.lastname.data,
+                            firstname=form.firstname.data, facility=form.facility.data, access=1,
+                            business=form.business.data, confirmed=False)
             db.session.add(new_user)
             db.session.commit()
 
             token_user = token.generate_confirmation_token(username)
-            confirm_url = "{}confirm/{}".format(Config.URL_ENDPOINT,token_user)
+            confirm_url = "{}confirm/{}".format(Config.URL_ENDPOINT, token_user)
             html = render_template('user/activate_mail.html', confirm_url=confirm_url)
             subject = "Bitte bestätigen Sie ihre Email"
-            mail = Mailer(email,subject,html)
+            mail = Mailer(email, subject, html)
             mail.send_email()
             login_user(User.query.filter_by(username=username).first())
-            #return render_template('user/api_key.html', key='', btn_text='Generieren', username=current_user.username, user_id=current_user.id, access=1,host=Config.URL_ENDPOINT)
+            return render_template('user/signup.html')
+            # return render_template('user/api_key.html', key='', btn_text='Generieren', username=current_user.username, user_id=current_user.id, access=1,host=Config.URL_ENDPOINT)
+
     return render_template('user/signup.html', form=form)
 '''
 Email confirmation
@@ -132,16 +133,17 @@ Email confirmation
 def confirm_email(token_pass):
     username = token.confirm_token(token_pass)
     user = User.query.filter_by(username=username).first_or_404()
-    if user.confirmed:
-        flash('Account already confirmed. Please login.', 'success')
-    else:
-        user.confirmed=True
+    app.logger.debug("State User{0}".format(user.confirmed))
+    if user.confirmed is False:
+        user.confirmed = True
         user.confirmed_on = datetime.datetime.now()
         db.session.add(user)
         db.session.commit()
         logout_user()
-        flash('You have confirmed your account. Thanks!', 'success')
-    return redirect("https://monitor.ioer.de/monitor_api/login")
+        return render_template('user/confirmed_mail.html',confimed=True)
+    else:
+        return render_template('user/confirmed_mail.html', confimed=False)
+
 
 
 '''

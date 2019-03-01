@@ -102,23 +102,12 @@ Log In
 /*
 Sign Up
  */
-.signin{
-    margin-bottom: 5vh;
-}
 .signin .logo{
-    margin-top: 5vh;
     margin-bottom: 5vh;
-}
-.signin .error_message{
-  max-width: 80%;
-  padding: 15px;
-  margin: 0 auto;
-  border: 2px solid red;
 }
 .signin .form-signin {
-  max-width: 80%;
   padding: 15px;
-  margin: 0 auto;
+  margin: 0 auto 5vh;
 }
 .signin .form-signin .form-signin-heading,
 .signin .form-signin .checkbox {
@@ -149,7 +138,7 @@ Sign Up
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.signin .btn-primary{
+.signin .form-signin .signin .btn-primary{
     margin-top: 2vh;
     width:150px;
     height: 50px;

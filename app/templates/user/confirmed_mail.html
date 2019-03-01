@@ -1,0 +1,45 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}
+IÖR-Monitor-API
+{% endblock %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+{% endblock %}
+
+{% block content %}
+    <div class="header">
+        <h2>Registrierung</h2>
+    </div>
+    <div class="container logo">
+        <a href="https://ioer-monitor.de" target="_blank">
+            <a href="http://www.ioer-monitor.de" target="_blank"><div class="image"></div></a>
+        </a>
+    </div>
+    {% if confimed %}
+        <div class="container mx-auto">
+            <div class="well well-lg">
+                <div class="alert alert-success" role="alert">
+                    <h2>Vielen Dank für ihre Registrierung</h2>
+                </div>
+                <h3>Bitte Melden Sie sich jetzt an</h3>
+                <a href="https://monitor.ioer.de/monitor_api/login">
+                    <button class="btn btn-lg btn-primary btn-block w-50">Anmelden</button>
+                </a>
+            </div>
+        </div>
+    {% else %}
+        <div class="container mx-auto">
+            <div class="well well-lg">
+                <div class="alert alert-danger" role="alert">
+                    <h2>Ihr Account ist schon registriert</h2>
+                </div>
+                <h3>Bitte Melden Sie sich an</h3>
+                <a href="https://monitor.ioer.de/monitor_api/login">
+                    <button class="btn btn-lg btn-primary btn-block w-50">Anmelden</button>
+                </a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

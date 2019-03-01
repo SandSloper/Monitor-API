@@ -12,28 +12,41 @@ IÖR-Monitor-API
     <div class="header">
         <h2>Registrierung</h2>
     </div>
-<div class="container signin">
     <div class="container logo">
         <a href="https://ioer-monitor.de" target="_blank">
             <a href="http://www.ioer-monitor.de" target="_blank"><div class="image"></div></a>
         </a>
     </div>
-     {% if error %}
-      <p class="error_message"><strong>Fehler:</strong> {{ error }}
-      {% endif %}
-  <form class="form-signin" method="POST">
-    {{ form.hidden_tag() }}
-    {{ wtf.form_field(form.username)}}
-    {{ wtf.form_field(form.email) }}
-    {{ wtf.form_field(form.firstname) }}
-    {{ wtf.form_field(form.lastname) }}
-    {{ wtf.form_field(form.business) }}
-    {{ wtf.form_field(form.facility) }}
-    {{ wtf.form_field(form.password) }}
-    {{ wtf.form_field(form.repeat_password) }}
-    {{ wtf.form_field(form.conditions) }}
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Registrieren</button>
-  </form>
-
-</div> <!-- /container -->
+    <div class="container signin">
+         {% if error %}
+             <div class="error_message container w-75">{{ error }}</div>
+         {% endif %}
+         {% if form %}
+          <form class="form-signin" method="POST">
+            {{ form.hidden_tag() }}
+            {{ wtf.form_field(form.username)}}
+            {{ wtf.form_field(form.email) }}
+            {{ wtf.form_field(form.firstname) }}
+            {{ wtf.form_field(form.lastname) }}
+            {{ wtf.form_field(form.business) }}
+            {{ wtf.form_field(form.facility) }}
+            {{ wtf.form_field(form.password) }}
+            {{ wtf.form_field(form.repeat_password) }}
+            {{ wtf.form_field(form.conditions) }}
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Registrieren</button>
+          </form>
+    </div> <!-- /container -->
+    {% else %}
+    <div class="mx-auto">
+        <div class="well well-lg">
+            <div class="alert alert-success" role="alert">
+                <h2>Vielen Dank für ihre Registrierung</h2>
+            </div>
+            <h3>Eine Registrierungsmail wurde versandt.</h3>
+            <a href="https://monitor.ioer.de/monitor_api/">
+                <button class="btn btn-lg btn-primary btn-block w-50">Zur Startseite</button>
+            </a>
+        </div>
+    </div>
+    {% endif %}
 {% endblock %}
