@@ -51,7 +51,6 @@ class ApiKey extends React.Component{
                     id:user_id
                 },
                  success:function(data){
-                    console.log(this.url);
                           if(data){
                               manager.setState({value: key});
                               manager.setState({button_text: "Kopieren"});

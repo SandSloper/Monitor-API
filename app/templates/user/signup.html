@@ -33,16 +33,16 @@ IÖR-Monitor-API
             {{ wtf.form_field(form.password) }}
             {{ wtf.form_field(form.repeat_password) }}
             {{ wtf.form_field(form.conditions) }}
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Registrieren</button>
+            <button class="btn btn-lg btn-primary btn-block w-50" type="submit">Registrieren</button>
           </form>
     </div> <!-- /container -->
     {% else %}
     <div class="mx-auto">
         <div class="well well-lg">
             <div class="alert alert-success" role="alert">
-                <h2>Vielen Dank für ihre Registrierung</h2>
+                <h3>Vielen Dank für ihre Registrierung</h3>
             </div>
-            <h3>Eine Registrierungsmail wurde versandt.</h3>
+            <h4>Eine Registrierungsmail wurde versandt.</h4>
             <a href="https://monitor.ioer.de/monitor_api/">
                 <button class="btn btn-lg btn-primary btn-block w-50">Zur Startseite</button>
             </a>

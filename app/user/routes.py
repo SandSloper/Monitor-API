@@ -144,8 +144,18 @@ def confirm_email(token_pass):
     else:
         return render_template('user/confirmed_mail.html', confimed=False)
 
+#Todo
+'''
+password reset
+'''
+@user.route('/reset')
+def reset_passworf():
+    form = RegisterForm(form_type="inline")
+    if form.validate_on_submit():
+        username = form.username.data
+        user = User.query.filter_by(username=username).first_or_404()
 
-
+    return render_template('user/reset_password.html',form=form)
 '''
 Service overview, shown if the USER is authenticated
 '''

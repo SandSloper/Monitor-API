@@ -102,7 +102,8 @@ Log In
 /*
 Sign Up
  */
-.signin .logo{
+.logo{
+    margin-top: 50px;
     margin-bottom: 5vh;
 }
 .signin .form-signin {
