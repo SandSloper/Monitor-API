@@ -21,7 +21,7 @@ def send():
                   sender=sender,
                   subject='IÖR-Feedback from: {}'.format(name),
                   recipients=["monitor@ioer.de"])
-    app.logger.debug("send Mail from:{} \n message:{} \n sendto:{}".format(sender,message,"l.mucha@ioer.de || monitor@ioer.de"))
+    app.logger.debug("send Mail from:{} \n message:{} \n sendto:{}".format(sender,message,"monitor@ioer.de"))
     mail.send(msg)
     return jsonify("send")
 

@@ -80,14 +80,13 @@ def login():
         if user and check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember_me.data)
             if current_user.access == 2:
-                app.logger.info("%s is logged in as admin", current_user.username)
                 return redirect("{}admin/".format(Config.URL_ENDPOINT))
             else:
                 app.logger.info("%s is logged in as user",current_user.username)
                 return render_template('user/api_key.html', key=current_user.api_key, btn_text='Kopieren', username=current_user.username,
                                        user_id=current_user.id,host=Config.URL_ENDPOINT)
         else:
-            error = Markup('Der <b>Nutzername</b> oder <b>Passwort</b> falsch')
+            error = Markup('<div class="alert alert-danger w-100" role="alert">Der <b>Nutzername</b> oder das <b>Passwort</b> ist falsch</div>')
             return render_template('user/login.html', form=form, error=error)
 
     return render_template('user/login.html', form=form)
@@ -122,8 +121,6 @@ def signup():
             mail.send_email()
             login_user(User.query.filter_by(username=username).first())
             return render_template('user/signup.html')
-            # return render_template('user/api_key.html', key='', btn_text='Generieren', username=current_user.username, user_id=current_user.id, access=1,host=Config.URL_ENDPOINT)
-
     return render_template('user/signup.html', form=form)
 '''
 Email confirmation
@@ -144,18 +141,45 @@ def confirm_email(token_pass):
     else:
         return render_template('user/confirmed_mail.html', confimed=False)
 
-#Todo
 '''
 password reset
 '''
-@user.route('/reset')
-def reset_passworf():
-    form = RegisterForm(form_type="inline")
+@user.route('/reset',methods=['GET', 'POST'])
+def send_reset_password():
+    form = ResetPasswordMailForm(form_type="inline")
     if form.validate_on_submit():
-        username = form.username.data
-        user = User.query.filter_by(username=username).first_or_404()
+        email = form.email.data
+        user = User.query.filter_by(email=email).first()
+        if user is None:
+            error = Markup('<div class="alert alert-danger w-100" role="alert">Der <b>Emailadresse</b> ist nicht registriert</div>')
+            return render_template('user/reset_password.html', form_mail=form,error=error)
+        else:
+            token_user = token.generate_confirmation_token(user.email)
+            confirm_url = "{}reset/{}".format(Config.URL_ENDPOINT, token_user)
+            html = render_template('user/reset_password_mail.html', confirm_url=confirm_url)
+            subject = "Passwort zurücksetzen für den IÖR-Monitor"
+            mail = Mailer(email, subject, html)
+            mail.send_email()
+            return render_template('user/reset_password.html', confimed=True)
 
-    return render_template('user/reset_password.html',form=form)
+    return render_template('user/reset_password.html',form_mail=form)
+
+@user.route('/reset/<token_pass>',methods=['GET', 'POST'])
+def reset_password(token_pass):
+    form = ResetPasswordForm(form_type="inline")
+    if form.validate_on_submit():
+        email = token.confirm_token(token_pass)
+        user = User.query.filter_by(email=email).first_or_404()
+        new_pw =  generate_password_hash(form.password.data, method='sha256')
+        user.password = new_pw
+        db.session.add(user)
+        db.session.commit()
+        logout_user()
+        return render_template('user/reset_password.html',reseted=True)
+    '''else:
+        error = Markup('<div class="alert alert-danger w-100" role="alert">Der Token für die Zurücksetzung ist abgelaufen</div>')
+        return render_template('user/reset_password.html', error=error)'''
+    return render_template('user/reset_password.html', reset_form=form)
 '''
 Service overview, shown if the USER is authenticated
 '''
@@ -166,8 +190,6 @@ def user_services():
         return render_template('user/services.html', key=current_user.api_key, access=current_user.access)
     else:
        return redirect("{}login".format(Config.URL_ENDPOINT))
-    if user.confirmend:
-        flash('Account already confirmed. Please login.', 'success')
 '''
 show/generate API Key
 '''
