@@ -134,7 +134,7 @@ class Wcs (OgcService):
                         layer=("Layer\n"
                                '    NAME "{0}_{1}_{2}m"\n'
                                '    METADATA\n'
-                               '        "wcs_label" "WCS {3}" \n'
+                               '        "wcs_label" "{0}_{1}_{2}m" \n'
                                '        "wcs_rangeset_name" "{3}"\n'
                                '        "wcs_description "  "{4}"\n'
                                '        "wcs_extent" "4005000.000000 2655000.000000 4695000.000000 3595000.000000"\n'

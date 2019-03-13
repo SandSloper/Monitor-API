@@ -24,7 +24,6 @@ def send():
     app.logger.debug("send Mail from:{} \n message:{} \n sendto:{}".format(sender,message,"monitor@ioer.de"))
     mail.send(msg)
     return jsonify("send")
-
 @monitor.route('/error_mail', methods=['GET', 'POST'])
 def send_error():
     message = request.args.get('message')
@@ -59,8 +58,10 @@ def set_cache():
                     for sp in spatial_extends:
                         if int(spatial_extends[sp])==1:
                             json = '{"ind":{"id":"'+id+'","time":"'+t+'","raumgliederung":"'+sp+'","klassifizierung":"haeufigkeit","klassenzahl":"7"},"format":{"id":"gebiete"},"query":"getJSON"}'
+                            print(json)
                             created.append(json)
                             requests.post(Config.URL_BACKEND_MONITOR,data={'values':json})
         return jsonify(created)
     else:
         return jsonify("error")
+

@@ -8,7 +8,8 @@ class ApiKey extends React.Component{
     copyToClipboard(){
         const el = document.createElement('textarea'),
             manager = this;
-        if(this.state.key){
+        console.log(this.state.value);
+        if(this.state.value){
             el.value = this.state.value;
             document.body.appendChild(el);
             el.select();
@@ -16,7 +17,6 @@ class ApiKey extends React.Component{
             document.body.removeChild(el);
         }else{
              var key =ApiKey.makekey();
-            //key_input.val(key);
             //check if the key allredy exists
            $.ajax({
                url:url_base+'/check_key',

@@ -19,28 +19,40 @@ const table={
         }
 
         $.when(table.getData(setting[0])).done(function(data) {
-            console.log(data);
+            let get_service = function(){
+                switch (setting[0]) {
+                    case "gebiete":
+                        return "wfs";
+                    //raster and wcs are identically
+                    case "raster":
+                        return "wcs";
+                }
+            };
             $.each(data, function (key, row) {
                 $.each(data[key]['indicators'], function (key, value) {
-                    let capability_url = url_base + 'user?id=' + key + '&service=' + setting[1] + '&key=' + user_key + '&VERSION=1.1.0&REQUEST=GetCapabilities',
-                        url=url_base + 'user?id=' + key + '&service=' + setting[1] + '&key=' + user_key,
-                        url_monitor = function(){
-                            if(setting[0]==="raster"){
-                                return `https://monitor.ioer.de/?raeumliche_gliederung=raster&ind=${key}`;
-                            }else{
-                                return `https://monitor.ioer.de/?raeumliche_gliederung=gebiete&opacity=0.8&ind=${key}&raumgl=bld`;
-                            }
-                        },
-                        indicator_group = `<div><b>${value.ind_name_short}</b></div><div>${value.interpretation}</div>`,
-                        button_group = `<div class="btn-group" role="group" aria-label="Basic example">
+                    if(value.ogc[get_service()]==="1") {
+                        console.log(value);
+                        let capability_url = url_base + 'user?id=' + key + '&service=' + setting[1] + '&key=' + user_key + '&VERSION=2.0.0&REQUEST=GetCapabilities',
+                            url = url_base + 'user?id=' + key + '&service=' + setting[1] + '&key=' + user_key,
+                            // set the url for the map viewer link
+                            url_monitor = function () {
+                                if (setting[0] === "raster") {
+                                    return `https://monitor.ioer.de/?raeumliche_gliederung=raster&ind=${key}`;
+                                } else {
+                                    return `https://monitor.ioer.de/?raeumliche_gliederung=gebiete&opacity=0.8&ind=${key}&raumgl=bld`;
+                                }
+                            },
+                            indicator_group = `<div><b>${value.ind_name_short}</b></div><div>${value.interpretation}</div>`,
+                            button_group = `<div class="btn-group" role="group" aria-label="Basic example">
                                           <a target="_blank" href="${capability_url}"><button type="button" class="btn btn-warning">GetCapabilities</button></a>
                                           <button type="button" class="btn btn-primary copy" data-url="${url}">URL-Kopieren</button>
                                           <a href="${url_monitor()}" target="_blank"><button type="button" class="btn btn-secondary info_btn">Karte</button></a>
                                         </div>`;
-                    values.push({
-                        "name":indicator_group,
-                        "url": button_group
-                    });
+                        values.push({
+                            "name": indicator_group,
+                            "url": button_group
+                        });
+                    }
                 });
             });
             table.getTableObject().DataTable({

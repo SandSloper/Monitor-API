@@ -171,9 +171,9 @@ class Wms(OgcService):
                 if int_time >= 2006 and int_time <= now.year:
                     for s in self.indicator.get_spatial_extends():
                         layer=("LAYER\n"
-                                '   NAME "{0}_{1}_{2}"\n'
+                                '   NAME "{0}_{1}_{2}m"\n'
                                 "   METADATA\n"
-                                '       "wms_title" "{0}_{1}"\n'
+                                '       "wms_title" "{0}_{1}_{2}m"\n'
                                 '       "wms_extent" "4000000 2650000 4700000 3600000"\n'
                                 '       "wms_srs" "epsg:25832 epsg:25833 epsg:31466 epsg:31467 epsg:31468 epsg:31469 epsg:3034 epsg:3035 epsg:3044 epsg:3857 epsg:4258 epsg:4326"\n'
                                 '       "wms_feature_info_mime_type" "text/html" \n'

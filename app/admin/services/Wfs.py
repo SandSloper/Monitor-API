@@ -121,7 +121,7 @@ class Wfs(OgcService):
                             layer = ('LAYER \n'
                                     '  NAME "{0}_{1}" \n'
                                     '  METADATA \n'
-                                    '       "wfs_title" "{2} {1}" \n'
+                                    '       "wfs_title" "{2} {1} ({0})" \n'
                                     '       "wfs_abstract" "{2} {1} an {0}" \n'
                                     '       "wfs_description " "{3}" \n'
                                     '       "wfs_srs" "epsg:{4}" \n'

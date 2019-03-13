@@ -67,6 +67,7 @@ User Log In
 '''
 @user.route('/login', methods=['GET', 'POST'])
 def login():
+    logout_user()
     if current_user.is_authenticated:
         if current_user.access == 2:
             return redirect("{}admin/".format(Config.URL_ENDPOINT))
