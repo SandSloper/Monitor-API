@@ -13,4 +13,4 @@ Im folgenden Abschnitt sind kurz die bis jetzt implementierten Module zusammenge
 ### Technologien
 - Flask
 - React
-- JQuery
+- PostgreSQL
