@@ -1,3 +1,7 @@
+:root{
+    --main-color:#4E60AA;
+    --active-color:#8CB91B
+}
 .w-50{
     width: 50% !important;
 }
@@ -12,4 +16,7 @@
 }
 .float-right{
     float: right;
+}
+.cursor{
+    cursor: pointer !important;
 }

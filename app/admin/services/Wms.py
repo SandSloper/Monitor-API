@@ -124,7 +124,7 @@ class Wms(OgcService):
                     'IMAGEPATH "/srv/www/htdocs/ms_tmp/"\n'
                     'IMAGEURL "/ms_tmp/"\n'
                                        '    METADATA\n'
-                       '        "wcs_title"  "wms {0}"\n'
+                       '        "wms_title"  "wms {0}"\n'
                        '        "wms_abstract" "{1}"\n'
                        '        "wms_label" "{0}"\n'
                        '        "wms_description" "{2}"\n'

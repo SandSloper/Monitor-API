@@ -11,19 +11,19 @@ def admin_page():
 
 @admin.route('/wfs',methods=['GET', 'POST'])
 def wfs_service():
-    wfs = Wfs('G:\\mapsrv_daten\\detailviewer\\wfs_mapfiles')
-    #wfs = Wfs()
+    #wfs = Wfs('G:\\mapsrv_daten\\detailviewer\\wfs_mapfiles')
+    wfs = Wfs()
     return jsonify(wfs.createAllServices())
 
 @admin.route('/wcs',methods=['POST'])
 def wcs_service():
-    wcs = Wcs('G:\\mapsrv_daten\\detailviewer\\wcs_mapfiles')
-    #wcs = Wcs()
+    #wcs = Wcs('G:\\mapsrv_daten\\detailviewer\\wcs_mapfiles')
+    wcs = Wcs()
     return jsonify(wcs.createAllServices())
 
 @admin.route('/wms',methods=['POST'])
 def wms_service():
-    wms = Wms('G:\\mapsrv_daten\\detailviewer\\wms_mapfiles')
-   # wms = Wms()
+    #wms = Wms('G:\\mapsrv_daten\\detailviewer\\wms_mapfiles')
+    wms = Wms()
     return jsonify(wms.createAllServices())
 

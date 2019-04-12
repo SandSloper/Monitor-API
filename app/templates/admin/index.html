@@ -3,21 +3,36 @@
 <head>
   <meta charset="utf-8">
   <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/fontawesome/css/all.min.css') }}">
     <link type="text/css" href="{{ url_for('static', filename='lib/bootstrap/bootstrap.min.css') }}" rel="stylesheet"/>
-    <link type="text/css" href="{{ url_for('static', filename='lib/datatables/datatables.min.css') }}" rel="stylesheet"/>
+    <link type="text/css" href="{{ url_for('static', filename='lib/sweetalert/sweetalert.css') }}" rel="stylesheet"/>
     <link type="text/css" href="{{ url_for('static', filename='css/admin.css') }}" rel="stylesheet"/>
 </head>
 <body>
 <div class="header"><h2>Admin</h2></div>
 <div id="navbar"></div>
-<div id="page"></div>
-<div id="side_nav"></div>
+<div class="container-fluid mt-2">
+    <div class="row">
+        <div  id="side_nav" class="col col-1"></div>
+        <div class="col w-100" id="page_content"></div>
+    </div>
+</div>
 </body>
+<!--Libs-->
 <script src="{{ url_for('static', filename='lib/react/react.min.js') }}"></script>
 <script src="{{ url_for('static', filename='lib/react/react-dom.min.js') }}"></script>
 <script src="{{ url_for('static', filename='lib/react/JSXTransformer.js') }}"></script>
 <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/bootstrap/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/sweetalert/sweetalert.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/axios/axios.min.js') }}"></script>
+<!--React-->
 <script src="{{url_for('static',filename='js/admin/Navbar.jsx')}}" type="text/jsx"></script>
 <script src="{{url_for('static',filename='js/admin/Sidenav.jsx')}}" type="text/jsx"></script>
-<script type=text/javascript>$SCRIPT_ROOT = {{ request.script_root|tojson|safe }}</script>
+<script src="{{url_for('static',filename='js/admin/OGC.jsx')}}" type="text/jsx"></script>
+<script src="{{url_for('static',filename='js/admin/ModalDialog.jsx')}}" type="text/jsx"></script>
+<!--Classes-->
+<script src="{{url_for('static',filename='js/admin/RequestManager.js')}}" type="text/jsx"></script>
+<script src="{{url_for('static',filename='js/admin/SwalManager.js')}}" type="text/jsx"></script>
+<script type=text/javascript>$SCRIPT_ROOT ={{ request.script_root|tojson|safe }}</script>
 </html>
