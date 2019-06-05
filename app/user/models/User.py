@@ -48,6 +48,6 @@ class User(UserMixin, db.Model):
 
     def get_id(self):
         return self.id
-
+    #object to string
     def __repr__(self):
         return '<User %r>' % (self.username)

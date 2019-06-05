@@ -7,14 +7,14 @@ class Menu extends React.Component{
             <div className="navbar">
                 <ul className="navbar-nav">
                     <li className={"nav-item "+(path ? '':'active')}>
-                        <a className="nav-link" href="https://monitor.ioer.de/monitor_api/api_key">API-Key</a>
+                        <a className="nav-link" href={url_base+"/api_key"}>API-Key</a>
                     </li>
                     <li className={"nav-item "+(path ? 'active':'')}>
-                        <a className="nav-link" href="https://monitor.ioer.de/monitor_api/services">OGC-Dienste</a>
+                        <a className="nav-link" href={url_base+"/services"}>OGC-Dienste</a>
                     </li>
                 </ul>
                 <div className="logout my-2 my-lg-0">
-                    <a href="https://monitor.ioer.de/monitor_api/logout">
+                    <a href={url_base+"/logout"}>
                         <button type="submit" className="btn btn-warning">Logout</button>
                     </a>
                 </div>

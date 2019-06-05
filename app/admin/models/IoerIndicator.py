@@ -1,6 +1,6 @@
-import json
+from app.admin.interfaces.Indicator import Indicator
 
-class Indicator:
+class IoerIndicator(Indicator):
     def __init__(self,id, name, description, time_string, spatial_extends, units, methodology,colors=None,cat=None):
         self.id = id
         self.name=name

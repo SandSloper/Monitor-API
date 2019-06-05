@@ -2,7 +2,6 @@ class OGC extends React.Component{
    constructor(props) {
         super(props);
         this.state={
-            service:"wfs",
             result:false,
             resultJSX:false
         };
@@ -12,11 +11,12 @@ class OGC extends React.Component{
         let service=ev.currentTarget.getAttribute('data-service');
         if(service==="updateAll"){
             SwalManager.setLoading("info");
-            RequestManager.updateOGCService(this.state.service)
+            RequestManager.updateOGCService(this.props.service)
                 .then(result => {
+                    console.log(result);
                    SwalManager.removeDialog();
                    let data = result.data;
-                    let resultJSX = (
+                   let resultJSX = (
                            <div className="card-columns">
                                {data.map((value,index)=>{
                                    let elements = data[index][Object.keys(value)];
@@ -37,13 +37,14 @@ class OGC extends React.Component{
                                                    </ul>
                                                     <div className="card-text font-weight-bold">Räumliche-Gebiete:</div>
                                                    <ul className="list-group">
-                                                   {sp_extend.map((value,i)=>{
+                                                   {this.props.service!=="geosn" ?
+                                                       sp_extend.map((value,i)=>{
                                                        if(parseInt(elements.spatial_extends[value])===1){
                                                            return(
                                                                 <li className="list-group-item text-dark">{value}</li>
                                                             )
                                                        }
-                                                   })}
+                                                   }):elements.spatial_extends}
                                                    </ul>
                                                </div>
                                            </div>)
@@ -52,7 +53,7 @@ class OGC extends React.Component{
                                            <div className="card text-white bg-danger">
                                                <div className="card-body">
                                                    <h5 className="card-title">{elements.name}</h5>
-                                                   <p className="card-text font-weight-bold">Diensterstellung schlug fehl</p>
+                                                   <p className="card-text font-weight-bold">{elements.state}</p>
                                                </div>
                                            </div>)
                                    }
@@ -68,6 +69,7 @@ class OGC extends React.Component{
                     console.error(error);
                SwalManager.setError();
             });
+            this.setState({result:false});
         }else if(service==="create"){
 
         }
@@ -85,26 +87,26 @@ class OGC extends React.Component{
                     </div>
                 </div>
                 <div className="col-md-3">
-                   <div className="card mx-sm-1 p-3">
+                   <div className="card mx-sm-1 p-3 el-disabled">
                         <div className="card-img-top text-center text-primary"><i className="fa fa-edit fa-4x" aria-hidden="true"></i></div>
                         <div className="card-body text-center">
-                            <a href="#" className="btn btn-primary" data-service="create">Einzelnen Dienste erstellen</a>
+                            <a href="#" className="btn btn-primary el-disabled" data-service="create">Einzelnen Dienste erstellen</a>
                         </div>
                     </div>
                 </div>
                 <div className="col-md-3">
-                    <div className="card mx-sm-1 p-3">
+                    <div className="card mx-sm-1 p-3 el-disabled">
                         <div className="card-img-top text-center text-danger"><i className="fa fa-trash-alt fa-4x" aria-hidden="true"></i></div>
                         <div className="card-body text-center">
-                            <a href="#" className="btn btn-danger">Dienst löschen</a>
+                            <a href="#" className="btn btn-danger el-disabled">Dienst löschen</a>
                         </div>
                     </div>
                 </div>
                 <div className="col-md-3">
-                    <div className="card mx-sm-1 p-3">
+                    <div className="card mx-sm-1 p-3 el-disabled">
                         <div className="card-img-top text-center text-success"><i className="fa fa-table fa-4x" aria-hidden="true"></i></div>
                         <div className="card-body text-center">
-                            <a href="#" className="btn btn-success">Übersicht</a>
+                            <a href="#" className="btn btn-success el-disabled">Übersicht</a>
                         </div>
                     </div>
                 </div>
@@ -115,6 +117,6 @@ class OGC extends React.Component{
   }
 }
 ReactDOM.render(
-    < OGC />,
+    < OGC service={"wfs"}/>,
     document.getElementById('page_content')
 );

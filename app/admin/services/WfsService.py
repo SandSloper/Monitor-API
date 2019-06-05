@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 import os
 import codecs
-import datetime
 
 from app import *
-from app.admin.models.IndicatorValues import IndicatorValues
-from app.models.Toolbox import Toolbox
-from app.admin.models.Indicator import Indicator
+from app.admin.services.IndicatorValues import IndicatorValues
+from app.admin.models.Toolbox import Toolbox
+from app.admin.models.IoerIndicator import IoerIndicator
 from app.admin.interfaces.OgcService import OgcService
 
-class Wfs(OgcService):
+class WfsService(OgcService):
     indicator = None
     def __init__(self,path='/mapsrv_daten/detailviewer/wfs_mapfiles'):
         self.service='wfs'
@@ -31,15 +30,15 @@ class Wfs(OgcService):
                 methodology = self.toolbox.clean_string(val["methodik"])
                 unit = val["unit"]
                 #builder
-                self.indicator = Indicator(ind_id, ind_name, ind_description, times, spatial_extends, unit, methodology)
-                results.append(self.writeFile())
+                self.indicator = IoerIndicator(ind_id, ind_name, ind_description, times, spatial_extends, unit, methodology)
+                results.append(self.__writeFile())
         return results
 
     def createSingleService(self,Indicator,file_path=None):
         self.indicator=Indicator
-        self.writeFile(file_path)
+        self.__writeFile(file_path)
 
-    def writeFile(self,file_path=None):
+    def __writeFile(self, file_path=None):
         try:
             # extract the times
             time_array = self.indicator.get_time().split(",")
@@ -87,6 +86,7 @@ class Wfs(OgcService):
                 '       "ows_role" "Erzeuger" \n'
                 '       "wfs_enable_request" "*" \n'
                 '       "wfs_encoding" "UTF-8" \n'
+                '       "ows_enable_request" "*"\n'
                 "END \n"
             "END \n".format(self.indicator.get_name(),self.indicator.get_description(),self.indicator.get_methodogy()))
 
@@ -104,7 +104,7 @@ class Wfs(OgcService):
 
             for t in sorted(time_array):
                 int_time = int(t)
-                if int_time>2006 and int_time<=2016:
+                if int_time>2006:
                     for s in self.indicator.get_spatial_extends():
                         int_s = int(self.indicator.get_spatial_extends()[s])
                         if int_s==1:
@@ -112,16 +112,16 @@ class Wfs(OgcService):
                             geometry = 'the_geom'
                             # geometry column is different for timeshifts in the year 2000
 
-                            if s != 'g50' or s != 'sst':
+                            if s != 'g50' or s != 'stt':
                                 if int_time <= 2012:
                                     epsg = '31467'
 
-                            sql = '{0} from (select g.gid, g.ags, g.{0}, g.gen, a."{1}" as value from vg250_{2}_{3}_grob g join basiskennzahlen_{3} a on g.ags = a.ags where a."{1}" >=-1) as subquery using unique gid using srid={4}'.format(geometry,self.indicator.get_id(),s,t,epsg)
+                            sql = '{0} from (select g.gid, g.ags, g.{0}, g.gen, a."{1}" as value from vg250_{2}_{3}_grob g join basiskennzahlen_{3} a on g.ags = a."AGS" where a."{1}" >=-1) as subquery using unique gid using srid={4}'.format(geometry,self.indicator.get_id(),s,t,epsg)
 
                             layer = ('LAYER \n'
                                     '  NAME "{0}_{1}" \n'
                                     '  METADATA \n'
-                                    '       "wfs_title" "{2} {1} ({0})" \n'
+                                    '       "wfs_title" "{2} {1} an {0}" \n'
                                     '       "wfs_abstract" "{2} {1} an {0}" \n'
                                     '       "wfs_description " "{3}" \n'
                                     '       "wfs_srs" "epsg:{4}" \n'

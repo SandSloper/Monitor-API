@@ -8,8 +8,8 @@ class ApiKey extends React.Component{
     copyToClipboard(){
         const el = document.createElement('textarea'),
             manager = this;
-        console.log(this.state.value);
-        if(this.state.value){
+        console.log(this.state.value, this.state.value.length);
+        if(this.state.value && this.state.value.length >1){
             el.value = this.state.value;
             document.body.appendChild(el);
             el.select();
@@ -18,6 +18,7 @@ class ApiKey extends React.Component{
         }else{
              var key =ApiKey.makekey();
             //check if the key allredy exists
+            console.log(url_base+'/check_key');
            $.ajax({
                url:url_base+'/check_key',
                type:"GET",
@@ -42,6 +43,7 @@ class ApiKey extends React.Component{
     }
     insert(key,username,user_id){
         const manager = this;
+        console.log(url_base+'/check_key');
          $.ajax({
                 url:url_base+'/insert_key',
                 type:"GET",

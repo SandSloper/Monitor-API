@@ -1,9 +1,10 @@
 const url_base =window.location.origin + '/monitor_api/';
-//TODO noch auf react umstellen !
+
 $(document).ready(function(){
     table.init(false);
     checkbox.init();
 });
+
 const table={
     getTableObject:function(){
         $elem = $('#service_table');
@@ -75,9 +76,6 @@ const table={
             url: 'https://monitor.ioer.de/backend/query.php',
             data: {
                 values:'{"format":{"id":"'+setting+'"},"query":"getAllIndicators"}'
-            },
-            success:function(){
-                console.log(this.url);
             }
         });
 
@@ -105,6 +103,7 @@ const table={
         }
     }
 };
+
 const checkbox={
     getContainerObject:function(){
         $elem = $('.services').find('form');

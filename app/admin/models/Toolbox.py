@@ -1,5 +1,5 @@
 import json
-from app import *
+
 
 class Toolbox:
     def clean_string(self, string):

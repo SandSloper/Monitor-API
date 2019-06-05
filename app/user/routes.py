@@ -8,7 +8,7 @@ from flask import url_for
 from flask import Response
 
 from app.user.models.Forms import *
-from app.user.models.Users import *
+from app.user.models.User import *
 from app.config import Config
 from werkzeug.security import check_password_hash, generate_password_hash
 from app.user.models.Token import Token
@@ -30,6 +30,13 @@ def index():
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+@login_manager.unauthorized_handler
+def unauthorized():
+    form = RegisterForm(form_type="inline")
+    return render_template('user/signup.html', form=form)
+'''
+handels the streaming of the given OGC-Service
+'''
 @user.route('/user', methods=['GET', 'POST'])
 def get_service():
     #get all url parameter
@@ -39,6 +46,7 @@ def get_service():
     id=''
     key = ''
     paramater_ogc = ''
+
     for x in parameters:
         x_str = x.lower()
         if 'key' in x:
@@ -49,6 +57,7 @@ def get_service():
             id=x_str.replace('id=','')
         else:
             paramater_ogc +='&'+x_str
+
     url_ogc ="https://monitor.ioer.de/cgi-bin/mapserv?map=/mapsrv_daten/detailviewer/{}_mapfiles/{}_{}.map&SERVICE={}{}".format(service.lower(),service.lower(),id.upper(),service.upper(),paramater_ogc)
     app.logger.info("Mapserver request: %s", url_ogc)
     req = requests.get(url_ogc, stream=True)
@@ -168,19 +177,20 @@ def send_reset_password():
 @user.route('/reset/<token_pass>',methods=['GET', 'POST'])
 def reset_password(token_pass):
     form = ResetPasswordForm(form_type="inline")
-    if form.validate_on_submit():
-        email = token.confirm_token(token_pass)
-        user = User.query.filter_by(email=email).first_or_404()
-        new_pw =  generate_password_hash(form.password.data, method='sha256')
-        user.password = new_pw
-        db.session.add(user)
-        db.session.commit()
-        logout_user()
-        return render_template('user/reset_password.html',reseted=True)
-    '''else:
+    if token.confirm_token(token_pass):
+        if form.validate_on_submit():
+            email = token.confirm_token(token_pass)
+            user = User.query.filter_by(email=email).first_or_404()
+            new_pw =  generate_password_hash(form.password.data, method='sha256')
+            user.password = new_pw
+            db.session.add(user)
+            db.session.commit()
+            logout_user()
+            return render_template('user/reset_password.html',reseted=True)
+        return render_template('user/reset_password.html', reset_form=form)
+    else:
         error = Markup('<div class="alert alert-danger w-100" role="alert">Der Token für die Zurücksetzung ist abgelaufen</div>')
-        return render_template('user/reset_password.html', error=error)'''
-    return render_template('user/reset_password.html', reset_form=form)
+        return render_template('user/reset_password.html', error=error)
 '''
 Service overview, shown if the USER is authenticated
 '''

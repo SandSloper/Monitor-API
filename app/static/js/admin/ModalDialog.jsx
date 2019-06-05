@@ -4,6 +4,7 @@ class ModalDialog extends React.Component{
         super(props);
     }
     static remove(){
+        //boostrap needs jquery :-(
         $('.modal').modal('hide');
     }
     componentDidMount(){
